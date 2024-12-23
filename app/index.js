@@ -4,6 +4,7 @@ import {COLORS} from "../constants/theme";
 import ScreenHeaderBtn from "../components/common/header/ScreenHeaderBtn";
 import icons from "../constants/icons";
 import {ScrollView, View} from "react-native";
+import Welcome from "../components/home/welcome/Welcome";
 
 const Home = () => {
     const router = useRouter();
@@ -34,6 +35,8 @@ const Home = () => {
                         padding: 16,
                     }}
                 >
+
+                    <Welcome/>
                 </View>
             </ScrollView>
 
