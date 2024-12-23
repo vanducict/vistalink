@@ -1,13 +1,3 @@
-# Expo Router Example
+Vistalink App - React Native
+Vistalink is a mobile application built with React Native. This README will guide you through setting up the project locally and running the app on your development environment.
 
-Use [`expo-router`](https://docs.expo.dev/router/introduction/) to build native navigation using files in the `app/` directory.
-
-## 🚀 How to use
-
-```sh
-npx create-expo-app -e with-router
-```
-
-## 📝 Notes
-
-- [Expo Router: Docs](https://docs.expo.dev/router/introduction/)
