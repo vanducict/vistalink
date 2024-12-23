@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="start project (header)">
-      <change afterPath="$PROJECT_DIR$/assets/fonts/DMSans-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/DMSans-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/DMSans-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/home/welcome/Welcome.style.js" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icons/profile.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/profile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/icons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/welcome/Welcome.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/welcome/Welcome.style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1734958460075</updated>
       <workItem from="1734958462400" duration="6000" />
-      <workItem from="1734966398971" duration="8128000" />
+      <workItem from="1734966398971" duration="8248000" />
     </task>
     <task id="LOCAL-00001" summary="start project (header)">
       <created>1734972757780</created>
@@ -73,7 +62,14 @@
       <option name="project" value="LOCAL" />
       <updated>1734972757781</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Welcome component">
+      <created>1734996865630</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1734996865630</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,6 +77,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start project (header)" />
-    <option name="LAST_COMMIT_MESSAGE" value="start project (header)" />
+    <MESSAGE value="Welcome component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Welcome component" />
   </component>
 </project>
