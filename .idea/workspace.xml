@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="padding fix">
+      <change afterPath="$PROJECT_DIR$/assets/images/link.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/home/nearby/Nearby.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/home/nearby/Nearby.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/home/popular/Popular.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/home/popular/Popular.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/home/popularcard/PopularCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/home/popularcard/PopularCard.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/images.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/welcome/Welcome.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/welcome/Welcome.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons/profile.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/profile.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +52,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/icons" />
+      <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/assets/fonts" />
       <recent name="$PROJECT_DIR$/components/common/header" />
     </key>
@@ -53,7 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1734958460075</updated>
       <workItem from="1734958462400" duration="6000" />
-      <workItem from="1734966398971" duration="8248000" />
+      <workItem from="1734966398971" duration="13957000" />
     </task>
     <task id="LOCAL-00001" summary="start project (header)">
       <created>1734972757780</created>
@@ -69,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1734996865630</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="padding fix">
+      <created>1734997001982</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1734997001982</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,6 +98,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start project (header)" />
     <MESSAGE value="Welcome component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Welcome component" />
+    <MESSAGE value="padding fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="padding fix" />
   </component>
 </project>

@@ -5,6 +5,8 @@ import ScreenHeaderBtn from "../components/common/header/ScreenHeaderBtn";
 import icons from "../constants/icons";
 import {ScrollView, View} from "react-native";
 import Welcome from "../components/home/welcome/Welcome";
+import Popular from "../components/home/popular/Popular";
+import Nearby from "../components/home/nearby/Nearby";
 
 const Home = () => {
     const router = useRouter();
@@ -37,6 +39,8 @@ const Home = () => {
                 >
 
                     <Welcome/>
+                    <Popular/>
+                    <Nearby/>
                 </View>
             </ScrollView>
 

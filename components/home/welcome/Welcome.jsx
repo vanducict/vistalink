@@ -13,7 +13,7 @@ const Welcome = () => {
     return (
         <View>
             <View>
-                <Text style={styles.userName}>Hello Sebastien.</Text>
+                <Text style={styles.userName}>Hello Natasha.</Text>
                 <Text style={styles.welcomeMessage}>Find your perfect link</Text>
             </View>
             <View style={styles.searchContainer}>
@@ -54,6 +54,7 @@ const Welcome = () => {
                     horizontal={true}
                     contentContainerStyle={{columnGap: SIZES.small}}
                     keyExtractor={(item) => item}
+                    showsHorizontalScrollIndicator={false}
                 />
             </View>
         </View>
