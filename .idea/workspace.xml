@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="adjust htmls css + sample data">
-      <change afterPath="$PROJECT_DIR$/app/screens/HomeScreen.js" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="rework navigation structure">
+      <change afterPath="$PROJECT_DIR$/app/screens/home/HomeScreen.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/HomeScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/link.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/link.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,10 +44,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/icons" />
       <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$/app/screens/login" />
+      <recent name="$PROJECT_DIR$/app/screens/home" />
+      <recent name="$PROJECT_DIR$/assets/icons" />
       <recent name="$PROJECT_DIR$/assets/fonts" />
-      <recent name="$PROJECT_DIR$/components/common/header" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -86,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735042485447</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="rework navigation structure">
+      <created>1735058987702</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1735058987702</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +108,7 @@
     <MESSAGE value="Welcome component" />
     <MESSAGE value="padding fix" />
     <MESSAGE value="first version homepage design" />
-    <option name="LAST_COMMIT_MESSAGE" value="first version homepage design" />
+    <MESSAGE value="rework navigation structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="rework navigation structure" />
   </component>
 </project>

@@ -1,8 +1,8 @@
-import Home from "./screens/HomeScreen";
+import Login from "./screens/login/LoginScreen";
 
 const Index = () => {
     return (
-        <Home/>
+        <Login/>
     );
 }
 
