@@ -1,6 +1,6 @@
 import {Image, Text, TouchableOpacity, View} from "react-native";
 
-import images from "../../../constants/images";
+import images from "../../../constants/icons";
 import styles from "./NearbyCard.style";
 
 const NearbyCard = ({item}) => {
@@ -11,7 +11,7 @@ const NearbyCard = ({item}) => {
         >
             <TouchableOpacity style={styles.logoContainer}>
                 <Image
-                    source={images.link}
+                    source={images.provider}
                     resizeMode={"contain"}
                     style={styles.logoImage}
                 />
@@ -31,6 +31,11 @@ const NearbyCard = ({item}) => {
                     </Text>
                     <Text style={styles.location}> Belgium</Text>
                 </View>
+            </View>
+            <View>
+                <Text>Open spots :
+                    <Text style={styles.openSpots}> 0/1</Text>
+                </Text>
             </View>
         </TouchableOpacity>
     );

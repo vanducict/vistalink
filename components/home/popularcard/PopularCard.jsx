@@ -1,6 +1,6 @@
 import {Image, Text, TouchableOpacity, View} from "react-native";
 import styles from "./PopularCard.style";
-import images from "../../../constants/images";
+import images from "../../../constants/icons";
 
 const PopularJobCard = ({item}) => {
     return (
@@ -10,7 +10,7 @@ const PopularJobCard = ({item}) => {
         >
             <TouchableOpacity style={styles.logoContainer}>
                 <Image
-                    source={images.link}
+                    source={images.provider}
                     resizeMode={"contain"}
                     style={styles.logoImage}
                 />
@@ -30,6 +30,11 @@ const PopularJobCard = ({item}) => {
                     </Text>
                     <Text style={styles.location}> Belgium</Text>
                 </View>
+            </View>
+            <View>
+                <Text>Open spots :
+                    <Text style={styles.openSpots}> 0/1</Text>
+                </Text>
             </View>
         </TouchableOpacity>
     );

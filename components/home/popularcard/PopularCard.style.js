@@ -50,6 +50,11 @@ const styles = StyleSheet.create({
         fontFamily: FONT.regular,
         color: "#B3AEC6",
     },
+    openSpots: {
+        fontSize: SIZES.medium - 2,
+        fontFamily: FONT.regular,
+        color: COLORS.gray,
+    },
 });
 
 export default styles;
