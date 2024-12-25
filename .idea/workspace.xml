@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="rework navigation structure">
-      <change afterPath="$PROJECT_DIR$/app/screens/home/HomeScreen.style.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="Loginscreen">
+      <change afterPath="$PROJECT_DIR$/FirebaseConfig.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metro.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/HomeScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/link.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/link.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +37,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
@@ -61,6 +61,8 @@
       <updated>1734958460075</updated>
       <workItem from="1734958462400" duration="6000" />
       <workItem from="1734966398971" duration="15003000" />
+      <workItem from="1735128737449" duration="1500000" />
+      <workItem from="1735131731987" duration="1572000" />
     </task>
     <task id="LOCAL-00001" summary="start project (header)">
       <created>1734972757780</created>
