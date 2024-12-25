@@ -1,5 +1,7 @@
 import {useFonts} from "expo-font";
 import {Stack} from "expo-router";
+import AuthProvider from "../utils/AuthenticationContext";
+import React from "react";
 
 const Layout = () => {
     const [fontsLoaded] = useFonts({
@@ -13,7 +15,9 @@ const Layout = () => {
     }
 
     return (
-        <Stack/>
+        <AuthProvider>
+            <Stack/>
+        </AuthProvider>
     )
 };
 
