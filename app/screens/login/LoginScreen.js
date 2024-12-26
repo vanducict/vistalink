@@ -1,20 +1,12 @@
 import React, {useState} from "react";
-import {
-    ActivityIndicator,
-    Image,
-    KeyboardAvoidingView,
-    SafeAreaView,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View
-} from "react-native";
+import {Image, KeyboardAvoidingView, SafeAreaView, Text, TextInput, TouchableOpacity, View} from "react-native";
 import {Stack} from "expo-router";
 import styles from "./LoginScreen.style";
 import images from "../../../constants/images";
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 import {firebase_auth} from "../../../FirebaseConfig";
 import {waitFor} from "@babel/core/lib/gensync-utils/async";
+import Loading from "../../../components/common/loading/Loading";
 
 
 const Login = () => {
@@ -87,14 +79,12 @@ const Login = () => {
                         style={styles.loginBtn}
                         onPress={() => signIn()}
                     >
-                        <Text>Login</Text>
+                        <Text>Sign in</Text>
                     </TouchableOpacity>
 
 
-                    {loading ? (
-                        <ActivityIndicator size="large" color="#0000ff" style={styles.loadingIndicator}/>
-                    ) : null}
-
+                    <Loading loading={loading}/>
+                    
                     <TouchableOpacity onPress={() => alert("Forgot Password?")}>
                         <Text style={styles.forgotPassword}>Forgot Password?</Text>
                     </TouchableOpacity>
