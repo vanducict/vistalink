@@ -5,21 +5,21 @@ import styles from "./LoginScreen.style";
 import images from "../../../constants/images";
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 import {firebase_auth} from "../../../FirebaseConfig";
-import {waitFor} from "@babel/core/lib/gensync-utils/async";
 import Loading from "../../../components/common/loading/Loading";
-
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const auth = firebase_auth;
+
     const signIn = async () => {
         try {
             setLoading(true);
-            waitFor(2000);
-            const response = await signInWithEmailAndPassword(auth, username, password);
-            console.log(username + " signed in: ", response);
+            setTimeout(async () => {
+                const response = await signInWithEmailAndPassword(auth, username, password);
+                console.log(username + " signed in: ", response);
+            }, 2000);
         } catch (e) {
             console.log("Error signing in: ", e);
         } finally {
@@ -30,16 +30,16 @@ const Login = () => {
     const signUp = async () => {
         try {
             setLoading(true);
-            waitFor(2000);
-            const response = await createUserWithEmailAndPassword(auth, username, password);
-            console.log(username + " signed up: ", response);
+            setTimeout(async () => {
+                const response = await createUserWithEmailAndPassword(auth, username, password);
+                console.log(username + " signed up: ", response);
+            }, 2000);
         } catch (e) {
             console.log("Error signing up: ", e);
         } finally {
             setLoading(false);
         }
     };
-
 
     return (
         <SafeAreaView style={styles.safeArea}>
@@ -56,7 +56,7 @@ const Login = () => {
                 }}
             />
 
-            <KeyboardAvoidingView behavior={"padding"}>
+            <KeyboardAvoidingView style={styles.container} behavior={"padding"}>
                 <View style={styles.container}>
                     <Image source={images.link} style={{width: 80, height: 80}}/>
                     <Text style={styles.title}>VistaLink</Text>
@@ -82,9 +82,9 @@ const Login = () => {
                         <Text>Sign in</Text>
                     </TouchableOpacity>
 
+                    {/* Conditionally render the Loading component */}
+                    {loading && <Loading loading={loading}/>}
 
-                    <Loading loading={loading}/>
-                    
                     <TouchableOpacity onPress={() => alert("Forgot Password?")}>
                         <Text style={styles.forgotPassword}>Forgot Password?</Text>
                     </TouchableOpacity>
@@ -99,12 +99,10 @@ const Login = () => {
 
         </SafeAreaView>
     );
-
-
 };
 
 Login.options = {
-    headerShown: false, // Ensure the header is shown for Home
+    headerShown: false, // Ensure the header is hidden
 };
 
 export default Login;

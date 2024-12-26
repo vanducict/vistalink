@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {COLORS, FONT} from "../../../constants/theme";
+import {COLORS, FONT, SIZES} from "../../../constants/theme";
 
 const styles = StyleSheet.create({
     safeArea: {
@@ -7,24 +7,24 @@ const styles = StyleSheet.create({
         backgroundColor: "#f9f9f9", // Match background to avoid color mismatch
     },
     container: {
-        flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        padding: 50,
+        paddingHorizontal: SIZES.small,  // Use dynamic padding for better responsiveness
+        paddingVertical: SIZES.large,      // Add some vertical space on larger screens
     },
     title: {
         fontSize: 24,
         fontWeight: "bold",
-        marginBottom: 20,
-        color: COLORS.secondary, // Darker text
+        marginBottom: SIZES.medium,        // Use a constant for spacing
+        color: COLORS.secondary,          // Darker text
     },
     loadingIndicator: {
-        marginTop: 20,
+        marginTop: SIZES.small,
         justifyContent: 'center',
         alignItems: 'center',
     },
     input: {
-        width: "100%",
+        width: SIZES.xxLarge / 0.1,
         height: 50,
         backgroundColor: "#fff", // White input background
         borderWidth: 1,
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
         marginBottom: 15,
         fontSize: 16,
         color: "#333",
+        // Responsive font scaling can be added here if needed
     },
     forgotPassword: {
         marginTop: 10,
@@ -58,18 +59,16 @@ const styles = StyleSheet.create({
         textDecorationLine: "underline",
     },
     loginBtn: {
-        paddingVertical: 10,
-        marginVertical: 10,
+        paddingVertical: SIZES.small,   // Adjust padding using size constants
+        marginVertical: SIZES.small,     // Space between button and other components
         backgroundColor: COLORS.tertiary,
         fontFamily: FONT.medium,
         color: COLORS.lightWhite,
         justifyContent: "center",
         alignItems: "center",
-        textAlign: "center",
-        display: "flex",
-        width: "100%",
-    }
-
+        width: 100,
+        borderRadius: 8, // Round button corners for better UX
+    },
 });
 
 export default styles;
