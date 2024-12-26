@@ -18,6 +18,11 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         color: COLORS.secondary, // Darker text
     },
+    loadingIndicator: {
+        marginTop: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
     input: {
         width: "100%",
         height: 50,

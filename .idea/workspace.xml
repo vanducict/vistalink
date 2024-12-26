@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="add stack dependencies when need">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/home/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/HomeScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/login/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735058987702</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="leave header login for now">
+      <created>1735176844091</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1735176844091</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +114,7 @@
     <MESSAGE value="padding fix" />
     <MESSAGE value="first version homepage design" />
     <MESSAGE value="rework navigation structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="rework navigation structure" />
+    <MESSAGE value="leave header login for now" />
+    <option name="LAST_COMMIT_MESSAGE" value="leave header login for now" />
   </component>
 </project>

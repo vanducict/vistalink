@@ -1,10 +1,20 @@
 import React, {useState} from "react";
-import {Image, KeyboardAvoidingView, SafeAreaView, Text, TextInput, TouchableOpacity, View} from "react-native";
+import {
+    ActivityIndicator,
+    Image,
+    KeyboardAvoidingView,
+    SafeAreaView,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View
+} from "react-native";
 import {Stack} from "expo-router";
 import styles from "./LoginScreen.style";
 import images from "../../../constants/images";
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 import {firebase_auth} from "../../../FirebaseConfig";
+import {waitFor} from "@babel/core/lib/gensync-utils/async";
 
 
 const Login = () => {
@@ -14,6 +24,8 @@ const Login = () => {
     const auth = firebase_auth;
     const signIn = async () => {
         try {
+            setLoading(true);
+            waitFor(2000);
             const response = await signInWithEmailAndPassword(auth, username, password);
             console.log(username + " signed in: ", response);
         } catch (e) {
@@ -25,6 +37,8 @@ const Login = () => {
 
     const signUp = async () => {
         try {
+            setLoading(true);
+            waitFor(2000);
             const response = await createUserWithEmailAndPassword(auth, username, password);
             console.log(username + " signed up: ", response);
         } catch (e) {
@@ -75,6 +89,11 @@ const Login = () => {
                     >
                         <Text>Login</Text>
                     </TouchableOpacity>
+
+
+                    {loading ? (
+                        <ActivityIndicator size="large" color="#0000ff" style={styles.loadingIndicator}/>
+                    ) : null}
 
                     <TouchableOpacity onPress={() => alert("Forgot Password?")}>
                         <Text style={styles.forgotPassword}>Forgot Password?</Text>
