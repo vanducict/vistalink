@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="Compatible">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="fix ios issues mobile dev and styling issues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirebaseConfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FirebaseConfig.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/home/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/HomeScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/login/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/nearby/Nearby.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearby/Nearby.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/popular/Popular.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popular/Popular.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,11 +124,29 @@
       <option name="project" value="LOCAL" />
       <updated>1735208634742</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix ios issues mobile dev and styling issues">
+      <created>1735225535597</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1735225535597</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start project (header)" />
@@ -147,6 +157,7 @@
     <MESSAGE value="leave header login for now" />
     <MESSAGE value="put loading wheel sign in up" />
     <MESSAGE value="seperate loading compo" />
-    <option name="LAST_COMMIT_MESSAGE" value="seperate loading compo" />
+    <MESSAGE value="fix ios issues mobile dev and styling issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix ios issues mobile dev and styling issues" />
   </component>
 </project>

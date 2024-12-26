@@ -6,6 +6,7 @@ import images from "../../../constants/images";
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 import {firebase_auth} from "../../../FirebaseConfig";
 import Loading from "../../../components/common/loading/Loading";
+import {waitFor} from "@babel/core/lib/gensync-utils/async";
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -16,10 +17,9 @@ const Login = () => {
     const signIn = async () => {
         try {
             setLoading(true);
-            setTimeout(async () => {
-                const response = await signInWithEmailAndPassword(auth, username, password);
-                console.log(username + " signed in: ", response);
-            }, 2000);
+            waitFor(2000);
+            const response = await signInWithEmailAndPassword(auth, username, password);
+            console.log(username + " signed in: ", response);
         } catch (e) {
             console.log("Error signing in: ", e);
         } finally {
@@ -30,10 +30,9 @@ const Login = () => {
     const signUp = async () => {
         try {
             setLoading(true);
-            setTimeout(async () => {
-                const response = await createUserWithEmailAndPassword(auth, username, password);
-                console.log(username + " signed up: ", response);
-            }, 2000);
+            waitFor(2000);
+            const response = await createUserWithEmailAndPassword(auth, username, password);
+            console.log(username + " signed up: ", response);
         } catch (e) {
             console.log("Error signing up: ", e);
         } finally {
@@ -82,8 +81,7 @@ const Login = () => {
                         <Text>Sign in</Text>
                     </TouchableOpacity>
 
-                    {/* Conditionally render the Loading component */}
-                    {loading && <Loading loading={loading}/>}
+                    <Loading loading={loading}/>
 
                     <TouchableOpacity onPress={() => alert("Forgot Password?")}>
                         <Text style={styles.forgotPassword}>Forgot Password?</Text>
