@@ -1,5 +1,14 @@
 import React, {useState} from "react";
-import {Image, KeyboardAvoidingView, SafeAreaView, Text, TextInput, TouchableOpacity, View} from "react-native";
+import {
+    Image,
+    Keyboard,
+    KeyboardAvoidingView,
+    SafeAreaView,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View
+} from "react-native";
 import {Stack} from "expo-router";
 import styles from "./LoginScreen.style";
 import images from "../../../constants/images";
@@ -24,6 +33,7 @@ const Login = () => {
             console.log("Error signing in: ", e);
         } finally {
             setLoading(false);
+            Keyboard.dismiss();
         }
     };
 
@@ -37,6 +47,7 @@ const Login = () => {
             console.log("Error signing up: ", e);
         } finally {
             setLoading(false);
+            Keyboard.dismiss();
         }
     };
 
