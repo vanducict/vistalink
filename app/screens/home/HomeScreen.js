@@ -3,9 +3,11 @@ import ScreenHeaderBtn from "../../../components/common/header/ScreenHeaderBtn";
 import Welcome from "../../../components/home/welcome/Welcome";
 import Popular from "../../../components/home/popular/Popular";
 import Nearby from "../../../components/home/nearby/Nearby";
-import {SafeAreaView, ScrollView, View} from "react-native";
+import {Image, SafeAreaView, ScrollView, View} from "react-native";
 import icons from "../../../constants/icons";
 import {COLORS} from "../../../constants/theme";
+import images from "../../../constants/images";
+import React from "react";
 
 const Home = () => {
     const router = useRouter();
@@ -16,6 +18,7 @@ const Home = () => {
                 options={{
                     headerStyle: {backgroundColor: COLORS.lightWhite},
                     headerShadowVisible: true,
+
                     headerLeft: () => (
                         <ScreenHeaderBtn
                             iconUrl={icons.profile}
@@ -28,7 +31,12 @@ const Home = () => {
                             dimension="100%"
                         />
                     ),
-                    headerTitle: "",
+                    headerTitle: () => (
+                        <Image
+                            source={images.link} // Path to your image
+                            style={{width: 40, height: 40, resizeMode: 'contain'}} // Adjust size
+                        />
+                    ),
                 }}
             />
 

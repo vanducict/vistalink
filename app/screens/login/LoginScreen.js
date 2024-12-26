@@ -6,6 +6,7 @@ import images from "../../../constants/images";
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 import {firebase_auth} from "../../../FirebaseConfig";
 
+
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -38,14 +39,20 @@ const Login = () => {
         <SafeAreaView style={styles.safeArea}>
             <Stack.Screen
                 options={{
-                    headerShown: false,
-                    headerShadowVisible: false,
-                    headerTitle: "",
+                    headerShadowVisible: true,
+                    headerTitle: () => (
+                        <Image
+                            source={images.link} // Path to your image
+                            style={{width: 40, height: 40, resizeMode: 'contain'}} // Adjust size
+                        />
+                    ),
+                    headerTitleAlign: 'center', // Ensure the title is centered
                 }}
             />
+
             <KeyboardAvoidingView behavior={"padding"}>
                 <View style={styles.container}>
-                    <Image source={images.link} style={{width: 100, height: 100}}/>
+                    <Image source={images.link} style={{width: 80, height: 80}}/>
                     <Text style={styles.title}>VistaLink</Text>
                     <TextInput
                         style={styles.input}
@@ -83,7 +90,12 @@ const Login = () => {
 
         </SafeAreaView>
     );
+
+
 };
 
+Login.options = {
+    headerShown: false, // Ensure the header is shown for Home
+};
 
 export default Login;
