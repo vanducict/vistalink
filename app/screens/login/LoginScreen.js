@@ -19,7 +19,7 @@ const Login = () => {
             setLoading(true);
             waitFor(2000);
             const response = await signInWithEmailAndPassword(auth, username, password);
-            console.log(username + " signed in: ", response);
+            console.log(username + " signed in: ", username);
         } catch (e) {
             console.log("Error signing in: ", e);
         } finally {
@@ -32,7 +32,7 @@ const Login = () => {
             setLoading(true);
             waitFor(2000);
             const response = await createUserWithEmailAndPassword(auth, username, password);
-            console.log(username + " signed up: ", response);
+            console.log(username + " signed up: ", username);
         } catch (e) {
             console.log("Error signing up: ", e);
         } finally {
