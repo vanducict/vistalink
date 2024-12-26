@@ -20,6 +20,7 @@ const Welcome = () => {
                 <View style={styles.searchWrapper}>
                     <TextInput
                         placeholder="Search for a link"
+                        placeholderTextColor="#888"
                         onChange={() => {
                         }}
                         style={styles.searchInput}/>
