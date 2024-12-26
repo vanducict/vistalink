@@ -18,7 +18,7 @@ const Home = () => {
                 options={{
                     headerStyle: {backgroundColor: COLORS.lightWhite},
                     headerShadowVisible: true,
-
+                    headerTitleAlign: 'center',
                     headerLeft: () => (
                         <ScreenHeaderBtn
                             iconUrl={icons.profile}

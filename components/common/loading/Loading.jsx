@@ -6,9 +6,10 @@ import {COLORS} from "../../../constants/theme";
 
 
 const Loading = ({loading}) => {
-    return (loading ? (
-        <ActivityIndicator size="large" color={COLORS.tertiary} style={styles.loadingIndicator}/>
-    ) : null)
+    return (loading ?
+        (
+            <ActivityIndicator size="large" color={COLORS.tertiary} style={styles.loadingIndicator}/>
+        ) : null)
 };
 
 export default Loading;
