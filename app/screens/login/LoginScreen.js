@@ -16,6 +16,8 @@ import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "fireba
 import {firebase_auth} from "../../../FirebaseConfig";
 import Loading from "../../../components/common/loading/Loading";
 import {waitFor} from "@babel/core/lib/gensync-utils/async";
+import insertUser from "../../../service/user/UserService";
+
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -42,6 +44,7 @@ const Login = () => {
             setLoading(true);
             waitFor(2000);
             const response = await createUserWithEmailAndPassword(auth, username, password);
+            await insertUser(username);
             console.log(username + " signed up: ", username);
         } catch (e) {
             console.log("Error signing up: ", e);
