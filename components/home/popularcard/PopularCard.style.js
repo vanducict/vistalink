@@ -4,7 +4,7 @@ import {COLORS, FONT, SIZES} from "../../../constants/theme";
 
 const styles = StyleSheet.create({
     container: {
-        width: 250,
+        width: 300,
         padding: SIZES.xLarge,
         backgroundColor: COLORS.white,
         borderRadius: SIZES.medium,
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         width: "70%",
         height: "70%",
     },
-    companyName: {
+    ownerEmail: {
         fontSize: SIZES.medium,
         fontFamily: FONT.regular,
         color: "#B3AEC6",
@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
     infoContainer: {
         marginTop: SIZES.large,
     },
-    jobName: {
-        fontSize: SIZES.large,
+    linkName: {
+        fontSize: SIZES.medium - 2,
         fontFamily: FONT.medium,
     },
     infoWrapper: {
@@ -41,16 +41,11 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         alignItems: "center",
     },
-    publisher: {
-        fontSize: SIZES.medium - 2,
-        fontFamily: FONT.regular,
-    },
     location: {
         fontSize: SIZES.medium - 2,
         fontFamily: FONT.regular,
-        color: "#B3AEC6",
     },
-    openSpots: {
+    maxPeople: {
         fontSize: SIZES.medium - 2,
         fontFamily: FONT.regular,
         color: COLORS.gray,

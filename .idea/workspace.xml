@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="rework navigation with tabs">
-      <change afterPath="$PROJECT_DIR$/app/screens/chats/ChatScreen.style.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/chats/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/links/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/profile/ProfileScreen.style.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/profile/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/chat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/link.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/myprofile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/tabbar/TabBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/tabbar/TabBar.style.js" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/service/link/LinkService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/icons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/popular/Popular.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popular/Popular.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/popularcard/PopularCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popularcard/PopularCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/popularcard/PopularCard.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popularcard/PopularCard.style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +70,7 @@
       <workItem from="1734966398971" duration="15003000" />
       <workItem from="1735128737449" duration="1500000" />
       <workItem from="1735131731987" duration="1572000" />
-      <workItem from="1735305750557" duration="24952000" />
+      <workItem from="1735305750557" duration="27378000" />
     </task>
     <task id="LOCAL-00001" summary="start project (header)">
       <created>1734972757780</created>
@@ -195,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735471323757</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="custom navbar working wth sample pages">
+      <created>1735506836384</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1735506836384</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +225,7 @@
     <MESSAGE value="registerscreen set user working" />
     <MESSAGE value="update welcomescreen to current user" />
     <MESSAGE value="rework navigation with tabs" />
-    <option name="LAST_COMMIT_MESSAGE" value="rework navigation with tabs" />
+    <MESSAGE value="custom navbar working wth sample pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="custom navbar working wth sample pages" />
   </component>
 </project>
