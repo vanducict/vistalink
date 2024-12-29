@@ -39,7 +39,7 @@ const Welcome = () => {
         return (
             <View>
                 <View>
-                    <Text style={styles.userName}>Hello {currentUser.name}.</Text>
+                    <Text style={styles.userName}>Hello {currentUser.firstName}.</Text>
                     <Text style={styles.welcomeMessage}>Find your perfect link</Text>
                 </View>
                 <View style={styles.searchContainer}>

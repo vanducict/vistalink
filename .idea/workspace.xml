@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="update welcomescreen to current user">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="rework navigation with tabs">
+      <change afterPath="$PROJECT_DIR$/app/screens/chats/ChatScreen.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/chats/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/links/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/profile/ProfileScreen.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/profile/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/chat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/link.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/myprofile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/common/tabbar/TabBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/common/tabbar/TabBar.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/header/ScreenHeaderBtn.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/header/ScreenHeaderBtn.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/icons.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +62,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/icons" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/app/screens/login" />
       <recent name="$PROJECT_DIR$/app/screens/home" />
-      <recent name="$PROJECT_DIR$/assets/icons" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -75,7 +81,7 @@
       <workItem from="1734966398971" duration="15003000" />
       <workItem from="1735128737449" duration="1500000" />
       <workItem from="1735131731987" duration="1572000" />
-      <workItem from="1735305750557" duration="19044000" />
+      <workItem from="1735305750557" duration="24952000" />
     </task>
     <task id="LOCAL-00001" summary="start project (header)">
       <created>1734972757780</created>
@@ -182,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735467921255</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="rework navigation with tabs">
+      <created>1735471323757</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1735471323757</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +228,7 @@
     <MESSAGE value="first working supabase user (no rls)" />
     <MESSAGE value="registerscreen set user working" />
     <MESSAGE value="update welcomescreen to current user" />
-    <option name="LAST_COMMIT_MESSAGE" value="update welcomescreen to current user" />
+    <MESSAGE value="rework navigation with tabs" />
+    <option name="LAST_COMMIT_MESSAGE" value="rework navigation with tabs" />
   </component>
 </project>
