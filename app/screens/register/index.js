@@ -12,13 +12,13 @@ import {
 import {Stack, useRouter} from "expo-router";
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import styles from "./RegisterScreen.style";
-import images from "../../../constants/images";
 import {COLORS} from "../../../constants/theme";
 import {waitFor} from "@babel/core/lib/gensync-utils/async";
 
 import {firebase_auth} from "../../../FirebaseConfig";
 import Loading from "../../../components/common/loading/Loading";
 import {insertUser} from "../../../service/user/UserService";
+import images from "../../../constants/images";
 
 const Register = () => {
     const router = useRouter();
@@ -68,20 +68,22 @@ const Register = () => {
             <Stack.Screen
                 backgroundColor={COLORS.lightWhite}
                 options={{
+                    headerShown: true, // Ensure the header is explicitly enabled
                     headerTitle: () => (
                         <Image
-                            source={images.link} // Path to your image
-                            style={{width: 40, height: 40, resizeMode: 'contain'}} // Adjust size
+                            source={images.link}
+                            style={{width: 40, height: 40, resizeMode: 'contain'}}
                         />
                     ),
                     headerLeft: () => (
                         <TouchableOpacity onPress={() => router.replace("/screens/login")}>
-                            <Text style={styles.backButton}>Back</Text>
+                            <Text style={styles.backButton}>&lt; Back</Text>
                         </TouchableOpacity>
                     ),
-                    headerTitleAlign: 'center', // Ensure the title is centered
+                    headerTitleAlign: 'center',
                 }}
             />
+
 
             <KeyboardAvoidingView style={styles.container} behavior="padding">
                 <TextInput

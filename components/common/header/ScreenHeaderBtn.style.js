@@ -3,8 +3,8 @@ import {StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
     btnContainer: {
-        width: 50,
-        height: 50,
+        width: 40,
+        height: 40,
         borderRadius: 10 / 1.25,
         marginInlineEnd: 10,
         justifyContent: "center",

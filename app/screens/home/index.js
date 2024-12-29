@@ -4,10 +4,10 @@ import Welcome from "../../../components/home/welcome/Welcome";
 import Popular from "../../../components/home/popular/Popular";
 import Nearby from "../../../components/home/nearby/Nearby";
 import {FlatList, Image, SafeAreaView} from "react-native";
-import icons from "../../../constants/icons";
 import {COLORS} from "../../../constants/theme";
-import images from "../../../constants/images";
 import React from "react";
+import images from "../../../constants/images";
+import icons from "../../../constants/icons";
 
 const Home = () => {
     const router = useRouter();
@@ -52,3 +52,4 @@ const Home = () => {
 };
 
 export default Home;
+

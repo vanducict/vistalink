@@ -9,14 +9,13 @@ import {
     TouchableOpacity,
     View
 } from "react-native";
-import {Stack, useRouter} from "expo-router";
+import {useRouter} from "expo-router";
 import styles from "./LoginScreen.style";
 import images from "../../../constants/images";
 import {signInWithEmailAndPassword} from "firebase/auth";
 import {firebase_auth} from "../../../FirebaseConfig";
 import Loading from "../../../components/common/loading/Loading";
 import {waitFor} from "@babel/core/lib/gensync-utils/async";
-import {COLORS} from "../../../constants/theme";
 
 
 const Login = () => {
@@ -42,19 +41,6 @@ const Login = () => {
 
     return (
         <SafeAreaView style={styles.safeArea}>
-            <Stack.Screen
-                backgroundColor={COLORS.lightWhite}
-                options={{
-                    headerTitle: () => (
-                        <Image
-                            source={images.link} // Path to your image
-                            style={{width: 40, height: 40, resizeMode: 'contain'}} // Adjust size
-                        />
-                    ),
-                    headerTitleAlign: 'center', // Ensure the title is centered
-                }}
-            />
-
             <KeyboardAvoidingView style={styles.container} behavior={"padding"}>
                 <View style={styles.container}>
                     <Image source={images.link} style={{width: 80, height: 80}}/>

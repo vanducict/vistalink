@@ -16,7 +16,11 @@ const Layout = () => {
 
     return (
         <AuthProvider>
-            <Stack/>
+            <Stack
+                screenOptions={{
+                    headerShown: false, // Disable the Stack header globally
+                }}
+            />
         </AuthProvider>
     )
 };
