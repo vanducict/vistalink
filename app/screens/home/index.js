@@ -22,14 +22,12 @@ const Home = () => {
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.lightWhite}}>
             <Stack.Screen
+                backgroundColor={COLORS.lightWhite}
                 options={{
-                    headerStyle: {backgroundColor: COLORS.lightWhite},
-                    headerShadowVisible: true,
-                    headerTitleAlign: 'center',
-                    headerLeft: () => (
-                        <ScreenHeaderBtn
-                            iconUrl={icons.profile}
-                            dimension="100%"
+                    headerTitle: () => (
+                        <Image
+                            source={images.link} // Path to your image
+                            style={{width: 40, height: 40, resizeMode: 'contain'}} // Adjust size
                         />
                     ),
                     headerRight: () => (
@@ -38,12 +36,7 @@ const Home = () => {
                             dimension="100%"
                         />
                     ),
-                    headerTitle: () => (
-                        <Image
-                            source={images.link} // Path to your image
-                            style={{width: 40, height: 40, resizeMode: 'contain'}} // Adjust size
-                        />
-                    ),
+                    headerTitleAlign: 'center', // Ensure the title is centered
                 }}
             />
 

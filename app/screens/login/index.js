@@ -9,17 +9,18 @@ import {
     TouchableOpacity,
     View
 } from "react-native";
-import {Stack} from "expo-router";
+import {Stack, useRouter} from "expo-router";
 import styles from "./LoginScreen.style";
 import images from "../../../constants/images";
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+import {signInWithEmailAndPassword} from "firebase/auth";
 import {firebase_auth} from "../../../FirebaseConfig";
 import Loading from "../../../components/common/loading/Loading";
 import {waitFor} from "@babel/core/lib/gensync-utils/async";
-import insertUser from "../../../service/user/UserService";
+import {COLORS} from "../../../constants/theme";
 
 
 const Login = () => {
+    const router = useRouter();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
@@ -39,26 +40,11 @@ const Login = () => {
         }
     };
 
-    const signUp = async () => {
-        try {
-            setLoading(true);
-            waitFor(2000);
-            const response = await createUserWithEmailAndPassword(auth, username, password);
-            await insertUser(username);
-            console.log(username + " signed up: ", username);
-        } catch (e) {
-            console.log("Error signing up: ", e);
-        } finally {
-            setLoading(false);
-            Keyboard.dismiss();
-        }
-    };
-
     return (
         <SafeAreaView style={styles.safeArea}>
             <Stack.Screen
+                backgroundColor={COLORS.lightWhite}
                 options={{
-                    headerShadowVisible: true,
                     headerTitle: () => (
                         <Image
                             source={images.link} // Path to your image
@@ -92,7 +78,7 @@ const Login = () => {
                         style={styles.loginBtn}
                         onPress={() => signIn()}
                     >
-                        <Text>Sign in</Text>
+                        <Text style={styles.signInButton}>Sign in</Text>
                     </TouchableOpacity>
 
                     <Loading loading={loading}/>
@@ -102,9 +88,11 @@ const Login = () => {
                     </TouchableOpacity>
                     <View style={styles.registerContainer}>
                         <Text style={styles.registerText}>Don't have an account?</Text>
-                        <TouchableOpacity onPress={signUp}>
+
+                        <TouchableOpacity onPress={() => router.replace("/screens/register")}>
                             <Text style={styles.registerLink}> Register</Text>
                         </TouchableOpacity>
+
                     </View>
                 </View>
             </KeyboardAvoidingView>

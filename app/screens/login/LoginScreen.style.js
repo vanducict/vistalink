@@ -4,7 +4,7 @@ import {COLORS, FONT, SIZES} from "../../../constants/theme";
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
-        backgroundColor: "#f9f9f9", // Match background to avoid color mismatch
+        backgroundColor: COLORS.lightWhite,
     },
     container: {
         justifyContent: "center",
@@ -69,6 +69,10 @@ const styles = StyleSheet.create({
         width: 100,
         borderRadius: 8, // Round button corners for better UX
     },
+    signInButton: {
+        color: COLORS.lightWhite,
+    }
+
 });
 
 export default styles;

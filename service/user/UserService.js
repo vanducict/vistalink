@@ -1,13 +1,19 @@
 import supabase from "../../app/lib/supabase";
 
-// Function to insert a user with a given UID
-const insertUser = async (uid) => {
+const insertUser = async (user, email, name, firstName, birthdate) => {
     try {
         const {data, error} = await supabase
             .from('User')
-            .insert([{uid}])  // Insert using the dynamic UID
+            .insert([
+                {
+                    uid: user.uid,
+                    email: email,
+                    name: name,
+                    firstName: firstName,
+                    birthDate: birthdate
+                },
+            ])
             .select();
-
         if (error) {
             console.error("Error inserting user:", error.message);
             return {success: false, error: error.message};

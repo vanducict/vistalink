@@ -9,16 +9,15 @@ const Loading = () => {
     return (
         <SafeAreaView style={styles.container}>
             <Stack.Screen
+                backgroundColor={COLORS.lightWhite}
                 options={{
-                    headerStyle: {backgroundColor: COLORS.lightWhite},
-                    headerShadowVisible: true,
-                    headerTitleAlign: "center",
                     headerTitle: () => (
                         <Image
                             source={images.link} // Path to your image
-                            style={{width: 40, height: 40, resizeMode: "contain"}} // Adjust size
+                            style={{width: 40, height: 40, resizeMode: 'contain'}} // Adjust size
                         />
                     ),
+                    headerTitleAlign: 'center', // Ensure the title is centered
                 }}
             />
             <View style={styles.loaderContainer}>

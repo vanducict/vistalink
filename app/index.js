@@ -1,8 +1,8 @@
 import React from "react";
 import {useAuth} from "../utils/AuthenticationContext";
-import Home from "./screens/home/HomeScreen";
-import Login from "./screens/login/LoginScreen";
-import Loading from "./screens/loading/LoadingScreen";
+import Home from "./screens/home";
+import Login from "./screens/login";
+import Loading from "./screens/loading";
 
 
 const App = () => {
