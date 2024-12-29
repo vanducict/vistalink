@@ -15,9 +15,10 @@ import styles from "./RegisterScreen.style";
 import images from "../../../constants/images";
 import {COLORS} from "../../../constants/theme";
 import {waitFor} from "@babel/core/lib/gensync-utils/async";
-import insertUser from "../../../service/user/UserService";
+
 import {firebase_auth} from "../../../FirebaseConfig";
 import Loading from "../../../components/common/loading/Loading";
+import {insertUser} from "../../../service/user/UserService";
 
 const Register = () => {
     const router = useRouter();

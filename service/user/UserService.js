@@ -1,6 +1,6 @@
 import supabase from "../../app/lib/supabase";
 
-const insertUser = async (user, email, name, firstName, birthdate) => {
+export const insertUser = async (user, email, name, firstName, birthdate) => {
     try {
         const {data, error} = await supabase
             .from('User')
@@ -27,4 +27,18 @@ const insertUser = async (user, email, name, firstName, birthdate) => {
     }
 };
 
-export default insertUser;
+
+export const getCurrentUser = async () => {
+    const {data: user, error} = await supabase
+        .from('User')
+        .select('*')
+    if (error) {
+        console.log("Error fetching user:", error);
+        return null;
+    }
+
+    return user;
+}
+
+
+
