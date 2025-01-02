@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {
+    Alert,
     Image,
     Keyboard,
     KeyboardAvoidingView,
@@ -7,32 +8,42 @@ import {
     Text,
     TextInput,
     TouchableOpacity,
-    View
+    View,
 } from "react-native";
 import {useRouter} from "expo-router";
 import styles from "./LoginScreen.style";
 import images from "../../../constants/images";
-import {signInWithEmailAndPassword} from "firebase/auth";
-import {firebase_auth} from "../../../FirebaseConfig";
 import Loading from "../../../components/common/loading/Loading";
-import {waitFor} from "@babel/core/lib/gensync-utils/async";
-
+import supabase from "../../lib/supabase";
 
 const Login = () => {
     const router = useRouter();
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState(''); // Changed from username to email
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
-    const auth = firebase_auth;
 
     const signIn = async () => {
+        if (!email || !password) {
+            Alert.alert("Error", "Please enter both email and password.");
+            return;
+        }
+
         try {
             setLoading(true);
-            waitFor(2000);
-            const response = await signInWithEmailAndPassword(auth, username, password);
-            console.log(username + " signed in: ", username);
+            const {data: session, error} = await supabase.auth.signInWithPassword({
+                email, // Ensure the key is `email`
+                password,
+            });
+
+            if (error) {
+                console.log("Error occurred :", error);
+                Alert.alert("Error", error.message);
+            } else {
+                console.log("Signed in session:", session);
+            }
         } catch (e) {
             console.log("Error signing in: ", e);
+            Alert.alert("Error", "An unexpected error occurred.");
         } finally {
             setLoading(false);
             Keyboard.dismiss();
@@ -47,10 +58,11 @@ const Login = () => {
                     <Text style={styles.title}>VistaLink</Text>
                     <TextInput
                         style={styles.input}
-                        placeholder="Username"
-                        value={username}
-                        onChangeText={(text) => setUsername(text)}
+                        placeholder="Email" // Updated placeholder
+                        value={email}
+                        onChangeText={(text) => setEmail(text)} // Updated state setter
                         placeholderTextColor="#888"
+                        keyboardType="email-address"
                     />
                     <TextInput
                         style={styles.input}
@@ -64,7 +76,9 @@ const Login = () => {
                         style={styles.loginBtn}
                         onPress={() => signIn()}
                     >
-                        <Text style={styles.signInButton}>Sign in</Text>
+                        <Text style={styles.signInButton}>
+                            {loading ? "Signing In..." : "Sign in"}
+                        </Text>
                     </TouchableOpacity>
 
                     <Loading loading={loading}/>

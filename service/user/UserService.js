@@ -6,7 +6,6 @@ export const insertUser = async (user, email, name, firstName, birthdate) => {
             .from('User')
             .insert([
                 {
-                    uid: user.uid,
                     email: email,
                     name: name,
                     firstName: firstName,

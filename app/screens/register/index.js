@@ -10,15 +10,14 @@ import {
     TouchableOpacity,
 } from "react-native";
 import {Stack, useRouter} from "expo-router";
-import {createUserWithEmailAndPassword} from "firebase/auth";
+
 import styles from "./RegisterScreen.style";
 import {COLORS} from "../../../constants/theme";
-import {waitFor} from "@babel/core/lib/gensync-utils/async";
-
-import {firebase_auth} from "../../../FirebaseConfig";
 import Loading from "../../../components/common/loading/Loading";
-import {insertUser} from "../../../service/user/UserService";
 import images from "../../../constants/images";
+import supabase from "../../lib/supabase";
+import {insertUser} from "../../../service/user/UserService";
+
 
 const Register = () => {
     const router = useRouter();
@@ -28,36 +27,54 @@ const Register = () => {
     const [name, setName] = useState("");
     const [firstName, setFirstName] = useState("");
     const [loading, setLoading] = useState(false);
-    const auth = firebase_auth;
+
+    // Sign up the user after successful registration
+    const signUp = async (user) => {
+        try {
+            Keyboard.dismiss();
+            setLoading(true);
+            await insertUser(user, email, name, firstName, birthdate);
+            console.log(email + " signed up: ");
+        } catch (e) {
+            console.log("Error signing up: ", e);
+        } finally {
+            setLoading(false);
+            router.replace("/"); // Navigate after registration
+        }
+    };
+
+    // Handle the registration logic
     const handleRegister = async () => {
-
-        const signUp = async () => {
-            try {
-                Keyboard.dismiss();
-                setLoading(true);
-                waitFor(2000);
-                const firebaseResponse = await createUserWithEmailAndPassword(auth, email, password);
-                if (firebaseResponse.user != null) {
-                    await insertUser(firebaseResponse.user, email, name, firstName, birthdate);
-                }
-                console.log(email + " signed up: ");
-            } catch (e) {
-                console.log("Error signing up: ", e);
-            } finally {
-                setLoading(false);
-                router.replace("/");
-            }
-        };
-
         if (!email || !password || !birthdate || !name || !firstName) {
             Alert.alert("Error", "Please fill in all the fields.");
             return;
         }
 
         try {
-            await signUp();
+            Keyboard.dismiss();
+            setLoading(true);
+
+            // Sign up the user with Supabase
+            const {data: user, error} = await supabase.auth.signUp({
+                email,
+                password,
+            }, {
+                redirectTo: "https://your-custom-url.com", // Add your redirect URL here
+            });
+
+            if (error) {
+                throw new Error(error.message);  // Ensure we throw an error if signup fails
+            }
+
+            // If the user was created, sign them up
+            await signUp(user);
+
+            // Success message
+            Alert.alert("Success", "You have successfully registered!");
+            router.replace("/"); // Redirect after registration
         } catch (error) {
             Alert.alert("Error", error.message);
+            console.error("Error signing up: ", error);
         } finally {
             setLoading(false);
         }
@@ -68,11 +85,11 @@ const Register = () => {
             <Stack.Screen
                 backgroundColor={COLORS.lightWhite}
                 options={{
-                    headerShown: true, // Ensure the header is explicitly enabled
+                    headerShown: true,
                     headerTitle: () => (
                         <Image
                             source={images.link}
-                            style={{width: 40, height: 40, resizeMode: 'contain'}}
+                            style={{width: 40, height: 40, resizeMode: "contain"}}
                         />
                     ),
                     headerLeft: () => (
@@ -80,18 +97,16 @@ const Register = () => {
                             <Text style={styles.backButton}>&lt; Back</Text>
                         </TouchableOpacity>
                     ),
-                    headerTitleAlign: 'center',
+                    headerTitleAlign: "center",
                 }}
             />
-
 
             <KeyboardAvoidingView style={styles.container} behavior="padding">
                 <TextInput
                     style={styles.input}
                     placeholder="Email"
                     value={email}
-                    id="email"
-                    onChangeText={(text) => setEmail(text)}
+                    onChangeText={setEmail}
                     keyboardType="email-address"
                     placeholderTextColor="#888"
                 />
@@ -100,19 +115,16 @@ const Register = () => {
                     style={styles.input}
                     placeholder="Password"
                     value={password}
-                    id="password"
-                    onChangeText={(text) => setPassword(text)}
+                    onChangeText={setPassword}
                     secureTextEntry
                     placeholderTextColor="#888"
                 />
-
 
                 <TextInput
                     style={styles.input}
                     placeholder="Name"
                     value={name}
-                    id="name"
-                    onChangeText={(text) => setName(text)}
+                    onChangeText={setName}
                     placeholderTextColor="#888"
                 />
 
@@ -120,8 +132,7 @@ const Register = () => {
                     style={styles.input}
                     placeholder="First Name"
                     value={firstName}
-                    id="firstname"
-                    onChangeText={(text) => setFirstName(text)}
+                    onChangeText={setFirstName}
                     placeholderTextColor="#888"
                 />
 
@@ -129,11 +140,9 @@ const Register = () => {
                     style={styles.input}
                     placeholder="Birthdate (YYYY-MM-DD)"
                     value={birthdate}
-                    id="birthdate"
-                    onChangeText={(text) => setBirthdate(text)}
+                    onChangeText={setBirthdate}
                     placeholderTextColor="#888"
                 />
-
 
                 <TouchableOpacity style={styles.registerButton} onPress={handleRegister}>
                     <Text style={styles.registerButtonText}>
@@ -145,6 +154,5 @@ const Register = () => {
         </SafeAreaView>
     );
 };
-
 
 export default Register;
