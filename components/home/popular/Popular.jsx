@@ -17,7 +17,6 @@ const Popular = () => {
             try {
                 setLoading(true);
                 const fetchedLinks = await getAllLinks();
-                console.log("Fetched links:", fetchedLinks);
                 setLinks(fetchedLinks);
             } catch (error) {
                 console.error("Error fetching links:", error);

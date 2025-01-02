@@ -16,25 +16,23 @@ const NearbyCard = ({item}) => {
                     style={styles.logoImage}
                 />
             </TouchableOpacity>
-            <Text style={styles.companyName} numberOfLines={1}>
-                Sebastien Vandendriessche
+            <Text style={styles.ownerEmail} numberOfLines={1}>
+                {item.ownerEmail}
             </Text>
 
             <View style={styles.infoContainer}>
-                <Text style={styles.jobName} numberOfLines={1}>
-                    Spotable Event
+                <Text style={styles.linkName} numberOfLines={1}>
+                    {item.name}
                 </Text>
                 <View style={styles.infoWrapper}>
-                    <Text style={styles.publisher}>
-                        Wintercircus Ghent -
-
+                    <Text style={styles.location}>
+                        {item.location} -
                     </Text>
-                    <Text style={styles.location}> Belgium</Text>
                 </View>
             </View>
             <View>
                 <Text>Open spots :
-                    <Text style={styles.openSpots}> 0/1</Text>
+                    <Text style={styles.maxPeople}> {item.maxPeople}</Text>
                 </Text>
             </View>
         </TouchableOpacity>

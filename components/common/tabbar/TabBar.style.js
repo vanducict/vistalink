@@ -3,7 +3,7 @@ import {StyleSheet} from "react-native";
 const styles = StyleSheet.create({
     tabBar: {
         flexDirection: "row",
-        height: 70,
+        height: 80,
         justifyContent: "space-around",
         alignItems: "center",
         shadowColor: "#000",
