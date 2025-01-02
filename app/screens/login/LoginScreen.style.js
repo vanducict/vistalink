@@ -71,7 +71,11 @@ const styles = StyleSheet.create({
     },
     signInButton: {
         color: COLORS.lightWhite,
-    }
+    },
+    loginBtnDisabled: {
+        backgroundColor: '#A5D6A7', // Lighter green or greyed out color for disabled state
+    },
+
 
 });
 

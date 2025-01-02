@@ -34,7 +34,9 @@ const Login = () => {
                 email, // Ensure the key is `email`
                 password,
             });
-            router.replace("../../");
+            if (session.user) {
+                router.replace("../../");
+            }
             if (error) {
                 console.log("Error occurred :", error);
                 Alert.alert("Error", error.message);
@@ -73,8 +75,9 @@ const Login = () => {
                         secureTextEntry
                     />
                     <TouchableOpacity
-                        style={styles.loginBtn}
+                        style={[styles.loginBtn, loading && styles.loginBtnDisabled]} // Apply disabled style
                         onPress={() => signIn()}
+                        disabled={loading} // Disable button when loading
                     >
                         <Text style={styles.signInButton}>
                             {loading ? "Signing In..." : "Sign in"}

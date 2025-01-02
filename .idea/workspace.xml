@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="change auth to supabase rework home">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="fix nav login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/AuthenticationContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/AuthenticationContext.js" afterDir="false" />
     </list>
@@ -70,7 +71,7 @@
       <workItem from="1735131731987" duration="1572000" />
       <workItem from="1735305750557" duration="28366000" />
       <workItem from="1735808100304" duration="989000" />
-      <workItem from="1735825027653" duration="7777000" />
+      <workItem from="1735825027653" duration="8996000" />
     </task>
     <task id="LOCAL-00001" summary="start project (header)">
       <created>1734972757780</created>
@@ -219,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735832801478</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="fix nav login">
+      <created>1735834549589</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1735834549589</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +277,7 @@
     <MESSAGE value="update packages" />
     <MESSAGE value="change auth to supabase" />
     <MESSAGE value="change auth to supabase rework home" />
-    <option name="LAST_COMMIT_MESSAGE" value="change auth to supabase rework home" />
+    <MESSAGE value="fix nav login" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix nav login" />
   </component>
 </project>
