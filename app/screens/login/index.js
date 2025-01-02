@@ -34,7 +34,7 @@ const Login = () => {
                 email, // Ensure the key is `email`
                 password,
             });
-
+            router.replace("../../");
             if (error) {
                 console.log("Error occurred :", error);
                 Alert.alert("Error", error.message);

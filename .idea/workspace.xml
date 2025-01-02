@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="change auth to supabase rework home">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/user/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/AuthenticationContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/AuthenticationContext.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +70,7 @@
       <workItem from="1735131731987" duration="1572000" />
       <workItem from="1735305750557" duration="28366000" />
       <workItem from="1735808100304" duration="989000" />
-      <workItem from="1735825027653" duration="6119000" />
+      <workItem from="1735825027653" duration="7777000" />
     </task>
     <task id="LOCAL-00001" summary="start project (header)">
       <created>1734972757780</created>
@@ -211,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735832486025</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="change auth to supabase rework home">
+      <created>1735832801478</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1735832801478</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +234,17 @@
         <option value="Default.Subject" />
         <option value="Space.CommitStatus" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
@@ -249,6 +268,7 @@
     <MESSAGE value="popular fetch all links for now" />
     <MESSAGE value="update packages" />
     <MESSAGE value="change auth to supabase" />
-    <option name="LAST_COMMIT_MESSAGE" value="change auth to supabase" />
+    <MESSAGE value="change auth to supabase rework home" />
+    <option name="LAST_COMMIT_MESSAGE" value="change auth to supabase rework home" />
   </component>
 </project>
