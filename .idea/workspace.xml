@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/service/link/LinkService.js" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="popular fetch all links for now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/popular/Popular.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popular/Popular.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/popularcard/PopularCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popularcard/PopularCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/popularcard/PopularCard.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popularcard/PopularCard.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +67,8 @@
       <workItem from="1734966398971" duration="15003000" />
       <workItem from="1735128737449" duration="1500000" />
       <workItem from="1735131731987" duration="1572000" />
-      <workItem from="1735305750557" duration="27378000" />
+      <workItem from="1735305750557" duration="28366000" />
+      <workItem from="1735808100304" duration="317000" />
     </task>
     <task id="LOCAL-00001" summary="start project (header)">
       <created>1734972757780</created>
@@ -191,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735506836384</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="popular fetch all links for now">
+      <created>1735511405287</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1735511405287</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +231,7 @@
     <MESSAGE value="update welcomescreen to current user" />
     <MESSAGE value="rework navigation with tabs" />
     <MESSAGE value="custom navbar working wth sample pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="custom navbar working wth sample pages" />
+    <MESSAGE value="popular fetch all links for now" />
+    <option name="LAST_COMMIT_MESSAGE" value="popular fetch all links for now" />
   </component>
 </project>
