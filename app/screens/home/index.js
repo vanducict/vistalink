@@ -4,17 +4,19 @@ import Popular from "../../../components/home/popular/Popular";
 import Nearby from "../../../components/home/nearby/Nearby";
 import {FlatList, Image, SafeAreaView} from "react-native";
 import {COLORS} from "../../../constants/theme";
-import React from "react";
+import React, {useState} from "react";
 import images from "../../../constants/images";
 
 const Home = () => {
     const router = useRouter();
 
+    const [activeEventType, setActiveEventType] = useState(null);
+
     // Data for FlatList (could be sections or a list of items)
     const sections = [
-        {id: '1', component: <Welcome/>},
-        {id: '2', component: <Popular/>},
-        {id: '3', component: <Nearby/>},
+        {id: '1', component: <Welcome setActiveEventType={setActiveEventType}/>},
+        {id: '2', component: <Popular eventType={activeEventType}/>},
+        {id: '3', component: <Nearby eventType={activeEventType}/>},
     ];
 
     return (
@@ -44,4 +46,3 @@ const Home = () => {
 };
 
 export default Home;
-

@@ -7,16 +7,18 @@ import React, {useEffect, useState} from "react";
 import {getAllLinks} from "../../../service/link/LinkService";
 import Loading from "../../common/loading/Loading";
 
-const Popular = () => {
+const Popular = ({eventType}) => {
     const router = useRouter();
     const [links, setLinks] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    // Triggered whenever eventType changes
     useEffect(() => {
         const fetchLinks = async () => {
             try {
                 setLoading(true);
-                const fetchedLinks = await getAllLinks();
+                console.log("Fetching links with event type:", eventType);  // Logs current eventType
+                const fetchedLinks = await getAllLinks(eventType);  // Make sure the eventType is used in the API call or logic
                 setLinks(fetchedLinks);
             } catch (error) {
                 console.error("Error fetching links:", error);
@@ -25,9 +27,9 @@ const Popular = () => {
             }
         };
 
-        fetchLinks().then(links => {
-        });
-    }, []);
+        fetchLinks().then(r => eventType); // Fetch links whenever eventType changes
+
+    }, [eventType]);  // Dependency on eventType ensures effect runs every time it changes
 
     return (
         <View style={styles.container}>
@@ -38,20 +40,19 @@ const Popular = () => {
                 </TouchableOpacity>
             </View>
 
+            {/* Loading indicator */}
             <Loading loading={loading}/>
 
             <FlatList
                 data={links}
                 renderItem={({item}) => (
-                    <PopularCard item={item}/>
+                    <PopularCard item={item}/> // Render each PopularCard item
                 )}
-                keyExtractor={(item) => item.id.toString()}
-                horizontal={true}
-                contentContainerStyle={{columnGap: SIZES.small}}
-                showsHorizontalScrollIndicator={false}
+                keyExtractor={(item) => item.id.toString()} // Extract unique key for each item
+                horizontal={true} // Display items horizontally
+                contentContainerStyle={{columnGap: SIZES.small}} // Adjust spacing between items
+                showsHorizontalScrollIndicator={false} // Hide horizontal scroll indicator
             />
-
-
         </View>
     );
 };
