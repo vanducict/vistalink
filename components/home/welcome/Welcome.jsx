@@ -9,9 +9,9 @@ import Loading from "../../common/loading/Loading";
 import {getAllEventTypes} from "../../../service/link/LinkService";
 
 const Welcome = ({setActiveEventType}) => {
-    const [evenTypes, setEventTypes] = useState([]);
+    const [eventTypes, setEventTypes] = useState([]);
     const router = useRouter();
-    const [activeJobType, setActiveJobType] = useState(evenTypes[0]);
+    const [activeJobType, setActiveJobType] = useState(null);  // Initially no filter
     const [currentUser, setCurrentUser] = useState(null);
     const [loading, setLoading] = useState(false);
 
@@ -28,28 +28,38 @@ const Welcome = ({setActiveEventType}) => {
             }
         };
 
-        fetchUser().then(user => {
-        });
+        fetchUser();
 
-        const fetchEvenTypes = async () => {
+        const fetchEventTypes = async () => {
             try {
                 const eventTypes = await getAllEventTypes();
                 console.log("Fetched eventTypes:", eventTypes);
                 setEventTypes(eventTypes);
             } catch (error) {
-                console.log("Error fetching user:", error);
+                console.log("Error fetching event types:", error);
             } finally {
                 setLoading(false);
             }
         };
 
-        fetchEvenTypes().then(eventType => {
-        });
+        fetchEventTypes();
     }, []);
 
     if (!currentUser) {
         return <Loading loading={loading}/>;
     }
+
+    const handleTabPress = (item) => {
+        if (activeJobType === item) {
+            // Deselect if the same item is clicked again
+            setActiveJobType(null);
+            setActiveEventType(null);  // Reset to show all options
+        } else {
+            // Select a new item
+            setActiveJobType(item);
+            setActiveEventType(item); // Apply the filter
+        }
+    };
 
     return (
         <View>
@@ -78,19 +88,14 @@ const Welcome = ({setActiveEventType}) => {
 
             <View>
                 <FlatList
-                    data={evenTypes}
+                    data={eventTypes}
                     style={styles.tabContainer}
                     renderItem={({item}) => (
                         <TouchableOpacity
                             style={styles.tab(activeJobType, item)}
-                            onPress={() => {
-                                setActiveJobType(item);
-                                setActiveEventType(item);
-                            }}
+                            onPress={() => handleTabPress(item)} // Handle the tab press
                         >
-                            <Text
-                                style={styles.tabText(activeJobType, item)}
-                            >{item}</Text>
+                            <Text style={styles.tabText(activeJobType, item)}>{item}</Text>
                         </TouchableOpacity>
                     )}
                     horizontal={true}
