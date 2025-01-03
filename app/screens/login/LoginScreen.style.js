@@ -70,11 +70,10 @@ const styles = StyleSheet.create({
         borderRadius: 8, // Round button corners for better UX
     },
     signInButton: {
-        color: COLORS.lightWhite,
-    },
-    loginBtnDisabled: {
-        backgroundColor: '#A5D6A7', // Lighter green or greyed out color for disabled state
-    },
+        color: COLORS.white,
+        fontSize: 14,
+        fontWeight: "bold",
+    }
 
 
 });

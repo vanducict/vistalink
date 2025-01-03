@@ -45,8 +45,8 @@ const TabBar = ({state, descriptors, navigation}) => {
                         iconName = 'Home';
                         break;
                     case 'MyProfile':
-                        iconSource = icons.myProfile;
-                        iconName = 'My Profile';
+                        iconSource = icons.profile;
+                        iconName = 'Profile';
                         break;
                     case 'Chats':
                         iconSource = icons.chats;
@@ -54,7 +54,7 @@ const TabBar = ({state, descriptors, navigation}) => {
                         break;
                     case 'MyLinks':
                         iconSource = icons.links;
-                        iconName = 'My Links';
+                        iconName = 'Links';
                         break;
                     default:
                         iconSource = null;

@@ -1,12 +1,22 @@
 import {Image, Text, TouchableOpacity, View} from "react-native";
 import styles from "./PopularCard.style";
 import images from "../../../constants/icons";
+import {useRouter} from "expo-router";
 
 const PopularJobCard = ({item}) => {
+    const router = useRouter();
+
+    const handleCardPress = (item) => {
+        router.push({
+            pathname: '/screens/linkDetail/[item]',
+            params: {item: JSON.stringify((item))},
+        });
+    };
+
     return (
         <TouchableOpacity
             style={styles.container}
-            onPress={() => handleCardPress(item)}
+            onPress={() => handleCardPress(item)} // Fixed here
         >
             <TouchableOpacity style={styles.logoContainer}>
                 <Image

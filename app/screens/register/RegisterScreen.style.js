@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         },
         registerButtonText: {
             color: COLORS.white,
-            fontSize: 18,
+            fontSize: 14,
             fontWeight: "bold",
         },
         backButton: {

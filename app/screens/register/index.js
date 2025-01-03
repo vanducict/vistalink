@@ -17,6 +17,7 @@ import Loading from "../../../components/common/loading/Loading";
 import images from "../../../constants/images";
 import supabase from "../../lib/supabase";
 import {insertUser} from "../../../service/user/UserService";
+import icons from "../../../constants/icons";
 
 
 const Register = () => {
@@ -94,7 +95,11 @@ const Register = () => {
                     ),
                     headerLeft: () => (
                         <TouchableOpacity onPress={() => router.replace("/screens/login")}>
-                            <Text style={styles.backButton}>&lt; Back</Text>
+                            <Image
+                                source={icons.back}
+                                resizeMode="contain"
+                                style={{width: 20, height: 20}}
+                            />
                         </TouchableOpacity>
                     ),
                     headerTitleAlign: "center",

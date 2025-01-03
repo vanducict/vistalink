@@ -1,5 +1,4 @@
 import {Stack, useRouter} from "expo-router";
-import ScreenHeaderBtn from "../../../components/common/header/ScreenHeaderBtn";
 import Welcome from "../../../components/home/welcome/Welcome";
 import Popular from "../../../components/home/popular/Popular";
 import Nearby from "../../../components/home/nearby/Nearby";
@@ -7,7 +6,6 @@ import {FlatList, Image, SafeAreaView} from "react-native";
 import {COLORS} from "../../../constants/theme";
 import React from "react";
 import images from "../../../constants/images";
-import icons from "../../../constants/icons";
 
 const Home = () => {
     const router = useRouter();
@@ -28,12 +26,6 @@ const Home = () => {
                         <Image
                             source={images.link} // Path to your image
                             style={{width: 40, height: 40, resizeMode: 'contain'}} // Adjust size
-                        />
-                    ),
-                    headerRight: () => (
-                        <ScreenHeaderBtn
-                            iconUrl={icons.menu}
-                            dimension="100%"
                         />
                     ),
                     headerTitleAlign: 'center', // Ensure the title is centered
