@@ -28,13 +28,14 @@ const Register = () => {
     const [name, setName] = useState("");
     const [firstName, setFirstName] = useState("");
     const [loading, setLoading] = useState(false);
+    const [description, setDescription] = useState("");
 
     // Sign up the user after successful registration
     const signUp = async (user) => {
         try {
             Keyboard.dismiss();
             setLoading(true);
-            await insertUser(user, email, name, firstName, birthdate);
+            await insertUser(user, email, name, firstName, birthdate, description);
             console.log(email + " signed up: ");
         } catch (e) {
             console.log("Error signing up: ", e);
@@ -46,7 +47,7 @@ const Register = () => {
 
     // Handle the registration logic
     const handleRegister = async () => {
-        if (!email || !password || !birthdate || !name || !firstName) {
+        if (!email || !password || !birthdate || !name || !firstName || !description) {
             Alert.alert("Error", "Please fill in all the fields.");
             return;
         }
@@ -146,6 +147,14 @@ const Register = () => {
                     placeholder="Birthdate (YYYY-MM-DD)"
                     value={birthdate}
                     onChangeText={setBirthdate}
+                    placeholderTextColor="#888"
+                />
+
+                <TextInput
+                    style={styles.input}
+                    placeholder="Description"
+                    value={description}
+                    onChangeText={setDescription}
                     placeholderTextColor="#888"
                 />
 

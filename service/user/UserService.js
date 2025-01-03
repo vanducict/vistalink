@@ -1,6 +1,6 @@
 import supabase from "../../app/lib/supabase";
 
-export const insertUser = async (user, email, name, firstName, birthdate) => {
+export const insertUser = async (user, email, name, firstName, birthdate, description) => {
     try {
         const {data, error} = await supabase
             .from('User')
@@ -9,7 +9,8 @@ export const insertUser = async (user, email, name, firstName, birthdate) => {
                     email: email,
                     name: name,
                     firstName: firstName,
-                    birthDate: birthdate
+                    birthDate: birthdate,
+                    description: description
                 },
             ])
             .select();
@@ -36,7 +37,7 @@ export const getCurrentUser = async () => {
             console.error("Error fetching session:", sessionError);
             return null;
         }
-        
+
         if (!session?.user) {
             console.log("No active session found");
             return null;

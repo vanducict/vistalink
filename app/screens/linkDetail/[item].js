@@ -1,4 +1,4 @@
-import {Image, SafeAreaView, Text, TouchableOpacity, View} from "react-native";
+import {Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
 import {Stack, useGlobalSearchParams, useRouter} from "expo-router"; // Use `useSearchParams` for query params
 import {COLORS} from "../../../constants/theme";
 import icons from "../../../constants/icons";
@@ -39,33 +39,37 @@ const LinkDetail = () => {
                 }}
             />
 
-            <View style={styles.container}>
-                {event ? (
-                    <>
-                        <Text style={styles.title}>{event.name}</Text>
-                        <Text style={styles.description}>{event.description}</Text>
-                        <Text style={styles.detail}>Location: {event.location}</Text>
-                        <Text style={styles.detail}>Date: {event.date}</Text>
-                        <Text style={styles.detail}>
-                            Time: {event.startTime} - {event.endTime}
-                        </Text>
-                        <Text style={styles.detail}>Type: {event.eventType}</Text>
-                        <Text style={styles.detail}>
-                            Open Spots: {spotsTaken}/{totalSpots}
-                        </Text>
-                        <Text style={styles.detail}>
-                            Contact: {event.ownerEmail}
-                        </Text>
-                    </>
-                ) : (
-                    <Text style={styles.loadingText}>Loading...</Text>
-                )}
-            </View>
-            <TouchableOpacity style={styles.applyButton}>
-                <Text style={styles.applyButtonText}>
-                    {loading ? "Registering..." : "Register"}
-                </Text>
-            </TouchableOpacity>
+            <ScrollView>
+                <View style={styles.container}>
+                    {event ? (
+                        <>
+                            <Text style={styles.title}>{event.name}</Text>
+                            <Text style={styles.description}>{event.description}</Text>
+                            <Text style={styles.detail}>Location: {event.location}</Text>
+                            <Text style={styles.detail}>Date: {event.date}</Text>
+                            <Text style={styles.detail}>
+                                Time: {event.startTime} - {event.endTime}
+                            </Text>
+                            <Text style={styles.detail}>Type: {event.eventType}</Text>
+                            <Text style={styles.detail}>
+                                Open Spots: {spotsTaken}/{totalSpots}
+                            </Text>
+                            <Text style={styles.detail}>
+                                Contact: {event.ownerEmail}
+                            </Text>
+                        </>
+                    ) : (
+                        <Text style={styles.loadingText}>Loading...</Text>
+                    )}
+                </View>
+                <TouchableOpacity style={styles.applyButton}>
+                    <Text style={styles.applyButtonText}>
+                        {loading ? "Registering..." : "Register"}
+                    </Text>
+                </TouchableOpacity>
+            </ScrollView>
+
+
         </SafeAreaView>
     );
 };
