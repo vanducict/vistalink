@@ -39,22 +39,24 @@ const TabBar = ({state, descriptors, navigation}) => {
                 // Dynamically choose the icon based on the route name
                 let iconSource;
                 let iconName;
+                let iconStyle = styles.tabIcon; // Default icon style
                 switch (route.name) {
-                    case 'Home':
+                    case "Home":
                         iconSource = icons.home;
-                        iconName = 'Home';
+                        iconName = "Home";
                         break;
-                    case 'MyProfile':
+                    case "MyProfile":
                         iconSource = icons.profile;
-                        iconName = 'Profile';
+                        iconName = "Profile";
+                        iconStyle = [styles.tabIcon, {width: 40, height: 40}];
                         break;
-                    case 'Chats':
+                    case "Chats":
                         iconSource = icons.chats;
-                        iconName = 'Chats';
+                        iconName = "Chats";
                         break;
-                    case 'MyLinks':
+                    case "MyLinks":
                         iconSource = icons.links;
-                        iconName = 'Links';
+                        iconName = "Links";
                         break;
                     default:
                         iconSource = null;
@@ -73,7 +75,7 @@ const TabBar = ({state, descriptors, navigation}) => {
                         <Image
                             source={iconSource} // Use the selected icon source
                             resizeMode={"contain"}
-                            style={styles.tabIcon}
+                            style={iconStyle} // Apply dynamic style based on focus
                         />
                         <Text style={[styles.tabText, isFocused && styles.focusedText]}>
                             {iconName}
