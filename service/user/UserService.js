@@ -1,6 +1,6 @@
 import supabase from "../../app/lib/supabase";
 
-export const insertUser = async (user, email, name, firstName, birthdate, description) => {
+export const insertUser = async (user, email, name, firstName, birthdate, description, userType) => {
     try {
         const {data, error} = await supabase
             .from('User')
@@ -10,7 +10,8 @@ export const insertUser = async (user, email, name, firstName, birthdate, descri
                     name: name,
                     firstName: firstName,
                     birthDate: birthdate,
-                    description: description
+                    description: description,
+                    userType: userType,
                 },
             ])
             .select();
@@ -61,6 +62,21 @@ export const getCurrentUser = async () => {
         return null;
     }
 }
+
+export const getAllUserTypes = async () => {
+    const {data, error} = await supabase
+        .rpc('get_user_types');
+
+    if (error) {
+        console.log("Error fetching user types:", error);
+        return null;
+    } else {
+        console.log("User types:", data);
+        return data;  // The result will now be a simple array of user types
+    }
+};
+
+
 
 
 

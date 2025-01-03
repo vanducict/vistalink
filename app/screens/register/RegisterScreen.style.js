@@ -42,6 +42,33 @@ const styles = StyleSheet.create({
             paddingHorizontal: 10,
 
         },
+        pickerContainer: {
+            width: "100%",
+            marginVertical: 10,
+            display: "flex",
+            paddingHorizontal: 10,
+            backgroundColor: COLORS.lightWhite,
+            borderRadius: 10,
+        },
+        label: {
+            fontSize: 16,
+            marginBottom: 5,
+            color: "#555",
+        },
+        picker: {
+            height: 50,
+            width: "100%",
+            color: "#000",
+        },
+        roleDropdown: {
+            borderWidth: 1,
+            borderColor: "#ccc",
+            borderRadius: 8,
+            padding: 12,
+            marginBottom: 15,
+            fontSize: 16,
+        }
+
     })
 ;
 

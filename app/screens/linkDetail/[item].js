@@ -64,7 +64,7 @@ const LinkDetail = () => {
                 </View>
                 <TouchableOpacity style={styles.applyButton}>
                     <Text style={styles.applyButtonText}>
-                        {loading ? "Registering..." : "Register"}
+                        {loading ? "..." : "Register"}
                     </Text>
                 </TouchableOpacity>
             </ScrollView>

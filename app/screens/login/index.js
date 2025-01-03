@@ -80,7 +80,7 @@ const Login = () => {
                         disabled={loading} // Disable button when loading
                     >
                         <Text style={styles.signInButton}>
-                            {loading ? "Signing In..." : "Sign in"}
+                            {loading ? "..." : "Sign in"}
                         </Text>
                     </TouchableOpacity>
 

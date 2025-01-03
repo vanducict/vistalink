@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {COLORS} from "../../../constants/theme";
+import {COLORS, SIZES} from "../../../constants/theme";
 
 const styles = StyleSheet.create({
     container: {
@@ -77,6 +77,14 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         marginHorizontal: 20,
     },
+    userType: {
+        color: COLORS.primary,
+        fontWeight: "bold",
+        fontSize: 16,
+        marginVertical: SIZES.small,
+
+    }
+
 
 });
 

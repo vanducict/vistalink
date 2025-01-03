@@ -34,6 +34,7 @@ const Profile = () => {
 
     const handleSignOut = async () => {
         try {
+            setLoading(true);
             const {error} = await supabase.auth.signOut();
             if (error) {
                 Alert.alert("Error", error.message);
@@ -44,6 +45,7 @@ const Profile = () => {
             console.log("Error signing out:", err);
             Alert.alert("Error", "An unexpected error occurred.");
         }
+        setLoading(false);
     };
 
     if (loading) {
@@ -79,6 +81,7 @@ const Profile = () => {
                     <View style={styles.profileInfo}>
                         <Text style={styles.userEmail}>{currentUser?.email}</Text>
                         <Text style={styles.userBio}>{currentUser?.description || "No bio available"}</Text>
+                        <Text style={styles.userType}>{currentUser?.userType}</Text>
                     </View>
 
                 </View>

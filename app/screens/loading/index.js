@@ -21,7 +21,7 @@ const Loading = () => {
                 }}
             />
             <View style={styles.loaderContainer}>
-                <ActivityIndicator size="large" color={COLORS.primary}/>
+                <ActivityIndicator size="large" color={COLORS.tertiary}/>
             </View>
         </SafeAreaView>
     );
