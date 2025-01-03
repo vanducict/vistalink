@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="first version profile screen">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="picker role">
+      <change afterPath="$PROJECT_DIR$/components/home/search/SearchBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/home/search/SearchBar.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/loading/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/loading/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/ProfileScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/ProfileScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/user/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/welcome/Welcome.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/welcome/Welcome.style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735918102601</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="picker role">
+      <created>1735939835976</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1735939835976</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +321,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="leave header login for now" />
     <MESSAGE value="put loading wheel sign in up" />
     <MESSAGE value="seperate loading compo" />
     <MESSAGE value="fix ios issues mobile dev and styling issues" />
@@ -344,6 +345,7 @@
     <MESSAGE value="working first version search" />
     <MESSAGE value="combine query links" />
     <MESSAGE value="first version profile screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="first version profile screen" />
+    <MESSAGE value="picker role" />
+    <option name="LAST_COMMIT_MESSAGE" value="picker role" />
   </component>
 </project>
