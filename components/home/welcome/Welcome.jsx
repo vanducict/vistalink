@@ -1,4 +1,4 @@
-import {FlatList, Image, Text, TextInput, TouchableOpacity, View} from "react-native";
+import {FlatList, Image, Keyboard, Text, TextInput, TouchableOpacity, View} from "react-native";
 import styles from "./Welcome.style";
 import icons from "../../../constants/icons";
 import {useEffect, useState} from "react";
@@ -8,18 +8,18 @@ import {getCurrentUser} from "../../../service/user/UserService";
 import Loading from "../../common/loading/Loading";
 import {getAllEventTypes} from "../../../service/link/LinkService";
 
-const Welcome = ({setActiveEventType}) => {
+const Welcome = ({setActiveEventType, setActiveSearchQuery}) => {
     const [eventTypes, setEventTypes] = useState([]);
     const router = useRouter();
     const [activeJobType, setActiveJobType] = useState(null);  // Initially no filter
     const [currentUser, setCurrentUser] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');  // Track the search input
 
     useEffect(() => {
         const fetchUser = async () => {
             try {
                 const user = await getCurrentUser();
-                console.log("Fetched user:", user);
                 setCurrentUser(user.pop());
             } catch (error) {
                 console.log("Error fetching user:", error);
@@ -33,7 +33,6 @@ const Welcome = ({setActiveEventType}) => {
         const fetchEventTypes = async () => {
             try {
                 const eventTypes = await getAllEventTypes();
-                console.log("Fetched eventTypes:", eventTypes);
                 setEventTypes(eventTypes);
             } catch (error) {
                 console.log("Error fetching event types:", error);
@@ -51,14 +50,18 @@ const Welcome = ({setActiveEventType}) => {
 
     const handleTabPress = (item) => {
         if (activeJobType === item) {
-            // Deselect if the same item is clicked again
             setActiveJobType(null);
-            setActiveEventType(null);  // Reset to show all options
+            setActiveEventType(null);
         } else {
-            // Select a new item
             setActiveJobType(item);
-            setActiveEventType(item); // Apply the filter
+            setActiveEventType(item);
         }
+    };
+
+    // Update the search query when the search button is pressed
+    const handleSearchPress = () => {
+        setActiveSearchQuery(searchQuery);
+        Keyboard.dismiss()
     };
 
     return (
@@ -67,17 +70,19 @@ const Welcome = ({setActiveEventType}) => {
                 <Text style={styles.userName}>Hello {currentUser.firstName}.</Text>
                 <Text style={styles.welcomeMessage}>Find your perfect link</Text>
             </View>
+
+            {/* Search bar */}
             <View style={styles.searchContainer}>
                 <View style={styles.searchWrapper}>
                     <TextInput
                         placeholder="Search for a link"
                         placeholderTextColor="#888"
-                        onChange={() => {
-                        }}
+                        value={searchQuery} // Bind the value to the searchQuery state
+                        onChangeText={setSearchQuery} // Update the searchQuery state
                         style={styles.searchInput}
                     />
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={handleSearchPress}>
                     <Image
                         source={icons.search}
                         resizeMode={"stretch"}

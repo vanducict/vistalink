@@ -1,33 +1,29 @@
 import supabase from "../../app/lib/supabase";
 
-export const getAllLinks = async (eventType) => {
-    console.log("--------------------" + eventType)
-    if (!eventType) {
-        const {data: links, error} = await supabase
-            .from('Link')
-            .select('*')
-        if (error) {
-            console.log("Error fetching links:", error);
-            return null;
-        } else {
-            console.log("success fetching links:", links);
-            return links;
-        }
-    } else {
-        const {data: links, error} = await supabase
-            .from('Link')
-            .select('*')
-            .eq('eventType', eventType)
-        if (error) {
-            console.log("Error fetching links:", error);
-            return null;
-        } else {
-            console.log("success fetching links:", links);
-            return links;
-        }
+export const getAllLinks = async (eventType, searchQuery) => {
+    let query = supabase.from('Link').select('*');
+
+    // If eventType is provided, filter by eventType
+    if (eventType) {
+        query = query.eq('eventType', eventType);
     }
 
-}
+    if (searchQuery) {
+        query = query.or(`name.ilike.%${searchQuery}%,ownerEmail.ilike.%${searchQuery}%,location.ilike.%${searchQuery}%,description.ilike.%${searchQuery}%`);
+    }
+    
+    // Execute the query
+    const {data: links, error} = await query;
+
+    // Handle errors and return results
+    if (error) {
+        console.log("Error fetching links:", error);
+        return null;
+    }
+
+    console.log("Successfully fetched links:", links);
+    return links;
+};
 
 
 export const getAllEventTypes = async () => {

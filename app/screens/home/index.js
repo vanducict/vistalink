@@ -11,12 +11,15 @@ const Home = () => {
     const router = useRouter();
 
     const [activeEventType, setActiveEventType] = useState(null);
+    const [activeSearchQuery, setActiveSearchQuery] = useState(null);
 
-    // Data for FlatList (could be sections or a list of items)
     const sections = [
-        {id: '1', component: <Welcome setActiveEventType={setActiveEventType}/>},
-        {id: '2', component: <Popular eventType={activeEventType}/>},
-        {id: '3', component: <Nearby eventType={activeEventType}/>},
+        {
+            id: '1',
+            component: <Welcome setActiveEventType={setActiveEventType} setActiveSearchQuery={setActiveSearchQuery}/>
+        },
+        {id: '2', component: <Popular eventType={activeEventType} searchQuery={activeSearchQuery}/>},
+        {id: '3', component: <Nearby eventType={activeEventType} searchQuery={activeSearchQuery}/>},
     ];
 
     return (

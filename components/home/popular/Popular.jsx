@@ -7,7 +7,7 @@ import React, {useEffect, useState} from "react";
 import {getAllLinks} from "../../../service/link/LinkService";
 import Loading from "../../common/loading/Loading";
 
-const Popular = ({eventType}) => {
+const Popular = ({eventType, searchQuery}) => {
     const router = useRouter();
     const [links, setLinks] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -18,7 +18,7 @@ const Popular = ({eventType}) => {
             try {
                 setLoading(true);
                 console.log("Fetching links with event type:", eventType);  // Logs current eventType
-                const fetchedLinks = await getAllLinks(eventType);  // Make sure the eventType is used in the API call or logic
+                const fetchedLinks = await getAllLinks(eventType, searchQuery);  // Make sure the eventType is used in the API call or logic
                 setLinks(fetchedLinks);
             } catch (error) {
                 console.error("Error fetching links:", error);
@@ -28,8 +28,8 @@ const Popular = ({eventType}) => {
         };
 
         fetchLinks().then(r => eventType); // Fetch links whenever eventType changes
-
-    }, [eventType]);  // Dependency on eventType ensures effect runs every time it changes
+        console.log(searchQuery);
+    }, [eventType, searchQuery]);  // Dependency on eventType ensures effect runs every time it changes
 
     return (
         <View style={styles.container}>
