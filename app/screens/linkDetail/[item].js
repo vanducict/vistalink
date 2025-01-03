@@ -23,7 +23,7 @@ const LinkDetail = () => {
                         />
                     ),
                     headerLeft: () => (
-                        <TouchableOpacity onPress={() => router.replace("/screens/home")}>
+                        <TouchableOpacity onPress={() => router.back()}>
                             <Image
                                 source={icons.back}
                                 resizeMode="contain"
