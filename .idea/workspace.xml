@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735896857283</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="back fix">
+      <created>1735897027529</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1735897027529</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,6 +293,7 @@
     <MESSAGE value="change auth to supabase rework home" />
     <MESSAGE value="fix nav login" />
     <MESSAGE value="navigation pass data to plp work + style changing" />
-    <option name="LAST_COMMIT_MESSAGE" value="navigation pass data to plp work + style changing" />
+    <MESSAGE value="back fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="back fix" />
   </component>
 </project>

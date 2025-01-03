@@ -2,8 +2,16 @@ import {Image, Text, TouchableOpacity, View} from "react-native";
 
 import images from "../../../constants/icons";
 import styles from "./NearbyCard.style";
+import {useRouter} from "expo-router";
 
 const NearbyCard = ({item}) => {
+    const router = useRouter();
+    const handleCardPress = (item) => {
+        router.push({
+            pathname: '/screens/linkDetail/[item]',
+            params: {item: JSON.stringify((item))},
+        });
+    };
     return (
         <TouchableOpacity
             style={styles.container}
