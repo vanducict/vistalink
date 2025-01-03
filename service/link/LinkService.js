@@ -1,18 +1,20 @@
 import supabase from "../../app/lib/supabase";
 
+
 export const getAllLinks = async (eventType, searchQuery) => {
     let query = supabase.from('Link').select('*');
 
-    // If eventType is provided, filter by eventType
+    // Filter by eventType if provided
     if (eventType) {
         query = query.eq('eventType', eventType);
     }
 
+    // Filter by searchQuery across multiple fields if provided
     if (searchQuery) {
         query = query.or(`name.ilike.%${searchQuery}%,ownerEmail.ilike.%${searchQuery}%,location.ilike.%${searchQuery}%,description.ilike.%${searchQuery}%`);
     }
-    
-    // Execute the query
+
+    // Execute the combined query
     const {data: links, error} = await query;
 
     // Handle errors and return results
