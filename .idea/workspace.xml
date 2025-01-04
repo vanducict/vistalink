@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="create link home">
-      <change afterPath="$PROJECT_DIR$/assets/animations/connect.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/link.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/loading.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/animations.js" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/loading/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/loading/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/loading/Loading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/loading/Loading.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/createlink/CreateLink.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/createlink/CreateLink.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/createlink/CreateLink.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/createlink/CreateLink.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735941993150</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="lottie animations add">
+      <created>1735953219699</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1735953219699</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,7 +331,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="seperate loading compo" />
     <MESSAGE value="fix ios issues mobile dev and styling issues" />
     <MESSAGE value="loading screen fix" />
     <MESSAGE value="better logging" />
@@ -359,6 +355,7 @@
     <MESSAGE value="first version profile screen" />
     <MESSAGE value="picker role" />
     <MESSAGE value="split home view logic based on role" />
-    <option name="LAST_COMMIT_MESSAGE" value="split home view logic based on role" />
+    <MESSAGE value="lottie animations add" />
+    <option name="LAST_COMMIT_MESSAGE" value="lottie animations add" />
   </component>
 </project>

@@ -60,7 +60,7 @@ const Login = () => {
                         source={animations.link}
                         autoPlay
                         loop
-                        style={{width: 200, height: 200}}
+                        style={{width: 150, height: 150}}
                     />
                     <Text style={styles.title}>VistaLink</Text>
                     <TextInput
