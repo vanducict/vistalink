@@ -20,6 +20,22 @@ export const createUserLink = async (linkId, userEmail) => {
     }
 };
 
+export const getUserLinksForId = async (linkId) => {
+    const {data, error} = await supabase
+        .from('UserLink')
+        .select('*') // Adjust columns as necessary
+        .eq('linkId', linkId); // Filter by linkId
+
+    if (error) {
+        console.log("Error fetching UserLinks:", error);
+        return null;
+    } else {
+        console.log("UserLinks fetched successfully:", data);
+        return data;
+    }
+};
+
+
 
 
 

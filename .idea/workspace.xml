@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/service/userLink/UserLinkService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/tabbar/TabBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/tabbar/TabBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/userLink/UserLinkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/userLink/UserLinkService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +71,7 @@
       <workItem from="1735305750557" duration="28366000" />
       <workItem from="1735808100304" duration="989000" />
       <workItem from="1735825027653" duration="8996000" />
-      <workItem from="1736009617212" duration="5877000" />
+      <workItem from="1736009617212" duration="7107000" />
     </task>
     <task id="LOCAL-00001" summary="start project (header)">
       <created>1734972757780</created>
@@ -326,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736020121984</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="create user link works">
+      <created>1736021197665</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1736021197665</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,7 +362,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change color placeholder search" />
     <MESSAGE value="first working supabase user (no rls)" />
     <MESSAGE value="registerscreen set user working" />
     <MESSAGE value="update welcomescreen to current user" />
@@ -381,6 +386,7 @@
     <MESSAGE value="small css fix" />
     <MESSAGE value="fix loading screen" />
     <MESSAGE value="create link works" />
-    <option name="LAST_COMMIT_MESSAGE" value="create link works" />
+    <MESSAGE value="create user link works" />
+    <option name="LAST_COMMIT_MESSAGE" value="create user link works" />
   </component>
 </project>
