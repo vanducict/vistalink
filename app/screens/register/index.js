@@ -9,7 +9,7 @@ import {
     TextInput,
     TouchableOpacity,
 } from "react-native";
-import DropDownPicker from 'react-native-dropdown-picker';
+import DropDownPicker from "react-native-dropdown-picker";
 import {Stack, useRouter} from "expo-router";
 import styles from "./RegisterScreen.style";
 import {COLORS} from "../../../constants/theme";
@@ -18,13 +18,13 @@ import images from "../../../constants/images";
 import supabase from "../../lib/supabase";
 import {getAllUserTypes, insertUser} from "../../../service/user/UserService";
 import icons from "../../../constants/icons";
-
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 const Register = () => {
     const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [birthdate, setBirthdate] = useState("");
+    const [birthdate, setBirthdate] = useState(""); // To store the selected date
     const [name, setName] = useState("");
     const [firstName, setFirstName] = useState("");
     const [loading, setLoading] = useState(false);
@@ -33,17 +33,18 @@ const Register = () => {
     const [open, setOpen] = useState(false);
     const [items, setItems] = useState([]);
 
+    const [isDatePickerVisible, setDatePickerVisible] = useState(false);
+
     useEffect(() => {
         const fetchUserTypes = async () => {
             try {
                 setLoading(true);
                 const types = await getAllUserTypes();
                 if (types && types.length > 0) {
-                    // Make sure each item has a unique key
                     const formattedItems = types.map((type, index) => ({
-                        label: type,  // Assuming 'type' is the user type value
-                        value: type,  // 'value' will be used by DropDownPicker
-                        key: `${type}-${index}`  // A unique key for each item
+                        label: type,
+                        value: type,
+                        key: `${type}-${index}`,
                     }));
                     setItems(formattedItems);
                 } else {
@@ -55,9 +56,15 @@ const Register = () => {
                 setLoading(false);
             }
         };
-        fetchUserTypes().then(r => r);
+        fetchUserTypes().then((r) => r);
     }, []);
 
+    // Handle the selected date from the DateTimePickerModal
+    const handleConfirmDate = (date) => {
+        const formattedDate = date.toISOString().split("T")[0]; // Format as YYYY-MM-DD
+        setBirthdate(formattedDate);
+        setDatePickerVisible(false); // Hide the date picker after selection
+    };
 
     // Sign up the user after successful registration
     const signUp = async (user) => {
@@ -85,22 +92,22 @@ const Register = () => {
             Keyboard.dismiss();
             setLoading(true);
 
-            // Sign up the user with Supabase
-            const {data: user, error} = await supabase.auth.signUp({
-                email,
-                password,
-            }, {
-                redirectTo: "https://your-custom-url.com", // Add your redirect URL here
-            });
+            const {data: user, error} = await supabase.auth.signUp(
+                {
+                    email,
+                    password,
+                },
+                {
+                    redirectTo: "https://your-custom-url.com", // Add your redirect URL here
+                }
+            );
 
             if (error) {
-                throw new Error(error.message);  // Ensure we throw an error if signup fails
+                throw new Error(error.message);
             }
 
-            // If the user was created, sign them up
             await signUp(user);
 
-            // Success message
             Alert.alert("Success", "You have successfully registered!");
             router.replace("/"); // Redirect after registration
         } catch (error) {
@@ -171,13 +178,15 @@ const Register = () => {
                     placeholderTextColor="#888"
                 />
 
-                <TextInput
+                {/* TouchableOpacity to open the Date Picker */}
+                <TouchableOpacity
                     style={styles.input}
-                    placeholder="Birthdate (YYYY-MM-DD)"
-                    value={birthdate}
-                    onChangeText={setBirthdate}
-                    placeholderTextColor="#888"
-                />
+                    onPress={() => setDatePickerVisible(true)}
+                >
+                    <Text style={styles.inputText}>
+                        {birthdate || "Tap to select birthdate"}
+                    </Text>
+                </TouchableOpacity>
 
                 <TextInput
                     style={styles.input}
@@ -205,6 +214,14 @@ const Register = () => {
                 </TouchableOpacity>
                 <Loading loading={loading}/>
             </KeyboardAvoidingView>
+
+            {/* Date Picker Modal */}
+            <DateTimePickerModal
+                isVisible={isDatePickerVisible}
+                mode="date"
+                onConfirm={handleConfirmDate}
+                onCancel={() => setDatePickerVisible(false)}
+            />
         </SafeAreaView>
     );
 };

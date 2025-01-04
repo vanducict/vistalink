@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="small css fix">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="fix loading screen">
+      <change afterPath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/createLink/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/loading/Loading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/loading/Loading.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/createlink/CreateLink.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/createlink/CreateLink.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/link/LinkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/link/LinkService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +76,7 @@
       <workItem from="1735305750557" duration="28366000" />
       <workItem from="1735808100304" duration="989000" />
       <workItem from="1735825027653" duration="8996000" />
-      <workItem from="1736009617212" duration="139000" />
+      <workItem from="1736009617212" duration="4701000" />
     </task>
     <task id="LOCAL-00001" summary="start project (header)">
       <created>1734972757780</created>
@@ -310,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735953313212</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="fix loading screen">
+      <created>1736009998556</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1736009998556</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,7 +353,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="loading screen fix" />
     <MESSAGE value="better logging" />
     <MESSAGE value="change color placeholder search" />
     <MESSAGE value="first working supabase user (no rls)" />
@@ -365,6 +377,7 @@
     <MESSAGE value="split home view logic based on role" />
     <MESSAGE value="lottie animations add" />
     <MESSAGE value="small css fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="small css fix" />
+    <MESSAGE value="fix loading screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix loading screen" />
   </component>
 </project>

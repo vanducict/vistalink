@@ -43,3 +43,35 @@ export const getAllEventTypes = async () => {
         return uniqueEventTypes;
     }
 };
+
+
+export const createLink = async (name, description, date, location, startTime, endTime, eventType, maxPeople, ownerEmail) => {
+    // Create the payload with all the provided fields
+    const payload = {
+        name,
+        description,
+        date,
+        location,
+        startTime,
+        endTime,
+        eventType,
+        maxPeople,
+        ownerEmail
+    };
+
+    // Perform the insert operation on the 'Link' table
+    const {data, error} = await supabase
+        .from('Link')
+        .insert([payload])
+        .select();
+
+    if (error) {
+        console.log("Error creating link:", error);
+        return null;
+    } else {
+        console.log("Link created successfully:", data);
+        return data;
+    }
+};
+
+

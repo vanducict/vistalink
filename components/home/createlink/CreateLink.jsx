@@ -1,13 +1,16 @@
 import React from "react";
-import {Alert, SafeAreaView, Text, TouchableOpacity, View} from "react-native";
+import {SafeAreaView, Text, TouchableOpacity, View} from "react-native";
 import styles from "./CreateLink.style";
 import Lottie from "lottie-react-native";
 import animations from "../../../constants/animations";
+import {useRouter} from "expo-router";
 
 const CreateLink = () => {
+    const router = useRouter();
     const handleCreate = () => {
-        Alert.alert("Create Link", "Trigger your create link logic here!");
-        // You can add your navigation or API call logic here
+        router.push({
+            pathname: '/screens/createLink/'
+        });
     };
 
     return (
