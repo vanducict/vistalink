@@ -56,7 +56,7 @@ const TabBar = ({state, descriptors, navigation}) => {
                         break;
                     case "MyLinks":
                         iconSource = icons.links;
-                        iconName = "Links";
+                        iconName = "My Links";
                         break;
                     default:
                         iconSource = null;

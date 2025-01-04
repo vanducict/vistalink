@@ -2,9 +2,11 @@ import {Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "rea
 import {Stack, useGlobalSearchParams, useRouter} from "expo-router"; // Use `useSearchParams` for query params
 import {COLORS} from "../../../constants/theme";
 import icons from "../../../constants/icons";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./[item].style";
 import images from "../../../constants/images";
+import {createUserLink} from "../../../service/userLink/UserLinkService";
+import {getCurrentUser} from "../../../service/user/UserService";
 
 const LinkDetail = () => {
     const {item} = useGlobalSearchParams(); // Safely get query parameter
@@ -13,8 +15,35 @@ const LinkDetail = () => {
 
     const spotsTaken = 0; // Replace this with the actual data (e.g., the number of spots already taken)
     const totalSpots = event ? event.maxPeople : 1; // Total number of spots
-
     const [loading, setLoading] = useState(false); // Set loading state
+    const [currentUser, setCurrentUser] = useState(null); // Set current user state
+    const [registered, setRegistered] = useState(false); // Set registered state
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                setLoading(true);
+                const user = await getCurrentUser();
+                const currentUserData = user ? user.pop() : null;
+
+                if (currentUserData) {
+                    setCurrentUser(currentUserData);
+                } else {
+                    console.log("No user data available.");
+                }
+            } catch (error) {
+                console.log("Error fetching user:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchUser().then(r => {
+        });
+    }, [])
+
+    async function registerToLink() {
+        await createUserLink(event.id, currentUser.email);
+    }
+
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.lightWhite}}>
             <Stack.Screen
@@ -62,7 +91,7 @@ const LinkDetail = () => {
                         <Text style={styles.loadingText}>Loading...</Text>
                     )}
                 </View>
-                <TouchableOpacity style={styles.applyButton}>
+                <TouchableOpacity style={styles.applyButton} onPress={registerToLink} disabled={registered}>
                     <Text style={styles.applyButtonText}>
                         {loading ? "..." : "Register"}
                     </Text>
