@@ -1,14 +1,17 @@
-import {ActivityIndicator} from "react-native";
-
 import React from "react";
-import styles from "./Loading.style";
-import {COLORS} from "../../../constants/theme";
+import animations from "../../../constants/animations";
+import Lottie from "lottie-react-native";
 
 
 const Loading = ({loading}) => {
     return (loading ?
         (
-            <ActivityIndicator size="large" color={COLORS.tertiary} style={styles.loadingIndicator}/>
+            <Lottie
+                source={animations.loading}
+                autoPlay
+                loop
+                style={{width: 50, height: 50}}
+            />
         ) : null)
 };
 

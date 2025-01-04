@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         alignItems: "center", // Center items horizontally
         justifyContent: "center", // Center items vertically within the allocated space
         padding: 20,
-        marginVertical: "50%",
+        marginVertical: "20%",
     },
     header: {
         fontSize: 16,

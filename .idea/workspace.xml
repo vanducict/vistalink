@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="split home view logic based on role">
-      <change afterPath="$PROJECT_DIR$/components/home/createlink/CreateLink.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/home/createlink/CreateLink.style.js" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="create link home">
+      <change afterPath="$PROJECT_DIR$/assets/animations/connect.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/link.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/loading.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/animations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/loading/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/loading/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/loading/Loading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/loading/Loading.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/createlink/CreateLink.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/createlink/CreateLink.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/createlink/CreateLink.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/createlink/CreateLink.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,11 +58,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/animations" />
       <recent name="$PROJECT_DIR$/assets/icons" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/app/screens/login" />
-      <recent name="$PROJECT_DIR$/app/screens/home" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

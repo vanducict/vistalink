@@ -1,9 +1,11 @@
 import React from "react";
-import {ActivityIndicator, Image, SafeAreaView, View} from "react-native";
+import {Image, SafeAreaView, View} from "react-native";
 import {COLORS} from "../../../constants/theme";
 import {Stack} from "expo-router";
 import images from "../../../constants/images";
 import styles from "./LoadingScreen.style";
+import Lottie from "lottie-react-native";
+import animations from "../../../constants/animations";
 
 const Loading = () => {
     return (
@@ -21,7 +23,12 @@ const Loading = () => {
                 }}
             />
             <View style={styles.loaderContainer}>
-                <ActivityIndicator size="large" color={COLORS.tertiary}/>
+                <Lottie
+                    source={animations.loading}
+                    autoPlay
+                    loop
+                    style={{width: 50, height: 50}}
+                />
             </View>
         </SafeAreaView>
     );

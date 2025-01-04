@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {
     Alert,
-    Image,
     Keyboard,
     KeyboardAvoidingView,
     SafeAreaView,
@@ -12,9 +11,10 @@ import {
 } from "react-native";
 import {useRouter} from "expo-router";
 import styles from "./LoginScreen.style";
-import images from "../../../constants/images";
 import Loading from "../../../components/common/loading/Loading";
 import supabase from "../../lib/supabase";
+import Lottie from "lottie-react-native";
+import animations from "../../../constants/animations";
 
 const Login = () => {
     const router = useRouter();
@@ -56,7 +56,12 @@ const Login = () => {
         <SafeAreaView style={styles.safeArea}>
             <KeyboardAvoidingView style={styles.container} behavior={"padding"}>
                 <View style={styles.container}>
-                    <Image source={images.link} style={{width: 80, height: 80}}/>
+                    <Lottie
+                        source={animations.link}
+                        autoPlay
+                        loop
+                        style={{width: 200, height: 200}}
+                    />
                     <Text style={styles.title}>VistaLink</Text>
                     <TextInput
                         style={styles.input}
