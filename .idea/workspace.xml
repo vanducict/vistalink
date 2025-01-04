@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="picker role">
-      <change afterPath="$PROJECT_DIR$/components/home/search/SearchBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/home/search/SearchBar.style.js" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="split home view logic based on role">
+      <change afterPath="$PROJECT_DIR$/components/home/createlink/CreateLink.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/home/createlink/CreateLink.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/welcome/Welcome.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/welcome/Welcome.style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735939835976</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="split home view logic based on role">
+      <created>1735941993150</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1735941993150</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +326,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="put loading wheel sign in up" />
     <MESSAGE value="seperate loading compo" />
     <MESSAGE value="fix ios issues mobile dev and styling issues" />
     <MESSAGE value="loading screen fix" />
@@ -346,6 +350,7 @@
     <MESSAGE value="combine query links" />
     <MESSAGE value="first version profile screen" />
     <MESSAGE value="picker role" />
-    <option name="LAST_COMMIT_MESSAGE" value="picker role" />
+    <MESSAGE value="split home view logic based on role" />
+    <option name="LAST_COMMIT_MESSAGE" value="split home view logic based on role" />
   </component>
 </project>

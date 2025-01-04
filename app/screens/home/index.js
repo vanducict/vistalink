@@ -9,6 +9,7 @@ import images from "../../../constants/images";
 import SearchBar from "../../../components/home/search/SearchBar";
 import {getCurrentUser} from "../../../service/user/UserService";
 import Loading from "../loading";
+import CreateLink from "../../../components/home/createlink/CreateLink";
 
 const Home = () => {
     const router = useRouter();
@@ -55,7 +56,11 @@ const Home = () => {
         {
             id: '1',
             component: <Welcome/>
+        }, {
+            id: '2',
+            component: <CreateLink/>
         }
+
     ];
 
 
