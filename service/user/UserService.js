@@ -63,6 +63,29 @@ export const getCurrentUser = async () => {
     }
 }
 
+export const getUserForEmail = async (email) => {
+    try {
+
+        const {data: {session}, error: sessionError} = await supabase.auth.getSession();
+
+        const {data: user, error: userError} = await supabase
+            .from('User')
+            .select('*')
+            .eq('email', email);
+
+        // If there's an error fetching user data
+        if (userError) {
+            console.error("Error fetching user data:", userError);
+            return null;
+        }
+
+        return user;
+    } catch (e) {
+        console.error("Unexpected error:", e);
+        return null;
+    }
+}
+
 export const getAllUserTypes = async () => {
     const {data, error} = await supabase
         .rpc('get_user_types');

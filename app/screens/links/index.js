@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import styles from "./LinksScreen.style";
-import {Stack} from "expo-router";
+import {Stack, useRouter} from "expo-router";
 import images from "../../../constants/images";
 import {getCurrentUser} from "../../../service/user/UserService";
 import {getAllLinksForUser} from "../../../service/link/LinkService";
@@ -15,7 +15,7 @@ const Links = () => {
     const [currentUser, setCurrentUser] = useState(null);
     const [error, setError] = useState(null);
     const [activeTab, setActiveTab] = useState("Active"); // "Active" or "Expired"
-
+    const router = useRouter();
     const filteredLinks = links.filter((link) => {
         // Convert the link.date string (YYYY-MM-DD) to a Date object
         const linkDate = new Date(link.date);
@@ -72,6 +72,15 @@ const Links = () => {
             <Loading/>
         );
     }
+
+    function viewLinkActivity(link) {
+        router.push({
+            pathname: '/screens/linkActivity/[item]', // Dynamic route
+            params: {item: JSON.stringify(link)}, // Pass the link as a string
+        });
+    }
+
+
     return (
         <SafeAreaView style={{flex: 1}}>
             <ScrollView style={styles.container}>
@@ -141,7 +150,10 @@ const Links = () => {
                                     Starts at: {link.startTime} - Ends at: {link.endTime}
                                 </Text>
                             </View>
-                            <TouchableOpacity style={styles.actionButton}>
+                            <TouchableOpacity
+                                style={styles.actionButton}
+                                onPress={() => viewLinkActivity(link)} // Use link here
+                            >
                                 <Text style={styles.buttonText}>View</Text>
                             </TouchableOpacity>
                         </View>

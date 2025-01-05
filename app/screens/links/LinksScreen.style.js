@@ -84,10 +84,12 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.primary,
     },
     tabText: {
+        fontFamily: FONT.regular,
         color: "#000",
     },
     activeTabText: {
         color: "#fff",
+        fontFamily: FONT.bold,
     },
 });
 
