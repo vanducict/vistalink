@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="design fix">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="fix fonts and linkscreen start daddy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/chats/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/chats/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/createLink/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/links/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/ProfileScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/ProfileScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/tabbar/TabBar.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/tabbar/TabBar.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/createlink/CreateLink.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/createlink/CreateLink.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/link/LinkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/link/LinkService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +72,7 @@
       <workItem from="1735808100304" duration="989000" />
       <workItem from="1735825027653" duration="8996000" />
       <workItem from="1736009617212" duration="7339000" />
-      <workItem from="1736081308528" duration="6399000" />
+      <workItem from="1736081308528" duration="8671000" />
     </task>
     <task id="LOCAL-00001" summary="start project (header)">
       <created>1734972757780</created>
@@ -364,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736087230342</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="fix fonts and linkscreen start daddy">
+      <created>1736091570413</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1736091570413</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +391,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="rework navigation with tabs" />
     <MESSAGE value="custom navbar working wth sample pages" />
     <MESSAGE value="popular fetch all links for now" />
     <MESSAGE value="update packages" />
@@ -419,6 +415,7 @@
     <MESSAGE value="register user works" />
     <MESSAGE value="register fix" />
     <MESSAGE value="design fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="design fix" />
+    <MESSAGE value="fix fonts and linkscreen start daddy" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix fonts and linkscreen start daddy" />
   </component>
 </project>

@@ -69,6 +69,26 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontFamily: FONT.regular,
     },
+    tabContainer: {
+        flexDirection: "row",
+        justifyContent: "center",
+        marginVertical: 10,
+    },
+    tabButton: {
+        padding: 10,
+        marginHorizontal: 5,
+        borderRadius: 5,
+        backgroundColor: "#f0f0f0",
+    },
+    activeTabButton: {
+        backgroundColor: COLORS.primary,
+    },
+    tabText: {
+        color: "#000",
+    },
+    activeTabText: {
+        color: "#fff",
+    },
 });
 
 export default styles;
