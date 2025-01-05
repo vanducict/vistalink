@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: "bold",
         marginBottom: SIZES.medium,        // Use a constant for spacing
-        color: COLORS.secondary,          // Darker text
+        color: COLORS.secondary,
+        fontFamily: FONT.regular,// Darker text
     },
     loadingIndicator: {
         marginTop: SIZES.small,
@@ -32,8 +33,9 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         paddingHorizontal: 15,
         marginBottom: 15,
-        fontSize: 16,
+        fontSize: 14,
         color: "#333",
+        fontFamily: FONT.regular,
         // Responsive font scaling can be added here if needed
     },
     forgotPassword: {
@@ -42,6 +44,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: "600",
         textDecorationLine: "underline",
+        fontFamily: FONT.regular,
     },
     registerContainer: {
         flexDirection: "row",
@@ -51,12 +54,14 @@ const styles = StyleSheet.create({
     registerText: {
         fontSize: 14,
         color: "#888",
+        fontFamily: FONT.regular,
     },
     registerLink: {
         fontSize: 14,
         fontWeight: "bold",
         color: COLORS.tertiary,
         textDecorationLine: "underline",
+        fontFamily: FONT.regular,
     },
     loginBtn: {
         paddingVertical: SIZES.small,   // Adjust padding using size constants
@@ -73,6 +78,7 @@ const styles = StyleSheet.create({
         color: COLORS.white,
         fontSize: 14,
         fontWeight: "bold",
+        fontFamily: FONT.regular,
     }
 
 

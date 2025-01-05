@@ -1,11 +1,10 @@
 import {StyleSheet} from "react-native";
-import {COLORS, SIZES} from "../../../constants/theme";
+import {COLORS, FONT, SIZES} from "../../../constants/theme";
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: COLORS.lightWhite,
-
     },
     profileCard: {
         width: "100%",
@@ -30,21 +29,25 @@ const styles = StyleSheet.create({
     profileInfo: {
         alignItems: "center",
         marginBottom: 20,
+        fontFamily: FONT.regular,
     },
     title: {
         fontSize: 24,
         fontWeight: "bold",
         marginBottom: 10,
+        fontFamily: FONT.regular,
     },
     userEmail: {
         fontSize: 16,
         color: "#555",
         marginBottom: 5,
+        fontFamily: FONT.regular,
     },
     userBio: {
         fontSize: 14,
         color: "#777",
         textAlign: "center",
+        fontFamily: FONT.regular,
     },
     editButton: {
         backgroundColor: COLORS.tertiary,
@@ -58,7 +61,7 @@ const styles = StyleSheet.create({
     editButtonText: {
         color: "#fff",
         fontSize: 16, fontWeight: "bold",
-
+        fontFamily: FONT.regular,
     },
     signOutButton: {
         backgroundColor: "#f44336",
@@ -67,9 +70,11 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         marginTop: 20,
         width: "100%",
+        fontFamily: FONT.regular,
         alignItems: "center",
     },
     signOutText: {
+        fontFamily: FONT.regular,
         color: "#fff",
         fontSize: 16,
         fontWeight: "bold",
@@ -82,7 +87,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 16,
         marginVertical: SIZES.small,
-
+        fontFamily: FONT.regular,
     }
 
 

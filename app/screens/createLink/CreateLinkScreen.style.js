@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {COLORS} from "../../../constants/theme";
+import {COLORS, FONT} from "../../../constants/theme";
 
 const styles = StyleSheet.create({
     container: {
@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
         color: COLORS.primary,
         marginBottom: 20,
         textAlign: "center",
+        fontFamily: FONT.regular,
     },
     input: {
         borderWidth: 1,
@@ -20,7 +21,8 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         padding: 12,
         marginBottom: 15,
-        fontSize: 16,
+        fontSize: 14,
+        fontFamily: FONT.regular,
     },
     createButton: {
         backgroundColor: COLORS.tertiary,
@@ -32,6 +34,7 @@ const styles = StyleSheet.create({
         color: COLORS.white,
         fontSize: 14,
         fontWeight: "bold",
+        fontFamily: FONT.regular,
     },
     counterContainer: {
         flexDirection: 'row',
@@ -42,6 +45,7 @@ const styles = StyleSheet.create({
     },
     counterLabel: {
         fontSize: 16,
+        fontFamily: FONT.regular,
         fontWeight: 'bold',
         color: '#333',
         flex: 1,
@@ -56,8 +60,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
     },
     counterButton: {
-        width: 40,
-        height: 40,
+        width: 30,
+        height: 30,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#007BFF', // Primary button color
@@ -73,11 +77,13 @@ const styles = StyleSheet.create({
     counterButtonText: {
         fontSize: 20,
         color: '#fff',
+        fontFamily: FONT.regular,
     },
     counterValue: {
         fontSize: 20,
         fontWeight: 'bold',
         color: '#333',
+        fontFamily: FONT.regular,
     },
 });
 

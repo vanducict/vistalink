@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="design fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/popularcard/PopularCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popularcard/PopularCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/popularcard/PopularCard.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popularcard/PopularCard.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/chats/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/chats/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/createLink/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/links/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/ProfileScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/ProfileScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/tabbar/TabBar.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/tabbar/TabBar.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/createlink/CreateLink.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/createlink/CreateLink.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/link/LinkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/link/LinkService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +82,7 @@
       <workItem from="1735808100304" duration="989000" />
       <workItem from="1735825027653" duration="8996000" />
       <workItem from="1736009617212" duration="7339000" />
-      <workItem from="1736081308528" duration="2278000" />
+      <workItem from="1736081308528" duration="6399000" />
     </task>
     <task id="LOCAL-00001" summary="start project (header)">
       <created>1734972757780</created>
@@ -349,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736086669344</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="design fix">
+      <created>1736087230342</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1736087230342</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +394,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update welcomescreen to current user" />
     <MESSAGE value="rework navigation with tabs" />
     <MESSAGE value="custom navbar working wth sample pages" />
     <MESSAGE value="popular fetch all links for now" />
@@ -404,6 +418,7 @@
     <MESSAGE value="create user link works" />
     <MESSAGE value="register user works" />
     <MESSAGE value="register fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="register fix" />
+    <MESSAGE value="design fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="design fix" />
   </component>
 </project>

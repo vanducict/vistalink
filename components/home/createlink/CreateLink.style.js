@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {COLORS} from "../../../constants/theme";
+import {COLORS, FONT} from "../../../constants/theme";
 
 const styles = StyleSheet.create({
     container: {
@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 16,
         marginBottom: 20,
+        fontFamily: FONT.regular,
         textAlign: "center",
         color: "#555",
     },
@@ -28,6 +29,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: "#fff",
+        fontFamily: FONT.regular,
         fontWeight: "bold",
         fontSize: 16,
     },

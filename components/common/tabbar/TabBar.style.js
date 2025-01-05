@@ -1,4 +1,5 @@
 import {StyleSheet} from "react-native";
+import {FONT} from "../../../constants/theme";
 
 const styles = StyleSheet.create({
     tabBar: {
@@ -22,11 +23,13 @@ const styles = StyleSheet.create({
         color: "#e3e1dc",
         marginBottom: 20,
         fontSize: 8,
+        fontFamily: FONT.regular,
     },
     focusedText: {
         color: "#000000",
         fontWeight: "bold",
         fontSize: 10,
+        fontFamily: FONT.bold,
     },
     tabIcon: {
         width: 25,

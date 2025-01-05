@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {COLORS} from "../../../constants/theme";
+import {COLORS, FONT} from "../../../constants/theme";
 
 const styles = StyleSheet.create({
         safeArea: {
@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
             fontWeight: "bold",
             textAlign: "center",
             marginBottom: 20,
+            fontFamily: FONT.regular,
         },
         input: {
             borderWidth: 1,
@@ -22,7 +23,8 @@ const styles = StyleSheet.create({
             borderRadius: 8,
             padding: 12,
             marginBottom: 15,
-            fontSize: 16,
+            fontSize: 14,
+            fontFamily: FONT.regular,
         },
         registerButton: {
             backgroundColor: COLORS.tertiary,
@@ -34,6 +36,7 @@ const styles = StyleSheet.create({
             color: COLORS.white,
             fontSize: 14,
             fontWeight: "bold",
+            fontFamily: FONT.regular,
         },
         backButton: {
             fontSize: 16,
@@ -49,11 +52,13 @@ const styles = StyleSheet.create({
             paddingHorizontal: 10,
             backgroundColor: COLORS.lightWhite,
             borderRadius: 10,
+            fontFamily: FONT.regular,
         },
         label: {
             fontSize: 16,
             marginBottom: 5,
             color: "#555",
+            fontFamily: FONT.regular,
         },
         picker: {
             height: 50,
@@ -67,6 +72,7 @@ const styles = StyleSheet.create({
             padding: 12,
             marginBottom: 15,
             fontSize: 16,
+            fontFamily: FONT.regular,
         }
 
     })

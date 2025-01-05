@@ -163,8 +163,6 @@ const CreateLink = () => {
             />
 
             <KeyboardAvoidingView style={styles.container} behavior="padding">
-                <Text style={styles.header}>Create Link</Text>
-
                 <TextInput
                     style={styles.input}
                     placeholder="Name"
