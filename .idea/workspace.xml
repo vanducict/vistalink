@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,7 @@
       <workItem from="1735808100304" duration="989000" />
       <workItem from="1735825027653" duration="8996000" />
       <workItem from="1736009617212" duration="7339000" />
-      <workItem from="1736081308528" duration="15142000" />
+      <workItem from="1736081308528" duration="15264000" />
     </task>
     <task id="LOCAL-00001" summary="start project (header)">
       <created>1734972757780</created>
@@ -374,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736115787988</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="font changes">
+      <created>1736116010539</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1736116010539</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +411,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update packages" />
     <MESSAGE value="change auth to supabase" />
     <MESSAGE value="change auth to supabase rework home" />
     <MESSAGE value="fix nav login" />
@@ -429,6 +435,7 @@
     <MESSAGE value="fix fonts and linkscreen start daddy" />
     <MESSAGE value="active and expired based on date" />
     <MESSAGE value="Applicants viewlist" />
-    <option name="LAST_COMMIT_MESSAGE" value="Applicants viewlist" />
+    <MESSAGE value="font changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="font changes" />
   </component>
 </project>

@@ -104,6 +104,7 @@ const LinkActivity = () => {
                                 Time: {event.startTime} - {event.endTime}
                             </Text>
                             <Text style={styles.detail}>Type: {event.eventType}</Text>
+                            <Text style={styles.detail}>Open Spots: 0/{event.maxPeople}</Text>
                             <Text style={styles.detail}>
                                 Contact: {event.ownerEmail}
                             </Text>
