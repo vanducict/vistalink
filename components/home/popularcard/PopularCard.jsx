@@ -35,7 +35,7 @@ const PopularJobCard = ({item}) => {
                 </Text>
                 <View style={styles.infoWrapper}>
                     <Text style={styles.location}>
-                        {item.location} -
+                        {item.location}
                     </Text>
                 </View>
             </View>

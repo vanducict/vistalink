@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     location: {
         fontSize: SIZES.medium - 2,
         fontFamily: FONT.regular,
+        color: "#B3AEC6",
     },
     maxPeople: {
         fontSize: SIZES.medium - 2,

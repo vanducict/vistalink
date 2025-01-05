@@ -136,11 +136,9 @@ const LinkDetail = () => {
                     <Text style={styles.applyButtonText}>
                         {loading
                             ? "Loading..."
-                            : spotsTaken >= totalSpots
-                                ? "Full"
-                                : isUserRegistered
-                                    ? "Applied"
-                                    : "Apply"}
+                            : isUserRegistered
+                                ? "Applied"
+                                : "Apply"}
                     </Text>
                 </TouchableOpacity>
             </ScrollView>
