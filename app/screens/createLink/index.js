@@ -7,7 +7,7 @@ import images from "../../../constants/images";
 import icons from "../../../constants/icons";
 import Loading from "../../../components/common/loading/Loading";
 import styles from "./CreateLinkScreen.style";
-import {createLink, getAllEventTypes} from "../../../service/link/LinkService";
+import {createLink, getAllTypes} from "../../../service/link/LinkService";
 import DropDownPicker from "react-native-dropdown-picker";
 import {getCurrentUser} from "../../../service/user/UserService";
 
@@ -54,12 +54,15 @@ const CreateLink = () => {
         const fetchEventTypes = async () => {
             try {
                 setLoading(true);
-                const fetchedEventTypes = await getAllEventTypes();
+                const fetchedEventTypes = await getAllTypes();
+
                 if (fetchedEventTypes && fetchedEventTypes.length > 0) {
-                    setEventTypes(fetchedEventTypes.map((type) => ({
-                        label: type,
-                        value: type,
-                    })));
+                    setEventTypes(
+                        fetchedEventTypes.map((type) => ({
+                            label: type.value, // Extract the `value` property
+                            value: type.value, // Use `value` for both `label` and `value`
+                        }))
+                    );
                 } else {
                     console.log("No event types found.");
                 }
@@ -69,6 +72,7 @@ const CreateLink = () => {
                 setLoading(false);
             }
         };
+
 
         fetchUser().then(r => {
         });

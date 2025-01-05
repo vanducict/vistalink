@@ -45,6 +45,29 @@ export const getAllEventTypes = async () => {
 };
 
 
+export const getAllTypes = async () => {
+    try {
+        const {data, error} = await supabase.rpc('get_link_categories');
+
+        if (error) {
+            console.error("Error fetching link categories:", error.message || error);
+            return null;
+        }
+
+        if (!Array.isArray(data)) {
+            console.error("Unexpected data format:", data);
+            return null;
+        }
+
+        console.log("Link categories fetched successfully:", data);
+        return data;
+    } catch (err) {
+        console.error("Unexpected error occurred:", err);
+        return null;
+    }
+};
+
+
 export const createLink = async (name, description, date, location, startTime, endTime, eventType, maxPeople, ownerEmail) => {
     // Create the payload with all the provided fields
     const payload = {

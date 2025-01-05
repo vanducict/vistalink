@@ -115,7 +115,7 @@ const LinkDetail = () => {
                             </Text>
                             <Text style={styles.detail}>Type: {event.eventType}</Text>
                             <Text style={styles.detail}>
-                                Open Spots: {spotsTaken}/{totalSpots}
+                                Open Spots: 0/{totalSpots}
                             </Text>
                             <Text style={styles.detail}>
                                 Contact: {event.ownerEmail}
@@ -139,8 +139,8 @@ const LinkDetail = () => {
                             : spotsTaken >= totalSpots
                                 ? "Full"
                                 : isUserRegistered
-                                    ? "Registered"
-                                    : "Register"}
+                                    ? "Applied"
+                                    : "Apply"}
                     </Text>
                 </TouchableOpacity>
             </ScrollView>
