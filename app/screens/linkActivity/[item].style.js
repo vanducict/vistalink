@@ -45,6 +45,7 @@ const styles = {
         color: "#fff",
         fontSize: 16,
         fontWeight: "bold",
+        fontFamily: FONT.regular,
     },
     description: {
         fontSize: 14,
@@ -99,7 +100,7 @@ const styles = {
     applicantName: {
         fontSize: 18,
         fontWeight: "bold",
-        fontFamily: FONT.regular,
+        fontFamily: FONT.bold,
         color: COLORS.primary,
     },
     applicantEmail: {
@@ -111,6 +112,7 @@ const styles = {
         fontSize: 16,
         color: COLORS.gray,
         marginBottom: 10,
+        fontFamily: FONT.regular,
     },
     actionButtons: {
         flexDirection: "row",
