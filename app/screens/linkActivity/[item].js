@@ -115,7 +115,7 @@ const LinkActivity = () => {
                             <Text style={styles.detail}>Type: {event.eventType}</Text>
                             <Text style={styles.detail}>
                                 Open
-                                Spots: {userLinks.filter(link => link.status === 'approved').length}/{event.maxPeople}
+                                Spots: {(event.maxPeople) - userLinks.filter(link => link.status === 'approved').length}/{event.maxPeople}
                             </Text>
 
                             <Text style={styles.detail}>
@@ -138,10 +138,6 @@ const LinkActivity = () => {
                                 key={index}
                                 style={[
                                     styles.applicantContainer,
-                                    link.status === 'approved'
-                                        ? styles.approvedContainer
-                                        : styles.declinedContainer, // Apply the respective styles based on status
-                                    event.expired ? styles.expiredContainer : null, // Conditionally apply gray-out style
                                 ]}
                             >
                                 <Text style={styles.applicantName}>
@@ -149,7 +145,14 @@ const LinkActivity = () => {
                                 </Text>
                                 <Text style={styles.applicantEmail}>{link.userEmail}</Text>
                                 <Text style={styles.applicantStatus}>
-                                    Status: {link.status}
+                                    Status:
+                                    {link.status === 'approved' ? (
+                                        <Text style={styles.approvedText}> Approved</Text> // Display Pending text
+                                    ) : link.status === 'declined' ? (
+                                        <Text style={styles.declinedText}> Declined</Text> // Display Pending text
+                                    ) : (
+                                        <Text style={styles.pendingText}> Pending</Text> // Display Pending text
+                                    )}
                                 </Text>
                                 <View style={styles.actionButtons}>
                                     <TouchableOpacity

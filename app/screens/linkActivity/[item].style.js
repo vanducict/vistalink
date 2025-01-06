@@ -88,16 +88,30 @@ const styles = {
     },
     // Style for approved applicants with more aesthetic green
     approvedContainer: {
-        backgroundColor: '#7CFC00', // Light green (LimeGreen) background
-        borderColor: '#2E8B57', // Darker green border for contrast
+        backgroundColor: '#25D366', // Light green (LimeGreen) background
+        borderColor: '#25D366', // Darker green border for contrast
         elevation: 5, // Stronger shadow for green to make it stand out
         shadowColor: '#388E3C', // Slight greenish shadow
     },
-
+    approvedText: {
+        color: '#4CAF50', // Soft green for approved
+        fontWeight: 'bold',
+        fontSize: 16,
+    },
+    declinedText: {
+        color: '#F44336', // Muted red for declined
+        fontWeight: 'bold',
+        fontSize: 16,
+    },
+    pendingText: {
+        color: '#FF9800', // Soft orange for pending
+        fontWeight: 'bold',
+        fontSize: 16,
+    },
     // Style for declined applicants with more aesthetic red
     declinedContainer: {
-        backgroundColor: '#FF6F61', // Soft red (Salmon) background
-        borderColor: '#D32F2F', // Darker red border for contrast
+        backgroundColor: '#E53935', // Soft red (Salmon) background
+        borderColor: '#E53935', // Darker red border for contrast
         elevation: 5, // Stronger shadow for red to make it stand out
         shadowColor: '#C2185B', // Slight pinkish shadow for red
     },
