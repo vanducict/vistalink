@@ -122,7 +122,14 @@ const styles = {
         backgroundColor: COLORS.tertiary,
         padding: 10,
         borderRadius: 5,
-    }
+    },
+    expiredContainer: {
+        backgroundColor: '#d3d3d3', // Gray background for expired items
+        opacity: 0.6, // Make it visually distinct
+    },
+    disabledButton: {
+        backgroundColor: '#a9a9a9', // Gray out buttons for expired items
+    },
 };
 
 

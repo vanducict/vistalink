@@ -121,7 +121,13 @@ const LinkActivity = () => {
                         <Text style={styles.noApplicantsText}>No userLinks found.</Text>
                     ) : (
                         userLinks.map((link, index) => (
-                            <View key={index} style={styles.applicantContainer}>
+                            <View
+                                key={index}
+                                style={[
+                                    styles.applicantContainer,
+                                    event.expired ? styles.expiredContainer : null, // Conditionally apply gray-out style
+                                ]}
+                            >
                                 <Text style={styles.applicantName}>
                                     {link.userDetails?.[link.userDetails.length - 1]?.firstName} {link.userDetails?.[link.userDetails.length - 1]?.name}
                                 </Text>
@@ -131,15 +137,31 @@ const LinkActivity = () => {
                                 </Text>
                                 <View style={styles.actionButtons}>
                                     <TouchableOpacity
-                                        style={styles.viewProfileButton}
+                                        style={[
+                                            styles.viewProfileButton,
+                                            event.expired ? styles.disabledButton : null, // Disable button style
+                                        ]}
+                                        disabled={event.expired} // Disable interaction if expired
                                     >
                                         <Text style={styles.buttonText}>View Profile</Text>
                                     </TouchableOpacity>
                                     <View style={styles.approvalButtonsContainer}>
-                                        <TouchableOpacity style={styles.declineProfileButton}>
+                                        <TouchableOpacity
+                                            style={[
+                                                styles.declineProfileButton,
+                                                event.expired ? styles.disabledButton : null,
+                                            ]}
+                                            disabled={event.expired}
+                                        >
                                             <FontAwesome name="times-circle" size={40} color="white"/>
                                         </TouchableOpacity>
-                                        <TouchableOpacity style={styles.approveProfileButton}>
+                                        <TouchableOpacity
+                                            style={[
+                                                styles.approveProfileButton,
+                                                event.expired ? styles.disabledButton : null,
+                                            ]}
+                                            disabled={event.expired}
+                                        >
                                             <FontAwesome name="check-circle" size={40} color="white"/>
                                         </TouchableOpacity>
                                     </View>
@@ -148,6 +170,7 @@ const LinkActivity = () => {
                         ))
                     )}
                 </View>
+
                 <Loading loading={loading}/>
             </ScrollView>
         </SafeAreaView>
