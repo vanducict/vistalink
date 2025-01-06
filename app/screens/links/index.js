@@ -17,16 +17,10 @@ const Links = () => {
     const [activeTab, setActiveTab] = useState("Active"); // "Active" or "Expired"
     const router = useRouter();
     const filteredLinks = links.filter((link) => {
-        // Convert the link.date string (YYYY-MM-DD) to a Date object
-        const linkDate = new Date(link.date);
-
-        // Get today's date without the time component
-        const today = new Date();
-        today.setHours(0, 0, 0, 0); // Set time to midnight for accurate comparison
-
-        // Filter based on the selected tab
-        return activeTab === "Active" ? linkDate >= today : linkDate < today;
+        // Filter based on the selected tab using the expired field
+        return activeTab === "Active" ? !link.expired : link.expired;
     });
+
     // Fetch user data once on mount
     useEffect(() => {
         const fetchUser = async () => {
