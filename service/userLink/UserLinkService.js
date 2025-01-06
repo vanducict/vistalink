@@ -35,6 +35,26 @@ export const getUserLinksForId = async (linkId) => {
     }
 };
 
+export const updateUserLinkStatus = async (linkId, status) => {
+
+    const {data, error} = await supabase
+        .from('UserLink')
+        .update({status: status})
+        .eq('linkId', linkId)
+        .select()
+
+    if (error) {
+        console.log("Error updating UserLink:", error);
+        return null;
+    } else {
+        console.log("UserLink updated successfully:", data);
+        return data;
+    }
+
+};
+
+
+
 
 
 

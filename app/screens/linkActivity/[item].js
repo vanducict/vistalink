@@ -6,7 +6,7 @@ import icons from "../../../constants/icons";
 import React, {useEffect, useState} from "react";
 import {COLORS} from "../../../constants/theme";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import {getUserLinksForId} from "../../../service/userLink/UserLinkService";
+import {getUserLinksForId, updateUserLinkStatus} from "../../../service/userLink/UserLinkService";
 import Loading from "../../../components/common/loading/Loading";
 import {getUserForEmail} from "../../../service/user/UserService";
 
@@ -19,9 +19,18 @@ const LinkActivity = () => {
 
 
     function handleApplicantStatus(id, approved) {
-        // Handle applicant status (approve)
-        console.log(`Applicant with ID: ${id} is ${approved}`);
+        if (approved) {
+            updateUserLinkStatus(id, "approved").then(r => {
+                fetchUserLinksForId().then(r => r);
+            });
+
+        } else {
+            updateUserLinkStatus(id, "declined").then(r => {
+                fetchUserLinksForId().then(r => r);
+            });
+        }
     }
+
 
     const fetchUserDataByEmail = async (email) => {
         try {
@@ -104,7 +113,11 @@ const LinkActivity = () => {
                                 Time: {event.startTime} - {event.endTime}
                             </Text>
                             <Text style={styles.detail}>Type: {event.eventType}</Text>
-                            <Text style={styles.detail}>Open Spots: 0/{event.maxPeople}</Text>
+                            <Text style={styles.detail}>
+                                Open
+                                Spots: {userLinks.filter(link => link.status === 'approved').length}/{event.maxPeople}
+                            </Text>
+
                             <Text style={styles.detail}>
                                 Contact: {event.ownerEmail}
                             </Text>
@@ -125,6 +138,9 @@ const LinkActivity = () => {
                                 key={index}
                                 style={[
                                     styles.applicantContainer,
+                                    link.status === 'approved'
+                                        ? styles.approvedContainer
+                                        : styles.declinedContainer, // Apply the respective styles based on status
                                     event.expired ? styles.expiredContainer : null, // Conditionally apply gray-out style
                                 ]}
                             >
@@ -147,6 +163,7 @@ const LinkActivity = () => {
                                     </TouchableOpacity>
                                     <View style={styles.approvalButtonsContainer}>
                                         <TouchableOpacity
+                                            onPress={() => handleApplicantStatus(link.linkId, false)}
                                             style={[
                                                 styles.declineProfileButton,
                                                 event.expired ? styles.disabledButton : null,
@@ -156,6 +173,7 @@ const LinkActivity = () => {
                                             <FontAwesome name="times-circle" size={40} color="white"/>
                                         </TouchableOpacity>
                                         <TouchableOpacity
+                                            onPress={() => handleApplicantStatus(link.linkId, true)}
                                             style={[
                                                 styles.approveProfileButton,
                                                 event.expired ? styles.disabledButton : null,

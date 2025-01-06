@@ -86,6 +86,21 @@ const styles = {
         textAlign: "center",
         marginTop: 20,
     },
+    // Style for approved applicants with more aesthetic green
+    approvedContainer: {
+        backgroundColor: '#7CFC00', // Light green (LimeGreen) background
+        borderColor: '#2E8B57', // Darker green border for contrast
+        elevation: 5, // Stronger shadow for green to make it stand out
+        shadowColor: '#388E3C', // Slight greenish shadow
+    },
+
+    // Style for declined applicants with more aesthetic red
+    declinedContainer: {
+        backgroundColor: '#FF6F61', // Soft red (Salmon) background
+        borderColor: '#D32F2F', // Darker red border for contrast
+        elevation: 5, // Stronger shadow for red to make it stand out
+        shadowColor: '#C2185B', // Slight pinkish shadow for red
+    },
     applicantContainer: {
         backgroundColor: "#fff",
         padding: 15,
