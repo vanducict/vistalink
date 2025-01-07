@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="fetch correct events for collaborator">
+      <change afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/linkActivity/status/Status.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/linkActivity/status/Status.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/links/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/link/LinkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/link/LinkService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/userLink/UserLinkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/userLink/UserLinkService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,14 +75,7 @@
       <workItem from="1735808100304" duration="989000" />
       <workItem from="1735825027653" duration="8996000" />
       <workItem from="1736009617212" duration="7339000" />
-      <workItem from="1736081308528" duration="24643000" />
-    </task>
-    <task id="LOCAL-00001" summary="start project (header)">
-      <created>1734972757780</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1734972757781</updated>
+      <workItem from="1736081308528" duration="28771000" />
     </task>
     <task id="LOCAL-00002" summary="Welcome component">
       <created>1734996865630</created>
@@ -418,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736196385348</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="fetch correct events for collaborator">
+      <created>1736272893320</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1736272893326</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +450,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="small plp" />
     <MESSAGE value="filter balloons working" />
     <MESSAGE value="filter deselect reworks" />
     <MESSAGE value="working first version search" />
@@ -473,6 +474,7 @@
     <MESSAGE value="greyad out link applicants" />
     <MESSAGE value="reistering link" />
     <MESSAGE value="statuses rework" />
-    <option name="LAST_COMMIT_MESSAGE" value="statuses rework" />
+    <MESSAGE value="fetch correct events for collaborator" />
+    <option name="LAST_COMMIT_MESSAGE" value="fetch correct events for collaborator" />
   </component>
 </project>

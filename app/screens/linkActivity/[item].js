@@ -5,10 +5,11 @@ import images from "../../../constants/images";
 import icons from "../../../constants/icons";
 import React, {useEffect, useState} from "react";
 import {COLORS} from "../../../constants/theme";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import {getUserLinksForId, updateUserLinkStatus} from "../../../service/userLink/UserLinkService";
+import {getUserLinksForId} from "../../../service/userLink/UserLinkService";
 import Loading from "../../../components/common/loading/Loading";
-import {getUserForEmail} from "../../../service/user/UserService";
+import {getCurrentUser, getUserForEmail} from "../../../service/user/UserService";
+import Applicants from "../../../components/linkActivity/applicants/Applicants";
+import Status from "../../../components/linkActivity/status/Status";
 
 const LinkActivity = () => {
     const router = useRouter();
@@ -16,20 +17,24 @@ const LinkActivity = () => {
     const event = item ? JSON.parse(item) : null;
     const [loading, setLoading] = useState(false);
     const [userLinks, setUserLinks] = useState([]);
+    const [currentUser, setCurrentUser] = useState(null);
 
 
-    function handleApplicantStatus(id, approved) {
-        if (approved) {
-            updateUserLinkStatus(id, "approved").then(r => {
-                fetchUserLinksForId().then(r => r);
-            });
-
-        } else {
-            updateUserLinkStatus(id, "declined").then(r => {
-                fetchUserLinksForId().then(r => r);
-            });
+    const fetchUser = async () => {
+        try {
+            setLoading(true);
+            const user = await getCurrentUser();
+            if (user && user.length > 0) {
+                setCurrentUser(user.pop());
+            } else {
+                console.log("No user data found.");
+            }
+        } catch (error) {
+            console.log("Error fetching user:", error);
+        } finally {
+            setLoading(false);
         }
-    }
+    };
 
 
     const fetchUserDataByEmail = async (email) => {
@@ -74,6 +79,7 @@ const LinkActivity = () => {
 
     useEffect(() => {
         if (event?.id) fetchUserLinksForId().then(r => r);
+        fetchUser().then(r => r);
     }, [event?.id]);
 
     return (
@@ -127,72 +133,19 @@ const LinkActivity = () => {
                     )}
                 </View>
 
-                {/* Applicants List */}
-                <View style={styles.container}>
-                    <Text style={styles.sectionTitle}>Applicants</Text>
-                    {userLinks.length === 0 ? (
-                        <Text style={styles.noApplicantsText}>No userLinks found.</Text>
-                    ) : (
-                        userLinks.map((link, index) => (
-                            <View
-                                key={index}
-                                style={[
-                                    styles.applicantContainer,
-                                ]}
-                            >
-                                <Text style={styles.applicantName}>
-                                    {link.userDetails?.[link.userDetails.length - 1]?.firstName} {link.userDetails?.[link.userDetails.length - 1]?.name}
-                                </Text>
-                                <Text style={styles.applicantEmail}>{link.userEmail}</Text>
-                                <Text style={styles.applicantStatus}>
-                                    Status:
-                                    {link.status === 'approved' ? (
-                                        <Text style={styles.approvedText}> Approved</Text> // Display Pending text
-                                    ) : link.status === 'declined' ? (
-                                        <Text style={styles.declinedText}> Declined</Text> // Display Pending text
-                                    ) : (
-                                        <Text style={styles.pendingText}> Pending</Text> // Display Pending text
-                                    )}
-                                </Text>
-                                <View style={styles.actionButtons}>
-                                    <TouchableOpacity
-                                        style={[
-                                            styles.viewProfileButton,
-                                            event.expired ? styles.disabledButton : null, // Disable button style
-                                        ]}
-                                        disabled={event.expired} // Disable interaction if expired
-                                    >
-                                        <Text style={styles.buttonText}>View Profile</Text>
-                                    </TouchableOpacity>
-                                    <View style={styles.approvalButtonsContainer}>
-                                        <TouchableOpacity
-                                            onPress={() => handleApplicantStatus(link.linkId, false)}
-                                            style={[
-                                                styles.declineProfileButton,
-                                                event.expired ? styles.disabledButton : null,
-                                            ]}
-                                            disabled={event.expired}
-                                        >
-                                            <FontAwesome name="times-circle" size={40} color="white"/>
-                                        </TouchableOpacity>
-                                        <TouchableOpacity
-                                            onPress={() => handleApplicantStatus(link.linkId, true)}
-                                            style={[
-                                                styles.approveProfileButton,
-                                                event.expired ? styles.disabledButton : null,
-                                            ]}
-                                            disabled={event.expired}
-                                        >
-                                            <FontAwesome name="check-circle" size={40} color="white"/>
-                                        </TouchableOpacity>
-                                    </View>
-                                </View>
-                            </View>
-                        ))
-                    )}
-                </View>
+                <ScrollView>
+                    {currentUser?.userType === "Collaborator" ?
+                        <Status status={userLinks.find(link => link.userEmail === currentUser?.email)?.status}
+                                event={event}/>
+                        : <Applicants
+                            userLinks={userLinks}
+                            event={event}
+                            refreshUserLinks={fetchUserLinksForId}
+                        />}
 
-                <Loading loading={loading}/>
+                    <Loading loading={loading}/>
+                </ScrollView>
+
             </ScrollView>
         </SafeAreaView>
     );
