@@ -35,6 +35,21 @@ export const getUserLinksForId = async (linkId) => {
     }
 };
 
+export const getAllLinksForUserCollaborator = async (currentUser) => {
+    const {data, error} = await supabase
+        .from('UserLink')
+        .select('*') // Adjust columns as necessary
+        .eq('userEmail', currentUser.email); // Filter by linkId
+
+    if (error) {
+        console.log("Error fetching UserLinks:", error);
+        return null;
+    } else {
+        console.log("UserLinks fetched successfully:", data);
+        return data;
+    }
+}
+
 export const updateUserLinkStatus = async (linkId, status) => {
 
     const {data, error} = await supabase

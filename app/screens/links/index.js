@@ -4,8 +4,9 @@ import styles from "./LinksScreen.style";
 import {Stack, useRouter} from "expo-router";
 import images from "../../../constants/images";
 import {getCurrentUser} from "../../../service/user/UserService";
-import {getAllLinksForUser} from "../../../service/link/LinkService";
+import {getAllLinksForId, getAllLinksForUserConsumer} from "../../../service/link/LinkService";
 import Loading from "../loading";
+import {getAllLinksForUserCollaborator} from "../../../service/userLink/UserLinkService";
 
 
 const Links = () => {
@@ -18,7 +19,7 @@ const Links = () => {
     const router = useRouter();
     const filteredLinks = links.filter((link) => {
         // Filter based on the selected tab using the expired field
-        return activeTab === "Active" ? !link.expired : link.expired;
+        return activeTab === "Active" ? !link?.expired : link?.expired;
     });
 
     // Fetch user data once on mount
@@ -39,26 +40,57 @@ const Links = () => {
         fetchUser().then(r => r);
     }, []); // Only run once when the component mounts
 
-    // Fetch links once the currentUser is set
-    useEffect(() => {
-        if (!currentUser) return; // If there's no user, do not fetch links
+    const fetchLinks = async () => {
+        try {
+            setLoading(true);
 
-        const fetchLinks = async () => {
-            try {
-                setLoading(true);
-                const fetchedLinks = await getAllLinksForUser(currentUser);
-                setLinks(fetchedLinks);
-                console.log("Links fetched:", fetchedLinks);
-            } catch (error) {
-                setError("Error fetching links");
-                console.error("Error fetching links:", error);
-            } finally {
-                setLoading(false);
+            let fetchedLinks = [];
+
+            // Function to handle fetching links for a collaborator
+            const fetchCollaboratorLinks = async (collaboratorLinks) => {
+                const effectiveLinks = await Promise.all(
+                    collaboratorLinks.map(async (linkObj) => {
+                        const linkId = linkObj?.linkId || linkObj?.id;
+                        if (linkId) {
+                            const linkData = await getAllLinksForId(linkId);
+                            return linkData?.pop() || null; // Pop and return the last element, or null if empty
+                        } else {
+                            console.warn("linkObj or linkId is missing:", linkObj);
+                            return null;
+                        }
+                    })
+                );
+
+                return effectiveLinks.filter(link => link !== null); // Filter out null values
+            };
+
+            // Fetch links depending on the user type
+            if (currentUser.userType === "Consumer") {
+                fetchedLinks = await getAllLinksForUserConsumer(currentUser);
+            } else if (currentUser.userType === "Collaborator") {
+                const collaboratorLinks = await getAllLinksForUserCollaborator(currentUser);
+                console.log("Collaborator Links:", collaboratorLinks);
+                fetchedLinks = await fetchCollaboratorLinks(collaboratorLinks);
             }
-        };
 
-        fetchLinks().then(r => r);
-    }, [currentUser]); // Depend on currentUser only
+            setLinks(fetchedLinks);  // Update state with the fetched links
+            console.log("Links fetched:", fetchedLinks);
+
+        } catch (error) {
+            setError("Error fetching links");
+            console.error("Error fetching links:", error);
+        } finally {
+            setLoading(false);  // Set loading to false once the fetching is complete
+        }
+    };
+
+
+    useEffect(() => {
+        if (currentUser) {
+            fetchLinks();
+        }
+    }, [currentUser]);
+
 
     // Display loading state or error message
     if (loading) {
@@ -132,16 +164,16 @@ const Links = () => {
                 {filteredLinks.length === 0 ? (
                     <Text>No {activeTab.toLowerCase()} links available.</Text>
                 ) : (
-                    filteredLinks.map((link) => (
-                        <View key={link.id} style={styles.activityContainer}>
+                    filteredLinks.map((link, index) => (
+                        <View key={index} style={styles.activityContainer}>
                             <View style={styles.activityDetails}>
-                                <Text style={styles.activityTitle}>{link.name}</Text>
-                                <Text style={styles.activityDate}>{link.date}</Text>
+                                <Text style={styles.activityTitle}>{link?.name}</Text>
+                                <Text style={styles.activityDate}>{link?.date}</Text>
                                 <Text style={styles.activityLocation}>
-                                    Location: {link.location}
+                                    Location: {link?.location}
                                 </Text>
                                 <Text style={styles.activityTime}>
-                                    Starts at: {link.startTime} - Ends at: {link.endTime}
+                                    Starts at: {link?.startTime} - Ends at: {link?.endTime}
                                 </Text>
                             </View>
                             <TouchableOpacity

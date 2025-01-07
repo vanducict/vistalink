@@ -28,12 +28,27 @@ export const getAllLinks = async (eventType, searchQuery) => {
 };
 
 
-export const getAllLinksForUser = async (user) => {
+export const getAllLinksForUserConsumer = async (user) => {
     console.log(supabase.auth.getUser());
     const {data, error} = await supabase
         .from('Link')
         .select('*')
         .eq('ownerEmail', user.email);
+
+    if (error) {
+        console.log("Error fetching links for user:", error);
+        return null;
+    } else {
+        return data;
+    }
+};
+
+export const getAllLinksForId = async (id) => {
+    console.log(id);
+    const {data, error} = await supabase
+        .from('Link')
+        .select('*')
+        .eq('id', id);
 
     if (error) {
         console.log("Error fetching links for user:", error);
