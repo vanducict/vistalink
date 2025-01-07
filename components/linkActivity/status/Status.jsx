@@ -1,16 +1,24 @@
-import {Text, View} from "react-native";
+import {Modal, Text, TouchableOpacity, View} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import styles from "./Status.style";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Loading from "../../common/loading/Loading";
+import animations from "../../../constants/animations";
+import Lottie from "lottie-react-native";
 
 export const Status = ({status, event}) => {
     const [loading, setLoading] = useState(true);
+    const [showPopup, setShowPopup] = useState(false);
 
     useEffect(() => {
         // Simulate loading completion based on status or event expiration
         if (status || event?.expired) {
             setLoading(false);
+        }
+
+        // Trigger popup when status is approved
+        if (status === "approved") {
+            setShowPopup(true);
         }
     }, [status, event?.expired]);
 
@@ -53,6 +61,42 @@ export const Status = ({status, event}) => {
                     <Text style={styles.text}>{statusText}</Text>
                 </>
             )}
+
+            {/* Popup Modal */}
+            <Modal
+                transparent={true}
+                visible={showPopup}
+                animationType="fade"
+                onRequestClose={() => setShowPopup(false)}
+            >
+                <View style={styles.popupOverlay}>
+                    <View style={styles.popup}>
+                        <Lottie
+                            source={animations.approve}
+                            autoPlay
+                            loop={false} // Stops after one loop for confetti
+                            style={{width: 120, height: 120}}
+                        />
+                        <Text style={styles.popupTitle}>Congratulations!</Text>
+                        <Text style={styles.popupText}>Your application has been approved.</Text>
+                        <TouchableOpacity
+                            style={[styles.popupButton, styles.primaryButton]}
+                            onPress={() => setShowPopup(false)}
+                        >
+                            <Text style={styles.popupButtonText}>Close</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[styles.popupButton, styles.secondaryButton]}
+                            onPress={() => {
+                                setShowPopup(false);
+                                // Navigate to chat or perform another action
+                            }}
+                        >
+                            <Text style={styles.popupButtonText}>Go to Chat</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </Modal>
         </View>
     );
 };
