@@ -171,7 +171,61 @@ const styles = {
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,              // Shadow for Android
-    }
+    }, modalOverlay: {
+        flex: 1,
+        backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent background
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    modalContainer: {
+        backgroundColor: "#ffffff", // White background for the modal
+        width: "80%", // Take 80% of the screen width
+        borderRadius: 10,
+        padding: 20,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5, // Shadow for Android
+    },
+    modalTitle: {
+        fontSize: 18,
+        fontWeight: "bold",
+        color: "#333",
+        marginBottom: 15,
+        textAlign: "center",
+        fontFamily: FONT.regular,
+    },
+    modalButtons: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: 20,
+        width: "100%",
+    },
+    modalButtonYes: {
+        backgroundColor: COLORS.tertiary, // Green for Yes button
+        borderRadius: 5,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        alignItems: "center",
+        flex: 1,
+    },
+    modalButtonNo: {
+        backgroundColor: "#F44336", // Red for No button
+        borderRadius: 5,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        alignItems: "center",
+        flex: 1,
+        marginRight: 10,
+    },
+    modalButtonText: {
+        color: "#fff", // White text for buttons
+        fontSize: 16,
+        fontWeight: "600",
+        fontFamily: FONT.regular,
+    },
 };
 
 

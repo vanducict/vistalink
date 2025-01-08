@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="approval animiation">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="bulk edit approvals">
+      <change afterPath="$PROJECT_DIR$/assets/animations/select.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/animations.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,14 +75,7 @@
       <workItem from="1735825027653" duration="8996000" />
       <workItem from="1736009617212" duration="7339000" />
       <workItem from="1736081308528" duration="33572000" />
-      <workItem from="1736360730826" duration="2357000" />
-    </task>
-    <task id="LOCAL-00004" summary="first version homepage design">
-      <created>1735042485446</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1735042485447</updated>
+      <workItem from="1736360730826" duration="6282000" />
     </task>
     <task id="LOCAL-00005" summary="rework navigation structure">
       <created>1735058987702</created>
@@ -418,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736285920848</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="bulk edit approvals">
+      <created>1736363245711</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1736363245714</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +450,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="working first version search" />
     <MESSAGE value="combine query links" />
     <MESSAGE value="first version profile screen" />
     <MESSAGE value="picker role" />
@@ -473,6 +474,7 @@
     <MESSAGE value="fetch correct events for collaborator" />
     <MESSAGE value="Status bar collaborator" />
     <MESSAGE value="approval animiation" />
-    <option name="LAST_COMMIT_MESSAGE" value="approval animiation" />
+    <MESSAGE value="bulk edit approvals" />
+    <option name="LAST_COMMIT_MESSAGE" value="bulk edit approvals" />
   </component>
 </project>

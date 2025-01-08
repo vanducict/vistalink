@@ -1,30 +1,47 @@
-import {Text, TouchableOpacity, View} from "react-native";
+import {Modal, Text, TouchableOpacity, View} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import React, {useState} from "react";
 import styles from "./Applicants.style";
 import {updateUserLinkStatus} from "../../../service/userLink/UserLinkService";
+import Lottie from "lottie-react-native";
+import animations from "../../../constants/animations";
 
 const Applicants = ({userLinks, event, refreshUserLinks}) => {
-    const [statusUpdates, setStatusUpdates] = useState({});
+    const [isModalVisible, setIsModalVisible] = useState(false);
 
-    const handleStatusChange = (id, approved) => {
-        setStatusUpdates((prev) => ({
-            ...prev,
-            [id]: approved ? "approved" : "declined",
-        }));
+    const handleApplicantStatus = async (id, approved) => {
+        try {
+            const status = approved ? "approved" : "declined";
+            await updateUserLinkStatus(id, status);
+            await refreshUserLinks(); // Refresh links after updating
+        } catch (error) {
+            console.error("Error updating applicant status:", error);
+        }
     };
 
-    const handleSaveAll = async () => {
+    const submitApplicants = () => {
+        setIsModalVisible(true); // Open confirmation modal
+    };
+
+    const handleConfirm = async () => {
+        setIsModalVisible(false); // Close modal
         try {
-            const updatePromises = Object.entries(statusUpdates).map(([id, status]) =>
-                updateUserLinkStatus(id, status)
-            );
-            await Promise.all(updatePromises);
-            await refreshUserLinks();
-            setStatusUpdates({}); // Clear the local state after saving
+            // Iterate through all user links and approve them
+            for (const link of userLinks) {
+                if (link.status === "pending") {
+                    await updateUserLinkStatus(link.linkId, "approved");
+                }
+            }
+            await refreshUserLinks(); // Refresh user links after the update
+            console.log("All applicants submitted and approved.");
         } catch (error) {
-            console.error("Error updating statuses:", error);
+            console.error("Error confirming applicants:", error);
         }
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false); // Close modal without action
+        console.log("Submission cancelled.");
     };
 
     return (
@@ -41,22 +58,12 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                         <Text style={styles.applicantEmail}>{link.userEmail}</Text>
                         <Text style={styles.applicantStatus}>
                             Status:{" "}
-                            {statusUpdates[link.linkId] ? (
-                                <Text
-                                    style={
-                                        statusUpdates[link.linkId] === "approved"
-                                            ? styles.approvedText
-                                            : styles.declinedText
-                                    }
-                                >
-                                    {statusUpdates[link.linkId]}
-                                </Text>
-                            ) : link.status === "approved" ? (
-                                <Text style={styles.approvedText}>Approved</Text>
+                            {link.status === "approved" ? (
+                                <Text style={styles.approvedText}>approved</Text>
                             ) : link.status === "declined" ? (
-                                <Text style={styles.declinedText}>Declined</Text>
+                                <Text style={styles.declinedText}>declined</Text>
                             ) : (
-                                <Text style={styles.pendingText}>Pending</Text>
+                                <Text style={styles.pendingText}>pending</Text>
                             )}
                         </Text>
                         <View style={styles.actionButtons}>
@@ -71,7 +78,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                             </TouchableOpacity>
                             <View style={styles.approvalButtonsContainer}>
                                 <TouchableOpacity
-                                    onPress={() => handleStatusChange(link.linkId, false)}
+                                    onPress={() => handleApplicantStatus(link.linkId, false)}
                                     style={[
                                         styles.declineProfileButton,
                                         event.expired && styles.disabledButton,
@@ -81,7 +88,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                                     <FontAwesome name="times-circle" size={40} color="white"/>
                                 </TouchableOpacity>
                                 <TouchableOpacity
-                                    onPress={() => handleStatusChange(link.linkId, true)}
+                                    onPress={() => handleApplicantStatus(link.linkId, true)}
                                     style={[
                                         styles.approveProfileButton,
                                         event.expired && styles.disabledButton,
@@ -95,15 +102,49 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                     </View>
                 ))
             )}
-
             <TouchableOpacity
-                style={styles.saveAll}
-                onPress={handleSaveAll}
+                disabled={event.expired}
+                style={[
+                    styles.saveAll,
+                    event.expired && styles.disabledButton,
+                ]}
+                onPress={submitApplicants}
             >
-                <Text style={styles.buttonText}>Save & Submit</Text>
+                <Text style={styles.buttonText}>Submit & Chat</Text>
             </TouchableOpacity>
 
-
+            {/* Confirmation Modal */}
+            <Modal
+                transparent={true}
+                visible={isModalVisible}
+                animationType="fade"
+            >
+                <View style={styles.modalOverlay}>
+                    <View style={styles.modalContainer}>
+                        <Lottie
+                            source={animations.select}
+                            autoPlay
+                            loop
+                            style={{width: 200, height: 200}}
+                        />
+                        <Text style={styles.modalTitle}>Are you sure you have approved the right applicants?</Text>
+                        <View style={styles.modalButtons}>
+                            <TouchableOpacity
+                                style={styles.modalButtonNo}
+                                onPress={handleCancel}
+                            >
+                                <Text style={styles.modalButtonText}>No</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={styles.modalButtonYes}
+                                onPress={handleConfirm}
+                            >
+                                <Text style={styles.modalButtonText}>Yes</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </View>
+            </Modal>
         </View>
     );
 };
