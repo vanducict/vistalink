@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="Status bar collaborator">
-      <change afterPath="$PROJECT_DIR$/assets/animations/approve.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/confetti.json" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="approval animiation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/linkActivity/status/Status.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/status/Status.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/linkActivity/status/Status.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/status/Status.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/animations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,14 +72,8 @@
       <workItem from="1735808100304" duration="989000" />
       <workItem from="1735825027653" duration="8996000" />
       <workItem from="1736009617212" duration="7339000" />
-      <workItem from="1736081308528" duration="32662000" />
-    </task>
-    <task id="LOCAL-00003" summary="padding fix">
-      <created>1734997001982</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1734997001982</updated>
+      <workItem from="1736081308528" duration="33572000" />
+      <workItem from="1736360730826" duration="2357000" />
     </task>
     <task id="LOCAL-00004" summary="first version homepage design">
       <created>1735042485446</created>
@@ -420,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736277027866</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="approval animiation">
+      <created>1736285920848</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1736285920848</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +448,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="filter deselect reworks" />
     <MESSAGE value="working first version search" />
     <MESSAGE value="combine query links" />
     <MESSAGE value="first version profile screen" />
@@ -475,6 +472,7 @@
     <MESSAGE value="statuses rework" />
     <MESSAGE value="fetch correct events for collaborator" />
     <MESSAGE value="Status bar collaborator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Status bar collaborator" />
+    <MESSAGE value="approval animiation" />
+    <option name="LAST_COMMIT_MESSAGE" value="approval animiation" />
   </component>
 </project>

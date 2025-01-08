@@ -159,6 +159,19 @@ const styles = {
     disabledButton: {
         backgroundColor: '#a9a9a9', // Gray out buttons for expired items
     },
+    saveAll: {
+        backgroundColor: '#4CAF50', // A pleasing green for success actions
+        paddingVertical: 12,       // Vertical padding for comfortable touch size
+        paddingHorizontal: 20,     // Horizontal padding for balanced width
+        marginVertical: 15,        // Space between button and surrounding elements
+        alignItems: 'center',      // Center the text horizontally
+        borderRadius: 8,           // Rounded corners for a modern look
+        shadowColor: '#000',       // Shadow for depth
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,              // Shadow for Android
+    }
 };
 
 

@@ -1,17 +1,29 @@
 import {Text, TouchableOpacity, View} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import React from "react";
-import styles from "../../../app/screens/linkActivity/[item].style";
+import React, {useState} from "react";
+import styles from "./Applicants.style";
 import {updateUserLinkStatus} from "../../../service/userLink/UserLinkService";
 
 const Applicants = ({userLinks, event, refreshUserLinks}) => {
-    const handleApplicantStatus = async (id, approved) => {
+    const [statusUpdates, setStatusUpdates] = useState({});
+
+    const handleStatusChange = (id, approved) => {
+        setStatusUpdates((prev) => ({
+            ...prev,
+            [id]: approved ? "approved" : "declined",
+        }));
+    };
+
+    const handleSaveAll = async () => {
         try {
-            const status = approved ? "approved" : "declined";
-            await updateUserLinkStatus(id, status);
-            await refreshUserLinks(); // Refresh links after updating
+            const updatePromises = Object.entries(statusUpdates).map(([id, status]) =>
+                updateUserLinkStatus(id, status)
+            );
+            await Promise.all(updatePromises);
+            await refreshUserLinks();
+            setStatusUpdates({}); // Clear the local state after saving
         } catch (error) {
-            console.error("Error updating applicant status:", error);
+            console.error("Error updating statuses:", error);
         }
     };
 
@@ -29,7 +41,17 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                         <Text style={styles.applicantEmail}>{link.userEmail}</Text>
                         <Text style={styles.applicantStatus}>
                             Status:{" "}
-                            {link.status === "approved" ? (
+                            {statusUpdates[link.linkId] ? (
+                                <Text
+                                    style={
+                                        statusUpdates[link.linkId] === "approved"
+                                            ? styles.approvedText
+                                            : styles.declinedText
+                                    }
+                                >
+                                    {statusUpdates[link.linkId]}
+                                </Text>
+                            ) : link.status === "approved" ? (
                                 <Text style={styles.approvedText}>Approved</Text>
                             ) : link.status === "declined" ? (
                                 <Text style={styles.declinedText}>Declined</Text>
@@ -49,7 +71,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                             </TouchableOpacity>
                             <View style={styles.approvalButtonsContainer}>
                                 <TouchableOpacity
-                                    onPress={() => handleApplicantStatus(link.linkId, false)}
+                                    onPress={() => handleStatusChange(link.linkId, false)}
                                     style={[
                                         styles.declineProfileButton,
                                         event.expired && styles.disabledButton,
@@ -59,7 +81,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                                     <FontAwesome name="times-circle" size={40} color="white"/>
                                 </TouchableOpacity>
                                 <TouchableOpacity
-                                    onPress={() => handleApplicantStatus(link.linkId, true)}
+                                    onPress={() => handleStatusChange(link.linkId, true)}
                                     style={[
                                         styles.approveProfileButton,
                                         event.expired && styles.disabledButton,
@@ -73,6 +95,15 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                     </View>
                 ))
             )}
+
+            <TouchableOpacity
+                style={styles.saveAll}
+                onPress={handleSaveAll}
+            >
+                <Text style={styles.buttonText}>Save & Submit</Text>
+            </TouchableOpacity>
+
+
         </View>
     );
 };
