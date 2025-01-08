@@ -79,7 +79,40 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: "bold",
         fontFamily: FONT.regular,
-    }
+    },
+    facebookBtn: {
+        backgroundColor: "#4267B2", // Facebook blue
+        borderRadius: 5,
+        paddingVertical: 12,
+        paddingHorizontal: 25,
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 15,
+        width: "80%", // Adjust the width as needed
+    },
+    facebookButtonText: {
+        color: "#fff", // White text
+        fontSize: 16,
+        fontWeight: "bold",
+    },
+    googleBtn: {
+        backgroundColor: "#4285F4", // Google's blue color
+        borderRadius: 5,
+        paddingVertical: 12,
+        paddingHorizontal: 25,
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 15,
+        width: "80%", // Adjust as needed
+        flexDirection: "row", // Align icon and text horizontally
+        borderWidth: 1,
+        borderColor: "#ccc", // Optional: Adds border around button
+    },
+    googleButtonText: {
+        color: "#fff", // White text
+        fontSize: 16,
+        fontWeight: "bold",
+    },
 
 
 });

@@ -103,6 +103,17 @@ const Login = () => {
 
                     </View>
                 </View>
+
+                <TouchableOpacity
+                    style={[styles.facebookBtn]}
+                >
+                    <Text style={styles.facebookButtonText}>
+                        Join with Facebook
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.googleBtn}>
+                    <Text style={styles.googleButtonText}>Join with Google</Text>
+                </TouchableOpacity>
             </KeyboardAvoidingView>
 
         </SafeAreaView>
