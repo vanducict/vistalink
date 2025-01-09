@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="remove bulk edit and better ui flow">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="add sample fb and google login view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,14 +72,8 @@
       <workItem from="1735825027653" duration="8996000" />
       <workItem from="1736009617212" duration="7339000" />
       <workItem from="1736081308528" duration="33572000" />
-      <workItem from="1736360730826" duration="6740000" />
-    </task>
-    <task id="LOCAL-00006" summary="leave header login for now">
-      <created>1735176844091</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1735176844091</updated>
+      <workItem from="1736360730826" duration="7161000" />
+      <workItem from="1736441348945" duration="388000" />
     </task>
     <task id="LOCAL-00007" summary="put loading wheel sign in up">
       <created>1735177156714</created>
@@ -418,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736372787342</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="add sample fb and google login view">
+      <created>1736373377554</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1736373377555</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +448,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="first version profile screen" />
     <MESSAGE value="picker role" />
     <MESSAGE value="split home view logic based on role" />
     <MESSAGE value="lottie animations add" />
@@ -473,6 +472,7 @@
     <MESSAGE value="approval animiation" />
     <MESSAGE value="bulk edit approvals" />
     <MESSAGE value="remove bulk edit and better ui flow" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove bulk edit and better ui flow" />
+    <MESSAGE value="add sample fb and google login view" />
+    <option name="LAST_COMMIT_MESSAGE" value="add sample fb and google login view" />
   </component>
 </project>

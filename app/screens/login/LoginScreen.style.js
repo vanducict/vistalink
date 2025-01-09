@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
         color: COLORS.lightWhite,
         justifyContent: "center",
         alignItems: "center",
-        width: 100,
+        width: "325", // Full width button
         borderRadius: 8, // Round button corners for better UX
     },
     signInButton: {
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 25,
         alignItems: "center",
         justifyContent: "center",
-        marginTop: 15,
+        marginTop: 65,
         width: "80%", // Adjust the width as needed
     },
     facebookButtonText: {
