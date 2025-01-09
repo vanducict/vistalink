@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
         color: COLORS.lightWhite,
         justifyContent: "center",
         alignItems: "center",
+        maxHeight: 45,
         width: "325", // Full width button
         borderRadius: 8, // Round button corners for better UX
     },
