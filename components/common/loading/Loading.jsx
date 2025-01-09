@@ -13,7 +13,7 @@ const Loading = ({loading}) => {
                     source={animations.loading}
                     autoPlay
                     loop
-                    style={{width: 50, height: 50}}
+                    style={{width: 40, height: 40}}
                 />
             </View>
 

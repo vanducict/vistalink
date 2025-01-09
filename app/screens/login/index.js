@@ -85,11 +85,10 @@ const Login = () => {
                         disabled={loading} // Disable button when loading
                     >
                         <Text style={styles.signInButton}>
-                            {loading ? "..." : "Sign in"}
+                            {loading ? <Loading loading={loading}/> : "Sign in"}
                         </Text>
                     </TouchableOpacity>
 
-                    <Loading loading={loading}/>
 
                     <TouchableOpacity onPress={() => alert("Forgot Password?")}>
                         <Text style={styles.forgotPassword}>Forgot Password?</Text>
