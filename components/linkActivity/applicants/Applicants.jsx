@@ -48,7 +48,15 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
         <View style={styles.container}>
             <Text style={styles.sectionTitle}>Applicants</Text>
             {userLinks.length === 0 ? (
-                <Text style={styles.noApplicantsText}>No user links found.</Text>
+                <View style={styles.emptyContainer}>
+                    <Lottie
+                        source={animations.empty}
+                        autoPlay
+                        loop
+                        style={{width: 100, height: 100}}
+                    />
+                    <Text style={styles.noApplicantsText}>No applicant have applied yet.</Text>
+                </View>
             ) : (
                 userLinks.map((link, index) => (
                     <View key={index} style={styles.applicantContainer}>

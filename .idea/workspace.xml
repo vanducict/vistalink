@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="login adjust style">
-      <change afterPath="$PROJECT_DIR$/assets/animations/empty.json" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/links/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/nearby/Nearby.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearby/Nearby.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/nearby/Nearby.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearby/Nearby.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/popular/Popular.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popular/Popular.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/popular/Popular.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popular/Popular.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/animations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/user/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/createLink/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,14 +76,7 @@
       <workItem from="1736009617212" duration="7339000" />
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
-      <workItem from="1736441348945" duration="3038000" />
-    </task>
-    <task id="LOCAL-00010" summary="loading screen fix">
-      <created>1735226354833</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1735226354833</updated>
+      <workItem from="1736441348945" duration="4421000" />
     </task>
     <task id="LOCAL-00011" summary="better logging">
       <created>1735226410104</created>
@@ -429,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736442812661</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="login lowercase fix + empty ui">
+      <created>1736446043314</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1736446043315</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +451,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="split home view logic based on role" />
     <MESSAGE value="lottie animations add" />
     <MESSAGE value="small css fix" />
     <MESSAGE value="fix loading screen" />
@@ -484,6 +475,7 @@
     <MESSAGE value="remove bulk edit and better ui flow" />
     <MESSAGE value="add sample fb and google login view" />
     <MESSAGE value="login adjust style" />
-    <option name="LAST_COMMIT_MESSAGE" value="login adjust style" />
+    <MESSAGE value="login lowercase fix + empty ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="login lowercase fix + empty ui" />
   </component>
 </project>

@@ -13,7 +13,6 @@ import {getCurrentUser} from "../../../service/user/UserService";
 
 const CreateLink = () => {
     const router = useRouter();
-
     // State variables for form fields
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -237,10 +236,9 @@ const CreateLink = () => {
                     disabled={loading || !currentUser}
                 >
                     <Text style={styles.createButtonText}>
-                        {loading ? "..." : "Create"}
+                        {loading ? <Loading loading={loading}/> : "Create"}
                     </Text>
                 </TouchableOpacity>
-                <Loading loading={loading}/>
             </KeyboardAvoidingView>
 
             {/* Date Picker */}

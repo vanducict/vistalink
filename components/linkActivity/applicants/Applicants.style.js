@@ -226,6 +226,17 @@ const styles = {
         fontWeight: "600",
         fontFamily: FONT.regular,
     },
+    emptyContainer: {
+        flex: 1,
+        margin: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    emptyText: {
+        fontSize: 16,
+        color: 'gray',
+        fontFamily: FONT.regular,
+    },
 };
 
 
