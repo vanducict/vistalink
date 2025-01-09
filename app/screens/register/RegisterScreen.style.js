@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
             padding: 15,
             borderRadius: 8,
             alignItems: "center",
+            maxHeight: 50,
         },
         registerButtonText: {
             color: COLORS.white,

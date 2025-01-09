@@ -45,6 +45,8 @@ export const getCurrentUser = async () => {
         }
 
 
+        console.log(session.user.email);
+
         const {data: user, error: userError} = await supabase
             .from('User')
             .select('*')

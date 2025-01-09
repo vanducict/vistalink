@@ -4,6 +4,7 @@ import loading from "../assets/animations/loading.json";
 import confetti from "../assets/animations/confetti.json";
 import approve from "../assets/animations/approve.json";
 import select from "../assets/animations/select.json";
+import empty from "../assets/animations/empty.json";
 
 export default {
     link,
@@ -11,5 +12,6 @@ export default {
     loading,
     confetti,
     approve,
-    select
+    select,
+    empty
 };

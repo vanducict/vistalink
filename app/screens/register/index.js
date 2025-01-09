@@ -71,7 +71,7 @@ const Register = () => {
         try {
             Keyboard.dismiss();
             setLoading(true);
-            await insertUser(user, email, name, firstName, birthdate, description, userType);
+            await insertUser(user, email.toLowerCase(), name, firstName, birthdate, description, userType);
             console.log(email + " signed up: ");
         } catch (e) {
             console.log("Error signing up: ", e);
@@ -94,13 +94,14 @@ const Register = () => {
 
             const {data: user, error} = await supabase.auth.signUp(
                 {
-                    email,
-                    password,
+                    email: email.toString().toLowerCase(),
+                    password: password,
                 },
                 {
                     redirectTo: "https://your-custom-url.com", // Add your redirect URL here
                 }
             );
+
 
             if (error) {
                 throw new Error(error.message);
@@ -108,7 +109,7 @@ const Register = () => {
 
             await signUp(user);
 
-            Alert.alert("Success", "You have successfully registered!");
+            Alert.alert("Success", "Confirmation email sent. Please verify your email.");
             router.replace("/"); // Redirect after registration
         } catch (error) {
             Alert.alert("Error", error.message);
@@ -209,10 +210,10 @@ const Register = () => {
 
                 <TouchableOpacity style={styles.registerButton} onPress={handleRegister}>
                     <Text style={styles.registerButtonText}>
-                        {loading ? "..." : "Register"}
+                        {loading ? <Loading loading={loading}/> : "Register"}
                     </Text>
                 </TouchableOpacity>
-                <Loading loading={loading}/>
+
             </KeyboardAvoidingView>
 
             {/* Date Picker Modal */}

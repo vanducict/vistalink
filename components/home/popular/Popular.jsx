@@ -6,6 +6,8 @@ import {SIZES} from "../../../constants/theme";
 import React, {useEffect, useState} from "react";
 import {getAllLinks} from "../../../service/link/LinkService";
 import Loading from "../../common/loading/Loading";
+import Lottie from "lottie-react-native";
+import animations from "../../../constants/animations";
 
 const Popular = ({eventType, searchQuery}) => {
     const router = useRouter();
@@ -43,17 +45,31 @@ const Popular = ({eventType, searchQuery}) => {
             {/* Loading indicator */}
             <Loading loading={loading}/>
 
-            <FlatList
-                data={links}
-                renderItem={({item}) => (
-                    <PopularCard item={item}/> // Render each PopularCard item
-                )}
-                keyExtractor={(item) => item.id.toString()} // Extract unique key for each item
-                horizontal={true} // Display items horizontally
-                contentContainerStyle={{columnGap: SIZES.small}} // Adjust spacing between items
-                showsHorizontalScrollIndicator={false} // Hide horizontal scroll indicator
-            />
+            {links.length === 0 ? (
+                // Render this when the links array is empty
+                <View style={styles.emptyContainer}>
+                    <Lottie
+                        source={animations.empty}
+                        autoPlay
+                        loop
+                        style={{width: 100, height: 100}}
+                    />
+                    <Text style={styles.emptyText}>No popular links available.</Text>
+                </View>
+            ) : (
+                <FlatList
+                    data={links}
+                    renderItem={({item}) => (
+                        <PopularCard item={item}/> // Render each PopularCard item
+                    )}
+                    keyExtractor={(item) => item.id.toString()} // Extract unique key for each item
+                    horizontal={true} // Display items horizontally
+                    contentContainerStyle={{columnGap: SIZES.small}} // Adjust spacing between items
+                    showsHorizontalScrollIndicator={false} // Hide horizontal scroll indicator
+                />
+            )}
         </View>
+
     );
 };
 

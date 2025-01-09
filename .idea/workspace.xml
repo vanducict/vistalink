@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="login adjust style">
+      <change afterPath="$PROJECT_DIR$/assets/animations/empty.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/links/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/nearby/Nearby.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearby/Nearby.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/nearby/Nearby.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearby/Nearby.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/popular/Popular.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popular/Popular.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/popular/Popular.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popular/Popular.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/animations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/user/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/user/UserService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,14 +84,7 @@
       <workItem from="1736009617212" duration="7339000" />
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
-      <workItem from="1736441348945" duration="1168000" />
-    </task>
-    <task id="LOCAL-00009" summary="fix ios issues mobile dev and styling issues">
-      <created>1735225535597</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1735225535597</updated>
+      <workItem from="1736441348945" duration="3038000" />
     </task>
     <task id="LOCAL-00010" summary="loading screen fix">
       <created>1735226354833</created>
@@ -418,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736442531707</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="login adjust style">
+      <created>1736442812661</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1736442812661</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

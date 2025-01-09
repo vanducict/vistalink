@@ -91,6 +91,17 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontFamily: FONT.bold,
     },
+    emptyContainer: {
+        flex: 1,
+        margin: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    emptyText: {
+        fontSize: 16,
+        color: 'gray',
+        fontFamily: FONT.regular,
+    },
 });
 
 export default styles;

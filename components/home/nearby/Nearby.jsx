@@ -5,6 +5,8 @@ import NearbyCard from "../nearbycard/NearbyCard";
 import React, {useEffect, useState} from "react";
 import {getAllLinks} from "../../../service/link/LinkService";
 import Loading from "../../common/loading/Loading";
+import Lottie from "lottie-react-native";
+import animations from "../../../constants/animations";
 
 const Nearby = ({eventType, searchQuery}) => {
     const [links, setLinks] = useState([]);
@@ -37,14 +39,28 @@ const Nearby = ({eventType, searchQuery}) => {
             {/* Loading indicator */}
             <Loading loading={loading}/>
 
-            <FlatList
-                data={links}
-                renderItem={({item}) => <NearbyCard item={item}/>} // Render NearbyCard for each link
-                keyExtractor={(item) => item.id.toString()} // Key extraction based on id
-                horizontal={false} // Display items vertically
-                contentContainerStyle={{columnGap: SIZES.small}} // Gap between items
-            />
+            {links.length === 0 ? (
+                // Render this when links array is empty
+                <View style={styles.emptyContainer}>
+                    <Lottie
+                        source={animations.empty}
+                        autoPlay
+                        loop
+                        style={{width: 100, height: 100}}
+                    />
+                    <Text style={styles.emptyText}>No links available nearby.</Text>
+                </View>
+            ) : (
+                <FlatList
+                    data={links}
+                    renderItem={({item}) => <NearbyCard item={item}/>} // Render NearbyCard for each link
+                    keyExtractor={(item) => item.id.toString()} // Key extraction based on id
+                    horizontal={false} // Display items vertically
+                    contentContainerStyle={{columnGap: SIZES.small}} // Gap between items
+                />
+            )}
         </View>
+
     );
 };
 

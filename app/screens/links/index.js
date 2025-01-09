@@ -7,6 +7,8 @@ import {getCurrentUser} from "../../../service/user/UserService";
 import {getAllLinksForId, getAllLinksForUserConsumer} from "../../../service/link/LinkService";
 import Loading from "../loading";
 import {getAllLinksForUserCollaborator} from "../../../service/userLink/UserLinkService";
+import Lottie from "lottie-react-native";
+import animations from "../../../constants/animations";
 
 
 const Links = () => {
@@ -162,7 +164,19 @@ const Links = () => {
 
                 {/* Links List */}
                 {filteredLinks.length === 0 ? (
-                    <Text>No {activeTab.toLowerCase()} links available.</Text>
+                    <View style={styles.emptyContainer}>
+                        <Lottie
+                            source={animations.empty}
+                            autoPlay
+                            loop
+                            style={{width: 100, height: 100}}
+                        />
+                        <Text style={styles.emptyText}>
+                            {activeTab === "Active"
+                                ? "No active links available yet."
+                                : "No expired links available yet."}
+                        </Text>
+                    </View>
                 ) : (
                     filteredLinks.map((link, index) => (
                         <View key={index} style={styles.activityContainer}>

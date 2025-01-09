@@ -23,6 +23,18 @@ const styles = StyleSheet.create({
     cardsContainer: {
         marginTop: SIZES.medium,
     },
+    emptyContainer: {
+        flex: 1,
+        margin: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    emptyText: {
+        fontSize: 16,
+        color: 'gray',
+        fontFamily: FONT.regular,
+    },
+
 });
 
 export default styles;
