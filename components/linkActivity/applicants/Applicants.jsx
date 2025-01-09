@@ -2,7 +2,7 @@ import {Modal, Text, TouchableOpacity, View} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import React, {useState} from "react";
 import styles from "./Applicants.style";
-import {updateUserLinkStatus} from "../../../service/userLink/UserLinkService";
+import {notifyUserLinkStatus, updateUserLinkStatus} from "../../../service/userLink/UserLinkService";
 import Lottie from "lottie-react-native";
 import animations from "../../../constants/animations";
 
@@ -19,8 +19,8 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
         }
     };
 
-    const submitApplicants = () => {
-        setIsModalVisible(true); // Open confirmation modal
+    const openModal = () => {
+        setIsModalVisible(true);
     };
 
     const handleConfirm = async () => {
@@ -28,9 +28,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
         try {
             // Iterate through all user links and approve them
             for (const link of userLinks) {
-                if (link.status === "pending") {
-                    await updateUserLinkStatus(link.linkId, "approved");
-                }
+                await notifyUserLinkStatus(link.linkId);
             }
             await refreshUserLinks(); // Refresh user links after the update
             console.log("All applicants submitted and approved.");
@@ -116,7 +114,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                     styles.saveAll,
                     event.expired && styles.disabledButton,
                 ]}
-                onPress={submitApplicants}
+                onPress={openModal}
             >
                 <Text style={styles.buttonText}>Submit & Chat</Text>
             </TouchableOpacity>

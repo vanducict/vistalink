@@ -173,7 +173,7 @@ const styles = {
         elevation: 5,              // Shadow for Android
     }, modalOverlay: {
         flex: 1,
-        backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent background
+        backgroundColor: "rgba(0, 0, 0, 0.90)", // Semi-transparent background
         justifyContent: "center",
         alignItems: "center",
     },

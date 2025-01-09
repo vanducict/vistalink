@@ -6,24 +6,24 @@ import Loading from "../../common/loading/Loading";
 import animations from "../../../constants/animations";
 import Lottie from "lottie-react-native";
 
-export const Status = ({status, event}) => {
+export const Status = ({link, event}) => {
     const [loading, setLoading] = useState(true);
     const [showPopup, setShowPopup] = useState(false);
 
     useEffect(() => {
         // Simulate loading completion based on status or event expiration
-        if (status || event?.expired) {
+        if (link?.status || event?.expired) {
             setLoading(false);
         }
 
         // Trigger popup when status is approved
-        if (status === "approved") {
+        if (link?.status === "approved" && link?.notified) {
             setShowPopup(true);
         }
-    }, [status, event?.expired]);
+    }, [link?.status, event?.expired]);
 
     let statusStyle, statusIcon, statusText;
-
+    
     if (loading) {
         statusStyle = styles.loading;
         statusIcon = "spinner"; // Optional loading icon
@@ -33,17 +33,31 @@ export const Status = ({status, event}) => {
         statusIcon = "ban";
         statusText = "Expired";
     } else {
-        switch (status) {
+        switch (link?.status) {
             case "approved":
-                statusStyle = styles.approved;
-                statusIcon = "check-circle";
-                statusText = "Approved";
+                if (link?.notified) {
+                    statusStyle = styles.approved;
+                    statusIcon = "check-circle";
+                    statusText = "Approved";
+                } else {
+                    statusStyle = styles.pending;
+                    statusIcon = "hourglass-half";
+                    statusText = "Pending";
+                }
                 break;
+
             case "declined":
-                statusStyle = styles.declined;
-                statusIcon = "times-circle";
-                statusText = "Declined";
+                if (link?.notified) {
+                    statusStyle = styles.declined;
+                    statusIcon = "times-circle";
+                    statusText = "Declined";
+                } else {
+                    statusStyle = styles.pending;
+                    statusIcon = "hourglass-half";
+                    statusText = "Pending";
+                }
                 break;
+
             default:
                 statusStyle = styles.pending;
                 statusIcon = "hourglass-half";

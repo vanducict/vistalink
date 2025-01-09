@@ -135,7 +135,7 @@ const LinkActivity = () => {
 
                 <ScrollView>
                     {currentUser?.userType === "Collaborator" ?
-                        <Status status={userLinks.find(link => link.userEmail === currentUser?.email)?.status}
+                        <Status link={userLinks.find(link => link.userEmail === currentUser?.email)}
                                 event={event}/>
                         : <Applicants
                             userLinks={userLinks}
