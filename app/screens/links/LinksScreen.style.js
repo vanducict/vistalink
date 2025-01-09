@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     },
     emptyContainer: {
         flex: 1,
-        margin: 50,
+        marginTop: 150,
         justifyContent: 'center',
         alignItems: 'center',
     },

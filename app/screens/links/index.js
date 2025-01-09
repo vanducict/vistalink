@@ -1,28 +1,27 @@
-import React, {useEffect, useState} from 'react';
-import {Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import React, {useCallback, useEffect, useState} from 'react';
+import {Image, RefreshControl, SafeAreaView, ScrollView, Text, TouchableOpacity, View,} from 'react-native';
 import styles from "./LinksScreen.style";
 import {Stack, useRouter} from "expo-router";
 import images from "../../../constants/images";
 import {getCurrentUser} from "../../../service/user/UserService";
 import {getAllLinksForId, getAllLinksForUserConsumer} from "../../../service/link/LinkService";
-import Loading from "../loading";
 import {getAllLinksForUserCollaborator} from "../../../service/userLink/UserLinkService";
 import Lottie from "lottie-react-native";
 import animations from "../../../constants/animations";
-
+import {useFocusEffect} from "@react-navigation/native";
 
 const Links = () => {
-
     const [links, setLinks] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [refreshing, setRefreshing] = useState(false);
     const [currentUser, setCurrentUser] = useState(null);
     const [error, setError] = useState(null);
     const [activeTab, setActiveTab] = useState("Active"); // "Active" or "Expired"
     const router = useRouter();
-    const filteredLinks = links.filter((link) => {
-        // Filter based on the selected tab using the expired field
-        return activeTab === "Active" ? !link?.expired : link?.expired;
-    });
+
+    const filteredLinks = links.filter((link) =>
+        activeTab === "Active" ? !link?.expired : link?.expired
+    );
 
     // Fetch user data once on mount
     useEffect(() => {
@@ -30,7 +29,7 @@ const Links = () => {
             try {
                 setLoading(true);
                 const user = await getCurrentUser();
-                setCurrentUser(user.pop()); // Set user once data is fetched
+                setCurrentUser(user.pop());
             } catch (error) {
                 setError("Error fetching user");
                 console.log("Error fetching user:", error);
@@ -39,8 +38,8 @@ const Links = () => {
             }
         };
 
-        fetchUser().then(r => r);
-    }, []); // Only run once when the component mounts
+        fetchUser().then((r) => r);
+    }, []);
 
     const fetchLinks = async () => {
         try {
@@ -55,7 +54,7 @@ const Links = () => {
                         const linkId = linkObj?.linkId || linkObj?.id;
                         if (linkId) {
                             const linkData = await getAllLinksForId(linkId);
-                            return linkData?.pop() || null; // Pop and return the last element, or null if empty
+                            return linkData?.pop() || null;
                         } else {
                             console.warn("linkObj or linkId is missing:", linkObj);
                             return null;
@@ -63,7 +62,7 @@ const Links = () => {
                     })
                 );
 
-                return effectiveLinks.filter(link => link !== null); // Filter out null values
+                return effectiveLinks.filter((link) => link !== null);
             };
 
             // Fetch links depending on the user type
@@ -75,43 +74,47 @@ const Links = () => {
                 fetchedLinks = await fetchCollaboratorLinks(collaboratorLinks);
             }
 
-            setLinks(fetchedLinks);  // Update state with the fetched links
+            setLinks(fetchedLinks);
             console.log("Links fetched:", fetchedLinks);
-
         } catch (error) {
             setError("Error fetching links");
             console.error("Error fetching links:", error);
         } finally {
-            setLoading(false);  // Set loading to false once the fetching is complete
+            setLoading(false);
+            setRefreshing(false); // Ensure refreshing is false after completion
         }
     };
 
+    // Use `useFocusEffect` to refetch data when navigating back
+    useFocusEffect(
+        useCallback(() => {
+            if (currentUser) {
+                fetchLinks();
+            }
+        }, [currentUser])
+    );
 
-    useEffect(() => {
-        if (currentUser) {
-            fetchLinks();
-        }
-    }, [currentUser]);
-
-
-    // Display loading state or error message
-    if (loading) {
-        return (
-            <Loading/>
-        );
-    }
+    // Pull-to-refresh handler
+    const onRefresh = () => {
+        setRefreshing(true);
+        fetchLinks();
+    };
 
     function viewLinkActivity(link) {
         router.push({
-            pathname: '/screens/linkActivity/[item]', // Dynamic route
-            params: {item: JSON.stringify(link)}, // Pass the link as a string
+            pathname: "/screens/linkActivity/[item]",
+            params: {item: JSON.stringify(link)},
         });
     }
 
-
     return (
         <SafeAreaView style={{flex: 1}}>
-            <ScrollView style={styles.container}>
+            <ScrollView
+                style={styles.container}
+                refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>
+                }
+            >
                 {/* Header */}
                 <Stack.Screen
                     options={{
@@ -192,7 +195,7 @@ const Links = () => {
                             </View>
                             <TouchableOpacity
                                 style={styles.actionButton}
-                                onPress={() => viewLinkActivity(link)} // Use link here
+                                onPress={() => viewLinkActivity(link)}
                             >
                                 <Text style={styles.buttonText}>View</Text>
                             </TouchableOpacity>

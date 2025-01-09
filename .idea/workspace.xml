@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="login lowercase fix + empty ui">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/linkActivity/status/Status.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/status/Status.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/userLink/UserLinkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/userLink/UserLinkService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/links/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,14 +74,7 @@
       <workItem from="1736009617212" duration="7339000" />
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
-      <workItem from="1736441348945" duration="6401000" />
-    </task>
-    <task id="LOCAL-00012" summary="change color placeholder search">
-      <created>1735226618994</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1735226618994</updated>
+      <workItem from="1736441348945" duration="7436000" />
     </task>
     <task id="LOCAL-00013" summary="first working supabase user (no rls)">
       <created>1735310343212</created>
@@ -422,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736447623945</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="notify function">
+      <created>1736449634602</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1736449634607</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +449,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="lottie animations add" />
     <MESSAGE value="small css fix" />
     <MESSAGE value="fix loading screen" />
     <MESSAGE value="create link works" />
@@ -477,6 +473,7 @@
     <MESSAGE value="add sample fb and google login view" />
     <MESSAGE value="login adjust style" />
     <MESSAGE value="login lowercase fix + empty ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="login lowercase fix + empty ui" />
+    <MESSAGE value="notify function" />
+    <option name="LAST_COMMIT_MESSAGE" value="notify function" />
   </component>
 </project>
