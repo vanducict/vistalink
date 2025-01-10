@@ -58,6 +58,24 @@ export const getAllLinksForId = async (id) => {
     }
 };
 
+export const updateLinkClosed = async (id, status) => {
+
+    const {data, error} = await supabase
+        .from('Link')
+        .update({closed: status})
+        .eq('id', id)
+        .select()
+
+    if (error) {
+        console.log("Error updating Link:", error);
+        return null;
+    } else {
+        console.log("Link updated successfully:", data);
+        return data;
+    }
+
+};
+
 
 export const getAllEventTypes = async () => {
     const {data, error} = await supabase

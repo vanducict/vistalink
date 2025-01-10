@@ -20,9 +20,14 @@ const Links = () => {
     const [activeTab, setActiveTab] = useState("Active"); // "Active" or "Expired"
     const router = useRouter();
 
-    const filteredLinks = links.filter((link) =>
-        activeTab === "Active" ? !link?.expired : link?.expired
-    );
+    const filteredLinks = links.filter((link) => {
+        if (activeTab === "Active") {
+            return !link?.expired && !link?.closed; // Active links are neither expired nor closed
+        } else {
+            return link?.expired || link?.closed; // Expired tab includes expired or closed links
+        }
+    });
+
 
     // Fetch user data once on mount
     useEffect(() => {

@@ -5,6 +5,7 @@ import styles from "./Applicants.style";
 import {notifyUserLinkStatus, updateUserLinkStatus} from "../../../service/userLink/UserLinkService";
 import Lottie from "lottie-react-native";
 import animations from "../../../constants/animations";
+import {updateLinkClosed} from "../../../service/link/LinkService";
 
 const Applicants = ({userLinks, event, refreshUserLinks}) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -30,6 +31,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
             for (const link of userLinks) {
                 await notifyUserLinkStatus(link.linkId);
             }
+            await updateLinkClosed(event.id, true);
             await refreshUserLinks(); // Refresh user links after the update
             console.log("All applicants submitted and approved.");
         } catch (error) {
@@ -73,33 +75,38 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                             )}
                         </Text>
                         <View style={styles.actionButtons}>
+                            {/* View Profile Button */}
                             <TouchableOpacity
                                 style={[
                                     styles.viewProfileButton,
-                                    event.expired && styles.disabledButton,
+                                    (event.expired || event.closed) && styles.disabledButton, // Disable when expired or closed
                                 ]}
-                                disabled={event.expired}
+                                disabled={event.expired || event.closed} // Disable when expired or closed
                             >
                                 <Text style={styles.buttonText}>View Profile</Text>
                             </TouchableOpacity>
+
                             <View style={styles.approvalButtonsContainer}>
+                                {/* Decline Profile Button */}
                                 <TouchableOpacity
                                     onPress={() => handleApplicantStatus(link.linkId, false)}
                                     style={[
                                         styles.declineProfileButton,
-                                        event.expired && styles.disabledButton,
+                                        (event.expired || event.closed) && styles.disabledButton, // Disable when expired or closed
                                     ]}
-                                    disabled={event.expired}
+                                    disabled={event.expired || event.closed} // Disable when expired or closed
                                 >
                                     <FontAwesome name="times-circle" size={40} color="white"/>
                                 </TouchableOpacity>
+
+                                {/* Approve Profile Button */}
                                 <TouchableOpacity
                                     onPress={() => handleApplicantStatus(link.linkId, true)}
                                     style={[
                                         styles.approveProfileButton,
-                                        event.expired && styles.disabledButton,
+                                        (event.expired || event.closed) && styles.disabledButton, // Disable when expired or closed
                                     ]}
-                                    disabled={event.expired}
+                                    disabled={event.expired || event.closed} // Disable when expired or closed
                                 >
                                     <FontAwesome name="check-circle" size={40} color="white"/>
                                 </TouchableOpacity>
@@ -109,11 +116,11 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                 ))
             )}
             <TouchableOpacity
-                disabled={event.expired}
                 style={[
                     styles.saveAll,
-                    event.expired && styles.disabledButton,
+                    (event.expired || event.closed) && styles.disabledButton,
                 ]}
+                disabled={event.expired || event.closed} // Disable when expired or closed
                 onPress={openModal}
             >
                 <Text style={styles.buttonText}>Submit & Chat</Text>
