@@ -47,12 +47,27 @@ const styles = StyleSheet.create({
         fontSize: SIZES.medium - 2,
         fontFamily: FONT.regular,
     },
+    ownerEmail: {
+        fontSize: SIZES.medium,
+        fontFamily: FONT.regular,
+        color: "#B3AEC6",
+        marginTop: SIZES.small / 1.5,
+    },
+    linkName: {
+        fontSize: SIZES.medium - 2,
+        fontFamily: FONT.bold,
+    },
     location: {
         fontSize: SIZES.medium - 2,
         fontFamily: FONT.regular,
         color: "#B3AEC6",
     },
     openSpots: {
+        fontSize: SIZES.medium - 2,
+        fontFamily: FONT.regular,
+        color: COLORS.gray,
+    },
+    maxPeople: {
         fontSize: SIZES.medium - 2,
         fontFamily: FONT.regular,
         color: COLORS.gray,

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/popularcard/PopularCard.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popularcard/PopularCard.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/link/LinkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/link/LinkService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,13 +76,6 @@
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
       <workItem from="1736441348945" duration="7436000" />
-    </task>
-    <task id="LOCAL-00016" summary="rework navigation with tabs">
-      <created>1735471323757</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1735471323757</updated>
     </task>
     <task id="LOCAL-00017" summary="custom navbar working wth sample pages">
       <created>1735506836384</created>
@@ -417,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736547448397</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="navigate back">
+      <created>1736547583995</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1736547583995</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +450,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create user link works" />
     <MESSAGE value="register user works" />
     <MESSAGE value="register fix" />
     <MESSAGE value="design fix" />
@@ -472,6 +474,7 @@
     <MESSAGE value="reload mechanism home page" />
     <MESSAGE value="style adjust" />
     <MESSAGE value="isClosed when submit" />
-    <option name="LAST_COMMIT_MESSAGE" value="isClosed when submit" />
+    <MESSAGE value="navigate back" />
+    <option name="LAST_COMMIT_MESSAGE" value="navigate back" />
   </component>
 </project>

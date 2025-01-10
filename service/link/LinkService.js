@@ -14,6 +14,10 @@ export const getAllLinks = async (eventType, searchQuery) => {
         query = query.or(`name.ilike.%${searchQuery}%,ownerEmail.ilike.%${searchQuery}%,location.ilike.%${searchQuery}%,description.ilike.%${searchQuery}%`);
     }
 
+    // Add conditions for closed and expired being false
+    query = query.eq('closed', false).eq('expired', false);
+
+
     // Execute the combined query
     const {data: links, error} = await query;
 

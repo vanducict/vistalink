@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     },
     linkName: {
         fontSize: SIZES.medium - 2,
-        fontFamily: FONT.medium,
+        fontFamily: FONT.bold,
     },
     infoWrapper: {
         flexDirection: "row",
