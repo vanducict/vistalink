@@ -2,7 +2,7 @@ import {Stack, useRouter} from "expo-router";
 import Welcome from "../../../components/home/welcome/Welcome";
 import Popular from "../../../components/home/popular/Popular";
 import Nearby from "../../../components/home/nearby/Nearby";
-import {FlatList, Image, SafeAreaView} from "react-native";
+import {FlatList, Image, RefreshControl, SafeAreaView} from "react-native";
 import {COLORS} from "../../../constants/theme";
 import React, {useEffect, useState} from "react";
 import images from "../../../constants/images";
@@ -17,6 +17,7 @@ const Home = () => {
     const [activeSearchQuery, setActiveSearchQuery] = useState(null);
     const [currentUser, setCurrentUser] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [refreshing, setRefreshing] = useState(false);
     const CONSUMER_TYPE = "Consumer";
     const COLLABORATOR_TYPE = "Collaborator";
 
@@ -71,6 +72,17 @@ const Home = () => {
         );
     }
 
+    const handleRefresh = async () => {
+        setRefreshing(true);
+        try {
+            await new Promise((resolve) => setTimeout(resolve, 500));
+        } catch (error) {
+            console.error("Error during refresh:", error);
+        } finally {
+            setRefreshing(false);
+        }
+    };
+
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.lightWhite}}>
             <Stack.Screen
@@ -78,23 +90,26 @@ const Home = () => {
                 options={{
                     headerTitle: () => (
                         <Image
-                            source={images.link} // Path to your image
-                            style={{width: 40, height: 40, resizeMode: 'contain'}} // Adjust size
+                            source={images.link}
+                            style={{width: 40, height: 40, resizeMode: 'contain'}}
                         />
                     ),
-                    headerTitleAlign: 'center', // Ensure the title is centered
+                    headerTitleAlign: 'center',
                 }}
             />
 
             <FlatList
                 data={currentUser.userType === CONSUMER_TYPE ? sections_consumer : sections_collaborator}
                 keyExtractor={(item) => item.id}
-                renderItem={({item}) => item.component}
+                renderItem={({item}) => React.cloneElement(item.component, {refreshing})}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={{padding: 16}}
+                refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={handleRefresh}/>
+                }
             />
         </SafeAreaView>
     );
-};
+}
 
 export default Home;

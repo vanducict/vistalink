@@ -1,4 +1,4 @@
-import {FlatList, Text, View} from "react-native";
+import {FlatList, RefreshControl, Text, View} from "react-native";
 import styles from "./Nearby.style";
 import {SIZES} from "../../../constants/theme";
 import NearbyCard from "../nearbycard/NearbyCard";
@@ -8,27 +8,26 @@ import Loading from "../../common/loading/Loading";
 import Lottie from "lottie-react-native";
 import animations from "../../../constants/animations";
 
-const Nearby = ({eventType, searchQuery}) => {
+const Nearby = ({eventType, searchQuery, refreshing}) => {
     const [links, setLinks] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        const fetchLinks = async () => {
-            try {
-                setLoading(true);
-                console.log("Fetching links with event type:", eventType);  // Logs current eventType
-                const fetchedLinks = await getAllLinks(eventType, searchQuery);  // Make sure the eventType is used in the API call or logic
-                setLinks(fetchedLinks);
-            } catch (error) {
-                console.error("Error fetching links:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
+    const fetchLinks = async () => {
+        try {
+            setLoading(true);
+            console.log("Fetching links with event type:", eventType);
+            const fetchedLinks = await getAllLinks(eventType, searchQuery);
+            setLinks(fetchedLinks);
+        } catch (error) {
+            console.error("Error fetching links:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-        fetchLinks().then(eventType); // Fetch links whenever eventType changes
-        console.log(searchQuery);
-    }, [eventType, searchQuery]);  // Dependency on eventType ensures effect runs every time it changes
+    useEffect(() => {
+        fetchLinks();
+    }, [eventType, searchQuery, refreshing]); // Add refreshing as a dependency to trigger re-fetch
 
     return (
         <View style={styles.container}>
@@ -57,11 +56,17 @@ const Nearby = ({eventType, searchQuery}) => {
                     keyExtractor={(item) => item.id.toString()} // Key extraction based on id
                     horizontal={false} // Display items vertically
                     contentContainerStyle={{columnGap: SIZES.small}} // Gap between items
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={loading} // Show refresh spinner based on loading state
+                            onRefresh={fetchLinks} // Trigger fetchLinks on pull-to-refresh
+                        />
+                    }
                 />
             )}
         </View>
-
     );
 };
+
 
 export default Nearby;

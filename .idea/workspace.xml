@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="refresh control links page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/links/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/nearby/Nearby.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearby/Nearby.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/popular/Popular.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popular/Popular.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/search/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/search/SearchBar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

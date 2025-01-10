@@ -9,29 +9,27 @@ import Loading from "../../common/loading/Loading";
 import Lottie from "lottie-react-native";
 import animations from "../../../constants/animations";
 
-const Popular = ({eventType, searchQuery}) => {
+const Popular = ({eventType, searchQuery, refreshing}) => {
     const router = useRouter();
     const [links, setLinks] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    // Triggered whenever eventType changes
-    useEffect(() => {
-        const fetchLinks = async () => {
-            try {
-                setLoading(true);
-                console.log("Fetching links with event type:", eventType);  // Logs current eventType
-                const fetchedLinks = await getAllLinks(eventType, searchQuery);  // Make sure the eventType is used in the API call or logic
-                setLinks(fetchedLinks);
-            } catch (error) {
-                console.error("Error fetching links:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
+    const fetchLinks = async () => {
+        try {
+            setLoading(true);
+            const fetchedLinks = await getAllLinks(eventType, searchQuery);
+            setLinks(fetchedLinks);
+        } catch (error) {
+            console.error("Error fetching links:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-        fetchLinks().then(r => eventType); // Fetch links whenever eventType changes
-        console.log(searchQuery);
-    }, [eventType, searchQuery]);  // Dependency on eventType ensures effect runs every time it changes
+    // Fetch links initially and whenever eventType, searchQuery, or refreshing changes
+    useEffect(() => {
+        fetchLinks();
+    }, [eventType, searchQuery, refreshing]);
 
     return (
         <View style={styles.container}>
@@ -42,11 +40,9 @@ const Popular = ({eventType, searchQuery}) => {
                 </TouchableOpacity>
             </View>
 
-            {/* Loading indicator */}
             <Loading loading={loading}/>
 
             {links.length === 0 ? (
-                // Render this when the links array is empty
                 <View style={styles.emptyContainer}>
                     <Lottie
                         source={animations.empty}
@@ -60,17 +56,17 @@ const Popular = ({eventType, searchQuery}) => {
                 <FlatList
                     data={links}
                     renderItem={({item}) => (
-                        <PopularCard item={item}/> // Render each PopularCard item
+                        <PopularCard item={item}/>
                     )}
-                    keyExtractor={(item) => item.id.toString()} // Extract unique key for each item
-                    horizontal={true} // Display items horizontally
-                    contentContainerStyle={{columnGap: SIZES.small}} // Adjust spacing between items
-                    showsHorizontalScrollIndicator={false} // Hide horizontal scroll indicator
+                    keyExtractor={(item) => item.id.toString()}
+                    horizontal
+                    contentContainerStyle={{columnGap: SIZES.small}}
+                    showsHorizontalScrollIndicator={false}
                 />
             )}
         </View>
-
     );
 };
+
 
 export default Popular;

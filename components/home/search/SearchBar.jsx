@@ -2,36 +2,20 @@ import {FlatList, Image, Keyboard, Text, TextInput, TouchableOpacity, View} from
 import styles from "./SearchBar.style";
 import icons from "../../../constants/icons";
 import {useEffect, useState} from "react";
-import {useRouter} from "expo-router";
 import {SIZES} from "../../../constants/theme";
-import {getCurrentUser} from "../../../service/user/UserService";
 import Loading from "../../common/loading/Loading";
 import {getAllEventTypes} from "../../../service/link/LinkService";
 
-const Welcome = ({setActiveEventType, setActiveSearchQuery}) => {
+const Welcome = ({setActiveEventType, setActiveSearchQuery, refreshing, onRefresh}) => {
     const [eventTypes, setEventTypes] = useState([]);
-    const router = useRouter();
-    const [activeJobType, setActiveJobType] = useState(null);  // Initially no filter
-    const [currentUser, setCurrentUser] = useState(null);
+    const [activeJobType, setActiveJobType] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [searchQuery, setSearchQuery] = useState('');  // Track the search input
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
-        const fetchUser = async () => {
-            try {
-                const user = await getCurrentUser();
-                setCurrentUser(user.pop());
-            } catch (error) {
-                console.log("Error fetching user:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchUser().then(r => r);
-
         const fetchEventTypes = async () => {
             try {
+                setLoading(true);
                 const eventTypes = await getAllEventTypes();
                 setEventTypes(eventTypes);
             } catch (error) {
@@ -41,12 +25,8 @@ const Welcome = ({setActiveEventType, setActiveSearchQuery}) => {
             }
         };
 
-        fetchEventTypes().then(r => r);
-    }, []);
-
-    if (!currentUser) {
-        return <Loading loading={loading}/>;
-    }
+        fetchEventTypes();
+    }, [refreshing]); // Re-fetch event types when refreshing changes
 
     const handleTabPress = (item) => {
         if (activeJobType === item) {
@@ -58,11 +38,14 @@ const Welcome = ({setActiveEventType, setActiveSearchQuery}) => {
         }
     };
 
-    // Update the search query when the search button is pressed
     const handleSearchPress = () => {
         setActiveSearchQuery(searchQuery);
-        Keyboard.dismiss()
+        Keyboard.dismiss();
     };
+
+    if (loading) {
+        return <Loading loading={loading}/>;
+    }
 
     return (
         <View>
@@ -71,8 +54,8 @@ const Welcome = ({setActiveEventType, setActiveSearchQuery}) => {
                     <TextInput
                         placeholder="Search for a link"
                         placeholderTextColor="#888"
-                        value={searchQuery} // Bind the value to the searchQuery state
-                        onChangeText={setSearchQuery} // Update the searchQuery state
+                        value={searchQuery}
+                        onChangeText={setSearchQuery}
                         style={styles.searchInput}
                     />
                 </View>
@@ -92,7 +75,7 @@ const Welcome = ({setActiveEventType, setActiveSearchQuery}) => {
                     renderItem={({item}) => (
                         <TouchableOpacity
                             style={styles.tab(activeJobType, item)}
-                            onPress={() => handleTabPress(item)} // Handle the tab press
+                            onPress={() => handleTabPress(item)}
                         >
                             <Text style={styles.tabText(activeJobType, item)}>{item}</Text>
                         </TouchableOpacity>
