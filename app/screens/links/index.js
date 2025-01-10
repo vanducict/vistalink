@@ -9,6 +9,7 @@ import {getAllLinksForUserCollaborator} from "../../../service/userLink/UserLink
 import Lottie from "lottie-react-native";
 import animations from "../../../constants/animations";
 import {useFocusEffect} from "@react-navigation/native";
+import Loading from "../../../components/common/loading/Loading";
 
 const Links = () => {
     const [links, setLinks] = useState([]);
@@ -165,9 +166,11 @@ const Links = () => {
                     </TouchableOpacity>
                 </View>
 
+
                 {/* Links List */}
                 {filteredLinks.length === 0 ? (
                     <View style={styles.emptyContainer}>
+                        <Loading loading={loading}/>
                         <Lottie
                             source={animations.empty}
                             autoPlay

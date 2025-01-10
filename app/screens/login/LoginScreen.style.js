@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 25,
         alignItems: "center",
         justifyContent: "center",
-        marginTop: 15,
+        marginTop: 80,
         width: "80%", // Adjust as needed
         flexDirection: "row", // Align icon and text horizontally
         borderWidth: 1,
