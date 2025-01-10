@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="style change filter home links">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/popularcard/PopularCard.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popularcard/PopularCard.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/link/LinkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/link/LinkService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/links/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,13 +74,6 @@
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
       <workItem from="1736441348945" duration="7436000" />
-    </task>
-    <task id="LOCAL-00017" summary="custom navbar working wth sample pages">
-      <created>1735506836384</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1735506836384</updated>
     </task>
     <task id="LOCAL-00018" summary="popular fetch all links for now">
       <created>1735511405287</created>
@@ -420,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736547583995</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="style change filter home links">
+      <created>1736548130776</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1736548130776</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +448,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="register user works" />
     <MESSAGE value="register fix" />
     <MESSAGE value="design fix" />
     <MESSAGE value="fix fonts and linkscreen start daddy" />
@@ -475,6 +472,7 @@
     <MESSAGE value="style adjust" />
     <MESSAGE value="isClosed when submit" />
     <MESSAGE value="navigate back" />
-    <option name="LAST_COMMIT_MESSAGE" value="navigate back" />
+    <MESSAGE value="style change filter home links" />
+    <option name="LAST_COMMIT_MESSAGE" value="style change filter home links" />
   </component>
 </project>

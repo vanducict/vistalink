@@ -166,7 +166,7 @@ const Links = () => {
                                 activeTab === "Expired" && styles.activeTabText,
                             ]}
                         >
-                            Expired
+                            Closed
                         </Text>
                     </TouchableOpacity>
                 </View>
@@ -184,8 +184,8 @@ const Links = () => {
                         />
                         <Text style={styles.emptyText}>
                             {activeTab === "Active"
-                                ? "No active links available yet."
-                                : "No expired links available yet."}
+                                ? "No active links available."
+                                : "No closed links."}
                         </Text>
                     </View>
                 ) : (
