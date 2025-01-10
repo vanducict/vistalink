@@ -6,9 +6,11 @@ import {notifyUserLinkStatus, updateUserLinkStatus} from "../../../service/userL
 import Lottie from "lottie-react-native";
 import animations from "../../../constants/animations";
 import {updateLinkClosed} from "../../../service/link/LinkService";
+import {useRouter} from "expo-router";
 
 const Applicants = ({userLinks, event, refreshUserLinks}) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const router = useRouter();
 
     const handleApplicantStatus = async (id, approved) => {
         try {
@@ -33,6 +35,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
             }
             await updateLinkClosed(event.id, true);
             await refreshUserLinks(); // Refresh user links after the update
+            router.back(); // Go back to the previous screen
             console.log("All applicants submitted and approved.");
         } catch (error) {
             console.error("Error confirming applicants:", error);
