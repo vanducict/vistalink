@@ -42,6 +42,10 @@ const App = () => {
             <Tab.Screen
                 name="Chats"
                 component={Chats}
+                initialParams={{
+                    userId: 'vanducict', // example param
+                    userName: 'Tam Van Duc', // example param
+                }}
             />
             <Tab.Screen
                 name="MyProfile"

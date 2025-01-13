@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="style change filter home links">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="styling ff">
+      <change afterPath="$PROJECT_DIR$/app/screens/chatroom/ChatRoom.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/chatroom/[channelId].js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/links/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/chats/ChatScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/chats/ChatScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/chats/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/chats/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,11 +55,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/screens/chatroom" />
       <recent name="$PROJECT_DIR$/assets/animations" />
       <recent name="$PROJECT_DIR$/assets/icons" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/assets/images" />
-      <recent name="$PROJECT_DIR$/app/screens/login" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -74,6 +81,7 @@
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
       <workItem from="1736441348945" duration="7436000" />
+      <workItem from="1736799093463" duration="5674000" />
     </task>
     <task id="LOCAL-00018" summary="popular fetch all links for now">
       <created>1735511405287</created>
