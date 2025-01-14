@@ -74,14 +74,7 @@
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
       <workItem from="1736441348945" duration="7436000" />
-      <workItem from="1736799093463" duration="22193000" />
-    </task>
-    <task id="LOCAL-00028" summary="working first version search">
-      <created>1735913452621</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1735913452621</updated>
+      <workItem from="1736799093463" duration="22922000" />
     </task>
     <task id="LOCAL-00029" summary="combine query links">
       <created>1735913904010</created>
@@ -419,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736882862513</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="only god will know">
+      <created>1736883517584</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1736883517584</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +449,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="statuses rework" />
     <MESSAGE value="fetch correct events for collaborator" />
     <MESSAGE value="Status bar collaborator" />
     <MESSAGE value="approval animiation" />
@@ -474,6 +473,7 @@
     <MESSAGE value="ugly soluition delay for now" />
     <MESSAGE value="solutioj maynebe" />
     <MESSAGE value="async problem fix?" />
-    <option name="LAST_COMMIT_MESSAGE" value="async problem fix?" />
+    <MESSAGE value="only god will know" />
+    <option name="LAST_COMMIT_MESSAGE" value="only god will know" />
   </component>
 </project>

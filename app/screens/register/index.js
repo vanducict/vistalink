@@ -33,7 +33,6 @@ const Register = () => {
     const [userType, setUserType] = useState("");
     const [open, setOpen] = useState(false);
     const [items, setItems] = useState([]);
-
     const [isDatePickerVisible, setDatePickerVisible] = useState(false);
 
     useEffect(() => {
@@ -57,7 +56,7 @@ const Register = () => {
                 setLoading(false);
             }
         };
-        fetchUserTypes().then((r) => r);
+        fetchUserTypes();
     }, []);
 
     // Handle the selected date from the DateTimePickerModal
@@ -67,22 +66,16 @@ const Register = () => {
         setDatePickerVisible(false); // Hide the date picker after selection
     };
 
-    const signUp = async (user) => {
-        try {
-            Keyboard.dismiss();
-            setLoading(true);
-
-            // Wait for insertUser to finish
-            await insertUser(user, email.toLowerCase(), name, firstName, birthdate, description, userType);
-            console.log(email + " signed up: ");
-        } catch (e) {
-            console.log("Error signing up: ", e);
-        } finally {
-
-            setLoading(false);
+    const retryAsync = async (fn, retries = 3) => {
+        for (let i = 0; i < retries; i++) {
+            try {
+                return await fn();
+            } catch (error) {
+                console.error(`Attempt ${i + 1} failed:`, error);
+                if (i === retries - 1) throw error;
+            }
         }
     };
-
 
     const createStreamChatUser = async (supabaseUser) => {
         try {
@@ -91,42 +84,45 @@ const Register = () => {
                 return;
             }
 
+            const {user_metadata: {first_name, last_name}, id, email} = supabaseUser.user;
+
+            const userDisplayName = `${first_name || "FirstName"} ${last_name || "LastName"}`;
+            console.log("StreamChat User:", userDisplayName);
+
             const chatClient = StreamChat.getInstance('vxujf6n9668d'); // Replace with your Stream API Key
-            console.log(supabaseUser.user.user_metadata); // why this works with console.log only god will know....
-            const firstName = supabaseUser.user.user_metadata.first_name;
-            const lastName = supabaseUser.user.user_metadata.last_name;
-            const userId = supabaseUser.user.id;
-            const userEmail = supabaseUser.user.email;
-            const userDisplayName = `${firstName} ${lastName}`; // Fallback to a default name
-
-            console.log('StreamChat User:', userDisplayName); // Log the full name here
-
-            const user = {
-                id: userId,
-                email: userEmail,
-                name: userDisplayName,
-            };
 
             if (chatClient.user) {
                 console.log('Disconnecting existing user...');
                 await chatClient.disconnectUser();
             }
 
-            const serverToken = chatClient.devToken(userId); // Development token
+            const serverToken = chatClient.devToken(id);
+            await chatClient.connectUser({id, email, name: userDisplayName}, serverToken);
+            await chatClient.upsertUser({id, email, name: userDisplayName});
 
-            await chatClient.connectUser(user, serverToken);
-            await chatClient.upsertUser(user);
-
-            console.log('User created/updated in Stream Chat:', user);
+            console.log("User created/updated in Stream Chat:", userDisplayName);
 
             await chatClient.disconnectUser();
         } catch (error) {
-            console.error('Error creating/updating user in Stream Chat:', error);
+            console.error("Error creating/updating user in Stream Chat:", error);
         }
     };
 
+    const signUp = async (user) => {
+        try {
+            Keyboard.dismiss();
+            setLoading(true);
+            await retryAsync(() =>
+                insertUser(user, email.toLowerCase(), name, firstName, birthdate, description, userType)
+            );
+            console.log(`${email} signed up successfully.`);
+        } catch (error) {
+            console.log("Error signing up:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-    // Handle the registration logic
     const handleRegister = async () => {
         if (!email || !password || !birthdate || !name || !firstName || !description) {
             Alert.alert("Error", "Please fill in all the fields.");
@@ -137,10 +133,9 @@ const Register = () => {
             Keyboard.dismiss();
             setLoading(true);
 
-            // Sign up the user with Supabase
             const {data: user, error} = await supabase.auth.signUp({
                 email: email.toLowerCase(),
-                password: password,
+                password,
                 options: {
                     data: {
                         first_name: firstName,
@@ -153,17 +148,15 @@ const Register = () => {
                 throw new Error(error.message);
             }
 
-            // Ensure user data is valid before proceeding
             if (!user) {
                 throw new Error("User registration failed. Please try again.");
             }
 
-            // Perform additional user setup after successful sign up
-            await signUp(user); // Custom signup logic
-            await createStreamChatUser(user); // Stream Chat user creation logic
+            await signUp(user);
+            await createStreamChatUser(user);
 
             Alert.alert("Success", "Confirmation email sent. Please verify your email.");
-            router.replace("/"); // Redirect after registration
+            router.replace("/");
         } catch (error) {
             Alert.alert("Error", error.message);
             console.error("Error signing up:", error);
@@ -232,7 +225,6 @@ const Register = () => {
                     placeholderTextColor="#888"
                 />
 
-                {/* TouchableOpacity to open the Date Picker */}
                 <TouchableOpacity
                     style={styles.input}
                     onPress={() => setDatePickerVisible(true)}
@@ -256,7 +248,7 @@ const Register = () => {
                     value={userType}
                     items={items}
                     setOpen={setOpen}
-                    placeholder={"Select a role"}
+                    placeholder="Select a role"
                     setValue={setUserType}
                     setItems={setItems}
                 />
@@ -266,10 +258,8 @@ const Register = () => {
                         {loading ? <Loading loading={loading}/> : "Register"}
                     </Text>
                 </TouchableOpacity>
-
             </KeyboardAvoidingView>
 
-            {/* Date Picker Modal */}
             <DateTimePickerModal
                 isVisible={isDatePickerVisible}
                 mode="date"
