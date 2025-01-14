@@ -38,7 +38,6 @@ const Register = () => {
     useEffect(() => {
         const fetchUserTypes = async () => {
             try {
-                setLoading(true);
                 const types = await getAllUserTypes();
                 if (types && types.length > 0) {
                     const formattedItems = types.map((type, index) => ({
@@ -52,11 +51,9 @@ const Register = () => {
                 }
             } catch (error) {
                 console.log("Error fetching types:", error);
-            } finally {
-                setLoading(false);
             }
         };
-        fetchUserTypes();
+        fetchUserTypes().then(r => r);
     }, []);
 
     // Handle the selected date from the DateTimePickerModal
@@ -135,8 +132,6 @@ const Register = () => {
             console.log(`${email} signed up successfully.`);
         } catch (error) {
             console.log("Error signing up:", error);
-        } finally {
-            setLoading(false);
         }
     };
 
@@ -148,7 +143,6 @@ const Register = () => {
 
         try {
             Keyboard.dismiss();
-            setLoading(true);
 
             const {data: user, error} = await supabase.auth.signUp({
                 email: email.toLowerCase(),
@@ -178,12 +172,11 @@ const Register = () => {
             }
 
             Alert.alert("Success", "Confirmation email sent. Please verify your email.");
+            setLoading(false);
             router.replace("/");
         } catch (error) {
             Alert.alert("Error", error.message);
             console.error("Error signing up:", error);
-        } finally {
-            setLoading(false);
         }
     };
 

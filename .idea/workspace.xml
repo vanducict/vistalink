@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="attempt 100020100">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="I think this delay works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
     </list>
@@ -74,14 +74,7 @@
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
       <workItem from="1736441348945" duration="7436000" />
-      <workItem from="1736799093463" duration="28985000" />
-    </task>
-    <task id="LOCAL-00039" summary="register fix">
-      <created>1736086669344</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1736086669344</updated>
+      <workItem from="1736799093463" duration="29681000" />
     </task>
     <task id="LOCAL-00040" summary="design fix">
       <created>1736087230342</created>
@@ -419,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736891503423</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="I think this delay works">
+      <created>1736892449723</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1736892449723</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +449,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reload mechanism home page" />
     <MESSAGE value="style adjust" />
     <MESSAGE value="isClosed when submit" />
     <MESSAGE value="navigate back" />
@@ -474,6 +473,7 @@
     <MESSAGE value="fk it gebruik email nu" />
     <MESSAGE value="attempt 10002010" />
     <MESSAGE value="attempt 100020100" />
-    <option name="LAST_COMMIT_MESSAGE" value="attempt 100020100" />
+    <MESSAGE value="I think this delay works" />
+    <option name="LAST_COMMIT_MESSAGE" value="I think this delay works" />
   </component>
 </project>
