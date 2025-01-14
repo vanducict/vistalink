@@ -74,14 +74,7 @@
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
       <workItem from="1736441348945" duration="7436000" />
-      <workItem from="1736799093463" duration="23635000" />
-    </task>
-    <task id="LOCAL-00030" summary="first version profile screen">
-      <created>1735918102601</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1735918102601</updated>
+      <workItem from="1736799093463" duration="24027000" />
     </task>
     <task id="LOCAL-00031" summary="picker role">
       <created>1735939835976</created>
@@ -419,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736884808849</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="fffkes PN solution">
+      <created>1736885502716</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1736885502716</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +449,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Status bar collaborator" />
     <MESSAGE value="approval animiation" />
     <MESSAGE value="bulk edit approvals" />
     <MESSAGE value="remove bulk edit and better ui flow" />
@@ -474,6 +473,7 @@
     <MESSAGE value="async problem fix?" />
     <MESSAGE value="only god will know" />
     <MESSAGE value="POSSIbLE ASYNC FIX???" />
-    <option name="LAST_COMMIT_MESSAGE" value="POSSIbLE ASYNC FIX???" />
+    <MESSAGE value="fffkes PN solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="fffkes PN solution" />
   </component>
 </project>

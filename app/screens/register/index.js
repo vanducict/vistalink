@@ -96,8 +96,8 @@ const Register = () => {
             }
 
             const serverToken = chatClient.devToken(id);
-            await chatClient.connectUser({id, email, name: userDisplayName}, serverToken);
-            await chatClient.upsertUser({id, email, name: userDisplayName});
+            await chatClient.connectUser({id, email, name: firstName + " " + name}, serverToken);
+            await chatClient.upsertUser({id, email, name: firstName + " " + name});
 
             console.log("User created/updated in Stream Chat:", userDisplayName);
 
