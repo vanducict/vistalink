@@ -66,7 +66,7 @@ const Register = () => {
         setBirthdate(formattedDate);
         setDatePickerVisible(false); // Hide the date picker after selection
     };
-    
+
     const signUp = async (user) => {
         try {
             Keyboard.dismiss();
@@ -75,11 +75,6 @@ const Register = () => {
             // Wait for insertUser to finish
             await insertUser(user, email.toLowerCase(), name, firstName, birthdate, description, userType);
             console.log(email + " signed up: ");
-
-            // Now, wait for an additional 5 seconds (optional)
-            const waitFor = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-            await waitFor(5000); // Wait for 5 seconds before proceeding
-
         } catch (e) {
             console.log("Error signing up: ", e);
         } finally {
@@ -91,36 +86,39 @@ const Register = () => {
 
     const createStreamChatUser = async (supabaseUser) => {
         try {
-            // Initialize StreamChat client with your API key
+            if (!supabaseUser || !supabaseUser.user || !supabaseUser.user.user_metadata) {
+                console.error("User data is incomplete:", supabaseUser);
+                return;
+            }
+
             const chatClient = StreamChat.getInstance('vxujf6n9668d'); // Replace with your Stream API Key
 
-            const userId = supabaseUser.user.id; // Use the user ID from Supabase
+            const firstName = supabaseUser.user.user_metadata.first_name;
+            const lastName = supabaseUser.user.user_metadata.last_name;
+            const userId = supabaseUser.user.id;
             const userEmail = supabaseUser.user.email;
-            const userDisplayName = supabaseUser.user.user_metadata.first_name + " " + supabaseUser.user.user_metadata.last_name || userEmail; // Fallback to a default name
+            const userDisplayName = `${firstName} ${lastName}`; // Fallback to a default name
+
+            console.log('StreamChat User:', userDisplayName); // Log the full name here
 
             const user = {
-                id: userId, // Unique user ID
+                id: userId,
                 email: userEmail,
                 name: userDisplayName,
             };
 
-            // Disconnect any existing user to avoid conflicts
             if (chatClient.user) {
                 console.log('Disconnecting existing user...');
                 await chatClient.disconnectUser();
             }
 
-            // Generate a development token (ONLY for development/testing)
-            const serverToken = chatClient.devToken(userId); // Replace with a proper server token in production
+            const serverToken = chatClient.devToken(userId); // Development token
 
-            // Authenticate and upsert the user
             await chatClient.connectUser(user, serverToken);
-
-            // Upsert (create or update) the user in Stream Chat
             await chatClient.upsertUser(user);
+
             console.log('User created/updated in Stream Chat:', user);
 
-            // Disconnect the client after the operation (optional, depends on your use case)
             await chatClient.disconnectUser();
         } catch (error) {
             console.error('Error creating/updating user in Stream Chat:', error);
