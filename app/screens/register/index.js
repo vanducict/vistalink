@@ -66,20 +66,28 @@ const Register = () => {
         setBirthdate(formattedDate);
         setDatePickerVisible(false); // Hide the date picker after selection
     };
-
-    // Sign up the user after successful registration
+    
     const signUp = async (user) => {
         try {
             Keyboard.dismiss();
             setLoading(true);
+
+            // Wait for insertUser to finish
             await insertUser(user, email.toLowerCase(), name, firstName, birthdate, description, userType);
             console.log(email + " signed up: ");
+
+            // Now, wait for an additional 5 seconds (optional)
+            const waitFor = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+            await waitFor(5000); // Wait for 5 seconds before proceeding
+
         } catch (e) {
             console.log("Error signing up: ", e);
         } finally {
+
             setLoading(false);
         }
     };
+
 
     const createStreamChatUser = async (supabaseUser) => {
         try {
