@@ -96,6 +96,12 @@ const Register = () => {
                 {
                     email: email.toString().toLowerCase(),
                     password: password,
+                    options: {
+                        data: {
+                            first_name: firstName,
+                            last_name: name,
+                        }
+                    }
                 },
                 {
                     redirectTo: "https://your-custom-url.com", // Add your redirect URL here
