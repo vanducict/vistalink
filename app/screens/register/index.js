@@ -85,8 +85,8 @@ const Register = () => {
             }
 
             const {id, email, user_metadata} = supabaseUser.user;
-            const userDisplayName = `${firstName || "FirstName"} ${name || "LastName"}`;
-            console.log("StreamChat User:", userDisplayName);
+            const name = `${user_metadata.first_name} ${user_metadata.last_name}`;
+            console.log("StreamChat User:", name);
 
             const chatClient = StreamChat.getInstance('vxujf6n9668d'); // Replace with your Stream API Key
 
@@ -103,15 +103,17 @@ const Register = () => {
             await chatClient.connectUser({
                 id,
                 email,
+                name
             }, serverToken);
 
             // Upsert the user only after connecting to ensure the session is correct
             await chatClient.upsertUser({
                 id,
                 email,
+                name
             });
 
-            console.log("User created/updated in Stream Chat:", userDisplayName);
+            console.log("User created/updated in Stream Chat:", name);
 
             // Disconnect the user once the operation is complete
             await chatClient.disconnectUser();
