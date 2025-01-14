@@ -92,7 +92,7 @@ const Register = () => {
             }
 
             const chatClient = StreamChat.getInstance('vxujf6n9668d'); // Replace with your Stream API Key
-
+            console.log(supabaseUser.user.user_metadata); // why this works with console.log only god will know....
             const firstName = supabaseUser.user.user_metadata.first_name;
             const lastName = supabaseUser.user.user_metadata.last_name;
             const userId = supabaseUser.user.id;
