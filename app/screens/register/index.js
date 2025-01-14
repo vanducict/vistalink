@@ -106,6 +106,8 @@ const Register = () => {
                 name
             }, serverToken);
 
+            await new Promise(resolve => setTimeout(resolve, 5000));// Wait for 1 second before upserting the user
+
             // Upsert the user only after connecting to ensure the session is correct
             await chatClient.upsertUser({
                 id,
