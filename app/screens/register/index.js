@@ -90,19 +90,23 @@ const Register = () => {
 
             const chatClient = StreamChat.getInstance('vxujf6n9668d'); // Replace with your Stream API Key
 
+            // Disconnect the existing user before connecting a new one to avoid session conflicts
             if (chatClient.user) {
                 console.log('Disconnecting existing user...');
                 await chatClient.disconnectUser();
             }
 
+            // Generate a server token for the specific user
             const serverToken = chatClient.devToken(id);
 
+            // Connect the user
             await chatClient.connectUser({
                 id,
                 email,
                 name: user_metadata.first_name + " " + user_metadata.last_name
             }, serverToken);
 
+            // Upsert the user only after connecting to ensure the session is correct
             await chatClient.upsertUser({
                 id,
                 email,
@@ -111,11 +115,13 @@ const Register = () => {
 
             console.log("User created/updated in Stream Chat:", userDisplayName);
 
+            // Disconnect the user once the operation is complete
             await chatClient.disconnectUser();
         } catch (error) {
             console.error("Error creating/updating user in Stream Chat:", error);
         }
     };
+
 
     const signUp = async (user) => {
         try {
