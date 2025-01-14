@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="chat load fix">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="fix lazy loading">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/chatroom/[channelId].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/chatroom/[channelId].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/chats/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/chats/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,14 +74,7 @@
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
       <workItem from="1736441348945" duration="7436000" />
-      <workItem from="1736799093463" duration="8029000" />
-    </task>
-    <task id="LOCAL-00020" summary="change auth to supabase">
-      <created>1735832486025</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1735832486025</updated>
+      <workItem from="1736799093463" duration="10476000" />
     </task>
     <task id="LOCAL-00021" summary="change auth to supabase rework home">
       <created>1735832801478</created>
@@ -421,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736844942039</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="fix lazy loading">
+      <created>1736846295233</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1736846295233</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,7 +449,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix fonts and linkscreen start daddy" />
     <MESSAGE value="active and expired based on date" />
     <MESSAGE value="Applicants viewlist" />
     <MESSAGE value="font changes" />
@@ -476,6 +473,7 @@
     <MESSAGE value="style change filter home links" />
     <MESSAGE value="super sketch version chat" />
     <MESSAGE value="chat load fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="chat load fix" />
+    <MESSAGE value="fix lazy loading" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix lazy loading" />
   </component>
 </project>

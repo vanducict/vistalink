@@ -80,12 +80,7 @@ const ChatRoom = () => {
                     <Chat client={chatClient}>
                         <Channel channel={channel}>
                             <View style={StyleSheet.absoluteFill}>
-                                <MessageList
-                                    initialScrollToFirstUnreadMessage
-                                    onEndReachedThreshold={0.5} // Adjust as needed
-                                    onEndReached={() => {
-                                        channel.query({messages: {limit: 20}}).catch(console.error); // Load more messages
-                                    }}/>
+                                <MessageList/>
                                 <MessageInput/>
                             </View>
                         </Channel>
