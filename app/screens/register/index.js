@@ -79,14 +79,13 @@ const Register = () => {
 
     const createStreamChatUser = async (supabaseUser) => {
         try {
-            if (!supabaseUser || !supabaseUser.user || !supabaseUser.user.user_metadata) {
+            if (!supabaseUser || !supabaseUser.user) {
                 console.error("User data is incomplete:", supabaseUser);
                 return;
             }
 
-            const {user_metadata: {first_name, last_name}, id, email} = supabaseUser.user;
-
-            const userDisplayName = `${first_name || "FirstName"} ${last_name || "LastName"}`;
+            const {id, email} = supabaseUser.user;
+            const userDisplayName = `${firstName || "FirstName"} ${name || "LastName"}`;
             console.log("StreamChat User:", userDisplayName);
 
             const chatClient = StreamChat.getInstance('vxujf6n9668d'); // Replace with your Stream API Key
