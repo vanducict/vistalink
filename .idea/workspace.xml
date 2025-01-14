@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="sad days">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/links/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,14 +75,7 @@
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
       <workItem from="1736441348945" duration="7436000" />
-      <workItem from="1736799093463" duration="24027000" />
-    </task>
-    <task id="LOCAL-00031" summary="picker role">
-      <created>1735939835976</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1735939835976</updated>
+      <workItem from="1736799093463" duration="25225000" />
     </task>
     <task id="LOCAL-00032" summary="split home view logic based on role">
       <created>1735941993150</created>
@@ -419,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736885502716</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="sad days">
+      <created>1736885920672</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1736885920672</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +450,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="approval animiation" />
     <MESSAGE value="bulk edit approvals" />
     <MESSAGE value="remove bulk edit and better ui flow" />
     <MESSAGE value="add sample fb and google login view" />
@@ -474,6 +474,7 @@
     <MESSAGE value="only god will know" />
     <MESSAGE value="POSSIbLE ASYNC FIX???" />
     <MESSAGE value="fffkes PN solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="fffkes PN solution" />
+    <MESSAGE value="sad days" />
+    <option name="LAST_COMMIT_MESSAGE" value="sad days" />
   </component>
 </project>

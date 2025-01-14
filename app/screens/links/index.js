@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Image, RefreshControl, SafeAreaView, ScrollView, Text, TouchableOpacity, View,} from 'react-native';
 import styles from "./LinksScreen.style";
 import {Stack, useRouter} from "expo-router";
@@ -8,7 +8,6 @@ import {getAllLinksForId, getAllLinksForUserConsumer} from "../../../service/lin
 import {getAllLinksForUserCollaborator} from "../../../service/userLink/UserLinkService";
 import Lottie from "lottie-react-native";
 import animations from "../../../constants/animations";
-import {useFocusEffect} from "@react-navigation/native";
 import Loading from "../../../components/common/loading/Loading";
 
 const Links = () => {
@@ -91,15 +90,7 @@ const Links = () => {
         }
     };
 
-    // Use `useFocusEffect` to refetch data when navigating back
-    useFocusEffect(
-        useCallback(() => {
-            if (currentUser) {
-                fetchLinks();
-            }
-        }, [currentUser])
-    );
-
+    
     // Pull-to-refresh handler
     const onRefresh = () => {
         setRefreshing(true);

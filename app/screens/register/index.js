@@ -143,6 +143,14 @@ const Register = () => {
                 },
             });
 
+            if (user) {
+                await signUp(user);
+                await createStreamChatUser(user);
+            } else if (error) {
+
+                console.error('Error signing up:', error.message);
+            }
+
             if (error) {
                 throw new Error(error.message);
             }
@@ -150,9 +158,6 @@ const Register = () => {
             if (!user) {
                 throw new Error("User registration failed. Please try again.");
             }
-
-            await signUp(user);
-            await createStreamChatUser(user);
 
             Alert.alert("Success", "Confirmation email sent. Please verify your email.");
             router.replace("/");
