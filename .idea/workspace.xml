@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="ugly soluition delay for now">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="solutioj maynebe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
     </list>
@@ -74,14 +74,7 @@
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
       <workItem from="1736441348945" duration="7436000" />
-      <workItem from="1736799093463" duration="21001000" />
-    </task>
-    <task id="LOCAL-00026" summary="filter balloons working">
-      <created>1735911091511</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1735911091511</updated>
+      <workItem from="1736799093463" duration="21905000" />
     </task>
     <task id="LOCAL-00027" summary="filter deselect reworks">
       <created>1735911280199</created>
@@ -419,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736864026354</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="solutioj maynebe">
+      <created>1736865451174</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1736865451174</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +449,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="greyad out link applicants" />
     <MESSAGE value="reistering link" />
     <MESSAGE value="statuses rework" />
     <MESSAGE value="fetch correct events for collaborator" />
@@ -474,6 +473,7 @@
     <MESSAGE value="add stream chat usere register" />
     <MESSAGE value="remove router replace" />
     <MESSAGE value="ugly soluition delay for now" />
-    <option name="LAST_COMMIT_MESSAGE" value="ugly soluition delay for now" />
+    <MESSAGE value="solutioj maynebe" />
+    <option name="LAST_COMMIT_MESSAGE" value="solutioj maynebe" />
   </component>
 </project>

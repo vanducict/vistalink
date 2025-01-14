@@ -137,35 +137,36 @@ const Register = () => {
             Keyboard.dismiss();
             setLoading(true);
 
-            const {data: user, error} = await supabase.auth.signUp(
-                {
-                    email: email.toString().toLowerCase(),
-                    password: password,
-                    options: {
-                        data: {
-                            first_name: firstName,
-                            last_name: name,
-                        }
-                    }
+            // Sign up the user with Supabase
+            const {data: user, error} = await supabase.auth.signUp({
+                email: email.toLowerCase(),
+                password: password,
+                options: {
+                    data: {
+                        first_name: firstName,
+                        last_name: name,
+                    },
                 },
-                {
-                    redirectTo: "https://your-custom-url.com", // Add your redirect URL here
-                }
-            );
-
+            });
 
             if (error) {
                 throw new Error(error.message);
             }
 
-            await signUp(user);
-            await createStreamChatUser(user);
+            // Ensure user data is valid before proceeding
+            if (!user) {
+                throw new Error("User registration failed. Please try again.");
+            }
+
+            // Perform additional user setup after successful sign up
+            await signUp(user); // Custom signup logic
+            await createStreamChatUser(user); // Stream Chat user creation logic
 
             Alert.alert("Success", "Confirmation email sent. Please verify your email.");
             router.replace("/"); // Redirect after registration
         } catch (error) {
             Alert.alert("Error", error.message);
-            console.error("Error signing up: ", error);
+            console.error("Error signing up:", error);
         } finally {
             setLoading(false);
         }
