@@ -6,7 +6,6 @@ import {ChannelList, Chat, OverlayProvider} from 'stream-chat-expo';
 import {GestureHandlerRootView} from "react-native-gesture-handler";
 import images from "../../../constants/images";
 import styles from "./ChatScreen.style";
-import Loading from "../../../components/common/loading/Loading";
 // Your StreamChat instance
 const chatClient = StreamChat.getInstance('vxujf6n9668d');
 
@@ -20,10 +19,6 @@ const makeid = (length) => {
     return result;
 };
 
-// Filters and options for the ChannelList
-const filters = {};
-const options = {limit: 20, messages_limit: 30};
-
 const ChatsScreen = ({route}) => {
     const {userId, userName} = route.params;
     const [channelsKey, setChannelsKey] = useState(1);
@@ -32,6 +27,9 @@ const ChatsScreen = ({route}) => {
     const [chatRoomDescription, setChatRoomDescription] = useState('');
     const [loading, setLoading] = useState(false);
     const router = useRouter();
+    // Filters and options for the ChannelList
+    const filters = {members: {$in: [userId]}}; // Show channels where the user is a member
+    const options = {limit: 20, messages_limit: 30};
 
     useEffect(() => {
         const connectStreamUser = async () => {
@@ -75,6 +73,15 @@ const ChatsScreen = ({route}) => {
         setModalVisible(false);
     };
 
+    if (loading) {
+        return (
+            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+                <Text>Loading Chats...</Text>
+            </View>
+        );
+    }
+
+
     return (
         <GestureHandlerRootView>
             <Stack.Screen
@@ -90,7 +97,6 @@ const ChatsScreen = ({route}) => {
                 }}
             />
             <OverlayProvider>
-                <Loading loading={loading}/>
                 <Chat client={chatClient}>
                     <Modal
                         animationType="slide"

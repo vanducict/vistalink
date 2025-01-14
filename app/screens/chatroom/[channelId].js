@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {ActivityIndicator, SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import {useGlobalSearchParams} from 'expo-router';
+import {Stack, useGlobalSearchParams} from 'expo-router';
 import {StreamChat} from 'stream-chat';
 import {Channel, Chat, MessageInput, MessageList, OverlayProvider as ChatOverlayProvider,} from 'stream-chat-expo';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -21,18 +21,20 @@ const ChatRoom = () => {
         const fetchChannel = async () => {
             try {
                 if (channelId) {
-                    const fetchedChannel = chatClient.channel('messaging', channelId);
-                    await fetchedChannel.watch();
-                    if (active) {
+                    // Check if channel is already in cache
+                    const cachedChannel = chatClient.activeChannels[channelId];
+                    if (cachedChannel) {
+                        setChannel(cachedChannel);
+                    } else {
+                        const fetchedChannel = chatClient.channel('messaging', channelId);
+                        await fetchedChannel.watch();
                         setChannel(fetchedChannel);
                     }
                 }
             } catch (error) {
                 console.error('Error fetching channel:', error);
             } finally {
-                if (active) {
-                    setLoading(false);
-                }
+                setLoading(false);
             }
         };
 
@@ -64,12 +66,26 @@ const ChatRoom = () => {
 
     return (
         <GestureHandlerRootView style={{flex: 1}}>
+            <Stack.Screen
+                options={{
+                    headerTitleAlign: "center",
+                    headerShown: true,
+                    headerTitle: () => (
+                        <Text>{channelId}</Text>
+                    ),
+                }}
+            />
             <SafeAreaView style={{flex: 1}}>
                 <ChatOverlayProvider bottomInset={insets.bottom} topInset={insets.top}>
                     <Chat client={chatClient}>
                         <Channel channel={channel}>
                             <View style={StyleSheet.absoluteFill}>
-                                <MessageList/>
+                                <MessageList
+                                    initialScrollToFirstUnreadMessage
+                                    onEndReachedThreshold={0.5} // Adjust as needed
+                                    onEndReached={() => {
+                                        channel.query({messages: {limit: 20}}).catch(console.error); // Load more messages
+                                    }}/>
                                 <MessageInput/>
                             </View>
                         </Channel>

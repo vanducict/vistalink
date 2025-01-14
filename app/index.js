@@ -18,6 +18,8 @@ const App = () => {
         return <Loading loading={loading}/>;
     }
 
+    console.log(user);
+
     return user ? (
         <Tab.Navigator
             screenOptions={{
@@ -43,8 +45,8 @@ const App = () => {
                 name="Chats"
                 component={Chats}
                 initialParams={{
-                    userId: 'vanducict', // example param
-                    userName: 'Tam Van Duc', // example param
+                    userId: user?.user?.id,
+                    userName: user?.user?.email,
                 }}
             />
             <Tab.Screen
