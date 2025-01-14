@@ -103,14 +103,12 @@ const Register = () => {
             await chatClient.connectUser({
                 id,
                 email,
-                name: user_metadata.first_name + " " + user_metadata.last_name
             }, serverToken);
 
             // Upsert the user only after connecting to ensure the session is correct
             await chatClient.upsertUser({
                 id,
                 email,
-                name: user_metadata.first_name + " " + user_metadata.last_name
             });
 
             console.log("User created/updated in Stream Chat:", userDisplayName);
