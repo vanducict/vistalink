@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="fix">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
     </list>
@@ -74,14 +74,7 @@
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
       <workItem from="1736441348945" duration="7436000" />
-      <workItem from="1736799093463" duration="16947000" />
-    </task>
-    <task id="LOCAL-00022" summary="fix nav login">
-      <created>1735834549589</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1735834549589</updated>
+      <workItem from="1736799093463" duration="18081000" />
     </task>
     <task id="LOCAL-00023" summary="navigation pass data to plp work + style changing">
       <created>1735896857283</created>
@@ -419,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736848872163</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="store display name supabase auth">
+      <created>1736860651501</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1736860651501</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +449,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Applicants viewlist" />
     <MESSAGE value="font changes" />
     <MESSAGE value="open spots add activity" />
     <MESSAGE value="add dynamic expired field" />
@@ -474,6 +473,7 @@
     <MESSAGE value="chat load fix" />
     <MESSAGE value="fix lazy loading" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="store display name supabase auth" />
+    <option name="LAST_COMMIT_MESSAGE" value="store display name supabase auth" />
   </component>
 </project>

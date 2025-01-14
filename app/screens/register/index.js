@@ -19,6 +19,7 @@ import supabase from "../../lib/supabase";
 import {getAllUserTypes, insertUser} from "../../../service/user/UserService";
 import icons from "../../../constants/icons";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
+import {StreamChat} from "stream-chat";
 
 const Register = () => {
     const router = useRouter();
@@ -81,6 +82,45 @@ const Register = () => {
         }
     };
 
+    const createStreamChatUser = async (supabaseUser) => {
+        try {
+            // Initialize StreamChat client with your API key
+            const chatClient = StreamChat.getInstance('vxujf6n9668d'); // Replace with your Stream API Key
+
+            const userId = supabaseUser.user.id; // Use the user ID from Supabase
+            const userEmail = supabaseUser.user.email;
+            const userDisplayName = supabaseUser.user.user_metadata.first_name + " " + supabaseUser.user.user_metadata.last_name || userEmail; // Fallback to a default name
+
+            const user = {
+                id: userId, // Unique user ID
+                email: userEmail,
+                name: userDisplayName,
+            };
+
+            // Disconnect any existing user to avoid conflicts
+            if (chatClient.user) {
+                console.log('Disconnecting existing user...');
+                await chatClient.disconnectUser();
+            }
+
+            // Generate a development token (ONLY for development/testing)
+            const serverToken = chatClient.devToken(userId); // Replace with a proper server token in production
+
+            // Authenticate and upsert the user
+            await chatClient.connectUser(user, serverToken);
+
+            // Upsert (create or update) the user in Stream Chat
+            await chatClient.upsertUser(user);
+            console.log('User created/updated in Stream Chat:', user);
+
+            // Disconnect the client after the operation (optional, depends on your use case)
+            await chatClient.disconnectUser();
+        } catch (error) {
+            console.error('Error creating/updating user in Stream Chat:', error);
+        }
+    };
+
+
     // Handle the registration logic
     const handleRegister = async () => {
         if (!email || !password || !birthdate || !name || !firstName || !description) {
@@ -114,6 +154,7 @@ const Register = () => {
             }
 
             await signUp(user);
+            await createStreamChatUser(user);
 
             Alert.alert("Success", "Confirmation email sent. Please verify your email.");
             router.replace("/"); // Redirect after registration
