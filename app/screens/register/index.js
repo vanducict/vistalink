@@ -78,7 +78,6 @@ const Register = () => {
             console.log("Error signing up: ", e);
         } finally {
             setLoading(false);
-            router.replace("/"); // Navigate after registration
         }
     };
 

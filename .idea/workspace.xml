@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="add stream chat usere register">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
     </list>
@@ -74,14 +74,7 @@
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
       <workItem from="1736441348945" duration="7436000" />
-      <workItem from="1736799093463" duration="18081000" />
-    </task>
-    <task id="LOCAL-00023" summary="navigation pass data to plp work + style changing">
-      <created>1735896857283</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1735896857283</updated>
+      <workItem from="1736799093463" duration="18573000" />
     </task>
     <task id="LOCAL-00024" summary="back fix">
       <created>1735897027529</created>
@@ -419,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736860651501</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="add stream chat usere register">
+      <created>1736861833685</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1736861833685</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +449,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="font changes" />
     <MESSAGE value="open spots add activity" />
     <MESSAGE value="add dynamic expired field" />
     <MESSAGE value="greyad out link applicants" />
@@ -474,6 +473,7 @@
     <MESSAGE value="fix lazy loading" />
     <MESSAGE value="fix" />
     <MESSAGE value="store display name supabase auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="store display name supabase auth" />
+    <MESSAGE value="add stream chat usere register" />
+    <option name="LAST_COMMIT_MESSAGE" value="add stream chat usere register" />
   </component>
 </project>
