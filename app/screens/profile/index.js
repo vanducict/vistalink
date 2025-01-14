@@ -8,6 +8,7 @@ import icons from "../../../constants/icons";
 import {Stack} from "expo-router";
 import {COLORS} from "../../../constants/theme";
 import images from "../../../constants/images";
+import {StreamChat} from "stream-chat";
 
 const Profile = () => {
     const [currentUser, setCurrentUser] = useState(null);
@@ -36,6 +37,8 @@ const Profile = () => {
         try {
             setLoading(true);
             const {error} = await supabase.auth.signOut();
+            const chatClient = StreamChat.getInstance('vxujf6n9668d'); // Replace with your Stream API Key
+            await chatClient.disconnectUser();
             if (error) {
                 Alert.alert("Error", error.message);
             } else {
