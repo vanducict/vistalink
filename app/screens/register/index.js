@@ -84,7 +84,7 @@ const Register = () => {
                 return;
             }
 
-            const {id, email} = supabaseUser.user;
+            const {id, email, user_metadata} = supabaseUser.user;
             const userDisplayName = `${firstName || "FirstName"} ${name || "LastName"}`;
             console.log("StreamChat User:", userDisplayName);
 
@@ -96,8 +96,18 @@ const Register = () => {
             }
 
             const serverToken = chatClient.devToken(id);
-            await chatClient.connectUser({id, email, name: firstName + " " + name}, serverToken);
-            await chatClient.upsertUser({id, email, name: firstName + " " + name});
+
+            await chatClient.connectUser({
+                id,
+                email,
+                name: user_metadata.first_name + " " + user_metadata.last_name
+            }, serverToken);
+
+            await chatClient.upsertUser({
+                id,
+                email,
+                name: user_metadata.first_name + " " + user_metadata.last_name
+            });
 
             console.log("User created/updated in Stream Chat:", userDisplayName);
 

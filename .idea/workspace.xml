@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="hopeloos 2.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/links/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,14 +74,7 @@
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
       <workItem from="1736441348945" duration="7436000" />
-      <workItem from="1736799093463" duration="25282000" />
-    </task>
-    <task id="LOCAL-00033" summary="lottie animations add">
-      <created>1735953219699</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1735953219699</updated>
+      <workItem from="1736799093463" duration="26572000" />
     </task>
     <task id="LOCAL-00034" summary="small css fix">
       <created>1735953313212</created>
@@ -419,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736887230182</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="hopeloos 2.0">
+      <created>1736887288436</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1736887288436</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +449,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove bulk edit and better ui flow" />
     <MESSAGE value="add sample fb and google login view" />
     <MESSAGE value="login adjust style" />
     <MESSAGE value="login lowercase fix + empty ui" />
@@ -474,6 +473,7 @@
     <MESSAGE value="fffkes PN solution" />
     <MESSAGE value="sad days" />
     <MESSAGE value="hopeloos" />
-    <option name="LAST_COMMIT_MESSAGE" value="hopeloos" />
+    <MESSAGE value="hopeloos 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="hopeloos 2.0" />
   </component>
 </project>
