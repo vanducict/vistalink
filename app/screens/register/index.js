@@ -74,6 +74,22 @@ const Register = () => {
         }
     };
 
+    const waitForCondition = async (conditionFn, interval = 500, timeout = 10000) => {
+        const startTime = Date.now();
+
+        while (true) {
+            if (conditionFn()) {
+                return; // Condition is met
+            }
+
+            if (Date.now() - startTime > timeout) {
+                throw new Error("Timeout waiting for condition");
+            }
+
+            await new Promise(resolve => setTimeout(resolve, interval));
+        }
+    };
+
     const createStreamChatUser = async (supabaseUser) => {
         try {
             if (!supabaseUser || !supabaseUser.user) {
@@ -103,9 +119,10 @@ const Register = () => {
                 name
             }, serverToken);
 
-            await new Promise(resolve => setTimeout(resolve, 5000));// Wait for 1 second before upserting the user
+            // Wait for the connection to be ready
+            await waitForCondition(() => chatClient.user, 500, 10000);
 
-            // Upsert the user only after connecting to ensure the session is correct
+            // Upsert the user only after the condition is met
             await chatClient.upsertUser({
                 id,
                 email,
