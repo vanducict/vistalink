@@ -74,14 +74,7 @@
       <workItem from="1736081308528" duration="33572000" />
       <workItem from="1736360730826" duration="7161000" />
       <workItem from="1736441348945" duration="7436000" />
-      <workItem from="1736799093463" duration="30814000" />
-    </task>
-    <task id="LOCAL-00041" summary="fix fonts and linkscreen start daddy">
-      <created>1736091570413</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1736091570413</updated>
+      <workItem from="1736799093463" duration="31463000" />
     </task>
     <task id="LOCAL-00042" summary="active and expired based on date">
       <created>1736108244911</created>
@@ -419,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736892909293</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="better fix late">
+      <created>1736897069217</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1736897069217</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +449,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="isClosed when submit" />
     <MESSAGE value="navigate back" />
     <MESSAGE value="style change filter home links" />
     <MESSAGE value="super sketch version chat" />
@@ -474,6 +473,7 @@
     <MESSAGE value="attempt 100020100" />
     <MESSAGE value="I think this delay works" />
     <MESSAGE value="better loading UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="better loading UI" />
+    <MESSAGE value="better fix late" />
+    <option name="LAST_COMMIT_MESSAGE" value="better fix late" />
   </component>
 </project>

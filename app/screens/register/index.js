@@ -123,11 +123,9 @@ const Register = () => {
             await waitForCondition(() => chatClient.user, 500, 10000);
 
             // Upsert the user only after the condition is met
-            await chatClient.upsertUser({
-                id,
-                email,
-                name
-            });
+            await chatClient.upsertUser(
+                {id: id, role: "user", email: email, name: name}
+            );
 
             console.log("User created/updated in Stream Chat:", name);
 
