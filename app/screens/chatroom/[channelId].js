@@ -1,40 +1,49 @@
 import React, {useEffect, useState} from 'react';
 import {ActivityIndicator, SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import {useGlobalSearchParams} from 'expo-router'; // Import for dynamic route params
+import {useGlobalSearchParams} from 'expo-router';
 import {StreamChat} from 'stream-chat';
 import {Channel, Chat, MessageInput, MessageList, OverlayProvider as ChatOverlayProvider,} from 'stream-chat-expo';
-import {useSafeAreaInsets} from "react-native-safe-area-context";
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 const ChatRoom = () => {
-    const {channelId} = useGlobalSearchParams(); // Extract channelId from the route params
+    const {channelId} = useGlobalSearchParams(); // Extract channelId from route params
     const [channel, setChannel] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    // Initialize the StreamChat client
+    // StreamChat instance
     const chatClient = StreamChat.getInstance('vxujf6n9668d');
+    const insets = useSafeAreaInsets();
 
     useEffect(() => {
-        // Fetch and initialize the channel
+        let active = true; // Prevent updates to unmounted components
+
         const fetchChannel = async () => {
             try {
-                const fetchedChannel = chatClient.channel('messaging', channelId);  // Specify the channel type and ID
-                await fetchedChannel.watch();  // Watch the channel for updates
-                setChannel(fetchedChannel);  // Set the channel state
-                setLoading(false);  // Stop loading when the channel is fetched
+                if (channelId) {
+                    const fetchedChannel = chatClient.channel('messaging', channelId);
+                    await fetchedChannel.watch();
+                    if (active) {
+                        setChannel(fetchedChannel);
+                    }
+                }
             } catch (error) {
                 console.error('Error fetching channel:', error);
-                setLoading(false);  // Stop loading even on error
+            } finally {
+                if (active) {
+                    setLoading(false);
+                }
             }
         };
 
-        if (channelId) {
-            fetchChannel();
-        }
+        fetchChannel();
 
-        // Cleanup on unmount
+        // Cleanup function to stop watching the channel
         return () => {
-            if (channel) {
-                channel.stopWatching(); // Stop watching the channel when leaving the chat
+            active = false; // Mark component as unmounted
+            if (channelId) {
+                const cleanupChannel = chatClient.channel('messaging', channelId);
+                cleanupChannel.stopWatching().catch(console.error);
             }
         };
     }, [channelId, chatClient]);
@@ -47,28 +56,27 @@ const ChatRoom = () => {
             </View>
         );
     }
-    const {bottom} = useSafeAreaInsets();
 
     // If no channel is found, show an error message
     if (!channel) {
-        return <Text style={{textAlign: 'center', marginTop: 20}}>Failed to load channel. Please try again.</Text>;
+        return <Text style={{textAlign: 'center', marginTop: 20}}>Channel not found. Please try again.</Text>;
     }
 
     return (
-
-
-        <SafeAreaView>
-            <ChatOverlayProvider bottomInset={bottom} topInset={0}>
-                <Chat client={chatClient}>
-                    <Channel channel={channel} keyboardVerticalOffset={0}>
-                        <View style={StyleSheet.absoluteFill}>
-                            <MessageList/>
-                            <MessageInput/>
-                        </View>
-                    </Channel>
-                </Chat>
-            </ChatOverlayProvider>
-        </SafeAreaView>
+        <GestureHandlerRootView style={{flex: 1}}>
+            <SafeAreaView style={{flex: 1}}>
+                <ChatOverlayProvider bottomInset={insets.bottom} topInset={insets.top}>
+                    <Chat client={chatClient}>
+                        <Channel channel={channel}>
+                            <View style={StyleSheet.absoluteFill}>
+                                <MessageList/>
+                                <MessageInput/>
+                            </View>
+                        </Channel>
+                    </Chat>
+                </ChatOverlayProvider>
+            </SafeAreaView>
+        </GestureHandlerRootView>
     );
 };
 
