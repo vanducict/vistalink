@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="update packages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,14 +76,7 @@
       <workItem from="1736441348945" duration="7436000" />
       <workItem from="1736799093463" duration="31535000" />
       <workItem from="1736927792952" duration="35000" />
-      <workItem from="1736947960155" duration="202000" />
-    </task>
-    <task id="LOCAL-00043" summary="Applicants viewlist">
-      <created>1736115787987</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1736115787988</updated>
+      <workItem from="1736947960155" duration="2853000" />
     </task>
     <task id="LOCAL-00044" summary="font changes">
       <created>1736116010539</created>
@@ -421,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736897849372</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="update packages">
+      <created>1736948497945</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1736948497945</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,7 +451,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="style change filter home links" />
     <MESSAGE value="super sketch version chat" />
     <MESSAGE value="chat load fix" />
     <MESSAGE value="fix lazy loading" />
@@ -476,6 +475,7 @@
     <MESSAGE value="better loading UI" />
     <MESSAGE value="better fix late" />
     <MESSAGE value="better fix late 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="better fix late 2" />
+    <MESSAGE value="update packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="update packages" />
   </component>
 </project>

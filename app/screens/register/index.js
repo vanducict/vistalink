@@ -98,39 +98,47 @@ const Register = () => {
             }
 
             const {id, email, user_metadata} = supabaseUser.user;
-            const name = `${user_metadata.first_name} ${user_metadata.last_name}`;
-            console.log("StreamChat User:", name);
 
-            const chatClient = StreamChat.getInstance('vxujf6n9668d'); // Replace with your Stream API Key
-
-            // Disconnect the existing user before connecting a new one to avoid session conflicts
-            if (chatClient.user) {
-                console.log('Disconnecting existing user...');
-                await chatClient.disconnectUser();
+            if (!user_metadata || !user_metadata.first_name || !user_metadata.last_name) {
+                console.error("User metadata is incomplete:", user_metadata);
+                return;
             }
 
-            // Generate a server token for the specific user
+            // Create user's full name
+            const name = `${user_metadata.first_name} ${user_metadata.last_name}`;
+            console.log("Creating StreamChat user:", {id, email, name});
+
+            // Forcefully disconnect the current user (if any)
+            const chatClient = new StreamChat('vxujf6n9668d'); // Create a fresh instance every time
+
+            // Disconnect the current user before proceeding
+            if (chatClient.user) {
+                console.log("Disconnecting existing user...");
+                await chatClient.disconnectUser();
+                console.log("User disconnected successfully.");
+            }
+
+            // Generate a server token for the new user
             const serverToken = chatClient.devToken(id);
 
-            // Connect the user
-            await chatClient.connectUser({
+            // Log out of any previous sessions
+            await chatClient.connectUser({id, email, name}, serverToken);
+            console.log("User connected to StreamChat:", {id, name});
+
+            // Upsert user metadata to make sure the name is correctly set
+            await chatClient.upsertUser({
                 id,
+                role: "user",
                 email,
-                name
-            }, serverToken);
+                name,
+            });
 
-            // Wait for the connection to be ready
-            await waitForCondition(() => chatClient.user, 500, 10000);
+            console.log("User created/updated in StreamChat:", {id, name});
 
-            // Upsert the user only after the condition is met
-            await chatClient.upsertUser(
-                {id: id, role: "user", email: email, name: name}
-            );
-
-            console.log("User created/updated in Stream Chat:", name);
-
-            // Disconnect the user once the operation is complete
+            // Optionally disconnect the user once the operation is complete
             await chatClient.disconnectUser();
+            console.log("User disconnected after operation.");
+
         } catch (error) {
             console.error("Error creating/updating user in Stream Chat:", error);
         }
