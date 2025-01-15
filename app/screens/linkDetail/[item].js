@@ -128,10 +128,10 @@ const LinkDetail = () => {
                 <TouchableOpacity
                     style={[
                         styles.applyButton,
-                        (spotsTaken >= totalSpots || isUserRegistered) && {backgroundColor: COLORS.gray} // Turn gray if full or registered
+                        (isUserRegistered) && {backgroundColor: COLORS.gray} // Turn gray if full or registered
                     ]}
                     onPress={registerToLink}
-                    disabled={spotsTaken >= totalSpots || isUserRegistered || loading} // Disable if full, registered, or loading
+                    disabled={isUserRegistered || loading} // Disable if full, registered, or loading
                 >
                     <Text style={styles.applyButtonText}>
                         {loading
