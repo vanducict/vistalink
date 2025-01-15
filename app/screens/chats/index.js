@@ -35,21 +35,47 @@ const ChatsScreen = ({route}) => {
         const connectStreamUser = async () => {
             try {
                 setLoading(true);
-                await chatClient.connectUser(
-                    {id: userId, name: userName},
-                    chatClient.devToken(userId),
-                );
-                setChannelsKey(prevKey => prevKey + 1); // Trigger re-render by incrementing the key
+
+                // If another user is already connected, disconnect first
+                if (chatClient?.userID && chatClient.userID !== userId) {
+                    console.log("Disconnecting previous user:", chatClient.userID);
+                    await chatClient.disconnectUser();
+                }
+
+                // Connect the current user
+                console.log("Connecting user:", userId);
+                const userPayload = {
+                    id: userId,
+                };
+
+                await chatClient.connectUser(userPayload, chatClient.devToken(userId));
+
+                setChannelsKey((prevKey) => prevKey + 1); // Trigger re-render
             } catch (err) {
-                console.error('Error connecting user:', err);
+                console.error("Error connecting user:", err);
+            } finally {
+                setLoading(false);
             }
         };
 
-        if (!chatClient.userID) {
-            connectStreamUser().then(r => r);
-            setLoading(false);
-        }
+        // Ensure the effect only runs when userId or userName changes
+        connectStreamUser();
+
+        return () => {
+            // Optional cleanup if needed
+            console.log("Cleaning up StreamChat user connection.");
+        };
     }, [userId, userName]);
+
+
+    useEffect(() => {
+        return () => {
+            if (chatClient?.userID) {
+                console.log("Disconnecting user on component unmount:", chatClient.userID);
+                chatClient.disconnectUser();
+            }
+        };
+    }, []);
 
     // Create a new chat room
     async function createChatRoom() {
