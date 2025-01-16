@@ -4,6 +4,7 @@
     <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,14 +78,7 @@
       <workItem from="1736799093463" duration="31535000" />
       <workItem from="1736927792952" duration="35000" />
       <workItem from="1736947960155" duration="5969000" />
-      <workItem from="1737016001054" duration="2901000" />
-    </task>
-    <task id="LOCAL-00049" summary="statuses rework">
-      <created>1736196385347</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1736196385348</updated>
+      <workItem from="1737016001054" duration="3926000" />
     </task>
     <task id="LOCAL-00050" summary="fetch correct events for collaborator">
       <created>1736272893320</created>
@@ -422,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737028585167</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="submit applicant check">
+      <created>1737029979246</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1737029979246</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +453,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add stream chat usere register" />
     <MESSAGE value="remove router replace" />
     <MESSAGE value="ugly soluition delay for now" />
     <MESSAGE value="solutioj maynebe" />
@@ -477,6 +477,7 @@
     <MESSAGE value="finalllyyyyy" />
     <MESSAGE value="fix multiple select + orderering applicants" />
     <MESSAGE value="refresh control applcicants" />
-    <option name="LAST_COMMIT_MESSAGE" value="refresh control applcicants" />
+    <MESSAGE value="submit applicant check" />
+    <option name="LAST_COMMIT_MESSAGE" value="submit applicant check" />
   </component>
 </project>

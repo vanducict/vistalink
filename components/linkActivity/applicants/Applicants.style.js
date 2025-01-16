@@ -236,7 +236,11 @@ const styles = {
         fontSize: 16,
         color: 'gray',
         fontFamily: FONT.regular,
-    },
+    }, errorMsg: {
+        color: '#FF4C4C',
+        fontFamily: FONT.bold
+    }
+
 };
 
 

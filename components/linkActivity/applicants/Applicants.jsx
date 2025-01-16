@@ -11,6 +11,7 @@ import {useRouter} from "expo-router";
 const Applicants = ({userLinks, event, refreshUserLinks}) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const router = useRouter();
+    const isOverCapacity = (event.maxPeople - userLinks.filter(link => link.status === 'approved').length) < 0;
 
     const handleApplicantStatus = async (id, userEmail, approved) => {
         try {
@@ -50,6 +51,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
     return (
         <View style={styles.container}>
             <Text style={styles.sectionTitle}>Applicants</Text>
+            {isOverCapacity ? <Text style={styles.errorMsg}>You can only approve {event.maxPeople}.</Text> : null}
             {userLinks.length === 0 ? (
                 <View style={styles.emptyContainer}>
                     <Lottie
@@ -162,7 +164,8 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                 </View>
             </Modal>
         </View>
-    );
+    )
+        ;
 };
 
 export default Applicants;
