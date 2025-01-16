@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="finalllyyyyy">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/userLink/UserLinkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/userLink/UserLinkService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,14 +77,7 @@
       <workItem from="1736799093463" duration="31535000" />
       <workItem from="1736927792952" duration="35000" />
       <workItem from="1736947960155" duration="5969000" />
-      <workItem from="1737016001054" duration="1564000" />
-    </task>
-    <task id="LOCAL-00047" summary="greyad out link applicants">
-      <created>1736189790139</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1736189790139</updated>
+      <workItem from="1737016001054" duration="1900000" />
     </task>
     <task id="LOCAL-00048" summary="reistering link">
       <created>1736191126401</created>
@@ -424,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736984347308</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="fix multiple select + orderering applicants">
+      <created>1737028193760</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1737028193761</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +452,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix" />
     <MESSAGE value="store display name supabase auth" />
     <MESSAGE value="add stream chat usere register" />
     <MESSAGE value="remove router replace" />
@@ -479,6 +476,7 @@
     <MESSAGE value="potential fix async names streamchat" />
     <MESSAGE value="apply fix" />
     <MESSAGE value="finalllyyyyy" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalllyyyyy" />
+    <MESSAGE value="fix multiple select + orderering applicants" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix multiple select + orderering applicants" />
   </component>
 </project>

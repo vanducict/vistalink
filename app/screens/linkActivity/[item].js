@@ -1,4 +1,4 @@
-import {Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
+import {Image, RefreshControl, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
 import styles from "./[item].style";
 import {Stack, useGlobalSearchParams, useRouter} from "expo-router";
 import images from "../../../constants/images";
@@ -109,7 +109,10 @@ const LinkActivity = () => {
                 }}
             />
 
-            <ScrollView>
+            <ScrollView
+                refreshControl={
+                    <RefreshControl refreshing={loading} onRefresh={fetchUserLinksForId}/>
+                }>
                 {/* Event Overview */}
                 <View style={styles.container}>
                     {event ? (
