@@ -7,12 +7,15 @@ import Lottie from "lottie-react-native";
 import animations from "../../../constants/animations";
 import {updateLinkClosed} from "../../../service/link/LinkService";
 import {useRouter} from "expo-router";
+import {StreamChat} from "stream-chat";
+import {useAuth} from "../../../utils/AuthenticationContext";
+import {getUserForEmail} from "../../../service/user/UserService";
 
 const Applicants = ({userLinks, event, refreshUserLinks}) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const router = useRouter();
     const isOverCapacity = (event.maxPeople - userLinks.filter(link => link.status === 'approved').length) < 0;
-
+    const {user, loading} = useAuth();
     const handleApplicantStatus = async (id, userEmail, approved) => {
         try {
             const status = approved ? "approved" : "declined";
@@ -27,6 +30,88 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
         setIsModalVisible(true);
     };
 
+    async function createChatRoom(userLinks) {
+        const chatClient = StreamChat.getInstance('vxujf6n9668d');
+        try {
+            if (!user) {
+                throw new Error('currentUser is not defined. Please provide a valid user ID.');
+            }
+
+            // Ensure the user is connected
+            if (!chatClient.user) {
+                await chatClient.connectUser(
+                    {
+                        id: user?.user?.id, // Unique user ID
+                    },
+                    chatClient.devToken(user?.user?.id) // Replace with server-generated token in production
+                );
+            }
+
+            // Validate event object
+            if (!event || !event.id || !event.name || !event.description) {
+                throw new Error('Invalid event object. Ensure event.id, event.name, and event.description are defined.');
+            }
+
+            // Create the channel
+            console.log('Event:', event);
+            console.log('User Links:', userLinks);
+
+            const channel = chatClient.channel('messaging', event.id, {
+                name: event.name,
+                description: event.description,
+            });
+
+            await channel.create();
+
+
+            const getMembers = async (userLinks) => {
+                const members = await Promise.all(
+                    userLinks.map(async (link) => {
+                        const user = await getUserForEmail(link.userEmail);
+                        console.log(`User for email ${link.userEmail}:`, user);
+                        if (user && user.length > 0) {
+                            return user[0]?.uid;  // Access the first element and get the `uid`
+                        } else {
+                            console.log(`User not found for email: ${link.userEmail}`);
+                            return null;  // Ensure it returns null if no user is found
+                        }
+                    })
+                );
+                members.push(user?.user?.id);  // Add the current user to the list of members
+                return members.filter(member => member !== null);  // Filter out any null values
+            };
+
+
+            const members = await getMembers(userLinks);
+            console.log('Members:', members);
+
+            if (members.length > 0) {
+                await channel.addMembers(members);
+            }
+
+            try {
+                // Fetch members once
+                const members = await getMembers(userLinks);
+                console.log('Members:', members);
+
+                // Add members to the channel if the list is not empty
+                if (members.length > 0) {
+                    await channel.addMembers(members);
+                }
+            } catch (error) {
+                console.error('Error adding members:', error);
+            }
+
+
+            console.log('Chat room created successfully!');
+        } catch (err) {
+            console.error('Error creating chat room or adding members:', err);
+        }
+
+        setIsModalVisible(false);
+    }
+
+
     const handleConfirm = async () => {
         setIsModalVisible(false); // Close modal
         try {
@@ -35,6 +120,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                 await notifyUserLinkStatus(link.linkId);
             }
             await updateLinkClosed(event.id, true);
+            await createChatRoom(userLinks.filter(link => link.status === 'approved'));
             await refreshUserLinks(); // Refresh user links after the update
             router.back(); // Go back to the previous screen
             console.log("All applicants submitted and approved.");

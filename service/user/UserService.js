@@ -2,6 +2,7 @@ import supabase from "../../app/lib/supabase";
 
 export const insertUser = async (user, email, name, firstName, birthdate, description, userType) => {
     try {
+        console.log(user);
         const {data, error} = await supabase
             .from('User')
             .insert([
@@ -12,6 +13,7 @@ export const insertUser = async (user, email, name, firstName, birthdate, descri
                     birthDate: birthdate,
                     description: description,
                     userType: userType,
+                    uid: user?.user?.id
                 },
             ])
             .select();
