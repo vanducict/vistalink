@@ -65,7 +65,10 @@ const LinkActivity = () => {
                         };
                     })
                 );
-                setUserLinks(userLinksWithDetails);
+
+                // Sort userLinksWithDetails by linkId to ensure consistent order
+                const sortedUserLinks = userLinksWithDetails.sort((a, b) => a.linkId - b.linkId);
+                setUserLinks(sortedUserLinks);
             } else {
                 console.log("No user links data available.");
             }

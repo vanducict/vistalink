@@ -12,10 +12,10 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const router = useRouter();
 
-    const handleApplicantStatus = async (id, approved) => {
+    const handleApplicantStatus = async (id, userEmail, approved) => {
         try {
             const status = approved ? "approved" : "declined";
-            await updateUserLinkStatus(id, status);
+            await updateUserLinkStatus(id, userEmail, status);
             await refreshUserLinks(); // Refresh links after updating
         } catch (error) {
             console.error("Error updating applicant status:", error);
@@ -92,7 +92,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                             <View style={styles.approvalButtonsContainer}>
                                 {/* Decline Profile Button */}
                                 <TouchableOpacity
-                                    onPress={() => handleApplicantStatus(link.linkId, false)}
+                                    onPress={() => handleApplicantStatus(link.linkId, link.userEmail, false)}
                                     style={[
                                         styles.declineProfileButton,
                                         (event.expired || event.closed) && styles.disabledButton, // Disable when expired or closed
@@ -104,7 +104,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
 
                                 {/* Approve Profile Button */}
                                 <TouchableOpacity
-                                    onPress={() => handleApplicantStatus(link.linkId, true)}
+                                    onPress={() => handleApplicantStatus(link.linkId, link.userEmail, true)}
                                     style={[
                                         styles.approveProfileButton,
                                         (event.expired || event.closed) && styles.disabledButton, // Disable when expired or closed

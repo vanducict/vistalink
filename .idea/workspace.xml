@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="apply fix">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="finalllyyyyy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/chats/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/chats/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/userLink/UserLinkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/userLink/UserLinkService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,14 +78,8 @@
       <workItem from="1736441348945" duration="7436000" />
       <workItem from="1736799093463" duration="31535000" />
       <workItem from="1736927792952" duration="35000" />
-      <workItem from="1736947960155" duration="5538000" />
-    </task>
-    <task id="LOCAL-00046" summary="add dynamic expired field">
-      <created>1736189227898</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1736189227898</updated>
+      <workItem from="1736947960155" duration="5969000" />
+      <workItem from="1737016001054" duration="1564000" />
     </task>
     <task id="LOCAL-00047" summary="greyad out link applicants">
       <created>1736189790139</created>
@@ -421,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736983344417</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="finalllyyyyy">
+      <created>1736984347306</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1736984347308</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,7 +454,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix lazy loading" />
     <MESSAGE value="fix" />
     <MESSAGE value="store display name supabase auth" />
     <MESSAGE value="add stream chat usere register" />
@@ -476,6 +478,7 @@
     <MESSAGE value="update packages" />
     <MESSAGE value="potential fix async names streamchat" />
     <MESSAGE value="apply fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="apply fix" />
+    <MESSAGE value="finalllyyyyy" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalllyyyyy" />
   </component>
 </project>

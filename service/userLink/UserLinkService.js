@@ -24,7 +24,9 @@ export const getUserLinksForId = async (linkId) => {
     const {data, error} = await supabase
         .from('UserLink')
         .select('*') // Adjust columns as necessary
-        .eq('linkId', linkId); // Filter by linkId
+        .eq('linkId', linkId) // Filter by linkId
+        .order('userEmail', {ascending: true}); // Order by linkId (ascending order)
+
 
     if (error) {
         console.log("Error fetching UserLinks:", error);
@@ -50,12 +52,13 @@ export const getAllLinksForUserCollaborator = async (currentUser) => {
     }
 }
 
-export const updateUserLinkStatus = async (linkId, status) => {
-
+export const updateUserLinkStatus = async (linkId, userEmail, status) => {
+    console.log(linkId, userEmail, status);
     const {data, error} = await supabase
         .from('UserLink')
         .update({status: status})
         .eq('linkId', linkId)
+        .eq('userEmail', userEmail)
         .select()
 
     if (error) {
