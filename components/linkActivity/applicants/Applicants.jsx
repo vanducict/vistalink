@@ -121,9 +121,9 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
             <TouchableOpacity
                 style={[
                     styles.saveAll,
-                    (event.expired || event.closed) && styles.disabledButton,
+                    (event.expired || event.closed || (event.maxPeople) - userLinks.filter(link => link.status === 'approved').length < 0) && styles.disabledButton,
                 ]}
-                disabled={event.expired || event.closed} // Disable when expired or closed
+                disabled={event.expired || event.closed || (event.maxPeople) - userLinks.filter(link => link.status === 'approved').length < 0} // Disable when expired or closed
                 onPress={openModal}
             >
                 <Text style={styles.buttonText}>Submit & Chat</Text>

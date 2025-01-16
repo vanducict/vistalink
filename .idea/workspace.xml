@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,14 +77,7 @@
       <workItem from="1736799093463" duration="31535000" />
       <workItem from="1736927792952" duration="35000" />
       <workItem from="1736947960155" duration="5969000" />
-      <workItem from="1737016001054" duration="1900000" />
-    </task>
-    <task id="LOCAL-00048" summary="reistering link">
-      <created>1736191126401</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1736191126401</updated>
+      <workItem from="1737016001054" duration="2901000" />
     </task>
     <task id="LOCAL-00049" summary="statuses rework">
       <created>1736196385347</created>
@@ -422,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737028193761</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="refresh control applcicants">
+      <created>1737028585167</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1737028585167</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +452,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="store display name supabase auth" />
     <MESSAGE value="add stream chat usere register" />
     <MESSAGE value="remove router replace" />
     <MESSAGE value="ugly soluition delay for now" />
@@ -477,6 +476,7 @@
     <MESSAGE value="apply fix" />
     <MESSAGE value="finalllyyyyy" />
     <MESSAGE value="fix multiple select + orderering applicants" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix multiple select + orderering applicants" />
+    <MESSAGE value="refresh control applcicants" />
+    <option name="LAST_COMMIT_MESSAGE" value="refresh control applcicants" />
   </component>
 </project>
