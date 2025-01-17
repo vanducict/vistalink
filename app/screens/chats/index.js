@@ -165,6 +165,7 @@ const ChatsScreen = ({route}) => {
                         key={channelsKey} // Use channelsKey to trigger re-render
                         filters={filters}
                         options={options}
+                        sort={{last_message_at: -1}}
                         onSelect={(channel) => {
                             // Use `router.push` to navigate to the chat room page
                             router.push(`/screens/chatroom/${channel.id}`, {
