@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="submit applicant check">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="working create chat!!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/user/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/chatroom/ChatRoom.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/chatroom/ChatRoom.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/chatroom/[channelId].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/chatroom/[channelId].js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,14 +78,7 @@
       <workItem from="1736799093463" duration="31535000" />
       <workItem from="1736927792952" duration="35000" />
       <workItem from="1736947960155" duration="5969000" />
-      <workItem from="1737016001054" duration="9406000" />
-    </task>
-    <task id="LOCAL-00051" summary="Status bar collaborator">
-      <created>1736277027866</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1736277027866</updated>
+      <workItem from="1737016001054" duration="10957000" />
     </task>
     <task id="LOCAL-00052" summary="approval animiation">
       <created>1736285920848</created>
@@ -423,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737031051729</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="working create chat!!!!">
+      <created>1737054000621</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1737054000621</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +453,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove router replace" />
     <MESSAGE value="ugly soluition delay for now" />
     <MESSAGE value="solutioj maynebe" />
     <MESSAGE value="async problem fix?" />
@@ -478,6 +477,7 @@
     <MESSAGE value="fix multiple select + orderering applicants" />
     <MESSAGE value="refresh control applcicants" />
     <MESSAGE value="submit applicant check" />
-    <option name="LAST_COMMIT_MESSAGE" value="submit applicant check" />
+    <MESSAGE value="working create chat!!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="working create chat!!!!" />
   </component>
 </project>

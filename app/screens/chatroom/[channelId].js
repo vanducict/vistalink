@@ -5,6 +5,7 @@ import {StreamChat} from 'stream-chat';
 import {Channel, Chat, MessageInput, MessageList, OverlayProvider as ChatOverlayProvider,} from 'stream-chat-expo';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import styles from './ChatRoom.style';
 
 const ChatRoom = () => {
     const {channelId} = useGlobalSearchParams(); // Extract channelId from route params
@@ -71,7 +72,7 @@ const ChatRoom = () => {
                     headerTitleAlign: "center",
                     headerShown: true,
                     headerTitle: () => (
-                        <Text>{channelId}</Text>
+                        <Text style={styles.title}>{channel?.data?.name}</Text>
                     ),
                 }}
             />
