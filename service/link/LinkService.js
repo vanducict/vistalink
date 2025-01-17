@@ -84,7 +84,9 @@ export const updateLinkClosed = async (id, status) => {
 export const getAllEventTypes = async () => {
     const {data, error} = await supabase
         .from('Link')
-        .select('eventType');  // Fetch all eventType values
+        .select('eventType')
+        .eq("closed", false)  // Fetch all eventType values
+        .eq("expired", false);  // Fetch all eventType values
 
     if (error) {
         console.log("Error fetching event types:", error);

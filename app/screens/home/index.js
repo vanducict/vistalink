@@ -26,7 +26,6 @@ const Home = () => {
             try {
                 setLoading(true);
                 const user = await getCurrentUser();
-                console.log(1111 + user);
                 if (user && user.length > 0) {
                     setCurrentUser(user.pop());
                 } else {
