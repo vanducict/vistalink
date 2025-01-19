@@ -20,6 +20,9 @@ import {getAllUserTypes, insertUser} from "../../../service/user/UserService";
 import icons from "../../../constants/icons";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import {StreamChat} from "stream-chat";
+import * as ImagePicker from 'expo-image-picker';
+import {decode} from 'base64-arraybuffer';
+import * as FileSystem from 'expo-file-system';
 
 const Register = () => {
     const router = useRouter();
@@ -34,6 +37,8 @@ const Register = () => {
     const [open, setOpen] = useState(false);
     const [items, setItems] = useState([]);
     const [isDatePickerVisible, setDatePickerVisible] = useState(false);
+    const [user, setUser] = useState();
+    const [selectedImage, setSelectedImage] = useState(null);  // Store selected image
 
     useEffect(() => {
         const fetchUserTypes = async () => {
@@ -56,7 +61,6 @@ const Register = () => {
         fetchUserTypes().then(r => r);
     }, []);
 
-    // Handle the selected date from the DateTimePickerModal
     const handleConfirmDate = (date) => {
         const formattedDate = date.toISOString().split("T")[0]; // Format as YYYY-MM-DD
         setBirthdate(formattedDate);
@@ -74,26 +78,9 @@ const Register = () => {
         }
     };
 
-    const waitForCondition = async (conditionFn, interval = 500, timeout = 10000) => {
-        const startTime = Date.now();
-
-        while (true) {
-            if (conditionFn()) {
-                return; // Condition is met
-            }
-
-            if (Date.now() - startTime > timeout) {
-                throw new Error("Timeout waiting for condition");
-            }
-
-            await new Promise(resolve => setTimeout(resolve, interval));
-        }
-    };
-
     const createStreamChatUser = async (supabaseUser) => {
         try {
             if (!supabaseUser || !supabaseUser.user) {
-                console.error("User data is incomplete:", supabaseUser);
                 return;
             }
 
@@ -108,42 +95,29 @@ const Register = () => {
             const name = `${user_metadata.first_name} ${user_metadata.last_name}`;
             console.log("Creating StreamChat user:", {id, email, name});
 
-            // Forcefully disconnect the current user (if any)
-            const chatClient = new StreamChat('vxujf6n9668d'); // Create a fresh instance every time
+            const chatClient = new StreamChat('vxujf6n9668d');
 
-            // Disconnect the current user before proceeding
             if (chatClient.user) {
                 console.log("Disconnecting existing user...");
                 await chatClient.disconnectUser();
                 console.log("User disconnected successfully.");
             }
 
-            // Generate a server token for the new user
             const serverToken = chatClient.devToken(id);
 
-            // Log out of any previous sessions
             await chatClient.connectUser({id, email, name}, serverToken);
             console.log("User connected to StreamChat:", {id, name});
 
-            // Upsert user metadata to make sure the name is correctly set
-            await chatClient.upsertUser({
-                id,
-                role: "user",
-                email,
-                name,
-            });
+            await chatClient.upsertUser({id, role: "user", email, name});
 
             console.log("User created/updated in StreamChat:", {id, name});
 
-            // Optionally disconnect the user once the operation is complete
             await chatClient.disconnectUser();
             console.log("User disconnected after operation.");
-
         } catch (error) {
             console.error("Error creating/updating user in Stream Chat:", error);
         }
     };
-
 
     const signUp = async (user) => {
         try {
@@ -158,6 +132,62 @@ const Register = () => {
         }
     };
 
+    const uploadImage = async (userId) => {
+        if (!selectedImage) return null;
+
+        try {
+            const base64 = await FileSystem.readAsStringAsync(selectedImage.uri, {
+                encoding: 'base64',
+            });
+
+            const filePath = `${userId}/${new Date().getTime()}.${selectedImage.type === 'image' ? 'png' : 'mp4'}`;
+            const contentType = selectedImage.type === 'image' ? 'image/png' : 'video/mp4';
+
+            console.log('Uploading image to Supabase...');
+            console.log('User ID:', userId);
+            console.log('File Path:', filePath);
+            console.log('Content Type:', contentType);
+
+            const {data, error} = await supabase.storage
+                .from('profileImages')
+                .upload(filePath, decode(base64), {
+                    contentType,
+                    cacheControl: '3600',
+                    upsert: true,
+                });
+
+            if (error) {
+                console.error('Error uploading image:', error.message);
+                Alert.alert('Error', error.message);
+            } else {
+                console.log('Upload successful:', data);
+                return data.Key; // Return the uploaded image key for later use
+            }
+        } catch (error) {
+            console.error('Error processing image:', error.message);
+            Alert.alert('Error', 'An error occurred while processing the image.');
+        }
+    };
+
+    const onSelectImage = async () => {
+        // Request image picker permissions
+        const {status} = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (status !== 'granted') {
+            Alert.alert('Permission denied', 'We need permission to access your media library.');
+            return;
+        }
+
+        // Open the image picker
+        const result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            quality: 1,
+        });
+
+        if (!result.canceled) {
+            setSelectedImage(result.assets[0]); // Save the selected image
+        }
+    };
+
     const handleRegister = async () => {
         if (!email || !password || !birthdate || !name || !firstName || !description) {
             Alert.alert("Error", "Please fill in all the fields.");
@@ -166,6 +196,7 @@ const Register = () => {
 
         try {
             Keyboard.dismiss();
+            setLoading(true);
 
             const {data: user, error} = await supabase.auth.signUp({
                 email: email.toLowerCase(),
@@ -181,12 +212,10 @@ const Register = () => {
             if (user) {
                 await signUp(user);
                 await createStreamChatUser(user);
+                setUser(user); // Store user data after successful registration
+                await uploadImage(user?.user?.id);
             } else if (error) {
-
                 console.error('Error signing up:', error.message);
-            }
-
-            if (error) {
                 throw new Error(error.message);
             }
 
@@ -290,6 +319,10 @@ const Register = () => {
                     setValue={setUserType}
                     setItems={setItems}
                 />
+
+                <TouchableOpacity style={styles.registerButton} onPress={onSelectImage}>
+                    <Text style={styles.registerButtonText}>Add Image</Text>
+                </TouchableOpacity>
 
                 <TouchableOpacity style={styles.registerButton} onPress={handleRegister}>
                     <Text style={styles.registerButtonText}>
