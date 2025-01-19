@@ -74,8 +74,14 @@ const styles = StyleSheet.create({
             marginBottom: 15,
             fontSize: 16,
             fontFamily: FONT.regular,
+        },
+        addImageButton: {
+            backgroundColor: COLORS.primary,
+            padding: 15,
+            borderRadius: 8,
+            alignItems: "center",
+            maxHeight: 50,
         }
-
     })
 ;
 

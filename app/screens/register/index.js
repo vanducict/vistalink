@@ -320,9 +320,22 @@ const Register = () => {
                     setItems={setItems}
                 />
 
-                <TouchableOpacity style={styles.registerButton} onPress={onSelectImage}>
+                <TouchableOpacity style={styles.addImageButton} onPress={onSelectImage}>
                     <Text style={styles.registerButtonText}>Add Image</Text>
                 </TouchableOpacity>
+
+                {selectedImage ? (
+                    <>
+                        <Image
+                            source={{uri: selectedImage.uri}}
+                            style={{width: 100, height: 100, borderRadius: 10, marginTop: 10}}
+                        />
+                        <Text style={{marginTop: 5}}>Uploaded: {selectedImage.fileName || 'Image'}</Text>
+                    </>
+                ) : (
+                    <Text style={{marginTop: 10}}>No image selected</Text>
+                )}
+
 
                 <TouchableOpacity style={styles.registerButton} onPress={handleRegister}>
                     <Text style={styles.registerButtonText}>
