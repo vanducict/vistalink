@@ -94,6 +94,7 @@ const Home = () => {
                         />
                     ),
                     headerTitleAlign: 'center',
+                    headerShown: false
                 }}
             />
 

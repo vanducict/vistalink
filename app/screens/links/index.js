@@ -125,7 +125,7 @@ const Links = () => {
                 <Stack.Screen
                     options={{
                         headerTitleAlign: "center",
-                        headerShown: true,
+                        headerShown: false,
                         headerTitle: () => (
                             <Image
                                 source={images.link}

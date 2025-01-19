@@ -68,6 +68,7 @@ const Profile = () => {
                             style={{width: 40, height: 40, resizeMode: 'contain'}} // Adjust size
                         />
                     ),
+                    headerShown: true,
                     headerTitleAlign: 'center', // Ensure the title is centered
                 }}
             />
