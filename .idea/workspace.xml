@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="add demo preview">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="add crop + demo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/ProfileScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/ProfileScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,13 +79,6 @@
       <workItem from="1736927792952" duration="35000" />
       <workItem from="1736947960155" duration="5969000" />
       <workItem from="1737016001054" duration="22572000" />
-    </task>
-    <task id="LOCAL-00057" summary="login adjust style">
-      <created>1736442531707</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1736442531707</updated>
     </task>
     <task id="LOCAL-00058" summary="login adjust style">
       <created>1736442812661</created>
@@ -422,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737324744066</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="add crop + demo">
+      <created>1737325859018</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1737325859018</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +453,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fffkes PN solution" />
     <MESSAGE value="sad days" />
     <MESSAGE value="hopeloos" />
     <MESSAGE value="hopeloos 2.0" />
@@ -477,6 +477,7 @@
     <MESSAGE value="chat sort" />
     <MESSAGE value="remove headers pages some" />
     <MESSAGE value="working adding images storage" />
-    <option name="LAST_COMMIT_MESSAGE" value="working adding images storage" />
+    <MESSAGE value="add crop + demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="add crop + demo" />
   </component>
 </project>

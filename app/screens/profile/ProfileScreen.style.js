@@ -20,6 +20,12 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginBottom: 20,
     },
+    image: {
+        width: 100,
+        height: 100,
+        borderRadius: 10,
+        margin: 5,
+    },
     avatar: {
         width: 120,
         height: 120,
