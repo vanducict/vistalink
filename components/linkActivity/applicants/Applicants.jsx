@@ -10,12 +10,16 @@ import {useRouter} from "expo-router";
 import {StreamChat} from "stream-chat";
 import {useAuth} from "../../../utils/AuthenticationContext";
 import {getUserForEmail} from "../../../service/user/UserService";
+import UserProfile from "../../../app/screens/userProfile";
 
 const Applicants = ({userLinks, event, refreshUserLinks}) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const router = useRouter();
     const isOverCapacity = (event.maxPeople - userLinks.filter(link => link.status === 'approved').length) < 0;
     const {user, loading} = useAuth();
+    const [openUserProfile, setOpenUserProfile] = useState(false);
+    const [selectedUser, setSelectedUser] = useState(null); // Track selected user
+
     const handleApplicantStatus = async (id, userEmail, approved) => {
         try {
             const status = approved ? "approved" : "declined";
@@ -134,6 +138,11 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
         console.log("Submission cancelled.");
     };
 
+    const viewProfile = (userDetails) => {
+        setSelectedUser(userDetails); // Pass the selected user data
+        setOpenUserProfile(true);
+    };
+
     return (
         <View style={styles.container}>
             <Text style={styles.sectionTitle}>Applicants</Text>
@@ -170,9 +179,10 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                             <TouchableOpacity
                                 style={[
                                     styles.viewProfileButton,
-                                    (event.expired || event.closed) && styles.disabledButton, // Disable when expired or closed
+                                    (event.expired || event.closed) && styles.disabledButton,
                                 ]}
-                                disabled={event.expired || event.closed} // Disable when expired or closed
+                                disabled={event.expired || event.closed}
+                                onPress={() => viewProfile(link.userDetails[0])}
                             >
                                 <Text style={styles.buttonText}>View Profile</Text>
                             </TouchableOpacity>
@@ -249,6 +259,11 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                     </View>
                 </View>
             </Modal>
+            <UserProfile
+                visible={openUserProfile}
+                userDetails={selectedUser}
+                onClose={() => setOpenUserProfile(false)} // Close modal
+            />
         </View>
     )
         ;

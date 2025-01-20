@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="link owner images">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="djust card spots">
+      <change afterPath="$PROJECT_DIR$/app/screens/userProfile/UserProfileScreen.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/userProfile/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/popularcard/PopularCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popularcard/PopularCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,14 +80,8 @@
       <workItem from="1736927792952" duration="35000" />
       <workItem from="1736947960155" duration="5969000" />
       <workItem from="1737016001054" duration="22572000" />
-      <workItem from="1737367879022" duration="5447000" />
-    </task>
-    <task id="LOCAL-00063" summary="style adjust">
-      <created>1736522274924</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1736522274925</updated>
+      <workItem from="1737367879022" duration="7467000" />
+      <workItem from="1737386101988" duration="1837000" />
     </task>
     <task id="LOCAL-00064" summary="isClosed when submit">
       <created>1736547448396</created>
@@ -425,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737379424170</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="djust card spots">
+      <created>1737381140690</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1737381140690</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,7 +456,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="attempt 10002010" />
     <MESSAGE value="attempt 100020100" />
     <MESSAGE value="I think this delay works" />
     <MESSAGE value="better loading UI" />
@@ -480,6 +480,7 @@
     <MESSAGE value="tabbar styling issue" />
     <MESSAGE value="better styling" />
     <MESSAGE value="link owner images" />
-    <option name="LAST_COMMIT_MESSAGE" value="link owner images" />
+    <MESSAGE value="djust card spots" />
+    <option name="LAST_COMMIT_MESSAGE" value="djust card spots" />
   </component>
 </project>
