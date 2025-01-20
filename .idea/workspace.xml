@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="better styling">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="link owner images">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/home/popularcard/PopularCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popularcard/PopularCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/popularcard/PopularCard.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popularcard/PopularCard.style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,14 +80,7 @@
       <workItem from="1736927792952" duration="35000" />
       <workItem from="1736947960155" duration="5969000" />
       <workItem from="1737016001054" duration="22572000" />
-      <workItem from="1737367879022" duration="4010000" />
-    </task>
-    <task id="LOCAL-00062" summary="reload mechanism home page">
-      <created>1736521325326</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1736521325327</updated>
+      <workItem from="1737367879022" duration="5447000" />
     </task>
     <task id="LOCAL-00063" summary="style adjust">
       <created>1736522274924</created>
@@ -429,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737369767767</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="link owner images">
+      <created>1737379424170</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1737379424170</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +455,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fk it gebruik email nu" />
     <MESSAGE value="attempt 10002010" />
     <MESSAGE value="attempt 100020100" />
     <MESSAGE value="I think this delay works" />
@@ -484,6 +479,7 @@
     <MESSAGE value="user image store show" />
     <MESSAGE value="tabbar styling issue" />
     <MESSAGE value="better styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="better styling" />
+    <MESSAGE value="link owner images" />
+    <option name="LAST_COMMIT_MESSAGE" value="link owner images" />
   </component>
 </project>

@@ -113,9 +113,7 @@ const NearbyCard = ({item}) => {
                 </View>
             </View>
             <View>
-                <Text>Open spots :
-                    <Text style={styles.maxPeople}> {item.maxPeople}</Text>
-                </Text>
+                <Text style={styles.maxPeople}>{item.eventType}</Text>
             </View>
         </TouchableOpacity>
     );
