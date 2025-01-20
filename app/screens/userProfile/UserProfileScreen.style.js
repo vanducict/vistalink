@@ -45,6 +45,17 @@ const styles = StyleSheet.create({
         color: "#555",
         marginBottom: 3,
     },
+    imageContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        marginVertical: 10,
+    },
+    avatar: {
+        width: 400,
+        height: 350,
+        margin: 10,
+    },
     infoValue: {
         fontSize: 16,
         fontFamily: FONT.regular,

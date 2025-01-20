@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="djust card spots">
-      <change afterPath="$PROJECT_DIR$/app/screens/userProfile/UserProfileScreen.style.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/userProfile/index.js" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/userProfile/UserProfileScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/userProfile/UserProfileScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/userProfile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/userProfile/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,14 +80,7 @@
       <workItem from="1736947960155" duration="5969000" />
       <workItem from="1737016001054" duration="22572000" />
       <workItem from="1737367879022" duration="7467000" />
-      <workItem from="1737386101988" duration="1837000" />
-    </task>
-    <task id="LOCAL-00064" summary="isClosed when submit">
-      <created>1736547448396</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1736547448397</updated>
+      <workItem from="1737386101988" duration="3176000" />
     </task>
     <task id="LOCAL-00065" summary="navigate back">
       <created>1736547583995</created>
@@ -426,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737381140690</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="view profile">
+      <created>1737406270024</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1737406270025</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,7 +455,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="attempt 100020100" />
     <MESSAGE value="I think this delay works" />
     <MESSAGE value="better loading UI" />
     <MESSAGE value="better fix late" />
@@ -481,6 +479,7 @@
     <MESSAGE value="better styling" />
     <MESSAGE value="link owner images" />
     <MESSAGE value="djust card spots" />
-    <option name="LAST_COMMIT_MESSAGE" value="djust card spots" />
+    <MESSAGE value="view profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="view profile" />
   </component>
 </project>
