@@ -1,9 +1,84 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Image, Text, TouchableOpacity, View} from "react-native";
 import styles from "./TabBar.style";
-import icons from "../../../constants/icons"; // Import your icons
+import icons from "../../../constants/icons"; // Import your default icons
+import supabase from "../../../app/lib/supabase";
+import {getCurrentUser} from "../../../service/user/UserService";
 
 const TabBar = ({state, descriptors, navigation}) => {
+    const [currentUser, setCurrentUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [imageUrls, setImageUrls] = useState([]); // Initialize as an empty array
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                setLoading(true);
+                const user = await getCurrentUser();
+                if (user && user.length > 0) {
+                    setCurrentUser(user.pop());
+                } else {
+                    console.log("No user data found.");
+                }
+            } catch (error) {
+                console.log("Error fetching user:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchUser();
+    }, []);
+
+    useEffect(() => {
+        const fetchImages = async () => {
+            if (!currentUser?.uid) return; // Ensure `currentUser` is loaded
+            try {
+                setLoading(true);
+                const files = await fetchUserImages(currentUser.uid);
+                const urls = await getPublicImageUrls(files, currentUser.uid);
+                setImageUrls(urls); // Set the fetched URLs
+            } catch (error) {
+                console.error("Error fetching images:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchImages();
+    }, [currentUser]);
+
+    const fetchUserImages = async (userId) => {
+        try {
+            const {data, error} = await supabase.storage
+                .from('profileImages') // Replace with your bucket name
+                .list(userId, {
+                    limit: 100, // Limit the number of files fetched
+                    offset: 0,  // Offset for pagination
+                });
+
+            if (error) {
+                console.error('Error fetching images:', error.message);
+                return [];
+            }
+
+            return data; // Returns an array of file objects
+        } catch (error) {
+            console.error('Error:', error.message);
+            return [];
+        }
+    };
+
+    const getPublicImageUrls = async (files, userId) => {
+        const urls = files.map((file) => {
+            const {data} = supabase.storage
+                .from('profileImages')
+                .getPublicUrl(`${userId}/${file.name}`);
+            return data.publicUrl; // Extract and return the public URL
+        });
+
+        return urls; // Return the array of URLs
+    };
+
     return (
         <View style={styles.tabBar}>
             {state.routes.map((route, index) => {
@@ -46,9 +121,13 @@ const TabBar = ({state, descriptors, navigation}) => {
                         iconName = "Home";
                         break;
                     case "MyProfile":
-                        iconSource = icons.profile;
+                        iconSource = imageUrls.length > 0 ? {uri: imageUrls[0]} : null; // Use the profile image or default icon
                         iconName = "Profile";
-                        iconStyle = [styles.tabIcon, {width: 40, height: 40}];
+                        iconStyle = [
+                            {
+                                ...styles.tabIconProfile,
+                            }
+                        ];
                         break;
                     case "Chats":
                         iconSource = icons.chats;

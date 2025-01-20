@@ -31,6 +31,10 @@ const styles = StyleSheet.create({
         height: 120,
         borderRadius: 60,
         marginBottom: 15,
+        borderWidth: 1,
+        resizeMode: 'cover',
+        borderColor: COLORS.primary,
+        overflow: 'hidden',  // Ensures the image stays within the circle
     },
     profileInfo: {
         alignItems: "center",

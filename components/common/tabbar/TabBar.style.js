@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {FONT} from "../../../constants/theme";
+import {COLORS, FONT} from "../../../constants/theme";
 
 const styles = StyleSheet.create({
     tabBar: {
@@ -35,6 +35,15 @@ const styles = StyleSheet.create({
         width: 25,
         height: 25,
         flex: 1,
+    },
+    tabIconProfile: {
+        width: 35,
+        height: 35,
+        borderRadius: 20,
+        borderWidth: 1,
+        resizeMode: 'cover',
+        borderColor: COLORS.primary,
+        overflow: 'hidden',  // Ensures the image stays within the circle
     }
 });
 
