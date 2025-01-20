@@ -31,10 +31,12 @@ const styles = StyleSheet.create({
         fontFamily: FONT.bold,
     },
     tabIcon: {
+        marginBottom: 5, // Adjusted for consistent spacing
         width: 25, // Unified size
         height: 25,
     },
     tabIconProfile: {
+        marginBottom: 5, // Adjusted for consistent spacing
         width: 30, // Match the size of tabIcon
         height: 30,
         borderRadius: 15, // Keep the circle shape

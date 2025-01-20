@@ -78,14 +78,7 @@
       <workItem from="1736927792952" duration="35000" />
       <workItem from="1736947960155" duration="5969000" />
       <workItem from="1737016001054" duration="22572000" />
-      <workItem from="1737367879022" duration="1635000" />
-    </task>
-    <task id="LOCAL-00060" summary="login lowercase fix + empty ui">
-      <created>1736447623945</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1736447623945</updated>
+      <workItem from="1737367879022" duration="1757000" />
     </task>
     <task id="LOCAL-00061" summary="notify function">
       <created>1736449634602</created>
@@ -423,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737368912037</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="tabbar styling issue">
+      <created>1737369674422</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1737369674422</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +453,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hopeloos 2.0" />
     <MESSAGE value="FIX?" />
     <MESSAGE value="fk it gebruik email nu" />
     <MESSAGE value="attempt 10002010" />
@@ -478,6 +477,7 @@
     <MESSAGE value="add crop + demo" />
     <MESSAGE value="pprofile image overview page" />
     <MESSAGE value="user image store show" />
-    <option name="LAST_COMMIT_MESSAGE" value="user image store show" />
+    <MESSAGE value="tabbar styling issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="tabbar styling issue" />
   </component>
 </project>
