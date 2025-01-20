@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="pprofile image overview page">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/ProfileScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/ProfileScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/tabbar/TabBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/tabbar/TabBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/common/tabbar/TabBar.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/tabbar/TabBar.style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,14 +78,7 @@
       <workItem from="1736927792952" duration="35000" />
       <workItem from="1736947960155" duration="5969000" />
       <workItem from="1737016001054" duration="22572000" />
-      <workItem from="1737367879022" duration="928000" />
-    </task>
-    <task id="LOCAL-00059" summary="login lowercase fix + empty ui">
-      <created>1736446043314</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1736446043315</updated>
+      <workItem from="1737367879022" duration="1635000" />
     </task>
     <task id="LOCAL-00060" summary="login lowercase fix + empty ui">
       <created>1736447623945</created>
@@ -425,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737327650571</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="user image store show">
+      <created>1737368912036</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1737368912037</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,7 +453,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hopeloos" />
     <MESSAGE value="hopeloos 2.0" />
     <MESSAGE value="FIX?" />
     <MESSAGE value="fk it gebruik email nu" />
@@ -480,6 +477,7 @@
     <MESSAGE value="working adding images storage" />
     <MESSAGE value="add crop + demo" />
     <MESSAGE value="pprofile image overview page" />
-    <option name="LAST_COMMIT_MESSAGE" value="pprofile image overview page" />
+    <MESSAGE value="user image store show" />
+    <option name="LAST_COMMIT_MESSAGE" value="user image store show" />
   </component>
 </project>

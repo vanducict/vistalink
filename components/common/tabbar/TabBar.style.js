@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
         backgroundColor: "#fff",
     },
-
     tabItem: {
         flex: 1,
         justifyContent: "center",
@@ -21,7 +20,7 @@ const styles = StyleSheet.create({
     },
     tabText: {
         color: "#e3e1dc",
-        marginBottom: 20,
+        marginBottom: 5, // Adjusted for consistent spacing
         fontSize: 8,
         fontFamily: FONT.regular,
     },
@@ -32,19 +31,19 @@ const styles = StyleSheet.create({
         fontFamily: FONT.bold,
     },
     tabIcon: {
-        width: 25,
+        width: 25, // Unified size
         height: 25,
-        flex: 1,
     },
     tabIconProfile: {
-        width: 35,
-        height: 35,
-        borderRadius: 20,
+        width: 30, // Match the size of tabIcon
+        height: 30,
+        borderRadius: 15, // Keep the circle shape
         borderWidth: 1,
-        resizeMode: 'cover',
         borderColor: COLORS.primary,
-        overflow: 'hidden',  // Ensures the image stays within the circle
-    }
+        overflow: 'hidden', // Ensures the image stays within the circle
+        alignItems: "center", // Center alignment
+        justifyContent: "center",
+    },
 });
 
 
