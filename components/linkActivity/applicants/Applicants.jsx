@@ -179,9 +179,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                             <TouchableOpacity
                                 style={[
                                     styles.viewProfileButton,
-                                    (event.expired || event.closed) && styles.disabledButton,
                                 ]}
-                                disabled={event.expired || event.closed}
                                 onPress={() => viewProfile(link.userDetails[0])}
                             >
                                 <Text style={styles.buttonText}>View Profile</Text>

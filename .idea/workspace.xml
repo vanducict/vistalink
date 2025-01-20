@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="show profile details applicants">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/userProfile/UserProfileScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/userProfile/UserProfileScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/userProfile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/userProfile/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,14 +79,7 @@
       <workItem from="1736947960155" duration="5969000" />
       <workItem from="1737016001054" duration="22572000" />
       <workItem from="1737367879022" duration="7467000" />
-      <workItem from="1737386101988" duration="3176000" />
-    </task>
-    <task id="LOCAL-00065" summary="navigate back">
-      <created>1736547583995</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1736547583995</updated>
+      <workItem from="1737386101988" duration="3696000" />
     </task>
     <task id="LOCAL-00066" summary="style change filter home links">
       <created>1736548130776</created>
@@ -425,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737406270025</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="show profile details applicants">
+      <created>1737408752990</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1737408752991</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,7 +454,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="I think this delay works" />
     <MESSAGE value="better loading UI" />
     <MESSAGE value="better fix late" />
     <MESSAGE value="better fix late 2" />
@@ -480,6 +478,7 @@
     <MESSAGE value="link owner images" />
     <MESSAGE value="djust card spots" />
     <MESSAGE value="view profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="view profile" />
+    <MESSAGE value="show profile details applicants" />
+    <option name="LAST_COMMIT_MESSAGE" value="show profile details applicants" />
   </component>
 </project>
