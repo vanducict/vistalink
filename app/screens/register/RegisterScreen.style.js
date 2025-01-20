@@ -7,8 +7,9 @@ const styles = StyleSheet.create({
             backgroundColor: COLORS.lightWhite,
         },
         container: {
+            flex: 1,
             padding: 20,
-            justifyContent: "center",
+            backgroundColor: COLORS.lightWhite,
         },
         title: {
             fontSize: 24,

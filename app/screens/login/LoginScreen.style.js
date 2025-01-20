@@ -9,6 +9,9 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: "center",
         alignItems: "center",
+        flex: 1,
+        padding: 20,
+        backgroundColor: COLORS.lightWhite,
         paddingHorizontal: SIZES.small,  // Use dynamic padding for better responsiveness
         paddingVertical: SIZES.large,      // Add some vertical space on larger screens
     },

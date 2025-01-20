@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     },
     logoImage: {
         width: "70%",
+        borderRadius: SIZES.medium,
         height: "70%",
     },
     ownerEmail: {
