@@ -100,25 +100,34 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     googleBtn: {
-        backgroundColor: "#4285F4", // Google's blue color
-        borderRadius: 5,
-        paddingVertical: 12,
-        paddingHorizontal: 25,
-        alignItems: "center",
-        justifyContent: "center",
-        marginTop: 80,
-        width: "80%", // Adjust as needed
-        flexDirection: "row", // Align icon and text horizontally
-        borderWidth: 1,
-        borderColor: "#ccc", // Optional: Adds border around button
+        marginTop: 100, // Add some space between buttons
+        flexDirection: 'row', // Align the icon and text horizontally
+        alignItems: 'center', // Vertically center the items
+        justifyContent: 'center', // Center content inside the button
+        backgroundColor: '#FFFFFF', // White background for Google button
+        borderColor: '#DDDDDD', // Light border color
+        borderWidth: 1, // Thin border
+        borderRadius: 8, // Rounded corners
+        paddingVertical: 10, // Vertical padding for the button
+        paddingHorizontal: 15, // Horizontal padding for the button
+        shadowColor: '#000', // Optional: Shadow for depth
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 2, // Shadow for Android
+        marginVertical: 10, // Add spacing between buttons
+    },
+    googleIcon: {
+        width: 24, // Smaller icon size
+        height: 24,
+        resizeMode: 'contain',
+        marginRight: 10, // Spacing between icon and text
     },
     googleButtonText: {
-        color: "#fff", // White text
-        fontSize: 16,
-        fontWeight: "bold",
+        fontSize: 16, // Clear and readable font size
+        fontWeight: '600', // Slightly bold text
+        color: '#333333', // Dark gray text for contrast
     },
-
-
 });
 
 export default styles;

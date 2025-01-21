@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {
     Alert,
+    Image,
     Keyboard,
     KeyboardAvoidingView,
     SafeAreaView,
@@ -16,6 +17,7 @@ import Loading from "../../../components/common/loading/Loading";
 import supabase from "../../lib/supabase";
 import Lottie from "lottie-react-native";
 import animations from "../../../constants/animations";
+import icons from "../../../constants/icons";
 
 const Login = () => {
     const router = useRouter();
@@ -107,8 +109,15 @@ const Login = () => {
                             </TouchableOpacity>
                         </View>
                         <TouchableOpacity style={styles.googleBtn}>
-                            <Text style={styles.googleButtonText}>Join with Google</Text>
+                            <Image
+                                source={icons.google}
+                                style={styles.googleIcon}
+                            />
+                            <Text style={styles.googleButtonText}>
+                                Join with Google
+                            </Text>
                         </TouchableOpacity>
+
                     </View>
                 </ScrollView>
             </KeyboardAvoidingView>

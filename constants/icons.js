@@ -6,6 +6,7 @@ import home from "../assets/icons/home.png";
 import myProfile from "../assets/icons/myprofile.png";
 import chats from "../assets/icons/chat.png";
 import links from "../assets/icons/link.png";
+import google from "../assets/icons/google.png";
 import back from "../assets/icons/back-btn.png";
 
 export default {
@@ -17,5 +18,6 @@ export default {
     home,
     chats,
     links,
+    google,
     back
 };

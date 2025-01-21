@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="enable btn view profile always">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/icons/google.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/chatroom/ChatRoom.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/chatroom/ChatRoom.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/chatroom/[channelId].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/chatroom/[channelId].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/icons.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,9 +51,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/icons" />
       <recent name="$PROJECT_DIR$/app/screens/chatroom" />
       <recent name="$PROJECT_DIR$/assets/animations" />
-      <recent name="$PROJECT_DIR$/assets/icons" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/assets/images" />
     </key>
@@ -81,14 +83,7 @@
       <workItem from="1737016001054" duration="22572000" />
       <workItem from="1737367879022" duration="7467000" />
       <workItem from="1737386101988" duration="4783000" />
-      <workItem from="1737463735543" duration="1497000" />
-    </task>
-    <task id="LOCAL-00067" summary="super sketch version chat">
-      <created>1736806410546</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1736806410547</updated>
+      <workItem from="1737463735543" duration="1988000" />
     </task>
     <task id="LOCAL-00068" summary="chat load fix">
       <created>1736844942039</created>
@@ -426,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737414346281</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="update chatroom style">
+      <created>1737491489108</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1737491489109</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,7 +458,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="better fix late" />
     <MESSAGE value="better fix late 2" />
     <MESSAGE value="update packages" />
     <MESSAGE value="potential fix async names streamchat" />
@@ -481,6 +482,7 @@
     <MESSAGE value="view profile" />
     <MESSAGE value="show profile details applicants" />
     <MESSAGE value="enable btn view profile always" />
-    <option name="LAST_COMMIT_MESSAGE" value="enable btn view profile always" />
+    <MESSAGE value="update chatroom style" />
+    <option name="LAST_COMMIT_MESSAGE" value="update chatroom style" />
   </component>
 </project>
