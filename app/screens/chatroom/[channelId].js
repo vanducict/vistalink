@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import {Stack, useGlobalSearchParams} from 'expo-router';
+import {ActivityIndicator, SafeAreaView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Stack, useGlobalSearchParams, useNavigation} from 'expo-router';
 import {StreamChat} from 'stream-chat';
 import {Channel, Chat, MessageInput, MessageList, OverlayProvider as ChatOverlayProvider,} from 'stream-chat-expo';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -11,6 +11,7 @@ const ChatRoom = () => {
     const {channelId} = useGlobalSearchParams(); // Extract channelId from route params
     const [channel, setChannel] = useState(null);
     const [loading, setLoading] = useState(true);
+    const navigation = useNavigation();
 
     // StreamChat instance
     const chatClient = StreamChat.getInstance('vxujf6n9668d');
@@ -71,18 +72,64 @@ const ChatRoom = () => {
                 options={{
                     headerTitleAlign: "center",
                     headerShown: true,
+                    headerLeftShown: false,
                     headerTitle: () => (
-                        <Text style={styles.title}>{channel?.data?.name}</Text>
+                        <View style={styles.headerContainer}>
+                            <View style={styles.headerCenter}>
+                                <Text style={styles.title}>{channel?.data?.name || "Chat"}</Text>
+                            </View>
+                        </View>
                     ),
                 }}
             />
+
+
             <SafeAreaView style={{flex: 1}}>
                 <ChatOverlayProvider bottomInset={insets.bottom} topInset={insets.top}>
                     <Chat client={chatClient}>
                         <Channel channel={channel}>
                             <View style={StyleSheet.absoluteFill}>
-                                <MessageList/>
-                                <MessageInput/>
+                                <MessageList
+                                    Message={({message}) => {
+                                        const isOwnMessage = message.user?.id === chatClient.userID;
+                                        const isDeleted = !!message.deleted_at;
+
+                                        return (
+                                            <View
+                                                style={[
+                                                    styles.messageContainer,
+                                                    isOwnMessage ? styles.ownMessage : styles.otherMessage,
+                                                ]}
+                                            >
+                                                {!isOwnMessage && !isDeleted && (
+                                                    <Text style={styles.username}>
+                                                        {message.user?.name || 'Anonymous'}
+                                                    </Text>
+                                                )}
+                                                <Text
+                                                    style={[
+                                                        styles.messageText,
+                                                        isDeleted && styles.deletedMessageText,
+                                                    ]}
+                                                >
+                                                    {isDeleted ? 'This message was deleted' : message.text}
+                                                </Text>
+                                            </View>
+                                        );
+                                    }}
+                                />
+
+                                <MessageInput
+                                    SendButton={(props) => (
+                                        <TouchableOpacity
+                                            onPress={props.sendMessage}
+                                            style={styles.sendButton}
+                                        >
+                                            <Text style={styles.sendButtonText}>Send</Text>
+                                        </TouchableOpacity>
+                                    )}
+                                />
+
                             </View>
                         </Channel>
                     </Chat>

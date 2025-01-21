@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="show profile details applicants">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="enable btn view profile always">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/chatroom/ChatRoom.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/chatroom/ChatRoom.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/chatroom/[channelId].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/chatroom/[channelId].js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,14 +80,8 @@
       <workItem from="1736947960155" duration="5969000" />
       <workItem from="1737016001054" duration="22572000" />
       <workItem from="1737367879022" duration="7467000" />
-      <workItem from="1737386101988" duration="3696000" />
-    </task>
-    <task id="LOCAL-00066" summary="style change filter home links">
-      <created>1736548130776</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1736548130776</updated>
+      <workItem from="1737386101988" duration="4783000" />
+      <workItem from="1737463735543" duration="1497000" />
     </task>
     <task id="LOCAL-00067" summary="super sketch version chat">
       <created>1736806410546</created>
@@ -424,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737408752991</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="enable btn view profile always">
+      <created>1737414346281</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1737414346281</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +456,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="better loading UI" />
     <MESSAGE value="better fix late" />
     <MESSAGE value="better fix late 2" />
     <MESSAGE value="update packages" />
@@ -479,6 +480,7 @@
     <MESSAGE value="djust card spots" />
     <MESSAGE value="view profile" />
     <MESSAGE value="show profile details applicants" />
-    <option name="LAST_COMMIT_MESSAGE" value="show profile details applicants" />
+    <MESSAGE value="enable btn view profile always" />
+    <option name="LAST_COMMIT_MESSAGE" value="enable btn view profile always" />
   </component>
 </project>
