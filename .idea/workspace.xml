@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="fix shift">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo/[data].style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/register2.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo/[data].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo/[data].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/animations.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,13 +91,6 @@
       <workItem from="1737463735543" duration="9529000" />
       <workItem from="1737533689898" duration="81000" />
       <workItem from="1737578549013" duration="4811000" />
-    </task>
-    <task id="LOCAL-00070" summary="fix">
-      <created>1736848872163</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1736848872163</updated>
     </task>
     <task id="LOCAL-00071" summary="store display name supabase auth">
       <created>1736860651501</created>
@@ -434,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737579908490</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="FINALLY SHIFT FIX">
+      <created>1737585220668</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1737585220668</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +465,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="potential fix async names streamchat" />
     <MESSAGE value="apply fix" />
     <MESSAGE value="finalllyyyyy" />
     <MESSAGE value="fix multiple select + orderering applicants" />
@@ -489,6 +489,7 @@
     <MESSAGE value="update chatroom style" />
     <MESSAGE value="google btn sttyle" />
     <MESSAGE value="first register screen styling done" />
-    <option name="LAST_COMMIT_MESSAGE" value="first register screen styling done" />
+    <MESSAGE value="FINALLY SHIFT FIX" />
+    <option name="LAST_COMMIT_MESSAGE" value="FINALLY SHIFT FIX" />
   </component>
 </project>
