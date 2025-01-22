@@ -56,6 +56,7 @@ const Register = () => {
                 style={{flex: 1}}
                 contentContainerStyle={styles.scrollViewContent}
                 enableOnAndroid={true}
+                extraScrollHeight={20}
                 keyboardShouldPersistTaps="handled" // Ensures keyboard doesn’t hide inputs
                 showsVerticalScrollIndicator={false} // Hides scroll indicator
                 // Removed extraScrollHeight and enableAutomaticScroll
@@ -87,25 +88,6 @@ const Register = () => {
                     />
                 </View>
 
-
-                {/* First Name Input */}
-                <TextInput
-                    style={styles.input}
-                    placeholder="First Name"
-                    value={firstNameState}
-                    onChangeText={setFirstNameState}
-                    placeholderTextColor="#888"
-                />
-
-                {/* Name Input */}
-                <TextInput
-                    style={styles.input}
-                    placeholder="Name"
-                    value={nameState}
-                    onChangeText={setNameState}
-                    placeholderTextColor="#888"
-                />
-
                 {/* Email Input */}
                 <TextInput
                     style={styles.input} // Add margin to prevent keyboard push
@@ -125,6 +107,25 @@ const Register = () => {
                     secureTextEntry
                     placeholderTextColor="#888"
                 />
+
+                {/* First Name Input */}
+                <TextInput
+                    style={styles.input}
+                    placeholder="First Name"
+                    value={firstNameState}
+                    onChangeText={setFirstNameState}
+                    placeholderTextColor="#888"
+                />
+
+                {/* Name Input */}
+                <TextInput
+                    style={styles.input}
+                    placeholder="Name"
+                    value={nameState}
+                    onChangeText={setNameState}
+                    placeholderTextColor="#888"
+                />
+
 
                 {/* Birthdate Picker */}
                 <TouchableOpacity
