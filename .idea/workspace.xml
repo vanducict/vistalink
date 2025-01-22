@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="google btn sttyle">
-      <change afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/register1.json" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="first register screen styling done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/RegisterScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo/[data].js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/animations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,14 +89,7 @@
       <workItem from="1737386101988" duration="4783000" />
       <workItem from="1737463735543" duration="9529000" />
       <workItem from="1737533689898" duration="81000" />
-      <workItem from="1737578549013" duration="1036000" />
-    </task>
-    <task id="LOCAL-00069" summary="fix lazy loading">
-      <created>1736846295233</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1736846295233</updated>
+      <workItem from="1737578549013" duration="4811000" />
     </task>
     <task id="LOCAL-00070" summary="fix">
       <created>1736848872163</created>
@@ -440,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737492066995</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="first register screen styling done">
+      <created>1737579908490</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1737579908490</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,7 +464,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update packages" />
     <MESSAGE value="potential fix async names streamchat" />
     <MESSAGE value="apply fix" />
     <MESSAGE value="finalllyyyyy" />
@@ -495,6 +488,7 @@
     <MESSAGE value="enable btn view profile always" />
     <MESSAGE value="update chatroom style" />
     <MESSAGE value="google btn sttyle" />
-    <option name="LAST_COMMIT_MESSAGE" value="google btn sttyle" />
+    <MESSAGE value="first register screen styling done" />
+    <option name="LAST_COMMIT_MESSAGE" value="first register screen styling done" />
   </component>
 </project>

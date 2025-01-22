@@ -1,4 +1,4 @@
-import {StyleSheet} from "react-native";
+import {StyleSheet} from 'react-native';
 import {COLORS, FONT} from "../../../constants/theme";
 
 const styles = StyleSheet.create({
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         backgroundColor: COLORS.lightWhite,
         borderBottomWidth: 1,
-        borderBottomColor: "#ddd", // Optional border for separation
+        borderBottomColor: "#ddd",
     },
     backButtonIcon: {
         width: 24,
@@ -22,9 +22,9 @@ const styles = StyleSheet.create({
         tintColor: COLORS.primary,
     },
     scrollViewContent: {
-        flexGrow: 1, // Ensures the content takes up available space without overflowing
-        paddingBottom: 10, // Space for scrolling when keyboard is open
-        paddingHorizontal: 10, // Adjust padding for the entire content
+        flexGrow: 1,
+        paddingBottom: 30, // Ensures smooth scrolling when the keyboard is open
+        paddingHorizontal: 20,
     },
     headerLogo: {
         width: 40,
@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     content: {
         paddingHorizontal: 15,
         marginTop: 20,
-        flex: 1,  // Ensures that content takes the available space
     },
     headerTitle: {
         fontSize: 24,
@@ -47,24 +46,31 @@ const styles = StyleSheet.create({
         color: "#888",
         marginBottom: 20,
     },
-    container: {
-        flex: 1,
-        justifyContent: "flex-start", // Aligns content at the top of the screen
-        paddingHorizontal: 15,
-        marginBottom: 10, // Adjusted for spacing when the keyboard is visible
+    input: {
+        height: 50,
+        borderColor: '#ccc',
+        borderWidth: 1,
+        borderRadius: 8,
+        paddingLeft: 15,
+        fontSize: 16,
+        marginVertical: 10,
+        backgroundColor: "#fff",
     },
     inputText: {
         color: "#555",
+        textAlignVertical: "center",
+        textAlign: "left",
+        alignContent: "center",
+        marginTop: 15,
         fontFamily: FONT.regular,
-        marginVertical: "auto",
     },
     registerButton: {
         backgroundColor: COLORS.tertiary,
         borderRadius: 8,
         paddingVertical: 15,
         alignItems: "center",
-        marginTop: 10,
-        marginBottom: 20, // Ensured space at the bottom
+        marginTop: 20,
+        marginBottom: 20,
     },
     registerButtonText: {
         color: "#fff",
@@ -72,44 +78,19 @@ const styles = StyleSheet.create({
         fontFamily: FONT.regular,
         fontSize: 16,
     },
-    addImageButton: {
-        backgroundColor: COLORS.secondary,
-        borderRadius: 8,
-        paddingVertical: 10,
-        alignItems: "center",
-        marginBottom: 10,
-    },
-    roleDropdown: {
-        marginBottom: 10,
-    },
     registerAnimation: {
-        width: 150,
-        height: 150,
-        alignSelf: "center",
-        maxHeight: 150,
-        maxWidth: 150,
+        width: 150, // Fixed width
+        height: 150, // Fixed height
+        alignSelf: "center", // Center the animation in the available space
+        position: "relative", // Position the animation absolutely
     },
-    input: {
-        height: 50, // Default height for other inputs
-        borderColor: '#ccc',
-        borderWidth: 1,
-        borderRadius: 8,
-        paddingLeft: 15, // Increased padding for better spacing
-        fontSize: 16, // Ensure legible font size
-        marginVertical: 10,
-        backgroundColor: "#fff", // White background for inputs
+    lottieContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 100, // Adjust this height to your needs
+        marginBottom: 20, // Ensure some space between the animation and other elements
     },
-    descriptionInput: {
-        height: 100, // Increased height for the description input
-        textAlignVertical: 'top', // Ensures the text aligns at the top of the input field
-        borderColor: '#ccc',
-        borderWidth: 1,
-        borderRadius: 8,
-        paddingLeft: 15,
-        paddingTop: 10, // Added padding at the top for multiline inputs
-        fontSize: 16,
-        backgroundColor: "#fff", // White background for description input
-    },
+
 });
 
 export default styles;
