@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo1/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo1/[data].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo1/[data].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo1/[data].style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo4/[data].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo4/[data].style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,14 +93,7 @@
       <workItem from="1737533689898" duration="81000" />
       <workItem from="1737578549013" duration="4811000" />
       <workItem from="1738152150438" duration="7480000" />
-      <workItem from="1738260404465" duration="1482000" />
-    </task>
-    <task id="LOCAL-00073" summary="remove router replace">
-      <created>1736862980757</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1736862980757</updated>
+      <workItem from="1738260404465" duration="1700000" />
     </task>
     <task id="LOCAL-00074" summary="ugly soluition delay for now">
       <created>1736864026354</created>
@@ -441,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738261606267</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="registration flow restyling 2">
+      <created>1738262185274</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1738262185275</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +468,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix multiple select + orderering applicants" />
     <MESSAGE value="refresh control applcicants" />
     <MESSAGE value="submit applicant check" />
     <MESSAGE value="working create chat!!!!" />
@@ -496,6 +492,7 @@
     <MESSAGE value="FINALLY SHIFT FIX" />
     <MESSAGE value="styling addtional page" />
     <MESSAGE value="registration flow restyling" />
-    <option name="LAST_COMMIT_MESSAGE" value="registration flow restyling" />
+    <MESSAGE value="registration flow restyling 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="registration flow restyling 2" />
   </component>
 </project>
