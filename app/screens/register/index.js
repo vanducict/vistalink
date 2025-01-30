@@ -45,7 +45,7 @@ const Register = () => {
 
         // Navigate to the additional information screen with data
         router.push({
-            pathname: '/screens/register/additionalInfo/[data]',
+            pathname: '/screens/register/additionalInfo1/[data]',
             params: {data: JSON.stringify(data)},
         });
     };

@@ -19,7 +19,7 @@ import styles from "./[data].style.js";
 import Lottie from "lottie-react-native";
 import animations from "../../../../constants/animations";
 
-const AdditionalInfo = () => {
+const AdditionalInfo1 = () => {
     const router = useRouter();
     const [description, setDescription] = useState('');
     const [open, setOpen] = useState(false);
@@ -28,6 +28,9 @@ const AdditionalInfo = () => {
         {label: 'Student', value: 'student'},
         {label: 'Teacher', value: 'teacher'},
     ]);
+
+    // Prepare the data to pass
+    const data = {};
     const [selectedImage, setSelectedImage] = useState(null);
 
     const handleImageSelection = async () => {
@@ -46,7 +49,11 @@ const AdditionalInfo = () => {
             selectedImage,
         });
 
-        Alert.alert('Success', 'Your details have been submitted!');
+        // Navigate to the additional information screen with data
+        router.push({
+            pathname: '/screens/register/additionalInfo2/[data]',
+            params: {data: JSON.stringify(data)},
+        });
     };
 
     // Handle key press to dismiss keyboard when Enter is pressed
@@ -137,4 +144,4 @@ const AdditionalInfo = () => {
     );
 };
 
-export default AdditionalInfo;
+export default AdditionalInfo1;

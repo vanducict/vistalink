@@ -7,6 +7,7 @@ import select from "../assets/animations/select.json";
 import empty from "../assets/animations/empty.json";
 import register2 from "../assets/animations/register2.json";
 import register1 from "../assets/animations/register1.json";
+import register3 from "../assets/animations/register3.json";
 
 export default {
     link,
@@ -17,5 +18,6 @@ export default {
     select,
     empty,
     register1,
-    register2
+    register2,
+    register3,
 };

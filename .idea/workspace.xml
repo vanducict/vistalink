@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo/[data].style.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/register2.json" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="styling addtional page">
+      <change afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo2/[data].js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo2/[data].style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo3/[data].js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo3/[data].style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo4/[data].js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo4/[data].style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/register3.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo/[data].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo1/[data].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo/[data].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo1/[data].style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants/animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/animations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +56,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/screens/register" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
@@ -55,6 +65,10 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/screens/register" />
+      <recent name="$PROJECT_DIR$/app/screens/register/additionalInfo2" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/animations" />
       <recent name="$PROJECT_DIR$/assets/icons" />
@@ -91,13 +105,8 @@
       <workItem from="1737463735543" duration="9529000" />
       <workItem from="1737533689898" duration="81000" />
       <workItem from="1737578549013" duration="4811000" />
-    </task>
-    <task id="LOCAL-00071" summary="store display name supabase auth">
-      <created>1736860651501</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1736860651501</updated>
+      <workItem from="1738152150438" duration="7480000" />
+      <workItem from="1738260404465" duration="1097000" />
     </task>
     <task id="LOCAL-00072" summary="add stream chat usere register">
       <created>1736861833685</created>
@@ -435,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737585220668</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="styling addtional page">
+      <created>1737587570847</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1737587570848</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,7 +481,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="apply fix" />
     <MESSAGE value="finalllyyyyy" />
     <MESSAGE value="fix multiple select + orderering applicants" />
     <MESSAGE value="refresh control applcicants" />
@@ -490,6 +505,7 @@
     <MESSAGE value="google btn sttyle" />
     <MESSAGE value="first register screen styling done" />
     <MESSAGE value="FINALLY SHIFT FIX" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINALLY SHIFT FIX" />
+    <MESSAGE value="styling addtional page" />
+    <option name="LAST_COMMIT_MESSAGE" value="styling addtional page" />
   </component>
 </project>
