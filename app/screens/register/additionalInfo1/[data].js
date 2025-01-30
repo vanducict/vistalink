@@ -82,10 +82,9 @@ const AdditionalInfo1 = () => {
                 </View>
 
                 <View style={styles.content}>
-                    <Text style={styles.headerTitle}>Almost There!</Text>
-                    <Text style={styles.subTitle}>
-                        Almost there! Let's wrap up your profile setup and make sure everything is ready for you.
-                    </Text>
+                    <Text style={styles.headerTitle}>Introduce Yourself & Define Your Role.</Text>
+                    <Text style={styles.subTitle}>Share a bit about who you are and select the role that you will
+                        represent.</Text>
                 </View>
 
                 <View style={styles.lottieContainer}>
@@ -119,6 +118,15 @@ const AdditionalInfo1 = () => {
                     setValue={setUserType}
                     setItems={setItems}
                 />
+
+                {/* Dynamic role description */}
+                {userType && (
+                    <Text style={styles.roleDescription}>
+                        {userType === 'student'
+                            ? '📚 As a student, you can explore resources, connect with mentors, and enhance your learning journey!'
+                            : '🎓 As a teacher, you can guide students, share knowledge, and contribute to a thriving learning community!'}
+                    </Text>
+                )}
 
                 {/* Add Image Button */}
                 <TouchableOpacity onPress={handleImageSelection}>

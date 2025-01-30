@@ -39,8 +39,8 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     mainImageSlot: {
-        width: Dimensions.get('window').width * 0.6, // Bigger size for the main profile picture
-        height: Dimensions.get('window').width * 0.6,
+        width: Dimensions.get('window').width * 0.9, // Bigger size for the main profile picture
+        height: Dimensions.get('window').width * 0.9,
         borderWidth: 2,
         borderColor: COLORS.gray,
         borderRadius: 15,

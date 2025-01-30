@@ -91,7 +91,6 @@ const styles = StyleSheet.create({
         height: 100, // Adjust this height to your needs
         marginBottom: 20, // Ensure some space between the animation and other elements
     },
-
     descriptionInput: {
         height: 120, // Adjust height for multiline text
         borderColor: '#ccc', // Light gray border color
@@ -106,6 +105,13 @@ const styles = StyleSheet.create({
         marginVertical: 10, // Vertical margin between other inputs or elements
         textAlignVertical: "top", // Align the text to the top for multiline input
     },
+    roleDescription: {
+        fontSize: 14,
+        color: "#666",
+        textAlign: "center",
+        marginTop: 8,
+        fontStyle: "italic",
+    }
 
 
 });
