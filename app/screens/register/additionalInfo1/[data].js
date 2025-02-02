@@ -103,7 +103,7 @@ const AdditionalInfo1 = () => {
             >
 
                 <View style={styles.customHeader}>
-                    <TouchableOpacity onPress={() => router.replace("/screens/register")}>
+                    <TouchableOpacity onPress={() => router.back()}>
                         <Image
                             source={icons.back}
                             resizeMode="contain"

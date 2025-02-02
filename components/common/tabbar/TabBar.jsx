@@ -20,9 +20,11 @@ const TabBar = ({state, descriptors, navigation}) => {
                 } else {
                     console.log("No user data found.");
                 }
-            } catch (error) {
+            }
+            catch (error) {
                 console.log("Error fetching user:", error);
-            } finally {
+            }
+            finally {
                 setLoading(false);
             }
         };
@@ -31,15 +33,19 @@ const TabBar = ({state, descriptors, navigation}) => {
 
     useEffect(() => {
         const fetchImages = async () => {
-            if (!currentUser?.uid) return; // Ensure `currentUser` is loaded
+            if (!currentUser?.uid) {
+                return;
+            } // Ensure `currentUser` is loaded
             try {
                 setLoading(true);
                 const files = await fetchUserImages(currentUser.uid);
                 const urls = await getPublicImageUrls(files, currentUser.uid);
                 setImageUrls(urls); // Set the fetched URLs
-            } catch (error) {
+            }
+            catch (error) {
                 console.error("Error fetching images:", error);
-            } finally {
+            }
+            finally {
                 setLoading(false);
             }
         };
@@ -62,7 +68,8 @@ const TabBar = ({state, descriptors, navigation}) => {
             }
 
             return data; // Returns an array of file objects
-        } catch (error) {
+        }
+        catch (error) {
             console.error('Error:', error.message);
             return [];
         }
@@ -152,10 +159,11 @@ const TabBar = ({state, descriptors, navigation}) => {
                         style={styles.tabItem}
                     >
                         <Image
-                            source={iconSource} // Use the selected icon source
-                            resizeMode={"contain"}
-                            style={iconStyle} // Apply dynamic style based on focus
+                            source={iconSource}
+                            resizeMode={"cover"} // Ensure the image fills the container
+                            style={iconStyle}
                         />
+
                         <Text style={[styles.tabText, isFocused && styles.focusedText]}>
                             {iconName}
                         </Text>

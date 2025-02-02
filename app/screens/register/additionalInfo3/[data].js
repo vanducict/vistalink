@@ -53,7 +53,7 @@ const AdditionalInfo3 = () => {
         <SafeAreaView style={styles.safeArea}>
             <KeyboardAvoidingView style={[styles.scrollViewContent, {flex: 1}]} behavior="padding">
                 <View style={styles.customHeader}>
-                    <TouchableOpacity onPress={() => router.replace("/screens/register")}>
+                    <TouchableOpacity onPress={() => router.back()}>
                         <Image source={icons.back} resizeMode="contain" style={styles.backButtonIcon}/>
                     </TouchableOpacity>
                     <Image source={images.link} style={styles.headerLogo}/>

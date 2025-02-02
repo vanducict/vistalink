@@ -38,6 +38,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 10,
     },
+    loadingContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 20,
+    },
     mainImageSlot: {
         width: Dimensions.get('window').width * 0.9, // Bigger size for the main profile picture
         height: Dimensions.get('window').width * 0.9,

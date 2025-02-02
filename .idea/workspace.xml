@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="packages update">
-      <change afterPath="$PROJECT_DIR$/service/registration/RegistrationService.js" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="register flow rework happy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo1/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo1/[data].js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo2/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo2/[data].js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo3/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo3/[data].js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo4/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo4/[data].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/user/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo4/[data].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo4/[data].style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/tabbar/TabBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/tabbar/TabBar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,14 +102,7 @@
       <workItem from="1737578549013" duration="4811000" />
       <workItem from="1738152150438" duration="7480000" />
       <workItem from="1738260404465" duration="2194000" />
-      <workItem from="1738329936127" duration="6481000" />
-    </task>
-    <task id="LOCAL-00075" summary="solutioj maynebe">
-      <created>1736865451174</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1736865451174</updated>
+      <workItem from="1738329936127" duration="8332000" />
     </task>
     <task id="LOCAL-00076" summary="async problem fix?">
       <created>1736882862513</created>
@@ -446,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738262710964</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="register flow rework happy">
+      <created>1738537809314</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1738537809315</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +477,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="submit applicant check" />
     <MESSAGE value="working create chat!!!!" />
     <MESSAGE value="chatroom name" />
     <MESSAGE value="filter home page bug" />
@@ -501,6 +501,7 @@
     <MESSAGE value="registration flow restyling" />
     <MESSAGE value="registration flow restyling 2" />
     <MESSAGE value="packages update" />
-    <option name="LAST_COMMIT_MESSAGE" value="packages update" />
+    <MESSAGE value="register flow rework happy" />
+    <option name="LAST_COMMIT_MESSAGE" value="register flow rework happy" />
   </component>
 </project>

@@ -6,13 +6,19 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import icons from "../../../../constants/icons";
 import styles from "./[data].style";
 import {handleRegister} from "../../../../service/registration/RegistrationService";
+import Loading from "../../../../components/common/loading/Loading";
 
 const AdditionalInfo4 = () => {
     const router = useRouter();
     const {data} = useGlobalSearchParams(); // Extract channelId from route params
     const [images, setImages] = useState([null, null, null, null, null]); // 5 slots
+    const [loading, setLoading] = useState(false);
+    const [disabled, setDisabled] = useState(false); // To disable buttons during loading
 
     const pickImageForSlot = async (index) => {
+        if (disabled) {
+            return;
+        } // Prevent picking images if submitting
         let result = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.Images,
             quality: 1
@@ -26,14 +32,22 @@ const AdditionalInfo4 = () => {
     };
 
     const removeImage = (index) => {
+        if (disabled) {
+            return;
+        } // Prevent removing images if submitting
         const newImages = [...images];
         newImages[index] = null;
         setImages(newImages);
     };
 
     const handleSubmit = () => {
+        setLoading(true);
+        setDisabled(true); // Disable other actions while submitting
+
         if (images.every(img => img === null)) {
             Alert.alert('Error', 'Please upload at least one picture.');
+            setLoading(false);
+            setDisabled(false);
             return;
         }
 
@@ -53,10 +67,14 @@ const AdditionalInfo4 = () => {
         };
 
         handleRegister(updatedData).then(r => {
-            Alert.alert('Success', 'Registration completed successfully!');
+            setLoading(false);
+            setDisabled(false);
             router.replace("/");
+        }).catch((error) => {
+            console.error('Registration Error:', error);
+            setLoading(false);
+            setDisabled(false);
         });
-
     };
 
     return (
@@ -64,7 +82,7 @@ const AdditionalInfo4 = () => {
             <GestureHandlerRootView>
                 <KeyboardAvoidingView style={[styles.scrollViewContent, {flex: 1}]} behavior={'padding'}>
                     <View style={styles.customHeader}>
-                        <TouchableOpacity onPress={() => router.replace("/screens/register")}>
+                        <TouchableOpacity onPress={() => router.back()} disabled={disabled}>
                             <Image source={icons.back} resizeMode="contain" style={styles.backButtonIcon}/>
                         </TouchableOpacity>
                     </View>
@@ -76,11 +94,13 @@ const AdditionalInfo4 = () => {
 
                     {/* Main Profile Picture */}
                     <View style={styles.mainImageContainer}>
-                        <TouchableOpacity style={styles.mainImageSlot} onPress={() => pickImageForSlot(0)}>
+                        <TouchableOpacity style={styles.mainImageSlot} onPress={() => pickImageForSlot(0)}
+                                          disabled={disabled}>
                             {images[0] ? (
                                 <>
                                     <Image source={{uri: images[0]}} style={styles.uploadedImage}/>
-                                    <TouchableOpacity style={styles.deleteButton} onPress={() => removeImage(0)}>
+                                    <TouchableOpacity style={styles.deleteButton} onPress={() => removeImage(0)}
+                                                      disabled={disabled}>
                                         <Text style={styles.deleteButtonText}>✕</Text>
                                     </TouchableOpacity>
                                     <Text style={styles.profileLabel}>Profile Picture</Text>
@@ -95,12 +115,12 @@ const AdditionalInfo4 = () => {
                     <View style={styles.smallImagesRow}>
                         {images.slice(1).map((image, index) => (
                             <TouchableOpacity key={index + 1} style={styles.smallImageSlot}
-                                              onPress={() => pickImageForSlot(index + 1)}>
+                                              onPress={() => pickImageForSlot(index + 1)} disabled={disabled}>
                                 {image ? (
                                     <>
                                         <Image source={{uri: image}} style={styles.uploadedImage}/>
                                         <TouchableOpacity style={styles.deleteButton}
-                                                          onPress={() => removeImage(index + 1)}>
+                                                          onPress={() => removeImage(index + 1)} disabled={disabled}>
                                             <Text style={styles.deleteButtonText}>✕</Text>
                                         </TouchableOpacity>
                                     </>
@@ -111,14 +131,18 @@ const AdditionalInfo4 = () => {
                         ))}
                     </View>
 
-                    <TouchableOpacity style={styles.registerButton} onPress={handleSubmit}>
-                        <Text style={styles.registerButtonText}>Finish</Text>
+                    {/* Submit Button with Loading Indicator */}
+                    <TouchableOpacity style={styles.registerButton} onPress={handleSubmit} disabled={disabled}>
+                        {loading ? (
+                            <Loading loading={loading}/>
+                        ) : (
+                            <Text style={styles.registerButtonText}>Finish</Text>
+                        )}
                     </TouchableOpacity>
                 </KeyboardAvoidingView>
             </GestureHandlerRootView>
         </SafeAreaView>
     );
 };
-
 
 export default AdditionalInfo4;
