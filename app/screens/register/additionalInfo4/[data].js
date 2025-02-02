@@ -1,13 +1,15 @@
 import {Alert, Image, KeyboardAvoidingView, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {useState} from 'react';
 import * as ImagePicker from 'expo-image-picker';
-import {useRouter} from 'expo-router';
+import {useGlobalSearchParams, useRouter} from 'expo-router';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import icons from "../../../../constants/icons";
 import styles from "./[data].style";
+import {handleRegister} from "../../../../service/registration/RegistrationService";
 
 const AdditionalInfo4 = () => {
     const router = useRouter();
+    const {data} = useGlobalSearchParams(); // Extract channelId from route params
     const [images, setImages] = useState([null, null, null, null, null]); // 5 slots
 
     const pickImageForSlot = async (index) => {
@@ -35,12 +37,26 @@ const AdditionalInfo4 = () => {
             return;
         }
 
-        console.log({images});
+        // Parse the incoming data
+        let parsedData = {};
+        try {
+            parsedData = data ? JSON.parse(data) : {};
+        }
+        catch (error) {
+            console.error('Error parsing data:', error);
+        }
 
-        router.push({
-            pathname: '/screens/register/additionalInfo3/[data]',
-            params: {data: JSON.stringify(images)}
+        // Add images to the existing data
+        const updatedData = {
+            ...parsedData, // Preserve previous data
+            images: images.filter(img => img !== null),
+        };
+
+        handleRegister(updatedData).then(r => {
+            Alert.alert('Success', 'Registration completed successfully!');
+            router.replace("/");
         });
+
     };
 
     return (

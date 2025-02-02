@@ -13,7 +13,7 @@ import {useState} from 'react';
 
 import icons from "../../../../constants/icons";
 import images from "../../../../constants/images";
-import {useRouter} from "expo-router";
+import {useGlobalSearchParams, useRouter} from "expo-router";
 import styles from "./[data].style.js";
 import Lottie from "lottie-react-native";
 import animations from "../../../../constants/animations";
@@ -24,10 +24,9 @@ const interestsList = [
     "Photography", "Writing", "Dancing", "Art & Design"
 ];
 
-const data = {};
-
 const AdditionalInfo2 = () => {
     const router = useRouter();
+    const {data} = useGlobalSearchParams();
     const [description, setDescription] = useState('');
     const [jobState, setJobState] = useState('');
     const [selectedInterests, setSelectedInterests] = useState([]);
@@ -46,16 +45,28 @@ const AdditionalInfo2 = () => {
             return;
         }
 
-        console.log({
-            description,
-            jobState,
-            selectedInterests,
-        });
+        // Parse the incoming data
+        let parsedData = {};
+        try {
+            parsedData = data ? JSON.parse(data) : {};
+        }
+        catch (error) {
+            console.error('Error parsing data:', error);
+        }
 
-        // Navigate to the additional information screen with data
+        // Add new fields to the data object
+        const updatedData = {
+            ...parsedData, // Preserve existing data
+            jobTitle: jobState,
+            selectedInterests,
+        };
+
+        console.log("Updated Data:", updatedData);
+
+        // Navigate to the next screen with the updated data
         router.push({
             pathname: '/screens/register/additionalInfo3/[data]',
-            params: {data: JSON.stringify(data)},
+            params: {data: JSON.stringify(updatedData)},
         });
     };
 
@@ -90,7 +101,7 @@ const AdditionalInfo2 = () => {
                 <Text style={styles.sectionTitle}>Select Your Interests:</Text>
                 <FlatList
                     data={interestsList}
-                    numColumns={2}
+                    numColumns={2} // Ensures proper grid layout
                     keyExtractor={(item) => item}
                     renderItem={({item}) => (
                         <TouchableOpacity
@@ -110,8 +121,9 @@ const AdditionalInfo2 = () => {
                             </Text>
                         </TouchableOpacity>
                     )}
-                    contentContainerStyle={styles.interestContainer}
+                    contentContainerStyle={{paddingHorizontal: 10}} // Adjust spacing if needed
                 />
+
 
                 <TouchableOpacity style={styles.registerButton} onPress={handleSubmit}>
                     <Text style={styles.registerButtonText}>Next</Text>

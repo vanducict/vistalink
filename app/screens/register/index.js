@@ -40,7 +40,7 @@ const Register = () => {
             password: passwordState,
             name: nameState,
             firstName: firstNameState,
-            birthdate,
+            birthDate: birthdate,
         };
 
         // Navigate to the additional information screen with data

@@ -9,28 +9,48 @@ import {
     TouchableOpacity,
     View
 } from 'react-native';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import DropDownPicker from 'react-native-dropdown-picker';
 
 import icons from "../../../../constants/icons";
 import images from "../../../../constants/images";
-import {useRouter} from "expo-router";
+import {useGlobalSearchParams, useRouter} from "expo-router";
 import styles from "./[data].style.js";
 import Lottie from "lottie-react-native";
 import animations from "../../../../constants/animations";
+import {getAllUserTypes} from "../../../../service/user/UserService";
 
 const AdditionalInfo1 = () => {
     const router = useRouter();
+    const {data} = useGlobalSearchParams(); // Extract channelId from route params
     const [description, setDescription] = useState('');
     const [open, setOpen] = useState(false);
     const [userType, setUserType] = useState(null);
-    const [items, setItems] = useState([
-        {label: 'Student', value: 'student'},
-        {label: 'Teacher', value: 'teacher'},
-    ]);
+    const [items, setItems] = useState([]);
 
-    // Prepare the data to pass
-    const data = {};
+    useEffect(() => {
+        const fetchUserTypes = async () => {
+            try {
+                const types = await getAllUserTypes();
+                if (types && types.length > 0) {
+                    const formattedItems = types.map((type, index) => ({
+                        label: type,
+                        value: type,
+                        key: `${type}-${index}`,
+                    }));
+                    setItems(formattedItems);
+                } else {
+                    console.log("No types found.");
+                }
+            }
+            catch (error) {
+                console.log("Error fetching types:", error);
+            }
+        };
+        fetchUserTypes().then(r => r);
+    }, []);
+
+
     const [selectedImage, setSelectedImage] = useState(null);
 
     const handleImageSelection = async () => {
@@ -43,16 +63,28 @@ const AdditionalInfo1 = () => {
             return;
         }
 
-        console.log({
+        // Parse the incoming data
+        let parsedData = {};
+        try {
+            parsedData = data ? JSON.parse(data) : {};
+        }
+        catch (error) {
+            console.error('Error parsing data:', error);
+        }
+
+        // Add new fields to the data object
+        const updatedData = {
+            ...parsedData, // Preserve existing data
             description,
             userType,
-            selectedImage,
-        });
+        };
 
-        // Navigate to the additional information screen with data
+        console.log("Updated Data:", updatedData);
+
+        // Navigate to the next screen with the updated data
         router.push({
             pathname: '/screens/register/additionalInfo2/[data]',
-            params: {data: JSON.stringify(data)},
+            params: {data: JSON.stringify(updatedData)},
         });
     };
 
@@ -122,9 +154,11 @@ const AdditionalInfo1 = () => {
                 {/* Dynamic role description */}
                 {userType && (
                     <Text style={styles.roleDescription}>
-                        {userType === 'student'
-                            ? '📚 As a student, you can explore resources, connect with mentors, and enhance your learning journey!'
-                            : '🎓 As a teacher, you can guide students, share knowledge, and contribute to a thriving learning community!'}
+                        {userType === 'Consumer'
+                            ? 'This is a user who places ads to find connections. Think of it as someone who’s looking for others to connect with, possibly to collaborate, network, or get advice. They take an active role in seeking connections by creating ads or posts.'
+                            : userType === 'Collaborator'
+                                ? 'A collaborator is someone who searches for ads placed by consumers or others, and then applies to them to form a connection. Instead of creating the ad, they are searching through available ads and responding to them, hoping to connect with others based on shared interests or needs.'
+                                : 'This is a default message for any other user role, such as a teacher, admin, or another role that isn’t a Consumer or Collaborator.'}
                     </Text>
                 )}
 

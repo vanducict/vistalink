@@ -3,18 +3,18 @@ import {useState} from 'react';
 
 import icons from "../../../../constants/icons";
 import images from "../../../../constants/images";
-import {useRouter} from "expo-router";
+import {useGlobalSearchParams, useRouter} from "expo-router";
 import styles from "./[data].style.js";
 import Lottie from "lottie-react-native";
 import animations from "../../../../constants/animations";
 
 const AdditionalInfo3 = () => {
     const router = useRouter();
+    const {data} = useGlobalSearchParams(); // Extract channelId from route params
     const [passion, setPassion] = useState('');
     const [travel, setTravel] = useState('');
     const [funFact, setFunFact] = useState('');
 
-    const data = {};
 
     const handleSubmit = () => {
         if (!passion || !travel || !funFact) {
@@ -22,20 +22,32 @@ const AdditionalInfo3 = () => {
             return;
         }
 
-        const data = {
-            passion,
-            travel,
-            funFact
+        // Parse the incoming data
+        let parsedData = {};
+        try {
+            parsedData = data ? JSON.parse(data) : {};
+        }
+        catch (error) {
+            console.error('Error parsing data:', error);
+        }
+
+        // Add new fields to the data object
+        const updatedData = {
+            ...parsedData, // Preserve existing data
+            question1: passion,
+            question2: travel,
+            question3: funFact,
         };
 
-        console.log(data);
+        console.log("Updated Data:", updatedData);
 
-        // Navigate to the next screen with data
+        // Navigate to the next screen with the updated data
         router.push({
             pathname: '/screens/register/additionalInfo4/[data]',
-            params: {data: JSON.stringify(data)},
+            params: {data: JSON.stringify(updatedData)},
         });
     };
+
 
     return (
         <SafeAreaView style={styles.safeArea}>
