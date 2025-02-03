@@ -103,29 +103,30 @@ const UserProfile = ({visible, userDetails, onClose}) => {
                                     <Loading loading={loading}/>
                                 ) : (
                                     <View style={[styles.infoGroup, styles.imageContainer]}>
+                                        {/* Name overlay - Positioned absolutely above the swiper */}
+                                        <Text style={styles.imageNameOverlay}>
+                                            {userDetails?.firstName} {userDetails?.name}, {calculateAge(userDetails.birthDate)}
+                                        </Text>
+
                                         {/* Swiper component for images */}
                                         <Swiper
                                             style={styles.swiper}
-                                            showsPagination={true} // Add pagination dots
-                                            loop={false} // Disable looping if you don't want to loop images
-                                            autoplay={false} // Disable autoplay, or set to true for auto scrolling
-                                            paginationStyle={styles.paginationStyle} // Apply custom pagination style
+                                            showsPagination={true}
+                                            loop={false}
+                                            autoplay={false}
+                                            paginationStyle={styles.paginationStyle}
                                         >
                                             {imageUrls.map((url, index) => (
-                                                <View key={index} style={styles.imageWrapper}>
+                                                <View key={index}>
                                                     <Image
                                                         source={{uri: url}}
                                                         style={styles.avatar}
                                                     />
-                                                    {/* Display name at bottom-right of the image */}
-                                                    <Text
-                                                        style={styles.imageName}>
-                                                        {userDetails?.firstName} {userDetails?.name}, {calculateAge(userDetails.birthDate)}
-                                                    </Text>
                                                 </View>
                                             ))}
                                         </Swiper>
                                     </View>
+
                                 )}
                                 <View style={styles.infoGroup}>
                                     <Text style={styles.infoLabel}>Biography:</Text>

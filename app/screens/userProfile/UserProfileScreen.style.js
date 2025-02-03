@@ -91,6 +91,19 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         borderRadius: 8,
     },
+    imageNameOverlay: {
+        position: 'absolute',
+        bottom: 40,  // Adjust distance from bottom
+        right: 10,  // Adjust for proper alignment
+        zIndex: 10,  // Ensure it stays on top
+        fontSize: 26,
+        color: '#fff',
+        fontWeight: 'bold',
+        textShadowColor: 'rgba(0, 0, 0, 0.7)',
+        textShadowOffset: {width: 1, height: 1},
+        textShadowRadius: 5,
+    },
+
     closeButtonText: {
         color: "#fff",
         fontSize: 16,
