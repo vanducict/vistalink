@@ -16,36 +16,37 @@ const styles = {
         flexDirection: "row",
         alignItems: "center",
         backgroundColor: COLORS.tertiary,
-        padding: 10,
-        marginTop: "auto",
-        height: 50,
-        borderRadius: 5,
+        paddingVertical: 12, // Increased padding for better touch area
+        paddingHorizontal: 18,
+        borderRadius: 10, // More rounded for a modern look
         marginVertical: 10,
-        justifyContent: "center", // Center the content
-    },
-    approveProfileButton: {
-        flexDirection: "row",
-        alignItems: "center",
-        backgroundColor: "#28a745", // Green color for approval
-        padding: 10,
-        borderRadius: 5,
-        marginVertical: 5,
-        justifyContent: "center", // Center the content
-    },
-    declineProfileButton: {
-        flexDirection: "row",
-        alignItems: "center",
-        backgroundColor: "#dc3545", // Red color for decline
-        padding: 10,
-        borderRadius: 5,
-        marginVertical: 5,
-        justifyContent: "center", // Center the content
+        justifyContent: "center", // Center content
+        shadowColor: "#000",
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
+        elevation: 4, // Android shadow effect
     },
     buttonText: {
         color: "#fff",
         fontSize: 16,
         fontWeight: "bold",
-        fontFamily: FONT.regular,
+        fontFamily: FONT.medium,
+    },
+
+    approveProfileButton: {
+        flexDirection: "row",
+        alignItems: "center",
+        padding: 10,
+        borderRadius: 5,
+        justifyContent: "center", // Center the content
+    },
+    declineProfileButton: {
+        flexDirection: "row",
+        alignItems: "center",
+        padding: 10,
+        borderRadius: 5,
+        justifyContent: "center", // Center the content
     },
     description: {
         fontSize: 14,
@@ -117,14 +118,16 @@ const styles = {
     },
     applicantContainer: {
         backgroundColor: "#fff",
-        padding: 15,
+        padding: 20, // Increased padding for better spacing
         marginVertical: 10,
-        borderRadius: 8,
+        borderRadius: 12, // Softer rounded corners
         shadowColor: "#000",
-        shadowOffset: {width: 0, height: 1},
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-        elevation: 2,
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.15, // Slightly stronger shadow for depth
+        shadowRadius: 4,
+        elevation: 3, // Adds depth on Android
+        borderWidth: 1, // Adds subtle border
+        borderColor: "#E0E0E0", // Light gray border for contrast
     },
     applicantName: {
         fontSize: 18,

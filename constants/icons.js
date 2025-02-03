@@ -8,6 +8,8 @@ import chats from "../assets/icons/chat.png";
 import links from "../assets/icons/link.png";
 import google from "../assets/icons/google.png";
 import back from "../assets/icons/back-btn.png";
+import check from "../assets/icons/check.png";
+import close from "../assets/icons/close.png";
 
 export default {
     menu,
@@ -19,5 +21,7 @@ export default {
     chats,
     links,
     google,
-    back
+    back,
+    check,
+    close,
 };

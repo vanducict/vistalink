@@ -4,6 +4,7 @@ import Swiper from 'react-native-swiper'; // Import swiper
 import styles from "./UserProfileScreen.style";
 import supabase from "../../lib/supabase";
 import Loading from "../../../components/common/loading/Loading";
+import icons from "../../../constants/icons";
 
 const UserProfile = ({visible, userDetails, onClose}) => {
     const [imageUrls, setImageUrls] = useState([]); // Initialize as an empty array
@@ -174,7 +175,11 @@ const UserProfile = ({visible, userDetails, onClose}) => {
                         )}
                     </ScrollView>
                     <TouchableOpacity style={styles.closeButton} onPress={onClose}>
-                        <Text style={styles.closeButtonText}>Close</Text>
+                        <Image
+                            source={icons.close}
+                            tintColor="white"
+                            style={{width: 10, height: 10, resizeMode: "contain"}}
+                        />
                     </TouchableOpacity>
                 </View>
             </View>

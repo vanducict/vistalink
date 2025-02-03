@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="update user profiles">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="name image better">
+      <change afterPath="$PROJECT_DIR$/assets/icons/check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/close.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/userProfile/UserProfileScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/userProfile/UserProfileScreen.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/userProfile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/userProfile/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/icons.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +64,8 @@
       <recent name="$PROJECT_DIR$/app/screens/register/additionalInfo2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/animations" />
       <recent name="$PROJECT_DIR$/assets/icons" />
+      <recent name="$PROJECT_DIR$/assets/animations" />
       <recent name="$PROJECT_DIR$/app/screens/chatroom" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/assets/images" />
@@ -98,13 +103,6 @@
       <workItem from="1738260404465" duration="2194000" />
       <workItem from="1738329936127" duration="9035000" />
       <workItem from="1738591640318" duration="711000" />
-    </task>
-    <task id="LOCAL-00081" summary="hopeloos">
-      <created>1736887230181</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1736887230182</updated>
     </task>
     <task id="LOCAL-00082" summary="hopeloos 2.0">
       <created>1736887288436</created>
@@ -442,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738598608009</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="name image better">
+      <created>1738605981183</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1738605981184</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +477,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove headers pages some" />
     <MESSAGE value="working adding images storage" />
     <MESSAGE value="add crop + demo" />
     <MESSAGE value="pprofile image overview page" />
@@ -497,6 +501,7 @@
     <MESSAGE value="clean up" />
     <MESSAGE value="style fix image" />
     <MESSAGE value="update user profiles" />
-    <option name="LAST_COMMIT_MESSAGE" value="update user profiles" />
+    <MESSAGE value="name image better" />
+    <option name="LAST_COMMIT_MESSAGE" value="name image better" />
   </component>
 </project>

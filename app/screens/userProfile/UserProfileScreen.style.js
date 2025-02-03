@@ -84,10 +84,10 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     },
     closeButton: {
-        marginTop: 15,
+        marginTop: 10,
         alignSelf: "center",
-        backgroundColor: COLORS.tertiary,
-        paddingVertical: 12,
+        backgroundColor: COLORS.primary,
+        paddingVertical: 15,
         paddingHorizontal: 20,
         borderRadius: 8,
     },
