@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="name image better">
-      <change afterPath="$PROJECT_DIR$/assets/icons/check.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/close.png" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="ui applicatons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/userProfile/UserProfileScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/userProfile/UserProfileScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/userProfile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/userProfile/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/icons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/createLink/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,13 +102,6 @@
       <workItem from="1738260404465" duration="2194000" />
       <workItem from="1738329936127" duration="9035000" />
       <workItem from="1738591640318" duration="711000" />
-    </task>
-    <task id="LOCAL-00082" summary="hopeloos 2.0">
-      <created>1736887288436</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1736887288436</updated>
     </task>
     <task id="LOCAL-00083" summary="FIX?">
       <created>1736889055883</created>
@@ -447,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738605981184</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="ui applicatons">
+      <created>1738607494799</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1738607494801</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,7 +476,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="working adding images storage" />
     <MESSAGE value="add crop + demo" />
     <MESSAGE value="pprofile image overview page" />
     <MESSAGE value="user image store show" />
@@ -502,6 +500,7 @@
     <MESSAGE value="style fix image" />
     <MESSAGE value="update user profiles" />
     <MESSAGE value="name image better" />
-    <option name="LAST_COMMIT_MESSAGE" value="name image better" />
+    <MESSAGE value="ui applicatons" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui applicatons" />
   </component>
 </project>

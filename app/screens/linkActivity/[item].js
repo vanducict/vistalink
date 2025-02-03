@@ -1,6 +1,6 @@
 import {Image, RefreshControl, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
 import styles from "./[item].style";
-import {Stack, useGlobalSearchParams, useRouter} from "expo-router";
+import {useGlobalSearchParams, useRouter} from "expo-router";
 import images from "../../../constants/images";
 import icons from "../../../constants/icons";
 import React, {useEffect, useState} from "react";
@@ -29,9 +29,11 @@ const LinkActivity = () => {
             } else {
                 console.log("No user data found.");
             }
-        } catch (error) {
+        }
+        catch (error) {
             console.log("Error fetching user:", error);
-        } finally {
+        }
+        finally {
             setLoading(false);
         }
     };
@@ -41,7 +43,8 @@ const LinkActivity = () => {
         try {
             const userData = await getUserForEmail(email); // Replace with your actual API/service call
             return userData;
-        } catch (error) {
+        }
+        catch (error) {
             console.log(`Error fetching data for email ${email}:`, error);
             return null; // Return null if there's an error
         }
@@ -72,42 +75,31 @@ const LinkActivity = () => {
             } else {
                 console.log("No user links data available.");
             }
-        } catch (error) {
+        }
+        catch (error) {
             console.log("Error fetching user links:", error);
-        } finally {
+        }
+        finally {
             setLoading(false);
         }
     };
 
 
     useEffect(() => {
-        if (event?.id) fetchUserLinksForId().then(r => r);
+        if (event?.id) {
+            fetchUserLinksForId().then(r => r);
+        }
         fetchUser().then(r => r);
     }, [event?.id]);
 
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.lightWhite}}>
-            <Stack.Screen
-                options={{
-                    headerTitleAlign: "center",
-                    headerShown: true,
-                    headerTitle: () => (
-                        <Image
-                            source={images.link}
-                            style={{width: 40, height: 40, resizeMode: "contain"}}
-                        />
-                    ),
-                    headerLeft: () => (
-                        <TouchableOpacity onPress={() => router.back()}>
-                            <Image
-                                source={icons.back}
-                                resizeMode="contain"
-                                style={{width: 20, height: 20}}
-                            />
-                        </TouchableOpacity>
-                    ),
-                }}
-            />
+            <View style={styles.customHeader}>
+                <TouchableOpacity onPress={() => router.back()}>
+                    <Image source={icons.back} resizeMode="contain" style={styles.backButtonIcon}/>
+                </TouchableOpacity>
+                <Image source={images.link} style={styles.headerLogo}/>
+            </View>
 
             <ScrollView
                 refreshControl={

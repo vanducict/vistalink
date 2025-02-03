@@ -1,5 +1,5 @@
 import {Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
-import {Stack, useGlobalSearchParams, useRouter} from "expo-router";
+import {useGlobalSearchParams, useRouter} from "expo-router";
 import {COLORS} from "../../../constants/theme";
 import icons from "../../../constants/icons";
 import React, {useEffect, useState} from "react";
@@ -30,9 +30,11 @@ const LinkDetail = () => {
             } else {
                 console.log("No user data available.");
             }
-        } catch (error) {
+        }
+        catch (error) {
             console.log("Error fetching user:", error);
-        } finally {
+        }
+        finally {
             setLoading(false);
         }
     };
@@ -48,20 +50,26 @@ const LinkDetail = () => {
             } else {
                 console.log("No user links data available.");
             }
-        } catch (error) {
+        }
+        catch (error) {
             console.log("Error fetching user links:", error);
-        } finally {
+        }
+        finally {
             setLoading(false);
         }
     };
 
     useEffect(() => {
         fetchUser();
-        if (event?.id) fetchUserLinksForId();
+        if (event?.id) {
+            fetchUserLinksForId();
+        }
     }, [event?.id]);
 
     async function registerToLink() {
-        if (!currentUser || loading) return;
+        if (!currentUser || loading) {
+            return;
+        }
 
         try {
             setLoading(true);
@@ -69,9 +77,11 @@ const LinkDetail = () => {
 
             // Refetch user links after registration
             await fetchUserLinksForId();
-        } catch (error) {
+        }
+        catch (error) {
             console.error("Error registering to link:", error);
-        } finally {
+        }
+        finally {
             setLoading(false);
         }
     }
@@ -80,27 +90,12 @@ const LinkDetail = () => {
 
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.lightWhite}}>
-            <Stack.Screen
-                options={{
-                    headerTitleAlign: "center",
-                    headerShown: true,
-                    headerTitle: () => (
-                        <Image
-                            source={images.link}
-                            style={{width: 40, height: 40, resizeMode: 'contain'}}
-                        />
-                    ),
-                    headerLeft: () => (
-                        <TouchableOpacity onPress={() => router.back()}>
-                            <Image
-                                source={icons.back}
-                                resizeMode="contain"
-                                style={{width: 20, height: 20}}
-                            />
-                        </TouchableOpacity>
-                    ),
-                }}
-            />
+            <View style={styles.customHeader}>
+                <TouchableOpacity onPress={() => router.back()}>
+                    <Image source={icons.back} resizeMode="contain" style={styles.backButtonIcon}/>
+                </TouchableOpacity>
+                <Image source={images.link} style={styles.headerLogo}/>
+            </View>
 
             <ScrollView>
                 <View style={styles.container}>

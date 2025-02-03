@@ -159,6 +159,26 @@ const styles = {
     disabledButton: {
         backgroundColor: '#a9a9a9', // Gray out buttons for expired items
     },
+    customHeader: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        paddingHorizontal: 15,
+        paddingVertical: 10,
+        backgroundColor: COLORS.lightWhite,
+        borderBottomWidth: 1,
+        borderBottomColor: "#ddd",
+    },
+    backButtonIcon: {
+        width: 24,
+        height: 24,
+        tintColor: COLORS.primary,
+    },
+    headerLogo: {
+        width: 40,
+        height: 40,
+        resizeMode: "contain",
+    }
 };
 
 
