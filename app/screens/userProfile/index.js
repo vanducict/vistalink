@@ -136,7 +136,7 @@ const UserProfile = ({visible, userDetails, onClose}) => {
                                     <Text style={styles.infoValue}>{userDetails.email}</Text>
                                 </View>
                                 <View style={styles.infoGroup}>
-                                    <Text style={styles.infoLabel}>Email:</Text>
+                                    <Text style={styles.infoLabel}>Job title</Text>
                                     <Text style={styles.infoValue}>{userDetails.jobTitle}</Text>
                                 </View>
                                 <View style={styles.infoGroup}>
