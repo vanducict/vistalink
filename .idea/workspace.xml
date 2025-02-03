@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="style fix image">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/popularcard/PopularCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/popularcard/PopularCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/userProfile/UserProfileScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/userProfile/UserProfileScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/userProfile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/userProfile/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,13 +100,6 @@
       <workItem from="1738260404465" duration="2194000" />
       <workItem from="1738329936127" duration="9035000" />
       <workItem from="1738591640318" duration="711000" />
-    </task>
-    <task id="LOCAL-00078" summary="POSSIbLE ASYNC FIX???">
-      <created>1736884808849</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1736884808849</updated>
     </task>
     <task id="LOCAL-00079" summary="fffkes PN solution">
       <created>1736885502716</created>
@@ -442,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738595120154</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="style fix image">
+      <created>1738596613130</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1738596613132</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +474,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="filter home page bug" />
     <MESSAGE value="chat sort" />
     <MESSAGE value="remove headers pages some" />
     <MESSAGE value="working adding images storage" />
@@ -497,6 +498,7 @@
     <MESSAGE value="register flow rework happy" />
     <MESSAGE value="register flow rework happy 2" />
     <MESSAGE value="clean up" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean up" />
+    <MESSAGE value="style fix image" />
+    <option name="LAST_COMMIT_MESSAGE" value="style fix image" />
   </component>
 </project>
