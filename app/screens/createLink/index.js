@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Alert, Image, KeyboardAvoidingView, SafeAreaView, Text, TextInput, TouchableOpacity, View} from "react-native";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import {COLORS} from "../../../constants/theme";
-import {Stack, useRouter} from "expo-router";
+import {useRouter} from "expo-router";
 import images from "../../../constants/images";
 import icons from "../../../constants/icons";
 import Loading from "../../../components/common/loading/Loading";
@@ -42,9 +42,11 @@ const CreateLink = () => {
                 } else {
                     console.log("No user data available.");
                 }
-            } catch (error) {
+            }
+            catch (error) {
                 console.log("Error fetching user:", error);
-            } finally {
+            }
+            finally {
                 setLoading(false);
             }
         };
@@ -65,9 +67,11 @@ const CreateLink = () => {
                 } else {
                     console.log("No event types found.");
                 }
-            } catch (error) {
+            }
+            catch (error) {
                 console.log("Error fetching event types:", error);
-            } finally {
+            }
+            finally {
                 setLoading(false);
             }
         };
@@ -88,7 +92,9 @@ const CreateLink = () => {
     };
 
     const handleCreateEvent = async () => {
-        if (!validateInputs()) return;
+        if (!validateInputs()) {
+            return;
+        }
         if (!currentUser || !currentUser.email) {
             Alert.alert("Error", "User data is missing. Please try again.");
             console.error("Current User Data:", currentUser);
@@ -112,7 +118,8 @@ const CreateLink = () => {
             setLoading(false);
             Alert.alert("Success", "Event created successfully!");
             router.back();
-        } catch (error) {
+        }
+        catch (error) {
             setLoading(false);
             console.error("Error creating event:", error);
             Alert.alert("Error", "Something went wrong while creating the event.");
@@ -138,28 +145,12 @@ const CreateLink = () => {
 
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.lightWhite}}>
-            <Stack.Screen
-                backgroundColor={COLORS.lightWhite}
-                options={{
-                    headerShown: true,
-                    headerTitle: () => (
-                        <Image
-                            source={images.link}
-                            style={{width: 40, height: 40, resizeMode: "contain"}}
-                        />
-                    ),
-                    headerLeft: () => (
-                        <TouchableOpacity onPress={() => router.back()}>
-                            <Image
-                                source={icons.back}
-                                resizeMode="contain"
-                                style={{width: 20, height: 20}}
-                            />
-                        </TouchableOpacity>
-                    ),
-                    headerTitleAlign: "center",
-                }}
-            />
+            <View style={styles.customHeader}>
+                <TouchableOpacity onPress={() => router.back()}>
+                    <Image source={icons.back} resizeMode="contain" style={styles.backButtonIcon}/>
+                </TouchableOpacity>
+                <Image source={images.link} style={styles.headerLogo}/>
+            </View>
 
             <KeyboardAvoidingView style={styles.container} behavior="padding">
                 <TextInput

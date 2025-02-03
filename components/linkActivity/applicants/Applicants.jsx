@@ -1,5 +1,4 @@
-import {Modal, Text, TouchableOpacity, View} from "react-native";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
+import {Image, Modal, Text, TouchableOpacity, View} from "react-native";
 import React, {useState} from "react";
 import styles from "./Applicants.style";
 import {notifyUserLinkStatus, updateUserLinkStatus} from "../../../service/userLink/UserLinkService";
@@ -11,6 +10,7 @@ import {StreamChat} from "stream-chat";
 import {useAuth} from "../../../utils/AuthenticationContext";
 import {getUserForEmail} from "../../../service/user/UserService";
 import UserProfile from "../../../app/screens/userProfile";
+import icons from "../../../constants/icons";
 
 const Applicants = ({userLinks, event, refreshUserLinks}) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -25,7 +25,8 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
             const status = approved ? "approved" : "declined";
             await updateUserLinkStatus(id, userEmail, status);
             await refreshUserLinks(); // Refresh links after updating
-        } catch (error) {
+        }
+        catch (error) {
             console.error("Error updating applicant status:", error);
         }
     };
@@ -102,13 +103,15 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                 if (members.length > 0) {
                     await channel.addMembers(members);
                 }
-            } catch (error) {
+            }
+            catch (error) {
                 console.error('Error adding members:', error);
             }
 
 
             console.log('Chat room created successfully!');
-        } catch (err) {
+        }
+        catch (err) {
             console.error('Error creating chat room or adding members:', err);
         }
 
@@ -128,7 +131,8 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
             await refreshUserLinks(); // Refresh user links after the update
             router.back(); // Go back to the previous screen
             console.log("All applicants submitted and approved.");
-        } catch (error) {
+        }
+        catch (error) {
             console.error("Error confirming applicants:", error);
         }
     };
@@ -195,7 +199,11 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                                     ]}
                                     disabled={event.expired || event.closed} // Disable when expired or closed
                                 >
-                                    <FontAwesome name="times-circle" size={40} color="white"/>
+                                    <Image
+                                        source={icons.close}
+                                        style={{width: 20, height: 20, resizeMode: "contain"}}
+                                    />
+
                                 </TouchableOpacity>
 
                                 {/* Approve Profile Button */}
@@ -207,7 +215,11 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                                     ]}
                                     disabled={event.expired || event.closed} // Disable when expired or closed
                                 >
-                                    <FontAwesome name="check-circle" size={40} color="white"/>
+                                    <Image
+                                        source={icons.check}
+                                        style={{width: 30, height: 30, resizeMode: "contain"}}
+                                    />
+
                                 </TouchableOpacity>
                             </View>
                         </View>

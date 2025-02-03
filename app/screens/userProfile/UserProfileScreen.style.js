@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     },
     modalContent: {
         width: "95%",
-        height: "80%",
+        height: "90%",
         backgroundColor: "#ffffff",
         borderRadius: 15,
         padding: 20,
@@ -20,19 +20,11 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 5,
     },
-    title: {
-        fontSize: 22,
-        fontFamily: FONT.regular,
-        fontWeight: "600",
-        color: "#333",
-        marginBottom: 15,
-        textAlign: "center",
-    },
     scrollContainer: {
         paddingVertical: 10,
     },
     infoGroup: {
-        marginBottom: 15,
+        marginBottom: 20,
         borderBottomWidth: 1,
         fontFamily: FONT.regular,
         borderBottomColor: "#eee",
@@ -49,16 +41,39 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         flexWrap: 'wrap',
-        marginVertical: 10,
     },
     avatar: {
-        width: 400,
-        height: 350,
-        margin: 10,
+        width: '100%', // Full width of the swiper
+        height: 500,   // Adjust height for a better fit
+        resizeMode: 'cover', // Ensure the image fills the container without distortion
+    },
+    swiper: {
+        height: 500, // Height of the swiper
+    },
+    imageName: {
+        position: 'absolute',
+        bottom: 10,
+        right: 10,
+        fontSize: 20,
+        color: '#fff',
+        marginBottom: 20,
+        fontFamily: FONT.regular,
+        fontWeight: 'bold',
+        textShadowColor: 'rgba(0, 0, 0, 0.7)', // Add a subtle shadow to improve text visibility
+        textShadowOffset: {width: 1, height: 1},
+        textShadowRadius: 5,
+        zIndex: 1, // Ensure the name text is above other elements
+    },
+    paginationStyle: {
+        position: 'absolute', // Position the pagination outside of the image
+        bottom: 10, // Adjust pagination position to avoid overlap
+        left: '50%',
+        transform: [{translateX: '-50%'}], // Center the pagination
+        zIndex: 0, // Ensure the pagination is below the text
     },
     infoValue: {
         fontSize: 16,
-        fontFamily: FONT.regular,
+        fontFamily: FONT.bold,
         color: "#333",
     },
     noDetailsText: {
@@ -69,20 +84,56 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     },
     closeButton: {
-        marginTop: 15,
+        marginTop: 10,
         alignSelf: "center",
-        backgroundColor: COLORS.tertiary,
-        paddingVertical: 12,
+        backgroundColor: COLORS.primary,
+        paddingVertical: 15,
         paddingHorizontal: 20,
         borderRadius: 8,
     },
+    imageNameOverlay: {
+        position: 'absolute',
+        bottom: 40,  // Adjust distance from bottom
+        right: 10,  // Adjust for proper alignment
+        zIndex: 10,  // Ensure it stays on top
+        fontSize: 26,
+        color: '#fff',
+        fontWeight: 'bold',
+        textShadowColor: 'rgba(0, 0, 0, 0.7)',
+        textShadowOffset: {width: 1, height: 1},
+        textShadowRadius: 5,
+    },
+
     closeButtonText: {
         color: "#fff",
         fontSize: 16,
         fontFamily: FONT.regular,
         fontWeight: "bold",
     },
+    interestsList: {
+        marginTop: 10,
+        flexDirection: 'row', // Align items horizontally
+        flexWrap: 'wrap', // Allow wrapping if there are too many items
+    },
+    interestItemContainer: {
+        backgroundColor: COLORS.secondary, // Set a background color
+        borderRadius: 20, // Rounded corners
+        paddingVertical: 8,
+        paddingHorizontal: 12, // Add padding for some space inside the "chip"
+        marginRight: 10, // Add spacing between items
+        marginBottom: 10, // Add spacing below items
+    },
+    interestItem: {
+        fontSize: 16,
+        fontFamily: FONT.regular,
+        color: "#fff", // White text to contrast against background
+    },
+    noInterestsText: {
+        fontSize: 16,
+        fontFamily: FONT.regular,
+        color: "#999",
+        marginTop: 5,
+    },
 });
-
 
 export default styles;

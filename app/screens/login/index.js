@@ -5,7 +5,6 @@ import {
     Keyboard,
     KeyboardAvoidingView,
     SafeAreaView,
-    ScrollView,
     Text,
     TextInput,
     TouchableOpacity,
@@ -61,65 +60,59 @@ const Login = () => {
                 style={{flex: 1}}
                 behavior="padding"
             >
-                <ScrollView
-                    contentContainerStyle={{flexGrow: 1}}
-                    keyboardShouldPersistTaps="handled"
-                    showsVerticalScrollIndicator={false}
-                >
-                    <View style={styles.container}>
-                        <Lottie
-                            source={animations.link}
-                            autoPlay
-                            loop
-                            style={{width: 150, height: 150}}
-                        />
-                        <Text style={styles.title}>VistaLink</Text>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Email"
-                            value={email}
-                            onChangeText={(text) => setEmail(text)}
-                            placeholderTextColor="#888"
-                            keyboardType="email-address"
-                        />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Password"
-                            placeholderTextColor="#888"
-                            value={password}
-                            onChangeText={(text) => setPassword(text)}
-                            secureTextEntry
-                        />
-                        <TouchableOpacity
-                            style={[styles.loginBtn, loading && styles.loginBtnDisabled]}
-                            onPress={signIn}
-                            disabled={loading}
-                        >
-                            <Text style={styles.signInButton}>
-                                {loading ? <Loading loading={loading}/> : "Sign in"}
-                            </Text>
+                <View style={styles.container}>
+                    <Lottie
+                        source={animations.link}
+                        autoPlay
+                        loop
+                        style={{width: 130, height: 130, marginBottom: 10}}
+                    />
+                    <Text style={styles.title}>VistaLink</Text>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Email"
+                        value={email}
+                        onChangeText={(text) => setEmail(text)}
+                        placeholderTextColor="#888"
+                        keyboardType="email-address"
+                    />
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Password"
+                        placeholderTextColor="#888"
+                        value={password}
+                        onChangeText={(text) => setPassword(text)}
+                        secureTextEntry
+                    />
+                    <TouchableOpacity
+                        style={[styles.loginBtn, loading && styles.loginBtnDisabled]}
+                        onPress={signIn}
+                        disabled={loading}
+                    >
+                        <Text style={styles.signInButton}>
+                            {loading ? <Loading loading={loading}/> : "Sign in"}
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => alert("Forgot Password?")}>
+                        <Text style={styles.forgotPassword}>Forgot Password?</Text>
+                    </TouchableOpacity>
+                    <View style={styles.registerContainer}>
+                        <Text style={styles.registerText}>Don't have an account?</Text>
+                        <TouchableOpacity onPress={() => router.replace("/screens/register")}>
+                            <Text style={styles.registerLink}> Register</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => alert("Forgot Password?")}>
-                            <Text style={styles.forgotPassword}>Forgot Password?</Text>
-                        </TouchableOpacity>
-                        <View style={styles.registerContainer}>
-                            <Text style={styles.registerText}>Don't have an account?</Text>
-                            <TouchableOpacity onPress={() => router.replace("/screens/register")}>
-                                <Text style={styles.registerLink}> Register</Text>
-                            </TouchableOpacity>
-                        </View>
-                        <TouchableOpacity style={styles.googleBtn}>
-                            <Image
-                                source={icons.google}
-                                style={styles.googleIcon}
-                            />
-                            <Text style={styles.googleButtonText}>
-                                Join with Google
-                            </Text>
-                        </TouchableOpacity>
-
                     </View>
-                </ScrollView>
+                    <TouchableOpacity style={styles.googleBtn}>
+                        <Image
+                            source={icons.google}
+                            style={styles.googleIcon}
+                        />
+                        <Text style={styles.googleButtonText}>
+                            Join with Google
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+
             </KeyboardAvoidingView>
         </SafeAreaView>
 

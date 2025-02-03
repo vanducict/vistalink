@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import {COLORS, FONT} from "../../../constants/theme";
+import {COLORS, FONT} from "../../../../constants/theme";
+
 
 const styles = StyleSheet.create({
     safeArea: {
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         paddingVertical: 15,
         alignItems: "center",
-        marginTop: 20,
+        marginTop: "auto",
         marginBottom: 20,
     },
     registerButtonText: {
@@ -90,6 +91,28 @@ const styles = StyleSheet.create({
         height: 100, // Adjust this height to your needs
         marginBottom: 20, // Ensure some space between the animation and other elements
     },
+    descriptionInput: {
+        height: 120, // Adjust height for multiline text
+        borderColor: '#ccc', // Light gray border color
+        borderWidth: 1,
+        borderRadius: 8,
+        paddingHorizontal: 15,
+        paddingTop: 15, // Padding on top for better text positioning
+        fontSize: 16, // Font size for the text
+        fontFamily: FONT.regular, // Use your custom font here
+        color: "#555", // Text color for description
+        backgroundColor: "#fff", // White background for the input box
+        marginVertical: 10, // Vertical margin between other inputs or elements
+        textAlignVertical: "top", // Align the text to the top for multiline input
+    },
+    roleDescription: {
+        fontSize: 14,
+        color: "#666",
+        textAlign: "center",
+        marginTop: 20,
+        fontStyle: "normal",
+    }
+
 
 });
 

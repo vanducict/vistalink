@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/icons/google.png" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="ui applicatons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/LoginScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/icons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/createLink/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -42,6 +49,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/screens/register" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
@@ -50,10 +58,14 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/screens/register" />
+      <recent name="$PROJECT_DIR$/app/screens/register/additionalInfo2" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/icons" />
-      <recent name="$PROJECT_DIR$/app/screens/chatroom" />
       <recent name="$PROJECT_DIR$/assets/animations" />
+      <recent name="$PROJECT_DIR$/app/screens/chatroom" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/assets/images" />
     </key>
@@ -83,112 +95,13 @@
       <workItem from="1737016001054" duration="22572000" />
       <workItem from="1737367879022" duration="7467000" />
       <workItem from="1737386101988" duration="4783000" />
-      <workItem from="1737463735543" duration="1988000" />
-    </task>
-    <task id="LOCAL-00068" summary="chat load fix">
-      <created>1736844942039</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1736844942039</updated>
-    </task>
-    <task id="LOCAL-00069" summary="fix lazy loading">
-      <created>1736846295233</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1736846295233</updated>
-    </task>
-    <task id="LOCAL-00070" summary="fix">
-      <created>1736848872163</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1736848872163</updated>
-    </task>
-    <task id="LOCAL-00071" summary="store display name supabase auth">
-      <created>1736860651501</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1736860651501</updated>
-    </task>
-    <task id="LOCAL-00072" summary="add stream chat usere register">
-      <created>1736861833685</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1736861833685</updated>
-    </task>
-    <task id="LOCAL-00073" summary="remove router replace">
-      <created>1736862980757</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1736862980757</updated>
-    </task>
-    <task id="LOCAL-00074" summary="ugly soluition delay for now">
-      <created>1736864026354</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1736864026354</updated>
-    </task>
-    <task id="LOCAL-00075" summary="solutioj maynebe">
-      <created>1736865451174</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1736865451174</updated>
-    </task>
-    <task id="LOCAL-00076" summary="async problem fix?">
-      <created>1736882862513</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1736882862513</updated>
-    </task>
-    <task id="LOCAL-00077" summary="only god will know">
-      <created>1736883517584</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1736883517584</updated>
-    </task>
-    <task id="LOCAL-00078" summary="POSSIbLE ASYNC FIX???">
-      <created>1736884808849</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1736884808849</updated>
-    </task>
-    <task id="LOCAL-00079" summary="fffkes PN solution">
-      <created>1736885502716</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1736885502716</updated>
-    </task>
-    <task id="LOCAL-00080" summary="sad days">
-      <created>1736885920672</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1736885920672</updated>
-    </task>
-    <task id="LOCAL-00081" summary="hopeloos">
-      <created>1736887230181</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1736887230182</updated>
-    </task>
-    <task id="LOCAL-00082" summary="hopeloos 2.0">
-      <created>1736887288436</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1736887288436</updated>
+      <workItem from="1737463735543" duration="9529000" />
+      <workItem from="1737533689898" duration="81000" />
+      <workItem from="1737578549013" duration="4811000" />
+      <workItem from="1738152150438" duration="7480000" />
+      <workItem from="1738260404465" duration="2194000" />
+      <workItem from="1738329936127" duration="9035000" />
+      <workItem from="1738591640318" duration="711000" />
     </task>
     <task id="LOCAL-00083" summary="FIX?">
       <created>1736889055883</created>
@@ -428,7 +341,112 @@
       <option name="project" value="LOCAL" />
       <updated>1737491489109</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="google btn sttyle">
+      <created>1737492066995</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1737492066995</updated>
+    </task>
+    <task id="LOCAL-00118" summary="first register screen styling done">
+      <created>1737579908490</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1737579908490</updated>
+    </task>
+    <task id="LOCAL-00119" summary="FINALLY SHIFT FIX">
+      <created>1737585220668</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1737585220668</updated>
+    </task>
+    <task id="LOCAL-00120" summary="styling addtional page">
+      <created>1737587570847</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1737587570848</updated>
+    </task>
+    <task id="LOCAL-00121" summary="registration flow restyling">
+      <created>1738261606267</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1738261606267</updated>
+    </task>
+    <task id="LOCAL-00122" summary="registration flow restyling 2">
+      <created>1738262185274</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1738262185275</updated>
+    </task>
+    <task id="LOCAL-00123" summary="packages update">
+      <created>1738262710964</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1738262710964</updated>
+    </task>
+    <task id="LOCAL-00124" summary="register flow rework happy">
+      <created>1738537809314</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1738537809315</updated>
+    </task>
+    <task id="LOCAL-00125" summary="register flow rework happy 2">
+      <created>1738539812248</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1738539812248</updated>
+    </task>
+    <task id="LOCAL-00126" summary="clean up">
+      <created>1738595120153</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1738595120154</updated>
+    </task>
+    <task id="LOCAL-00127" summary="style fix image">
+      <created>1738596613130</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1738596613132</updated>
+    </task>
+    <task id="LOCAL-00128" summary="update user profiles">
+      <created>1738598418819</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1738598418819</updated>
+    </task>
+    <task id="LOCAL-00129" summary="update user profiles">
+      <created>1738598608009</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1738598608009</updated>
+    </task>
+    <task id="LOCAL-00130" summary="name image better">
+      <created>1738605981183</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1738605981184</updated>
+    </task>
+    <task id="LOCAL-00131" summary="ui applicatons">
+      <created>1738607494799</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1738607494801</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,20 +476,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="better fix late 2" />
-    <MESSAGE value="update packages" />
-    <MESSAGE value="potential fix async names streamchat" />
-    <MESSAGE value="apply fix" />
-    <MESSAGE value="finalllyyyyy" />
-    <MESSAGE value="fix multiple select + orderering applicants" />
-    <MESSAGE value="refresh control applcicants" />
-    <MESSAGE value="submit applicant check" />
-    <MESSAGE value="working create chat!!!!" />
-    <MESSAGE value="chatroom name" />
-    <MESSAGE value="filter home page bug" />
-    <MESSAGE value="chat sort" />
-    <MESSAGE value="remove headers pages some" />
-    <MESSAGE value="working adding images storage" />
     <MESSAGE value="add crop + demo" />
     <MESSAGE value="pprofile image overview page" />
     <MESSAGE value="user image store show" />
@@ -483,6 +487,20 @@
     <MESSAGE value="show profile details applicants" />
     <MESSAGE value="enable btn view profile always" />
     <MESSAGE value="update chatroom style" />
-    <option name="LAST_COMMIT_MESSAGE" value="update chatroom style" />
+    <MESSAGE value="google btn sttyle" />
+    <MESSAGE value="first register screen styling done" />
+    <MESSAGE value="FINALLY SHIFT FIX" />
+    <MESSAGE value="styling addtional page" />
+    <MESSAGE value="registration flow restyling" />
+    <MESSAGE value="registration flow restyling 2" />
+    <MESSAGE value="packages update" />
+    <MESSAGE value="register flow rework happy" />
+    <MESSAGE value="register flow rework happy 2" />
+    <MESSAGE value="clean up" />
+    <MESSAGE value="style fix image" />
+    <MESSAGE value="update user profiles" />
+    <MESSAGE value="name image better" />
+    <MESSAGE value="ui applicatons" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui applicatons" />
   </component>
 </project>

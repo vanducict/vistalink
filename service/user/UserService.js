@@ -1,6 +1,6 @@
 import supabase from "../../app/lib/supabase";
 
-export const insertUser = async (user, email, name, firstName, birthdate, description, userType) => {
+export const insertUser = async (user, email, name, firstName, birthdate, description, userType, selectedInterests, jobTitle, question1, question2, question3) => {
     try {
         console.log(user);
         const {data, error} = await supabase
@@ -13,7 +13,12 @@ export const insertUser = async (user, email, name, firstName, birthdate, descri
                     birthDate: birthdate,
                     description: description,
                     userType: userType,
-                    uid: user?.user?.id
+                    uid: user?.user?.id,
+                    selectedInterests: selectedInterests,
+                    jobTitle: jobTitle,
+                    question1: question1,
+                    question2: question2,
+                    question3: question3,
                 },
             ])
             .select();
@@ -24,7 +29,8 @@ export const insertUser = async (user, email, name, firstName, birthdate, descri
             console.log("User inserted successfully:", data);
             return {success: true, data};
         }
-    } catch (e) {
+    }
+    catch (e) {
         console.error("Unexpected error:", e);
         return {success: false, error: e.message};
     }
@@ -61,7 +67,8 @@ export const getCurrentUser = async () => {
         }
 
         return user;
-    } catch (e) {
+    }
+    catch (e) {
         console.error("Unexpected error:", e);
         return null;
     }
@@ -84,7 +91,8 @@ export const getUserForEmail = async (email) => {
         }
 
         return user;
-    } catch (e) {
+    }
+    catch (e) {
         console.error("Unexpected error:", e);
         return null;
     }

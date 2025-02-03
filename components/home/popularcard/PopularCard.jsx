@@ -28,9 +28,11 @@ const PopularJobCard = ({item}) => {
                 } else {
                     console.log("No user data found.");
                 }
-            } catch (error) {
+            }
+            catch (error) {
                 console.log("Error fetching user:", error);
-            } finally {
+            }
+            finally {
                 setLoading(false);
             }
         };
@@ -39,15 +41,19 @@ const PopularJobCard = ({item}) => {
 
     useEffect(() => {
         const fetchImages = async () => {
-            if (!currentUser?.uid) return; // Ensure `currentUser` is loaded
+            if (!currentUser?.uid) {
+                return;
+            } // Ensure `currentUser` is loaded
             try {
                 setLoading(true);
                 const files = await fetchUserImages(currentUser.uid);
                 const urls = await getPublicImageUrls(files, currentUser.uid);
                 setImageUrls(urls); // Set the fetched URLs
-            } catch (error) {
+            }
+            catch (error) {
                 console.error("Error fetching images:", error);
-            } finally {
+            }
+            finally {
                 setLoading(false);
             }
         };
@@ -70,7 +76,8 @@ const PopularJobCard = ({item}) => {
             }
 
             return data; // Returns an array of file objects
-        } catch (error) {
+        }
+        catch (error) {
             console.error('Error:', error.message);
             return [];
         }
@@ -96,7 +103,7 @@ const PopularJobCard = ({item}) => {
             <TouchableOpacity style={styles.logoContainer}>
                 <Image
                     source={imageUrls.length > 0 ? {uri: imageUrls[0]} : null}
-                    resizeMode={"contain"}
+                    resizeMode={"cover"}
                     style={styles.logoImage}
                 />
             </TouchableOpacity>

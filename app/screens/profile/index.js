@@ -24,9 +24,11 @@ const Profile = () => {
                 } else {
                     console.log("No user data found.");
                 }
-            } catch (error) {
+            }
+            catch (error) {
                 console.log("Error fetching user:", error);
-            } finally {
+            }
+            finally {
                 setLoading(false);
             }
         };
@@ -35,15 +37,19 @@ const Profile = () => {
 
     useEffect(() => {
         const fetchImages = async () => {
-            if (!currentUser?.uid) return; // Ensure `currentUser` is loaded
+            if (!currentUser?.uid) {
+                return;
+            } // Ensure `currentUser` is loaded
             try {
                 setLoading(true);
                 const files = await fetchUserImages(currentUser.uid);
                 const urls = await getPublicImageUrls(files, currentUser.uid);
                 setImageUrls(urls); // Set the fetched URLs
-            } catch (error) {
+            }
+            catch (error) {
                 console.error("Error fetching images:", error);
-            } finally {
+            }
+            finally {
                 setLoading(false);
             }
         };
@@ -56,7 +62,7 @@ const Profile = () => {
             const {data, error} = await supabase.storage
                 .from('profileImages') // Replace with your bucket name
                 .list(userId, {
-                    limit: 100, // Limit the number of files fetched
+                    limit: 1, // Limit the number of files fetched
                     offset: 0,  // Offset for pagination
                 });
 
@@ -66,7 +72,8 @@ const Profile = () => {
             }
 
             return data; // Returns an array of file objects
-        } catch (error) {
+        }
+        catch (error) {
             console.error('Error:', error.message);
             return [];
         }
@@ -94,7 +101,8 @@ const Profile = () => {
             } else {
                 Alert.alert("Success", "You have signed out.");
             }
-        } catch (err) {
+        }
+        catch (err) {
             console.log("Error signing out:", err);
             Alert.alert("Error", "An unexpected error occurred.");
         }
@@ -124,7 +132,7 @@ const Profile = () => {
             <ScrollView>
                 <View style={styles.profileCard}>
                     <Text style={styles.title}>{currentUser?.firstName} {currentUser?.name}</Text>
-                    
+
 
                     <View style={styles.container}>
                         {imageUrls.length > 0 ? (

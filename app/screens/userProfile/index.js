@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from "react";
 import {Image, Modal, ScrollView, Text, TouchableOpacity, View} from "react-native";
+import Swiper from 'react-native-swiper'; // Import swiper
 import styles from "./UserProfileScreen.style";
 import supabase from "../../lib/supabase";
 import Loading from "../../../components/common/loading/Loading";
+import icons from "../../../constants/icons";
 
 const UserProfile = ({visible, userDetails, onClose}) => {
     const [imageUrls, setImageUrls] = useState([]); // Initialize as an empty array
@@ -13,15 +15,19 @@ const UserProfile = ({visible, userDetails, onClose}) => {
 
     useEffect(() => {
         const fetchImages = async () => {
-            if (!userDetails?.uid) return; // Ensure `currentUser` is loaded
+            if (!userDetails?.uid) {
+                return;
+            } // Ensure `currentUser` is loaded
             try {
                 setLoading(true);
                 const files = await fetchUserImages(userDetails?.uid);
                 const urls = await getPublicImageUrls(files, userDetails?.uid);
                 setImageUrls(urls); // Set the fetched URLs
-            } catch (error) {
+            }
+            catch (error) {
                 console.error("Error fetching images:", error);
-            } finally {
+            }
+            finally {
                 setLoading(false);
             }
         };
@@ -45,7 +51,8 @@ const UserProfile = ({visible, userDetails, onClose}) => {
 
             console.log("Fetched files:", data); // Log the files for debugging
             return data || []; // Return the files, or an empty array if `data` is null
-        } catch (error) {
+        }
+        catch (error) {
             console.error('Error fetching user images:', error.message);
             return [];
         }
@@ -68,12 +75,12 @@ const UserProfile = ({visible, userDetails, onClose}) => {
 
             console.log("Generated URLs:", urls); // Log URLs for debugging
             return urls.filter(Boolean); // Filter out null values
-        } catch (error) {
+        }
+        catch (error) {
             console.error('Error generating public image URLs:', error.message);
             return [];
         }
     };
-
 
     const calculateAge = (birthDate) => {
         const birthDateObj = new Date(birthDate);
@@ -90,7 +97,6 @@ const UserProfile = ({visible, userDetails, onClose}) => {
         <Modal animationType="fade" transparent={true} visible={visible}>
             <View style={styles.modalContainer}>
                 <View style={styles.modalContent}>
-                    <Text style={styles.title}>{userDetails?.firstName} {userDetails?.name}</Text>
                     <ScrollView contentContainerStyle={styles.scrollContainer}>
                         {userDetails ? (
                             <>
@@ -98,19 +104,31 @@ const UserProfile = ({visible, userDetails, onClose}) => {
                                     <Loading loading={loading}/>
                                 ) : (
                                     <View style={[styles.infoGroup, styles.imageContainer]}>
-                                        {imageUrls.map((url, index) => (
-                                            <Image
-                                                key={index}
-                                                source={{uri: url}}
-                                                style={styles.avatar}
-                                            />
-                                        ))}
+                                        {/* Name overlay - Positioned absolutely above the swiper */}
+                                        <Text style={styles.imageNameOverlay}>
+                                            {userDetails?.firstName} {userDetails?.name}, {calculateAge(userDetails.birthDate)}
+                                        </Text>
+
+                                        {/* Swiper component for images */}
+                                        <Swiper
+                                            style={styles.swiper}
+                                            showsPagination={true}
+                                            loop={false}
+                                            autoplay={false}
+                                            paginationStyle={styles.paginationStyle}
+                                        >
+                                            {imageUrls.map((url, index) => (
+                                                <View key={index}>
+                                                    <Image
+                                                        source={{uri: url}}
+                                                        style={styles.avatar}
+                                                    />
+                                                </View>
+                                            ))}
+                                        </Swiper>
                                     </View>
+
                                 )}
-                                <View style={styles.infoGroup}>
-                                    <Text style={styles.infoLabel}>Age</Text>
-                                    <Text style={styles.infoValue}>{calculateAge(userDetails.birthDate)}</Text>
-                                </View>
                                 <View style={styles.infoGroup}>
                                     <Text style={styles.infoLabel}>Biography:</Text>
                                     <Text style={styles.infoValue}>{userDetails.description}</Text>
@@ -119,19 +137,54 @@ const UserProfile = ({visible, userDetails, onClose}) => {
                                     <Text style={styles.infoLabel}>Email:</Text>
                                     <Text style={styles.infoValue}>{userDetails.email}</Text>
                                 </View>
+                                <View style={styles.infoGroup}>
+                                    <Text style={styles.infoLabel}>Job title</Text>
+                                    <Text style={styles.infoValue}>{userDetails.jobTitle}</Text>
+                                </View>
+                                <View style={styles.infoGroup}>
+                                    <Text style={styles.infoLabel}>Interests:</Text>
+                                    {userDetails.selectedInterests && userDetails.selectedInterests.length > 0 ? (
+                                        <View style={styles.interestsList}>
+                                            {userDetails.selectedInterests.map((interest, index) => (
+                                                <View key={index} style={styles.interestItemContainer}>
+                                                    <Text style={styles.interestItem}>{interest}</Text>
+                                                </View>
+                                            ))}
+                                        </View>
+                                    ) : (
+                                        <Text style={styles.noInterestsText}>No interests available.</Text>
+                                    )}
+                                </View>
+
+                                <View style={styles.infoGroup}>
+                                    <Text style={styles.infoLabel}>What is something you're passionate about?</Text>
+                                    <Text style={styles.infoValue}>{userDetails.question1}</Text>
+                                </View>
+                                <View style={styles.infoGroup}>
+                                    <Text style={styles.infoLabel}>If you could visit any place in the world, where
+                                        would it be?</Text>
+                                    <Text style={styles.infoValue}>{userDetails.question2}</Text>
+                                </View>
+                                <View style={styles.infoGroup}>
+                                    <Text style={styles.infoLabel}>What is a fun fact about yourself?</Text>
+                                    <Text style={styles.infoValue}>{userDetails.question3}</Text>
+                                </View>
                             </>
                         ) : (
                             <Text style={styles.noDetailsText}>No user details available.</Text>
                         )}
                     </ScrollView>
                     <TouchableOpacity style={styles.closeButton} onPress={onClose}>
-                        <Text style={styles.closeButtonText}>Close</Text>
+                        <Image
+                            source={icons.close}
+                            tintColor="white"
+                            style={{width: 10, height: 10, resizeMode: "contain"}}
+                        />
                     </TouchableOpacity>
                 </View>
             </View>
         </Modal>
     );
 };
-
 
 export default UserProfile;
