@@ -21,8 +21,14 @@ import animations from "../../../../constants/animations";
 const interestsList = [
     "Music", "Sports", "Reading", "Gaming", "Traveling",
     "Cooking", "Tech", "Fitness", "Fashion", "Movies",
-    "Photography", "Writing", "Dancing", "Art & Design"
+    "Photography", "Writing", "Dancing", "Art & Design",
+    "Nature", "Gardening", "Poetry", "Volunteering", "Hiking",
+    "Yoga", "History", "Science", "Coding", "Crafting",
+    "Animals", "Social Media", "DIY Projects", "Collecting", "Meditation",
+    "Board Games", "Podcasts", "Astronomy", "Philosophy", "Entrepreneurship",
+    "Language Learning", "Design", "Skateboarding", "Swimming", "Blogging"
 ];
+
 
 const AdditionalInfo2 = () => {
     const router = useRouter();

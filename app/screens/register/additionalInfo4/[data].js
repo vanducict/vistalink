@@ -1,4 +1,4 @@
-import {Alert, Image, KeyboardAvoidingView, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
+import {Alert, Image, KeyboardAvoidingView, Modal, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {useState} from 'react';
 import * as ImagePicker from 'expo-image-picker';
 import {useGlobalSearchParams, useRouter} from 'expo-router';
@@ -6,7 +6,7 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import icons from "../../../../constants/icons";
 import styles from "./[data].style";
 import {handleRegister} from "../../../../service/registration/RegistrationService";
-import Loading from "../../../../components/common/loading/Loading";
+import Loading from "../../../../components/common/loading/Loading"; // assuming this is your loading component
 
 const AdditionalInfo4 = () => {
     const router = useRouter();
@@ -141,6 +141,21 @@ const AdditionalInfo4 = () => {
                     </TouchableOpacity>
                 </KeyboardAvoidingView>
             </GestureHandlerRootView>
+
+            {/* Modal for loading */}
+            <Modal
+                transparent={true}
+                animationType="fade"
+                visible={loading}
+                onRequestClose={() => setLoading(false)}
+            >
+                <View style={styles.modalOverlay}>
+                    <View style={styles.modalContent}>
+                        <Loading loading={loading}/>
+                        <Text style={styles.modalText}>Creating your profile...</Text>
+                    </View>
+                </View>
+            </Modal>
         </SafeAreaView>
     );
 };

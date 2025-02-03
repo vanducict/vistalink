@@ -115,6 +115,23 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 16,
     },
+    modalOverlay: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.6)', // Semi-transparent black background
+    },
+    modalContent: {
+        backgroundColor: 'white',
+        padding: 30,
+        borderRadius: 10,
+        alignItems: 'center',
+    },
+    modalText: {
+        marginTop: 10,
+        fontSize: 14,
+        color: 'gray',
+    },
 });
 
 export default styles;
