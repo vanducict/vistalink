@@ -51,12 +51,6 @@ const AdditionalInfo1 = () => {
     }, []);
 
 
-    const [selectedImage, setSelectedImage] = useState(null);
-
-    const handleImageSelection = async () => {
-        Alert.alert('Image Picker', 'Image selection logic goes here.');
-    };
-
     const handleSubmit = () => {
         if (!description || !userType) {
             Alert.alert('Error', 'Please fill in all the fields.');
@@ -160,21 +154,6 @@ const AdditionalInfo1 = () => {
                                 ? 'A collaborator is someone who searches for ads placed by consumers or others, and then applies to them to form a connection. Instead of creating the ad, they are searching through available ads and responding to them, hoping to connect with others based on shared interests or needs.'
                                 : 'This is a default message for any other user role, such as a teacher, admin, or another role that isn’t a Consumer or Collaborator.'}
                     </Text>
-                )}
-
-                {/* Add Image Button */}
-                <TouchableOpacity onPress={handleImageSelection}>
-                    <Text style={styles.registerButtonText}>
-                        {selectedImage ? 'Change Image' : 'Add Image'}
-                    </Text>
-                </TouchableOpacity>
-
-                {/* Display selected image */}
-                {selectedImage && (
-                    <Image
-                        source={{uri: selectedImage.uri}}
-                        style={styles.selectedImage}
-                    />
                 )}
 
                 {/* Submit Button */}

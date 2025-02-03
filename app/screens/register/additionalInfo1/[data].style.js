@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         paddingVertical: 15,
         alignItems: "center",
-        marginTop: 20,
+        marginTop: "auto",
         marginBottom: 20,
     },
     registerButtonText: {
@@ -109,8 +109,8 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: "#666",
         textAlign: "center",
-        marginTop: 8,
-        fontStyle: "italic",
+        marginTop: 20,
+        fontStyle: "normal",
     }
 
 

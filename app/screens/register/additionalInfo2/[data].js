@@ -33,7 +33,6 @@ const interestsList = [
 const AdditionalInfo2 = () => {
     const router = useRouter();
     const {data} = useGlobalSearchParams();
-    const [description, setDescription] = useState('');
     const [jobState, setJobState] = useState('');
     const [selectedInterests, setSelectedInterests] = useState([]);
 
