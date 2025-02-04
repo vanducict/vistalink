@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, SafeAreaView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {ActivityIndicator, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {Stack, useGlobalSearchParams, useNavigation} from 'expo-router';
 import {StreamChat} from 'stream-chat';
 import {Channel, Chat, MessageInput, MessageList, OverlayProvider as ChatOverlayProvider,} from 'stream-chat-expo';
@@ -33,9 +33,11 @@ const ChatRoom = () => {
                         setChannel(fetchedChannel);
                     }
                 }
-            } catch (error) {
+            }
+            catch (error) {
                 console.error('Error fetching channel:', error);
-            } finally {
+            }
+            finally {
                 setLoading(false);
             }
         };
@@ -118,18 +120,7 @@ const ChatRoom = () => {
                                         );
                                     }}
                                 />
-
-                                <MessageInput
-                                    SendButton={(props) => (
-                                        <TouchableOpacity
-                                            onPress={props.sendMessage}
-                                            style={styles.sendButton}
-                                        >
-                                            <Text style={styles.sendButtonText}>Send</Text>
-                                        </TouchableOpacity>
-                                    )}
-                                />
-
+                                <MessageInput/>
                             </View>
                         </Channel>
                     </Chat>
