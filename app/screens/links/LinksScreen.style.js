@@ -79,6 +79,11 @@ const styles = StyleSheet.create({
         marginHorizontal: 5,
         borderRadius: 5,
         backgroundColor: "#f0f0f0",
+        shadowColor: "#000",
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5,
     },
     activeTabButton: {
         backgroundColor: COLORS.primary,

@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="ui applicatons">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="adjust headers">
+      <change afterPath="$PROJECT_DIR$/assets/animations/talking.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/createLink/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/createlink/CreateLink.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/createlink/CreateLink.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/animations.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,8 +65,8 @@
       <recent name="$PROJECT_DIR$/app/screens/register/additionalInfo2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/icons" />
       <recent name="$PROJECT_DIR$/assets/animations" />
+      <recent name="$PROJECT_DIR$/assets/icons" />
       <recent name="$PROJECT_DIR$/app/screens/chatroom" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/assets/images" />
@@ -102,20 +104,7 @@
       <workItem from="1738260404465" duration="2194000" />
       <workItem from="1738329936127" duration="9035000" />
       <workItem from="1738591640318" duration="711000" />
-    </task>
-    <task id="LOCAL-00083" summary="FIX?">
-      <created>1736889055883</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1736889055883</updated>
-    </task>
-    <task id="LOCAL-00084" summary="FIX?">
-      <created>1736890112227</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1736890112227</updated>
+      <workItem from="1738666031657" duration="2857000" />
     </task>
     <task id="LOCAL-00085" summary="fk it gebruik email nu">
       <created>1736890577000</created>
@@ -446,7 +435,21 @@
       <option name="project" value="LOCAL" />
       <updated>1738607494801</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="adjust headers">
+      <created>1738614922977</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1738614922977</updated>
+    </task>
+    <task id="LOCAL-00133" summary="fix send messsage">
+      <created>1738671212328</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1738671212329</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,8 +479,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add crop + demo" />
-    <MESSAGE value="pprofile image overview page" />
     <MESSAGE value="user image store show" />
     <MESSAGE value="tabbar styling issue" />
     <MESSAGE value="better styling" />
@@ -501,6 +502,8 @@
     <MESSAGE value="update user profiles" />
     <MESSAGE value="name image better" />
     <MESSAGE value="ui applicatons" />
-    <option name="LAST_COMMIT_MESSAGE" value="ui applicatons" />
+    <MESSAGE value="adjust headers" />
+    <MESSAGE value="fix send messsage" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix send messsage" />
   </component>
 </project>

@@ -8,6 +8,7 @@ import empty from "../assets/animations/empty.json";
 import register2 from "../assets/animations/register2.json";
 import register1 from "../assets/animations/register1.json";
 import register3 from "../assets/animations/register3.json";
+import talking from "../assets/animations/talking.json";
 
 export default {
     link,
@@ -20,4 +21,6 @@ export default {
     register1,
     register2,
     register3,
+    talking
 };
+

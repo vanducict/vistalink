@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import {Alert, Image, KeyboardAvoidingView, SafeAreaView, Text, TextInput, TouchableOpacity, View} from "react-native";
-import DateTimePickerModal from "react-native-modal-datetime-picker";
 import {COLORS} from "../../../constants/theme";
 import {useRouter} from "expo-router";
 import images from "../../../constants/images";
@@ -8,8 +7,9 @@ import icons from "../../../constants/icons";
 import Loading from "../../../components/common/loading/Loading";
 import styles from "./CreateLinkScreen.style";
 import {createLink, getAllTypes} from "../../../service/link/LinkService";
-import DropDownPicker from "react-native-dropdown-picker";
 import {getCurrentUser} from "../../../service/user/UserService";
+import Lottie from "lottie-react-native";
+import animations from "../../../constants/animations";
 
 const CreateLink = () => {
     const router = useRouter();
@@ -144,13 +144,29 @@ const CreateLink = () => {
     };
 
     return (
-        <SafeAreaView style={{flex: 1, backgroundColor: COLORS.lightWhite}}>
+        <SafeAreaView style={{
+            flex: 1, backgroundColor: COLORS.lightWhite
+        }}>
             <View style={styles.customHeader}>
                 <TouchableOpacity onPress={() => router.back()}>
                     <Image source={icons.back} resizeMode="contain" style={styles.backButtonIcon}/>
                 </TouchableOpacity>
                 <Image source={images.link} style={styles.headerLogo}/>
             </View>
+            <View style={styles.headerContainer}>
+                <Text style={styles.headerTitle}>Let's get started!</Text>
+                <Text style={styles.welcomeMessage}>Create and customize your perfect link.</Text>
+            </View>
+
+            <View style={styles.loaderContainer}>
+                <Lottie
+                    source={animations.talking}
+                    autoPlay
+                    loop
+                    style={{width: 200, height: 200}}
+                />
+            </View>
+
 
             <KeyboardAvoidingView style={styles.container} behavior="padding">
                 <TextInput
@@ -161,7 +177,7 @@ const CreateLink = () => {
                     placeholderTextColor="#888"
                 />
                 <TextInput
-                    style={styles.input}
+                    style={styles.descriptionInput}
                     placeholder="Description"
                     value={description}
                     onChangeText={setDescription}
@@ -175,51 +191,6 @@ const CreateLink = () => {
                     onChangeText={setLocation}
                     placeholderTextColor="#888"
                 />
-                <TouchableOpacity style={styles.input} onPress={() => setDatePickerVisible(true)}>
-                    <Text style={{color: date ? "#000" : "#888"}}>
-                        {date || "Select Date"}
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.input} onPress={() => setStartTimePickerVisible(true)}>
-                    <Text style={{color: startTime ? "#000" : "#888"}}>
-                        {startTime || "Select Start Time"}
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.input} onPress={() => setEndTimePickerVisible(true)}>
-                    <Text style={{color: endTime ? "#000" : "#888"}}>
-                        {endTime || "Select End Time"}
-                    </Text>
-                </TouchableOpacity>
-
-                <DropDownPicker
-                    style={styles.roleDropdown}
-                    open={open}
-                    value={eventType}
-                    items={eventTypes}
-                    setOpen={setOpen}
-                    placeholder={"Select an event type"}
-                    setValue={setEventType}
-                    setItems={setEventTypes}
-                />
-
-                <View style={styles.counterContainer}>
-                    <Text style={styles.counterLabel}>Max People:</Text>
-                    <View style={styles.counterControls}>
-                        <TouchableOpacity
-                            style={[styles.counterButton, styles.decreaseButton]}
-                            onPress={() => setMaxPeople(Math.max(1, maxPeople - 1))}
-                        >
-                            <Text style={styles.counterButtonText}>-</Text>
-                        </TouchableOpacity>
-                        <Text style={styles.counterValue}>{maxPeople}</Text>
-                        <TouchableOpacity
-                            style={[styles.counterButton, styles.increaseButton]}
-                            onPress={() => setMaxPeople(maxPeople + 1)}
-                        >
-                            <Text style={styles.counterButtonText}>+</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
 
                 <TouchableOpacity
                     style={styles.createButton}
@@ -232,29 +203,6 @@ const CreateLink = () => {
                 </TouchableOpacity>
             </KeyboardAvoidingView>
 
-            {/* Date Picker */}
-            <DateTimePickerModal
-                isVisible={isDatePickerVisible}
-                mode="date"
-                onConfirm={handleConfirmDate}
-                onCancel={() => setDatePickerVisible(false)}
-            />
-
-            {/* Start Time Picker */}
-            <DateTimePickerModal
-                isVisible={isStartTimePickerVisible}
-                mode="time"
-                onConfirm={handleConfirmStartTime}
-                onCancel={() => setStartTimePickerVisible(false)}
-            />
-
-            {/* End Time Picker */}
-            <DateTimePickerModal
-                isVisible={isEndTimePickerVisible}
-                mode="time"
-                onConfirm={handleConfirmEndTime}
-                onCancel={() => setEndTimePickerVisible(false)}
-            />
         </SafeAreaView>
     );
 };

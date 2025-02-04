@@ -217,7 +217,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                                 >
                                     <Image
                                         source={icons.check}
-                                        style={{width: 30, height: 30, resizeMode: "contain"}}
+                                        style={{width: 20, height: 20, resizeMode: "contain"}}
                                     />
 
                                 </TouchableOpacity>

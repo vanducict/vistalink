@@ -16,10 +16,10 @@ const styles = {
         flexDirection: "row",
         alignItems: "center",
         backgroundColor: COLORS.tertiary,
-        paddingVertical: 12, // Increased padding for better touch area
-        paddingHorizontal: 18,
+        paddingVertical: 8, // Increased padding for better touch area
+        paddingHorizontal: 10,
         borderRadius: 10, // More rounded for a modern look
-        marginVertical: 10,
+        marginVertical: 15,
         justifyContent: "center", // Center content
         shadowColor: "#000",
         shadowOffset: {width: 0, height: 2},
@@ -73,12 +73,15 @@ const styles = {
         fontFamily: FONT.regular,
     },
     approvalButtonsContainer: {
-        height: 70, // Set the height of the container
-        flexDirection: 'row', // Align buttons horizontally
-        justifyContent: 'space-between', // Add spacing between buttons
-        alignItems: 'center', // Center buttons vertically
-        width: '40%', // Set the width of the container
-        marginTop: "auto", // Optional: Add spacing above the buttons
+        height: 70,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '40%',
+        maxWidth: 300,  // Optional: Ensures it doesn't get too large
+        paddingHorizontal: 10, // Optional: Adds spacing from edges
+        marginTop: 'auto', // Ensure the parent supports this
+        gap: 10, // React Native 0.71+
     },
     noApplicantsText: {
         fontSize: 16,

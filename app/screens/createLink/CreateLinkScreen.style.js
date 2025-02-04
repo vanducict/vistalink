@@ -15,21 +15,13 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontFamily: FONT.regular,
     },
-    input: {
-        borderWidth: 1,
-        borderColor: "#ccc",
-        borderRadius: 8,
-        padding: 12,
-        marginBottom: 15,
-        fontSize: 14,
-        fontFamily: FONT.regular,
-    },
     createButton: {
         backgroundColor: COLORS.tertiary,
         padding: 15,
         maxHeight: 50,
         borderRadius: 8,
         alignItems: "center",
+        marginTop: "auto"
     },
     createButtonText: {
         color: COLORS.white,
@@ -105,7 +97,48 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
         resizeMode: "contain",
-    }
+    },
+    headerContainer: {
+        margin: 15,
+    },
+    headerTitle: {
+        fontSize: 24,
+        fontWeight: "bold",
+        color: "#333",
+    },
+    welcomeMessage: {
+        fontSize: 16,
+        color: "#666",
+        marginTop: 5,
+    },
+    descriptionInput: {
+        height: 120, // Adjust height for multiline text
+        borderColor: '#ccc', // Light gray border color
+        borderWidth: 1,
+        borderRadius: 8,
+        paddingHorizontal: 15,
+        paddingTop: 15, // Padding on top for better text positioning
+        fontSize: 16, // Font size for the text
+        fontFamily: FONT.regular, // Use your custom font here
+        color: "#555", // Text color for description
+        backgroundColor: "#fff", // White background for the input box
+        marginVertical: 10, // Vertical margin between other inputs or elements
+        textAlignVertical: "top", // Align the text to the top for multiline input
+    },
+    input: {
+        height: 50,
+        borderColor: '#ccc',
+        borderWidth: 1,
+        borderRadius: 8,
+        paddingLeft: 15,
+        fontSize: 16,
+        marginVertical: 10,
+        backgroundColor: "#fff",
+    },
+    loaderContainer: {
+        justifyContent: "center",
+        alignItems: "center",
+    },
 });
 
 
