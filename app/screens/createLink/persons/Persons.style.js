@@ -141,6 +141,36 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
+    sliderContainer: {
+        padding: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    sliderValue: {
+        fontSize: 20,
+        color: COLORS.primary,
+        marginBottom: 10,
+    },
+    slider: {
+        width: '80%',
+        height: 40,
+    },
+    footerContainer: {
+        padding: 20,
+        marginTop: 'auto',
+        alignItems: 'center',
+    },
+    nextButton: {
+        backgroundColor: COLORS.tertiary,
+        padding: 15,
+        borderRadius: 8,
+        width: '80%',
+        alignItems: 'center',
+    },
+    nextButtonText: {
+        fontSize: 18,
+        color: 'white',
+    },
 });
 
 

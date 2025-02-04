@@ -101,9 +101,14 @@ const LocationScreen = () => {
                         value={location}
                         onChangeText={setLocation}
                     />
-                    <TouchableOpacity onPress={fetchCoordinates} style={styles.searchButton}
+                    <TouchableOpacity onPress={fetchCoordinates}
                                       disabled={loading || !location.trim()}>
-                        <Text style={styles.searchButtonText}>Go</Text>
+                        <Image
+                            source={icons.search}
+                            resizeMode={"stretch"}
+                            tintColor={COLORS.lightWhite}
+                            style={styles.searchBtnImage}
+                        />
                     </TouchableOpacity>
                 </View>
             </View>

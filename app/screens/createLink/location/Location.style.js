@@ -108,6 +108,14 @@ const styles = StyleSheet.create({
         fontFamily: FONT.regular,
         fontSize: 16,
     },
+    searchBtnImage: {
+        width: 48,
+        tintColor: COLORS.white,
+        backgroundColor: COLORS.primary,
+        borderRadius: SIZES.medium,
+        height: 48,
+        padding: SIZES.small,
+    }
 });
 
 export default styles;

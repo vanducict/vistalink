@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="update styling">
-      <change afterPath="$PROJECT_DIR$/app/screens/createLink/details/Details.style.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/createLink/details/[data].js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/createLink/location/Location.style.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/createLink/location/[data].js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/locationPicker/LocationPicker.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/locationPicker/LocationPicker.style.js" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="tot derde scherm">
+      <change afterPath="$PROJECT_DIR$/app/screens/createLink/images/Images.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/createLink/images/[data].js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/createLink/persons/Persons.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/createLink/persons/[data].js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/calendar.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/persons.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/createLink/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/createLink/details/Details.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/details/Details.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/createLink/details/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/details/[data].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/createLink/location/Location.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/location/Location.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/createLink/location/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/location/[data].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/animations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -53,7 +56,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/screens/createLink/details" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/screens/createLink/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
@@ -63,6 +66,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/screens/createLink/images" />
+      <recent name="$PROJECT_DIR$/app/screens/createLink/persons" />
       <recent name="$PROJECT_DIR$/app/screens/createLink/details" />
       <recent name="$PROJECT_DIR$/app/screens/register" />
       <recent name="$PROJECT_DIR$/app/screens/register/additionalInfo2" />
@@ -107,14 +112,7 @@
       <workItem from="1738260404465" duration="2194000" />
       <workItem from="1738329936127" duration="9035000" />
       <workItem from="1738591640318" duration="711000" />
-      <workItem from="1738666031657" duration="11106000" />
-    </task>
-    <task id="LOCAL-00086" summary="attempt 10002010">
-      <created>1736891268900</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1736891268900</updated>
+      <workItem from="1738666031657" duration="14598000" />
     </task>
     <task id="LOCAL-00087" summary="attempt 100020100">
       <created>1736891503423</created>
@@ -452,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738674450677</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="tot derde scherm">
+      <created>1738684981744</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1738684981744</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +487,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="tabbar styling issue" />
     <MESSAGE value="better styling" />
     <MESSAGE value="link owner images" />
     <MESSAGE value="djust card spots" />
@@ -507,6 +511,7 @@
     <MESSAGE value="adjust headers" />
     <MESSAGE value="fix send messsage" />
     <MESSAGE value="update styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="update styling" />
+    <MESSAGE value="tot derde scherm" />
+    <option name="LAST_COMMIT_MESSAGE" value="tot derde scherm" />
   </component>
 </project>
