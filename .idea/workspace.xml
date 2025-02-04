@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="adjust headers">
-      <change afterPath="$PROJECT_DIR$/assets/animations/talking.json" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="update styling">
+      <change afterPath="$PROJECT_DIR$/app/screens/createLink/details/Details.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/createLink/details/[data].js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/createLink/location/Location.style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/createLink/location/[data].js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/locationPicker/LocationPicker.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/locationPicker/LocationPicker.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/CreateLinkScreen.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/createLink/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/links/LinksScreen.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/createlink/CreateLink.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/createlink/CreateLink.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/animations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/screens/register" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/screens/createLink/details" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
@@ -61,6 +63,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/screens/createLink/details" />
       <recent name="$PROJECT_DIR$/app/screens/register" />
       <recent name="$PROJECT_DIR$/app/screens/register/additionalInfo2" />
     </key>
@@ -104,14 +107,7 @@
       <workItem from="1738260404465" duration="2194000" />
       <workItem from="1738329936127" duration="9035000" />
       <workItem from="1738591640318" duration="711000" />
-      <workItem from="1738666031657" duration="2857000" />
-    </task>
-    <task id="LOCAL-00085" summary="fk it gebruik email nu">
-      <created>1736890577000</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1736890577000</updated>
+      <workItem from="1738666031657" duration="11106000" />
     </task>
     <task id="LOCAL-00086" summary="attempt 10002010">
       <created>1736891268900</created>
@@ -449,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738671212329</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="update styling">
+      <created>1738674450677</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1738674450677</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +482,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="user image store show" />
     <MESSAGE value="tabbar styling issue" />
     <MESSAGE value="better styling" />
     <MESSAGE value="link owner images" />
@@ -504,6 +506,7 @@
     <MESSAGE value="ui applicatons" />
     <MESSAGE value="adjust headers" />
     <MESSAGE value="fix send messsage" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix send messsage" />
+    <MESSAGE value="update styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="update styling" />
   </component>
 </project>
