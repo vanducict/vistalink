@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="tot derde scherm">
-      <change afterPath="$PROJECT_DIR$/app/screens/createLink/images/Images.style.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/createLink/images/[data].js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/createLink/persons/Persons.style.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/createLink/persons/[data].js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/calendar.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/persons.json" afterDir="false" />
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="tot en met endscreen , ma moe nog aanmkene">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/createLink/details/Details.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/details/Details.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/createLink/details/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/details/[data].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/createLink/location/Location.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/location/Location.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/createLink/location/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/location/[data].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/animations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/createLink/images/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/images/[data].js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,14 +100,8 @@
       <workItem from="1738260404465" duration="2194000" />
       <workItem from="1738329936127" duration="9035000" />
       <workItem from="1738591640318" duration="711000" />
-      <workItem from="1738666031657" duration="14598000" />
-    </task>
-    <task id="LOCAL-00087" summary="attempt 100020100">
-      <created>1736891503423</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1736891503423</updated>
+      <workItem from="1738666031657" duration="15636000" />
+      <workItem from="1738873401758" duration="1055000" />
     </task>
     <task id="LOCAL-00088" summary="I think this delay works">
       <created>1736892449723</created>
@@ -457,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738684981744</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="tot en met endscreen , ma moe nog aanmkene">
+      <created>1738688571670</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1738688571670</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,7 +476,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="better styling" />
     <MESSAGE value="link owner images" />
     <MESSAGE value="djust card spots" />
     <MESSAGE value="view profile" />
@@ -512,6 +500,7 @@
     <MESSAGE value="fix send messsage" />
     <MESSAGE value="update styling" />
     <MESSAGE value="tot derde scherm" />
-    <option name="LAST_COMMIT_MESSAGE" value="tot derde scherm" />
+    <MESSAGE value="tot en met endscreen , ma moe nog aanmkene" />
+    <option name="LAST_COMMIT_MESSAGE" value="tot en met endscreen , ma moe nog aanmkene" />
   </component>
 </project>

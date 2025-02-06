@@ -1,12 +1,14 @@
-import {Image, Modal, SafeAreaView, Text, TouchableOpacity, View} from "react-native";
-import {useState} from "react";
+import {Alert, Image, Modal, SafeAreaView, Text, TouchableOpacity, View} from "react-native";
+import {useEffect, useState} from "react";
 import * as ImagePicker from "expo-image-picker";
 import {useGlobalSearchParams, useRouter} from "expo-router";
 import icons from "../../../../constants/icons";
 import images from "../../../../constants/images";
 import {COLORS} from "../../../../constants/theme";
 import styles from "./Images.style";
-import Loading from "../../../../components/common/loading/Loading"; // assuming you have a loading component
+import Loading from "../../../../components/common/loading/Loading";
+import {createLink} from "../../../../service/link/LinkService";
+import {getCurrentUser} from "../../../../service/user/UserService"; // assuming you have a loading component
 
 const ImagesScreen = () => {
     const router = useRouter();
@@ -15,6 +17,32 @@ const ImagesScreen = () => {
     const [imagesState, setImagesState] = useState([null, null, null, null, null]); // 5 image slots
     const [loading, setLoading] = useState(false);
     const [disabled, setDisabled] = useState(false); // To disable buttons during loading
+    const [currentUser, setCurrentUser] = useState(null);
+
+
+    const fetchUser = async () => {
+        try {
+            setLoading(true);
+            const user = await getCurrentUser();
+            const currentUserData = user ? user.pop() : null;
+
+            if (currentUserData) {
+                setCurrentUser(currentUserData);
+            } else {
+                console.log("No user data available.");
+            }
+        }
+        catch (error) {
+            console.log("Error fetching user:", error);
+        }
+        finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchUser().then(r => r);
+    }, []);
 
     // Function to pick an image for a specific slot
     const pickImageForSlot = async (index) => {
@@ -42,6 +70,39 @@ const ImagesScreen = () => {
         const newImages = [...imagesState];
         newImages[index] = null;
         setImagesState(newImages);
+    };
+
+
+    const handleCreateEvent = async () => {
+        if (!imagesState) {
+            Alert.alert("Error", "Select at lease one image to continue.");
+            return;
+        }
+
+        setLoading(true);
+        // Parse the incoming data
+        let parsedData = {};
+        try {
+            parsedData = data ? JSON.parse(data) : {};
+            await createLink(
+                parsedData.name,
+                parsedData.description,
+                parsedData.date,
+                parsedData.location,
+                parsedData.startTime,
+                parsedData.endTime,
+                parsedData.eventType,
+                parsedData.maxPeople,
+                currentUser.email
+            );
+            setLoading(false);
+            Alert.alert("Success", "Event created successfully!");
+            router.replace("/");
+        }
+        catch (error) {
+            console.error('Error parsing data:', error);
+        }
+
     };
 
 
@@ -100,7 +161,7 @@ const ImagesScreen = () => {
             </View>
 
             {/* Submit Button with Loading Indicator */}
-            <TouchableOpacity style={styles.registerButton} disabled={disabled}>
+            <TouchableOpacity style={styles.registerButton} disabled={disabled} onPress={() => handleCreateEvent()}>
                 {loading ? (
                     <Loading loading={loading}/>
                 ) : (
@@ -113,7 +174,7 @@ const ImagesScreen = () => {
                 <View style={styles.modalOverlay}>
                     <View style={styles.modalContent}>
                         <Loading loading={loading}/>
-                        <Text style={styles.modalText}>Creating your profile...</Text>
+                        <Text style={styles.modalText}>Creating your link...</Text>
                     </View>
                 </View>
             </Modal>

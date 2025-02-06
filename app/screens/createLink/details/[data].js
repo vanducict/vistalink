@@ -100,7 +100,7 @@ const DetailsScreen = () => {
         // Add new fields to the data object
         const updatedData = {
             ...parsedData, // Preserve existing data
-            starTime: startTime,
+            startTime: startTime,
             endTime: endTime,
             date: date,
             eventType: eventType,
