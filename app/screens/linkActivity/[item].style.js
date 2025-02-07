@@ -207,6 +207,9 @@ const styles = {
     },
     activeDot: {
         backgroundColor: COLORS.tertiary, // Active dot color
+    },
+    detailContainer: {
+        marginTop: 15,
     }
 };
 

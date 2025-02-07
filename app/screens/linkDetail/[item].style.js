@@ -96,6 +96,9 @@ const styles = StyleSheet.create({
     },
     activeDot: {
         backgroundColor: COLORS.tertiary, // Active dot color
+    },
+    detailContainer: {
+        marginTop: 15,
     }
 });
 

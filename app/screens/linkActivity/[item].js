@@ -7,7 +7,7 @@ import React, {useEffect, useState} from "react";
 import {COLORS} from "../../../constants/theme";
 import {getUserLinksForId} from "../../../service/userLink/UserLinkService";
 import Loading from "../../../components/common/loading/Loading";
-import {getCurrentUser} from "../../../service/user/UserService";
+import {getCurrentUser, getUserForEmail} from "../../../service/user/UserService";
 import Applicants from "../../../components/linkActivity/applicants/Applicants";
 import Status from "../../../components/linkActivity/status/Status";
 import supabase from "../../lib/supabase";
@@ -43,14 +43,40 @@ const LinkActivity = () => {
         }
     };
 
+
+    const fetchUserDataByEmail = async (email) => {
+        try {
+            const userData = await getUserForEmail(email); // Replace with your actual API/service call
+            return userData;
+        }
+        catch (error) {
+            console.log(`Error fetching data for email ${email}:`, error);
+            return null; // Return null if there's an error
+        }
+    };
+
     const fetchUserLinksForId = async () => {
         try {
             setLoading(true);
-            const userLinks = await getUserLinksForId(event.id);
 
-            if (userLinks) {
-                setUserLinks(userLinks);
-                setSpotsTaken(userLinks.length);
+            // Fetch user links
+            const userLinksData = await getUserLinksForId(event.id);
+            if (userLinksData) {
+                // Fetch user data for each email
+                const userLinksWithDetails = await Promise.all(
+                    userLinksData.map(async (link) => {
+                        const userData = await fetchUserDataByEmail(link.userEmail);
+                        console.log("User Data:", userData); // Logs user data immediately
+                        return {
+                            ...link,
+                            userDetails: userData, // Merge user data into the link
+                        };
+                    })
+                );
+
+                // Sort userLinksWithDetails by linkId to ensure consistent order
+                const sortedUserLinks = userLinksWithDetails.sort((a, b) => a.linkId - b.linkId);
+                setUserLinks(sortedUserLinks);
             } else {
                 console.log("No user links data available.");
             }
@@ -62,6 +88,7 @@ const LinkActivity = () => {
             setLoading(false);
         }
     };
+
 
     const fetchImages = async () => {
         if (!event?.id) {
@@ -119,10 +146,10 @@ const LinkActivity = () => {
 
 
     useEffect(() => {
-        fetchUser();
+        fetchUser().then(r => r);
         if (event?.id) {
-            fetchUserLinksForId();
-            fetchImages();
+            fetchUserLinksForId().then(r => r);
+            fetchImages().then(r => r);
         }
     }, [event?.id]);
 
@@ -167,21 +194,24 @@ const LinkActivity = () => {
                                     </View>
                                 ))}
                             </Swiper>
-                            <Text style={styles.detail}>{event.description}</Text>
-                            <Text style={styles.detail}>Location: {event.location}</Text>
-                            <Text style={styles.detail}>Date: {event.date}</Text>
-                            <Text style={styles.detail}>
-                                Time: {event.startTime} - {event.endTime}
-                            </Text>
-                            <Text style={styles.detail}>Type: {event.eventType}</Text>
-                            <Text style={styles.detail}>
-                                Open
-                                Spots: {(event.maxPeople) - userLinks.filter(link => link.status === 'approved').length}/{event.maxPeople}
-                            </Text>
+                            <View style={styles.detailContainer}>
+                                <Text style={styles.detail}>{event.description}</Text>
+                                <Text style={styles.detail}>Location: {event.location}</Text>
+                                <Text style={styles.detail}>Date: {event.date}</Text>
+                                <Text style={styles.detail}>
+                                    Time: {event.startTime} - {event.endTime}
+                                </Text>
+                                <Text style={styles.detail}>Type: {event.eventType}</Text>
+                                <Text style={styles.detail}>
+                                    Open
+                                    Spots: {(event.maxPeople) - userLinks.filter(link => link.status === 'approved').length}/{event.maxPeople}
+                                </Text>
 
-                            <Text style={styles.detail}>
-                                Contact: {event.ownerEmail}
-                            </Text>
+                                <Text style={styles.detail}>
+                                    Contact: {event.ownerEmail}
+                                </Text>
+                            </View>
+
                         </>
                     ) : (
                         <Text style={styles.loadingText}>Loading...</Text>

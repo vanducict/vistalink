@@ -147,6 +147,8 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
         setOpenUserProfile(true);
     };
 
+    console.log(userLinks);
+
     return (
         <View style={styles.container}>
             <Text style={styles.sectionTitle}>Applicants</Text>
@@ -184,7 +186,7 @@ const Applicants = ({userLinks, event, refreshUserLinks}) => {
                                 style={[
                                     styles.viewProfileButton,
                                 ]}
-                                onPress={() => viewProfile(link.userDetails[0])}
+                                onPress={() => viewProfile(link?.userDetails[0])}
                             >
                                 <Text style={styles.buttonText}>View Profile</Text>
                             </TouchableOpacity>

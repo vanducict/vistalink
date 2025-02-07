@@ -5,6 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/linkActivity/applicants/Applicants.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,14 +106,7 @@
       <workItem from="1738591640318" duration="711000" />
       <workItem from="1738666031657" duration="15636000" />
       <workItem from="1738873401758" duration="2276000" />
-      <workItem from="1738919705729" duration="6496000" />
-    </task>
-    <task id="LOCAL-00093" summary="potential fix async names streamchat">
-      <created>1736954446129</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1736954446129</updated>
+      <workItem from="1738919705729" duration="7483000" />
     </task>
     <task id="LOCAL-00094" summary="apply fix">
       <created>1736983344413</created>
@@ -448,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738926365661</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="linkactivuty image">
+      <created>1738926673842</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1738926673842</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,7 +481,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update chatroom style" />
     <MESSAGE value="google btn sttyle" />
     <MESSAGE value="first register screen styling done" />
     <MESSAGE value="FINALLY SHIFT FIX" />
@@ -503,6 +505,7 @@
     <MESSAGE value="button style fix" />
     <MESSAGE value="linkdetail images" />
     <MESSAGE value="nearby card images" />
-    <option name="LAST_COMMIT_MESSAGE" value="nearby card images" />
+    <MESSAGE value="linkactivuty image" />
+    <option name="LAST_COMMIT_MESSAGE" value="linkactivuty image" />
   </component>
 </project>

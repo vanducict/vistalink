@@ -184,19 +184,23 @@ const LinkDetail = () => {
                                     </View>
                                 ))}
                             </Swiper>
-                            <Text style={styles.detail}>{event.description}</Text>
-                            <Text style={styles.detail}>Location: {event.location}</Text>
-                            <Text style={styles.detail}>Date: {event.date}</Text>
-                            <Text style={styles.detail}>
-                                Time: {event.startTime} - {event.endTime}
-                            </Text>
-                            <Text style={styles.detail}>Type: {event.eventType}</Text>
-                            <Text style={styles.detail}>
-                                Searching for: {totalSpots > 1 ? `${totalSpots} persons` : `${totalSpots} person`}
-                            </Text>
-                            <Text style={styles.detail}>
-                                Contact: {event.ownerEmail}
-                            </Text>
+                            <View style={styles.detailContainer}>
+                                <Text style={styles.detail}>{event.description}</Text>
+                                <Text style={styles.detail}>Location: {event.location}</Text>
+                                <Text style={styles.detail}>Date: {event.date}</Text>
+                                <Text style={styles.detail}>
+                                    Time: {event.startTime} - {event.endTime}
+                                </Text>
+                                <Text style={styles.detail}>Type: {event.eventType}</Text>
+                                <Text style={styles.detail}>
+                                    Open
+                                    Spots: {(event.maxPeople) - userLinks.filter(link => link.status === 'approved').length}/{event.maxPeople}
+                                </Text>
+
+                                <Text style={styles.detail}>
+                                    Contact: {event.ownerEmail}
+                                </Text>
+                            </View>
                         </>
                     ) : (
                         <Text style={styles.loadingText}>Loading...</Text>
