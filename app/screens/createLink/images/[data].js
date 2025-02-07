@@ -7,8 +7,8 @@ import images from "../../../../constants/images";
 import {COLORS} from "../../../../constants/theme";
 import styles from "./Images.style";
 import Loading from "../../../../components/common/loading/Loading";
-import {createLink} from "../../../../service/link/LinkService";
-import {getCurrentUser} from "../../../../service/user/UserService"; // assuming you have a loading component
+import {createLink, uploadImages} from "../../../../service/link/LinkService";
+import {getCurrentUser} from "../../../../service/user/UserService";
 
 const ImagesScreen = () => {
     const router = useRouter();
@@ -74,17 +74,21 @@ const ImagesScreen = () => {
 
 
     const handleCreateEvent = async () => {
-        if (!imagesState) {
-            Alert.alert("Error", "Select at lease one image to continue.");
+        // Filter out null values to check if at least one image is selected
+        const validImages = imagesState.filter(image => image !== null);
+
+        if (validImages.length === 0) {
+            Alert.alert("Error", "Please select at least one image to continue.");
             return;
         }
 
         setLoading(true);
-        // Parse the incoming data
-        let parsedData = {};
         try {
-            parsedData = data ? JSON.parse(data) : {};
-            await createLink(
+            // Parse the incoming data
+            let parsedData = data ? JSON.parse(data) : {};
+
+            // Call createLink and store the returned event object
+            const createdEvent = await createLink(
                 parsedData.name,
                 parsedData.description,
                 parsedData.date,
@@ -95,14 +99,26 @@ const ImagesScreen = () => {
                 parsedData.maxPeople,
                 currentUser.email
             );
+
+            console.log("Created Event:", createdEvent); // Log or use the returned object
+
+            // Upload images only if there are valid images and a valid event ID
+            if (createdEvent[0]?.id && validImages.length > 0) {
+                await uploadImages(createdEvent[0]?.id, validImages);
+            } else {
+                console.log("No images to upload or invalid event ID.");
+            }
+
             setLoading(false);
-            Alert.alert("Success", "Event created successfully!");
-            router.replace("/");
+            Alert.alert("Success", "Event created successfully!", [
+                {text: "OK", onPress: () => router.replace("/")}
+            ]);
         }
         catch (error) {
-            console.error('Error parsing data:', error);
+            console.error("Error creating event:", error);
+            setLoading(false);
+            Alert.alert("Error", "Something went wrong. Please try again.");
         }
-
     };
 
 

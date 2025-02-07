@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="tot en met endscreen , ma moe nog aanmkene">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="works without images">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/createLink/images/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/images/[data].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/link/LinkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/link/LinkService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,14 +102,8 @@
       <workItem from="1738329936127" duration="9035000" />
       <workItem from="1738591640318" duration="711000" />
       <workItem from="1738666031657" duration="15636000" />
-      <workItem from="1738873401758" duration="1055000" />
-    </task>
-    <task id="LOCAL-00088" summary="I think this delay works">
-      <created>1736892449723</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1736892449723</updated>
+      <workItem from="1738873401758" duration="2276000" />
+      <workItem from="1738919705729" duration="1924000" />
     </task>
     <task id="LOCAL-00089" summary="better loading UI">
       <created>1736892909293</created>
@@ -446,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738688571670</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="works without images">
+      <created>1738874959371</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1738874959371</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +478,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="link owner images" />
     <MESSAGE value="djust card spots" />
     <MESSAGE value="view profile" />
     <MESSAGE value="show profile details applicants" />
@@ -501,6 +502,7 @@
     <MESSAGE value="update styling" />
     <MESSAGE value="tot derde scherm" />
     <MESSAGE value="tot en met endscreen , ma moe nog aanmkene" />
-    <option name="LAST_COMMIT_MESSAGE" value="tot en met endscreen , ma moe nog aanmkene" />
+    <MESSAGE value="works without images" />
+    <option name="LAST_COMMIT_MESSAGE" value="works without images" />
   </component>
 </project>

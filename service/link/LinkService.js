@@ -1,4 +1,6 @@
 import supabase from "../../app/lib/supabase";
+import * as FileSystem from "expo-file-system";
+import {Buffer} from "buffer";
 
 
 export const getAllLinks = async (eventType, searchQuery) => {
@@ -116,7 +118,8 @@ export const getAllTypes = async () => {
 
         console.log("Link categories fetched successfully:", data);
         return data;
-    } catch (err) {
+    }
+    catch (err) {
         console.error("Unexpected error occurred:", err);
         return null;
     }
@@ -149,6 +152,61 @@ export const createLink = async (name, description, date, location, startTime, e
     } else {
         console.log("Link created successfully:", data);
         return data;
+    }
+};
+
+
+export const uploadImages = async (eventId, data) => {
+    console.log(eventId);
+    console.log(data);
+    if (!data || !Array.isArray(data) || data.length === 0) {
+        console.log("No images to upload or invalid input.");
+        return [];
+    }
+
+    try {
+        const uploadedImagePaths = [];
+
+        for (const imageUri of data) {
+            if (typeof imageUri !== "string" || !imageUri.startsWith("file://")) {
+                console.warn("Skipping invalid image URI:", imageUri);
+                continue;
+            }
+            console.log("Processing image:", imageUri);
+            // Convert image to Base64
+            const base64 = await FileSystem.readAsStringAsync(imageUri, {encoding: "base64"});
+
+            // Decode base64 to binary
+            const imageBuffer = Buffer.from(base64, "base64");
+
+            const fileType = imageUri.endsWith(".jpg") ? "jpg" : "png";
+            const filePath = `${eventId}/${Date.now()}.${fileType}`;
+            const contentType = fileType === "jpg" ? "image/jpeg" : "image/png";
+
+            console.log("Uploading:", filePath);
+
+            // Upload to Supabase
+            const {data: uploadData, error} = await supabase.storage
+                .from("linkImages")
+                .upload(filePath, imageBuffer, {
+                    contentType,
+                    cacheControl: "3600",
+                    upsert: true,
+                });
+
+            if (error) {
+                console.error("Upload failed:", error.message);
+            } else {
+                console.log("Upload successful:", uploadData);
+                uploadedImagePaths.push(uploadData.path);  // Use `path` instead of `Key`
+            }
+        }
+
+        return uploadedImagePaths;
+    }
+    catch (error) {
+        console.error("Error processing images:", error.message);
+        return [];
     }
 };
 
