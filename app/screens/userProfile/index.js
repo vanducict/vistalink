@@ -5,6 +5,7 @@ import styles from "./UserProfileScreen.style";
 import supabase from "../../lib/supabase";
 import Loading from "../../../components/common/loading/Loading";
 import icons from "../../../constants/icons";
+import {COLORS} from "../../../constants/theme";
 
 const UserProfile = ({visible, userDetails, onClose}) => {
     const [imageUrls, setImageUrls] = useState([]); // Initialize as an empty array
@@ -115,6 +116,8 @@ const UserProfile = ({visible, userDetails, onClose}) => {
                                             showsPagination={true}
                                             loop={false}
                                             autoplay={false}
+                                            activeDotColor={COLORS.tertiary}
+                                            dotColor="lightgray"  // Inactive dot color
                                             paginationStyle={styles.paginationStyle}
                                         >
                                             {imageUrls.map((url, index) => (

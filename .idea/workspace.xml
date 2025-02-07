@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="button style fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/createLink/images/Images.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/images/Images.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo4/[data].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo4/[data].style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/userProfile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/userProfile/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,14 +104,7 @@
       <workItem from="1738591640318" duration="711000" />
       <workItem from="1738666031657" duration="15636000" />
       <workItem from="1738873401758" duration="2276000" />
-      <workItem from="1738919705729" duration="2116000" />
-    </task>
-    <task id="LOCAL-00090" summary="better fix late">
-      <created>1736897069217</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1736897069217</updated>
+      <workItem from="1738919705729" duration="5303000" />
     </task>
     <task id="LOCAL-00091" summary="better fix late 2">
       <created>1736897849372</created>
@@ -448,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738921959953</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="button style fix">
+      <created>1738922300287</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1738922300287</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,7 +479,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="view profile" />
     <MESSAGE value="show profile details applicants" />
     <MESSAGE value="enable btn view profile always" />
     <MESSAGE value="update chatroom style" />
@@ -503,6 +503,7 @@
     <MESSAGE value="tot en met endscreen , ma moe nog aanmkene" />
     <MESSAGE value="works without images" />
     <MESSAGE value="upload link images" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload link images" />
+    <MESSAGE value="button style fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="button style fix" />
   </component>
 </project>

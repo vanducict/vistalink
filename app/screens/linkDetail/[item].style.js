@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         fontWeight: "bold",
-        marginBottom: 10,
+        marginBottom: 15,
         fontFamily: FONT.bold,
     },
     description: {
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     detail: {
         fontSize: 16,
         color: COLORS.gray,
-        marginBottom: 5,
+        marginTop: 10,
         fontFamily: FONT.regular,
     },
     loadingText: {
@@ -66,6 +66,36 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
         resizeMode: "contain",
+    },
+    swiper: {
+        height: 400, // Height of the swiper container
+        overflow: 'hidden', // Hide any content that overflows
+        position: 'relative', // Ensure absolute positioning works
+    },
+    avatar: {
+        width: '100%', // Full width of the swiper container
+        height: '100%', // Full height to fill swiper container
+        resizeMode: 'cover', // Keep image aspect ratio intact
+        borderRadius: 10, // Optional rounded corners
+    },
+    imageContainer: {
+        position: 'relative', // Ensures pagination is correctly positioned inside
+    },
+    paginationStyle: {
+        position: 'absolute', // Position the pagination inside the image
+        bottom: 10, // Adjust to place it at the bottom of the image
+        left: '50%',
+        transform: [{translateX: '-50%'}], // Center pagination dots horizontally
+        zIndex: 1, // Ensure pagination is above the image content
+    },
+    dot: {
+        width: 8,  // Inactive dot size
+        height: 8,
+        margin: 4, // Space between the dots
+        borderRadius: 4, // Circular dots
+    },
+    activeDot: {
+        backgroundColor: COLORS.tertiary, // Active dot color
     }
 });
 
