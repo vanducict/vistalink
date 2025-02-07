@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="works without images">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/createLink/images/[data].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/images/[data].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/link/LinkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/link/LinkService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/createLink/images/Images.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/createLink/images/Images.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/register/additionalInfo4/[data].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/register/additionalInfo4/[data].style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,14 +103,7 @@
       <workItem from="1738591640318" duration="711000" />
       <workItem from="1738666031657" duration="15636000" />
       <workItem from="1738873401758" duration="2276000" />
-      <workItem from="1738919705729" duration="1924000" />
-    </task>
-    <task id="LOCAL-00089" summary="better loading UI">
-      <created>1736892909293</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1736892909293</updated>
+      <workItem from="1738919705729" duration="2116000" />
     </task>
     <task id="LOCAL-00090" summary="better fix late">
       <created>1736897069217</created>
@@ -448,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738874959371</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="upload link images">
+      <created>1738921959953</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1738921959953</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,7 +478,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="djust card spots" />
     <MESSAGE value="view profile" />
     <MESSAGE value="show profile details applicants" />
     <MESSAGE value="enable btn view profile always" />
@@ -503,6 +502,7 @@
     <MESSAGE value="tot derde scherm" />
     <MESSAGE value="tot en met endscreen , ma moe nog aanmkene" />
     <MESSAGE value="works without images" />
-    <option name="LAST_COMMIT_MESSAGE" value="works without images" />
+    <MESSAGE value="upload link images" />
+    <option name="LAST_COMMIT_MESSAGE" value="upload link images" />
   </component>
 </project>

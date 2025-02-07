@@ -260,6 +260,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         alignItems: 'center',
         width: '90%',
+        maxHeight: 50,
         margin: "auto",
     },
     registerButtonText: {
