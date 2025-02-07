@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="button style fix">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="linkdetail images">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkDetail/[item].style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/userProfile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/userProfile/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,14 +103,7 @@
       <workItem from="1738591640318" duration="711000" />
       <workItem from="1738666031657" duration="15636000" />
       <workItem from="1738873401758" duration="2276000" />
-      <workItem from="1738919705729" duration="5303000" />
-    </task>
-    <task id="LOCAL-00091" summary="better fix late 2">
-      <created>1736897849372</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1736897849372</updated>
+      <workItem from="1738919705729" duration="6164000" />
     </task>
     <task id="LOCAL-00092" summary="update packages">
       <created>1736948497945</created>
@@ -449,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738922300287</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="linkdetail images">
+      <created>1738925472034</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1738925472034</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +478,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="show profile details applicants" />
     <MESSAGE value="enable btn view profile always" />
     <MESSAGE value="update chatroom style" />
     <MESSAGE value="google btn sttyle" />
@@ -504,6 +502,7 @@
     <MESSAGE value="works without images" />
     <MESSAGE value="upload link images" />
     <MESSAGE value="button style fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="button style fix" />
+    <MESSAGE value="linkdetail images" />
+    <option name="LAST_COMMIT_MESSAGE" value="linkdetail images" />
   </component>
 </project>
