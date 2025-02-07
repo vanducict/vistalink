@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="linkdetail images">
+    <list default="true" id="79c0da43-532a-416d-ab51-054896f6479d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/nearbycard/NearbyCard.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/linkActivity/[item].style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/linkActivity/[item].style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,14 +103,7 @@
       <workItem from="1738591640318" duration="711000" />
       <workItem from="1738666031657" duration="15636000" />
       <workItem from="1738873401758" duration="2276000" />
-      <workItem from="1738919705729" duration="6164000" />
-    </task>
-    <task id="LOCAL-00092" summary="update packages">
-      <created>1736948497945</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1736948497945</updated>
+      <workItem from="1738919705729" duration="6496000" />
     </task>
     <task id="LOCAL-00093" summary="potential fix async names streamchat">
       <created>1736954446129</created>
@@ -448,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738925472034</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="nearby card images">
+      <created>1738926365661</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1738926365661</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,7 +478,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="enable btn view profile always" />
     <MESSAGE value="update chatroom style" />
     <MESSAGE value="google btn sttyle" />
     <MESSAGE value="first register screen styling done" />
@@ -503,6 +502,7 @@
     <MESSAGE value="upload link images" />
     <MESSAGE value="button style fix" />
     <MESSAGE value="linkdetail images" />
-    <option name="LAST_COMMIT_MESSAGE" value="linkdetail images" />
+    <MESSAGE value="nearby card images" />
+    <option name="LAST_COMMIT_MESSAGE" value="nearby card images" />
   </component>
 </project>
